@@ -13,7 +13,7 @@ using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Controllers
 {
-	public abstract class __BaseController : Controller
+	public abstract class BaseController : Controller
 	{
 		public FeedbackContext Feedback
 		{

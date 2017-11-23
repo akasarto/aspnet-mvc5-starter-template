@@ -1,0 +1,6 @@
+﻿
+
+View models should always inherit from 'BaseViewModel'.
+Partial view models should always inherit from 'BasePartialViewModel'.
+
+You can copy the templates in this folder and rename the copy as needed.

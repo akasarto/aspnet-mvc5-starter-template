@@ -159,28 +159,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Controllers\.tpl\.readme.txt" />
     <Content Include="Favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Humans.txt" />
+    <Content Include="Models\.tpl\.readme.txt" />
+    <Content Include="Scripts\.tpl\.readme.txt" />
+    <Content Include="Scripts\.tpl\service.js" />
     <Content Include="Scripts\moment-with-locales.js" />
-    <Content Include="Scripts\_base\website.base.js" />
-    <Content Include="Scripts\_services\notification.service.js" />
-    <Content Include="Scripts\_services\modal.service.js" />
-    <Content Include="Scripts\_services\upload.service.js" />
-    <Content Include="Scripts\_services\validation.service.js" />
-    <Content Include="Scripts\_services\table.service.js" />
-    <Content Include="Scripts\_configs\timepicker.config.js" />
-    <Content Include="Scripts\_configs\jquery.validate.unobtrusive.config.js" />
-    <Content Include="Scripts\_configs\jquery.validate.config.js" />
-    <Content Include="Scripts\_configs\globalization.config.js" />
-    <Content Include="Scripts\_configs\datepicker.config.js" />
-    <Content Include="Scripts\_configs\cookies.config.js" />
-    <Content Include="Scripts\_services\progress.service.js" />
-    <Content Include="Scripts\_services\model.state.service.js" />
-    <Content Include="Scripts\_utils\feedback.utils.js" />
+    <Content Include="Scripts\base\website.base.js" />
+    <Content Include="Scripts\services\notification.service.js" />
+    <Content Include="Scripts\services\modal.service.js" />
+    <Content Include="Scripts\services\upload.service.js" />
+    <Content Include="Scripts\services\validation.service.js" />
+    <Content Include="Scripts\services\table.service.js" />
+    <Content Include="Scripts\configs\timepicker.config.js" />
+    <Content Include="Scripts\configs\jquery.validate.unobtrusive.config.js" />
+    <Content Include="Scripts\configs\jquery.validate.config.js" />
+    <Content Include="Scripts\configs\globalization.config.js" />
+    <Content Include="Scripts\configs\datepicker.config.js" />
+    <Content Include="Scripts\configs\cookies.config.js" />
+    <Content Include="Scripts\services\progress.service.js" />
+    <Content Include="Scripts\services\model.state.service.js" />
+    <Content Include="Scripts\utils\feedback.utils.js" />
     <Content Include="Scripts\vue.js" />
     <Content Include="Scripts\vue.min.js" />
-    <Content Include="Scripts\__tpl.js" />
+    <Content Include="Scripts\.tpl\script.js" />
+    <Content Include="Views\.tpl\.readme.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -194,6 +199,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\.tpl\Controller.cs" />
     <Compile Include="Controllers\BlobsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Infrastructure\Blobs\BlobUploadResult.cs" />
@@ -233,7 +239,7 @@
     <Compile Include="Infrastructure\HtmlExtension\RenderJsonResourcesScriptTag.cs" />
     <Compile Include="Infrastructure\SetLayout.cs" />
     <Compile Include="AppAreas.cs" />
-    <Compile Include="Controllers\__BaseController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -248,6 +254,8 @@
     <Compile Include="Infrastructure\Validation\SimpleInjectorValidatorFactory.cs" />
     <Compile Include="Initializer.cs" />
     <Compile Include="Infrastructure\Blobs\IBlobService.cs" />
+    <Compile Include="Models\.tpl\PartialViewModel.cs" />
+    <Compile Include="Models\.tpl\ViewModel.cs" />
     <Compile Include="Models\EmptyPartialViewModel.cs" />
     <Compile Include="Models\BaseViewModel.cs" />
     <Compile Include="Models\BasePartialViewModel.cs" />
@@ -277,8 +285,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\_LayoutEmails.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\_tpl\View.cshtml" />
-    <Content Include="Views\_tpl\PartialView.cshtml" />
+    <Content Include="Views\.tpl\View.cshtml" />
+    <Content Include="Views\.tpl\PartialView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

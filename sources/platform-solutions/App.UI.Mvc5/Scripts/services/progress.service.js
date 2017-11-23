@@ -23,11 +23,6 @@ var ProgressService = function (options) {
 
 	var settings = $.extend(true, defaults, options);
 
-	var initialize = function (options) {
-		settings = $.extend(true, settings, options);
-		return $(settings.tableSelector).DataTable(settings);
-	};
-
 	return {
 		start: function () {
 			NProgress.start();

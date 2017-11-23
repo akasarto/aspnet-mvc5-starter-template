@@ -6,7 +6,7 @@ namespace App.UI.Mvc5.Controllers
 {
 	[RoutePrefix("")]
 	[TrackMenuItem("root.landing")]
-	public class HomeController : __BaseController
+	public class HomeController : BaseController
 	{
 		[HttpGet]
 		[Route(Name = "HomeIndexGet")]
