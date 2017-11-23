@@ -195,6 +195,7 @@
       <DependentUpon>AdminResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\BlobsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Infrastructure\Blobs\BlobUploadResult.cs" />
     <Compile Include="Infrastructure\Cookies\GetCookie.cs" />
     <Compile Include="Infrastructure\Cookies\SetCookie.cs" />
@@ -249,7 +250,6 @@
     <Compile Include="Initializer.cs" />
     <Compile Include="Infrastructure\Blobs\IBlobService.cs" />
     <Compile Include="Models\EmptyPartialViewModel.cs" />
-    <Compile Include="Models\LayoutOptions.cs" />
     <Compile Include="Models\BaseViewModel.cs" />
     <Compile Include="Models\BasePartialViewModel.cs" />
     <Compile Include="Models\Blobs\UploadAnyViewModelValidator.cs" />
@@ -277,6 +277,9 @@
     <Content Include="Views\Errors\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\_LayoutEmails.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\_tpl\View.cshtml" />
+    <Content Include="Views\_tpl\PartialView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
