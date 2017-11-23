@@ -234,7 +234,6 @@
     <Compile Include="Infrastructure\SetLayout.cs" />
     <Compile Include="AppAreas.cs" />
     <Compile Include="Controllers\__BaseController.cs" />
-    <Compile Include="Controllers\_LandingController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

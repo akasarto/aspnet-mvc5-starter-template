@@ -100,6 +100,18 @@ namespace App.UI.Mvc5
 
 				Response.Clear();
 
+				Response.Write(exception.Message);
+				if (httpException != null && !string.IsNullOrWhiteSpace(httpException.GetHtmlErrorMessage()))
+				{
+					Response.Write("<hr />");
+					Response.Write(httpException.GetHtmlErrorMessage());
+				}
+				Response.Write("<hr />");
+				Response.Write(exception.ToString());
+
+				Response.End();
+
+				/*
 				var data = new RouteData();
 
 				data.Values["ex"] = exception;
@@ -112,6 +124,7 @@ namespace App.UI.Mvc5
 				var requestContext = new RequestContext(new HttpContextWrapper(Context), data);
 
 				controller.Execute(requestContext);
+				*/
 			}
 		}
 	}

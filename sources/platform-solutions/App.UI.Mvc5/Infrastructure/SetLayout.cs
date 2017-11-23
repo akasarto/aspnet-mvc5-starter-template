@@ -6,10 +6,6 @@ namespace App.UI.Mvc5.Infrastructure
 	{
 		Base,
 		Emails,
-		InternalBase,
-		InternalDefault,
-		InternalSidebarPanel,
-		InternalTabNavigation,
 		Null
 	}
 
@@ -27,22 +23,6 @@ namespace App.UI.Mvc5.Infrastructure
 
 				case Layouts.Emails:
 					result = "~/Views/_LayoutEmails.cshtml";
-					break;
-
-				case Layouts.InternalBase:
-					result = "~/Views/_LayoutInternalBase.cshtml";
-					break;
-
-				case Layouts.InternalDefault:
-					result = "~/Views/_LayoutInternalDefault.cshtml";
-					break;
-
-				case Layouts.InternalSidebarPanel:
-					result = "~/Views/_LayoutInternalSidebarPanel.cshtml";
-					break;
-
-				case Layouts.InternalTabNavigation:
-					result = "~/Views/_LayoutInternalTabs.cshtml";
 					break;
 
 				default:
