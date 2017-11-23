@@ -1,0 +1,210 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B57A2284-2075-456D-8E5E-60987B88D5BD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App.UI.Mvc5</RootNamespace>
+    <AssemblyName>App.UI.Mvc5</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\AppJsonResult.cs" />
+    <Compile Include="Infrastructure\AppViewEngine.cs" />
+    <Compile Include="Infrastructure\AppWebViewPage.cs" />
+    <Compile Include="Infrastructure\AuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\Blobs\BlobService.cs" />
+    <Compile Include="Infrastructure\Blobs\BlobServiceConfigs.cs" />
+    <Compile Include="Infrastructure\Blobs\BlobUploadResult.cs" />
+    <Compile Include="Infrastructure\Blobs\IBlobService.cs" />
+    <Compile Include="Infrastructure\Blobs\Thumbnails.cs" />
+    <Compile Include="Infrastructure\Cookies\GetCookie.cs" />
+    <Compile Include="Infrastructure\Cookies\SetCookie.cs" />
+    <Compile Include="Infrastructure\DirectRouteProvider.cs" />
+    <Compile Include="Infrastructure\Feedback\FeedbackContext.cs" />
+    <Compile Include="Infrastructure\Feedback\FeedbackMessage.cs" />
+    <Compile Include="Infrastructure\Feedback\FeedbackMessageType.cs" />
+    <Compile Include="Infrastructure\Feedback\FeedbackSummary.cs" />
+    <Compile Include="Infrastructure\Globalization\GlobalizationManager.cs" />
+    <Compile Include="Infrastructure\Globalization\GlobalizationService.cs" />
+    <Compile Include="Infrastructure\Globalization\IGlobalizationService.cs" />
+    <Compile Include="Infrastructure\Globalization\LocalizedDisplayAttribute.cs" />
+    <Compile Include="Infrastructure\HtmlExtension\CheckBoxForTheme.cs" />
+    <Compile Include="Infrastructure\HtmlExtension\RenderJsonResourcesScriptTag.cs" />
+    <Compile Include="Infrastructure\HtmlExtension\RenderLocalizedScriptTag.cs" />
+    <Compile Include="Infrastructure\HtmlExtension\ToByteSizeLabel.cs" />
+    <Compile Include="Infrastructure\HtmlExtension\WithHtmlLineBreaks.cs" />
+    <Compile Include="Infrastructure\HtmlExtension\WithRawHtmlOutput.cs" />
+    <Compile Include="Infrastructure\ImageResizer\IImageResizerThumbService.cs" />
+    <Compile Include="Infrastructure\ImageResizer\ImageResizerInfra.cs" />
+    <Compile Include="Infrastructure\ImageResizer\ImageResizerThumbService.cs" />
+    <Compile Include="Infrastructure\ImageResizer\Plugin\ImageResizerThumbPlugin.cs" />
+    <Compile Include="Infrastructure\ImageResizer\Plugin\ImageResizerThumbVirtualFile.cs" />
+    <Compile Include="Infrastructure\MenuTracker\MenuData.cs" />
+    <Compile Include="Infrastructure\MenuTracker\MenuHelperControllers.cs" />
+    <Compile Include="Infrastructure\MenuTracker\MenuHelperViewPages.cs" />
+    <Compile Include="Infrastructure\MenuTracker\MenuTrackingAgentAttribute.cs" />
+    <Compile Include="Infrastructure\MenuTracker\TrackMenuItemAttribute.cs" />
+    <Compile Include="Infrastructure\Realtime\Configs\HubActivator.cs" />
+    <Compile Include="Infrastructure\Realtime\Configs\SignalRCamelCaseJsonResolver.cs" />
+    <Compile Include="Infrastructure\Realtime\Configs\UserIdProvider.cs" />
+    <Compile Include="Infrastructure\Realtime\Hubs\AlertsHub.cs" />
+    <Compile Include="Infrastructure\Realtime\IRealtimeService.cs" />
+    <Compile Include="Infrastructure\Realtime\RealtimeService.cs" />
+    <Compile Include="Infrastructure\SetLayout.cs" />
+    <Compile Include="Infrastructure\Validation\RequiredCheckboxValidator.cs" />
+    <Compile Include="Infrastructure\Validation\SimpleInjectorValidatorFactory.cs" />
+    <Compile Include="Infrastructure\Validation\ValidationLanguageManager.cs" />
+    <Compile Include="Infrastructure\Validation\ValidationSummary.cs" />
+    <Compile Include="Models\BasePartialViewModel.cs" />
+    <Compile Include="Models\BaseViewModel.cs" />
+    <Compile Include="Models\EmptyPartialViewModel.cs" />
+    <Compile Include="Models\EmptyViewModel.cs" />
+    <Compile Include="Models\Errors\ErrorViewModel.cs" />
+    <Compile Include="Models\LayoutOptions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include=".editorconfig" />
+    <None Include="packages.config" />
+    <Content Include="Views\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Errors\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62832</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56522/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

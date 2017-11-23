@@ -1,0 +1,48 @@
+﻿@model ErrorViewModel
+
+<!-- Meta -->
+
+@{
+	this.SetLayout(Layouts.Base);
+
+	Model.PageTitle = GetLocalizedString("Errors_Title");
+}
+
+<!-- Page Contents -->
+
+<section class="body-error error-outside">
+	<div class="center-error">
+		<div class="error-header">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-8">
+							<a href="@Url.Action("Index", "_Landing")" class="logo logo-error">
+								<img src="@Url.Content("~/assets/images/logo.png")" height="54" alt="@GetLocalizedString("_App_Name")" />
+							</a>
+						</div>
+						<div class="col-md-4">
+							@Html.Action("BoxErrors", "Search")
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="main-error mb-xlg">
+					<h2 class="error-code text-dark text-center text-weight-semibold m-none">@Model.Code <i class="fa fa-file"></i></h2>
+					<p class="error-explanation text-center">@Model.Message</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h4 class="text">@GetLocalizedString("Errors_ActionsCallout")</h4>
+				<ul class="nav nav-list primary">
+					<li>
+						<a href="@Url.Action("Index", "_Landing")"><i class="fa fa-caret-right text-dark"></i> @GetLocalizedString("Home_MenuLabel")</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

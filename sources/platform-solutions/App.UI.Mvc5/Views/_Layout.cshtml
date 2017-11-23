@@ -1,0 +1,132 @@
+﻿@using App.UI.Mvc5.Infrastructure
+
+@model BaseViewModel
+
+@{
+	var culture = User.Culture;
+	var uiCulture = User.UICulture;
+	var pageTitle = $"{Model?.PageTitle ?? GetLocalizedString("_App_Welcome")} | {GetLocalizedString("_App_Name")}";
+}
+
+<!doctype html>
+<html class="@Model.GetHtmlClasses()" data-region="@culture.Name" lang="@uiCulture.TwoLetterISOLanguageName">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>@pageTitle</title>
+	<link rel="icon" href="~/favicon.ico" />
+	<link type="text/plain" rel="author" href="~/humans.txt" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="~/assets/vendor/bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" href="~/assets/vendor/font-awesome/css/font-awesome.css" />
+	<link rel="stylesheet" href="~/assets/vendor/magnific-popup/magnific-popup.css" />
+	<link rel="stylesheet" href="~/assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
+	<link rel="stylesheet" href="~/assets/vendor/jquery-ui/jquery-ui.css" />
+	<link rel="stylesheet" href="~/assets/vendor/jquery-ui/jquery-ui.theme.css" />
+	<link rel="stylesheet" href="~/assets/vendor/pnotify/pnotify.custom.css" />
+	@RenderSection("page_styles", required: false)
+	<link rel="stylesheet" href="~/assets/stylesheets/theme.css" />
+	<link rel="stylesheet" href="~/assets/stylesheets/skins/default.css" />
+	@if (!Model.LayoutOptions.HasFlag(LayoutOptions.RoundBorders))
+	{
+		<link rel="stylesheet" href="~/assets/stylesheets/skins/square-borders.css" />
+	}
+	<link rel="stylesheet" href="~/assets/stylesheets/theme-custom.css" />
+	<link rel="stylesheet" href="~/content/app.css" />
+	<script src="~/assets/vendor/modernizr/modernizr.js"></script>
+</head>
+
+@{
+	var hasOverlay = Model.LayoutOptions.HasFlag(LayoutOptions.OverlayLoader);
+}
+
+<body class="@(hasOverlay ? "loading-overlay-showing" : string.Empty)" @(hasOverlay ? "data-loading-overlay" : string.Empty)>
+
+	@if (hasOverlay)
+	{
+		<div class="loading-overlay">
+			<div class="bounce-loader">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+		</div>
+	}
+
+	@RenderBody()
+
+	@Html.FeedbackSummary()
+
+	@Html.RenderAdminScriptResourcesTag(User.Culture, User.UICulture)
+
+	<!-- Vendor -->
+	<script src="~/scripts/jquery-3.2.1.min.js"></script>
+	<script src="~/assets/vendor/jquery-cookie/jquery-cookie.js"></script>
+	<script src="~/scripts/_configs/cookies.config.js"></script>
+	<script src="~/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+	<script src="~/assets/vendor/bootstrap/js/bootstrap.js"></script>
+	<script src="~/assets/vendor/nanoscroller/nanoscroller.js"></script>
+	<script src="~/assets/vendor/bootstrap-confirmation/bootstrap-confirmation.js"></script>
+	<script src="~/assets/vendor/jquery-placeholder/jquery-placeholder.js"></script>
+	<script src="~/assets/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+	<script src="~/assets/vendor/jquery-placeholder/jquery-placeholder.js"></script>
+	<script src="~/assets/vendor/jquery-ui/jquery-ui.js"></script>
+	<script src="~/assets/vendor/jqueryui-touch-punch/jqueryui-touch-punch.js"></script>
+	<script src="~/assets/vendor/pnotify/pnotify.custom.js"></script>
+	<script src="~/assets/vendor/jquery-idletimer/idle-timer.js"></script>
+	<script src="~/assets/vendor/nprogress/nprogress.js"></script>
+	<script src="~/assets/vendor/autosize/autosize.js"></script>
+	<script src="~/scripts/moment-with-locales.js"></script>
+	<script src="~/scripts/vue.min.js"></script>
+	<script src="~/scripts/_configs/globalization.config.js"></script>
+	<script src="~/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	@Html.RenderLocalizedScriptTag("~/assets/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.{0}.min.js", User.Culture)
+	<script src="~/scripts/_configs/datepicker.config.js"></script>
+	<script src="~/assets/vendor/bootstrap-timepicker/bootstrap-timepicker.js"></script>
+	<script src="~/scripts/_configs/timepicker.config.js"></script>
+	<script src="~/scripts/jquery.validate.min.js"></script>
+	<script src="~/scripts/_configs/jquery.validate.config.js"></script>
+	<script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+	<script src="~/scripts/_configs/jquery.validate.unobtrusive.config.js"></script>
+	<script src="~/scripts/jquery.signalR-2.2.2.min.js"></script>
+	<script src="~/signalr/hubs"></script>
+	@RenderSection("page_scripts", required: false)
+	<script src="~/assets/javascripts/theme.js"></script>
+	<script src="~/assets/javascripts/theme.custom.js"></script>
+	<script src="~/assets/javascripts/theme.init.js"></script>
+	<script src="~/scripts/_base/website.base.js"></script>
+	<script src="~/scripts/_services/modal.service.js"></script>
+	<script src="~/scripts/_services/model.state.service.js"></script>
+	<script src="~/scripts/_services/notification.service.js"></script>
+	<script src="~/scripts/_services/progress.service.js"></script>
+	<script src="~/scripts/_services/table.service.js"></script>
+	<script src="~/scripts/_services/upload.service.js"></script>
+	<script src="~/scripts/_services/validation.service.js"></script>
+	<script src="~/scripts/_utils/feedback.utils.js"></script>
+
+	<!-- Default Delete Dialog Template -->
+	<div class="modal-dialog mfp-hide confirmation-service-dialog" id="mainDeleteDialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">@GetLocalizedString("DefaultAttentionTitle")</h4>
+			</div>
+			<div class="modal-body">
+				<div class="confirmation-content-template hidden">
+					@GetLocalizedString("DeleteDialogConfirmationMessageTemplate").WithRawHtmlOutput()
+				</div>
+				<div class="confirmation-content-template-with-label hidden">
+					@GetLocalizedString("DeleteDialogConfirmationMessageTemplateWithLabel").WithRawHtmlOutput()
+				</div>
+				<div class="confirmation-content-message"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-link confirmation-cancel">@GetLocalizedString("Cancel")</button>
+				<button type="button" class="btn btn-danger confirmation-confirm">@GetLocalizedString("Confirm")</button>
+			</div>
+		</div>
+	</div>
+
+	@RenderSection("page_scripts_init", required: false)
+
+</body>
+</html>
