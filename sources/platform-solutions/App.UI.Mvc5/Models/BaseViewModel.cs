@@ -12,6 +12,8 @@ namespace App.UI.Mvc5.Models
 		{
 			var result = new StringBuilder();
 
+			// Process possible layout options
+
 			return result.ToString();
 		}
 	}

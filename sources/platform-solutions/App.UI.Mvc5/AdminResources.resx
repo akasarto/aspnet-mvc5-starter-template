@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddNew" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="Alerts_AddTitle" xml:space="preserve">
+    <value>Add Alert</value>
+  </data>
+  <data name="Alerts_BoxTitle" xml:space="preserve">
+    <value>Alerts</value>
+  </data>
+  <data name="Alerts_DetailsTitle" xml:space="preserve">
+    <value>Alert Details</value>
+  </data>
+  <data name="Alerts_EditTitle" xml:space="preserve">
+    <value>Edit Alert</value>
+  </data>
+  <data name="Alerts_EmailVerificationAlertMessage" xml:space="preserve">
+    <value>Email verification required.</value>
+  </data>
+  <data name="Alerts_LoadUnreadErrorMessage" xml:space="preserve">
+    <value>Unable to load unread alerts summary.</value>
+  </data>
+  <data name="Alerts_MarkAsReadLabel" xml:space="preserve">
+    <value>Mark as Read</value>
+  </data>
+  <data name="Alerts_Title" xml:space="preserve">
+    <value>Alerts</value>
+  </data>
+  <data name="Alerts_UnreadLabel" xml:space="preserve">
+    <value>Not read yet</value>
+  </data>
+  <data name="Auth_InvalidCredentialsMessage" xml:space="preserve">
+    <value>Invalid credentials.</value>
+  </data>
+  <data name="Auth_LoginCallout" xml:space="preserve">
+    <value>Already have an account?</value>
+  </data>
+  <data name="Auth_LoginCalloutAction" xml:space="preserve">
+    <value>Sign In!</value>
+  </data>
+  <data name="Auth_LoginCalloutAlternate" xml:space="preserve">
+    <value>Remembered?</value>
+  </data>
+  <data name="Auth_LoginLabel" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="Auth_LoginTitle" xml:space="preserve">
+    <value>LogIn</value>
+  </data>
+  <data name="Auth_RecoverLabel" xml:space="preserve">
+    <value>Recover</value>
+  </data>
+  <data name="Auth_RecoverPasswordCallout" xml:space="preserve">
+    <value>Lost Password?</value>
+  </data>
+  <data name="Auth_RecoverPasswordInfo" xml:space="preserve">
+    <value>Enter your email bellow to receive recover instructions.</value>
+  </data>
+  <data name="Auth_RecoverPasswordSuccessInfo" xml:space="preserve">
+    <value>Message Sent!</value>
+  </data>
+  <data name="Auth_RecoverPasswordSuccessInfoDetails" xml:space="preserve">
+    <value>You'll receive an email with further instructions shortly.</value>
+  </data>
+  <data name="Auth_RecoverPasswordTitle" xml:space="preserve">
+    <value>Recover Password</value>
+  </data>
+  <data name="Auth_SetNewPasswordGeneralError" xml:space="preserve">
+    <value>Email verification failed. Please try again or request a new token.</value>
+  </data>
+  <data name="Auth_SetNewPasswordInfo" xml:space="preserve">
+    <value>Enter your e-mail and your new password to proceed.</value>
+  </data>
+  <data name="Auth_SetNewPasswordTitle" xml:space="preserve">
+    <value>Set New Password</value>
+  </data>
+  <data name="Auth_SetPasswordLabel" xml:space="preserve">
+    <value>Set Password</value>
+  </data>
+  <data name="Auth_SignUpCallout" xml:space="preserve">
+    <value>Don't have an account yet?</value>
+  </data>
+  <data name="Auth_SignUpCalloutAction" xml:space="preserve">
+    <value>Sign Up!</value>
+  </data>
+  <data name="Auth_SignUpLabel" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="Auth_SignUpTitle" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="CultureId" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="CultureId_Hint" xml:space="preserve">
+    <value>Date, time and numeric format.</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Current Password</value>
+  </data>
+  <data name="Dash_MenuLabel" xml:space="preserve">
+    <value>Dash</value>
+  </data>
+  <data name="Dash_Title" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DefaultAttentionTitle" xml:space="preserve">
+    <value>Attention!</value>
+  </data>
+  <data name="DefaultErrorMessage" xml:space="preserve">
+    <value>Something went wrong. Please try again.</value>
+  </data>
+  <data name="DefaultErrorTitle" xml:space="preserve">
+    <value>Error!</value>
+  </data>
+  <data name="DefaultInfoMessage" xml:space="preserve">
+    <value>Operation completed.</value>
+  </data>
+  <data name="DefaultInfoTitle" xml:space="preserve">
+    <value>Info!</value>
+  </data>
+  <data name="DefaultSectionFormLabel" xml:space="preserve">
+    <value>Form Data</value>
+  </data>
+  <data name="DefaultSectionFormLeadInfo" xml:space="preserve">
+    <value>Set the required entry data to proceed.</value>
+  </data>
+  <data name="DefaultSectionListLabel" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="DefaultSectionListLeadInfo" xml:space="preserve">
+    <value>Manage the available entries bellow.</value>
+  </data>
+  <data name="DefaultSuccessMessage" xml:space="preserve">
+    <value>The operation was completed with no errors.</value>
+  </data>
+  <data name="DefaultSuccessTitle" xml:space="preserve">
+    <value>Success!</value>
+  </data>
+  <data name="DefaultWarningMessage" xml:space="preserve">
+    <value>Operation completed but some minor problems occured.</value>
+  </data>
+  <data name="DefaultWarningTitle" xml:space="preserve">
+    <value>Warning!</value>
+  </data>
+  <data name="DeleteDialogConfirmationMessageTemplate" xml:space="preserve">
+    <value>The selected item will be permanently deleted.</value>
+  </data>
+  <data name="DeleteDialogConfirmationMessageTemplateWithLabel" xml:space="preserve">
+    <value>&lt;strong class="delete-item-label"&gt;&lt;/strong&gt; will be permanently deleted.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailOrUsername" xml:space="preserve">
+    <value>Email or Username</value>
+  </data>
+  <data name="EmptyListInfo" xml:space="preserve">
+    <value>No items.</value>
+  </data>
+  <data name="Errors_ActionsCallout" xml:space="preserve">
+    <value>Here are some useful links</value>
+  </data>
+  <data name="Errors_BadRequestMessage" xml:space="preserve">
+    <value>Error! Bad request.</value>
+  </data>
+  <data name="Errors_ForbiddenMessage" xml:space="preserve">
+    <value>Error! Access forbidden.</value>
+  </data>
+  <data name="Errors_GeneralErrorMessage" xml:space="preserve">
+    <value>Oops! Something went wrong. Please try again.</value>
+  </data>
+  <data name="Errors_NotFoundMessage" xml:space="preserve">
+    <value>Error! The page was not found.</value>
+  </data>
+  <data name="Errors_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Errors_UnauthorizedMessage" xml:space="preserve">
+    <value>Error! Please log in to proceed!</value>
+  </data>
+  <data name="Features_MenuLabel" xml:space="preserve">
+    <value>Features</value>
+  </data>
+  <data name="GoBack" xml:space="preserve">
+    <value>Go Back</value>
+  </data>
+  <data name="GoBackToList" xml:space="preserve">
+    <value>Back to List</value>
+  </data>
+  <data name="Home_MenuLabel" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HtmlElements_MenuLabel" xml:space="preserve">
+    <value>Html Elements</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Logs_AllLabel" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Logs_DebugLabel" xml:space="preserve">
+    <value>Debug</value>
+  </data>
+  <data name="Logs_ErrorLabel" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Logs_FatalLabel" xml:space="preserve">
+    <value>Fatal</value>
+  </data>
+  <data name="Logs_InfoLabel" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Logs_TraceLabel" xml:space="preserve">
+    <value>Trace</value>
+  </data>
+  <data name="Logs_TypeLabel" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Logs_WarningLabel" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="NewPassword2" xml:space="preserve">
+    <value>New Password Confirmation</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Password2" xml:space="preserve">
+    <value>Password Confirmation</value>
+  </data>
+  <data name="PictureBlobId" xml:space="preserve">
+    <value>Picture</value>
+  </data>
+  <data name="Management_Logs_MenuLabel" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="Management_Logs_Title" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="Management_MenuLabel" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="Management_Users_AddTitle" xml:space="preserve">
+    <value>Add User</value>
+  </data>
+  <data name="Management_Users_EditTitle" xml:space="preserve">
+    <value>Edit User</value>
+  </data>
+  <data name="Management_Users_MenuLabel" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Management_Users_Title" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="RefreshLabel" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember Me</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ScreenAutoLockMinutes" xml:space="preserve">
+    <value>Lock Screen</value>
+  </data>
+  <data name="Search_AllLabel" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="Search_MediaLabel" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="Search_PlaceholderLabel" xml:space="preserve">
+    <value>search...</value>
+  </data>
+  <data name="Search_ResultsTitle" xml:space="preserve">
+    <value>Search Results</value>
+  </data>
+  <data name="Search_SearchLabel" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Tasks_BoxTitle" xml:space="preserve">
+    <value>Tasks</value>
+  </data>
+  <data name="TermsAcceptance" xml:space="preserve">
+    <value>I agree with the &lt;a href="#" class="terms-link"&gt;terms of use&lt;/a&gt;.</value>
+  </data>
+  <data name="TimeZoneId" xml:space="preserve">
+    <value>Time Zone</value>
+  </data>
+  <data name="TimeZoneId_Hint" xml:space="preserve">
+    <value>Specify the time zone you are currently in.</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="UICultureId" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="UICultureId_Hint" xml:space="preserve">
+    <value>Supported language translations.</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="UserName_Hint" xml:space="preserve">
+    <value>Only letters and numbers starting with a letter. Ex.: Johnny5</value>
+  </data>
+  <data name="Users_ChangePasswordLinkLabel" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="Users_ChangePasswordTitle" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="Users_EditProfileLinkLabel" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
+  <data name="Users_EditProfileTitle" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
+  <data name="Users_InvalidPasswordMessage" xml:space="preserve">
+    <value>Invalid password.</value>
+  </data>
+  <data name="Users_LockScreenLinkLabel" xml:space="preserve">
+    <value>Lock Screen</value>
+  </data>
+  <data name="Users_LockScreenSettingsAutoLabel" xml:space="preserve">
+    <value>Auto lock:</value>
+  </data>
+  <data name="Users_LockScreenSettingsAutoValudeDisabled" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="Users_LockScreenSettingsAutoValueTemplate" xml:space="preserve">
+    <value>After {interval} minutes.</value>
+  </data>
+  <data name="Users_LogOffLinkLabel" xml:space="preserve">
+    <value>Log Off</value>
+  </data>
+  <data name="Users_ScreenLockedTitle" xml:space="preserve">
+    <value>Screen Locked</value>
+  </data>
+  <data name="Users_SelectPictureLabel" xml:space="preserve">
+    <value>Select Picture</value>
+  </data>
+  <data name="Users_UnlockLabel" xml:space="preserve">
+    <value>Unlock</value>
+  </data>
+  <data name="Users_UnlockScreenCalloutTemplate" xml:space="preserve">
+    <value>Not {0}?</value>
+  </data>
+  <data name="Users_VerifyEmailLabel" xml:space="preserve">
+    <value>Email Verification</value>
+  </data>
+  <data name="Users_VerifyEmailLeadInfo" xml:space="preserve">
+    <value>Confirm your e-mail address to unlock special features in your account.</value>
+  </data>
+  <data name="Users_VerifyEmailLinkLabel" xml:space="preserve">
+    <value>Verify Now!</value>
+  </data>
+  <data name="Users_VerifyEmailMessageSentLabel" xml:space="preserve">
+    <value>Message Sent!</value>
+  </data>
+  <data name="Users_VerifyEmailMessageSentLeadInfoTemplate" xml:space="preserve">
+    <value>Verification request sent to {0}.</value>
+  </data>
+  <data name="Users_VerifyEmailRequestError" xml:space="preserve">
+    <value>Unable to send verification message. Please try again.</value>
+  </data>
+  <data name="Users_VerifyEmailResponseError" xml:space="preserve">
+    <value>Unable to verify email. Please try again.</value>
+  </data>
+  <data name="Users_VerifyEmailSuccessLabel" xml:space="preserve">
+    <value>Thanks!</value>
+  </data>
+  <data name="Users_VerifyEmailSuccessLeadInfo" xml:space="preserve">
+    <value>Your email address is now verified.</value>
+  </data>
+  <data name="Users_VerifyEmailTitle" xml:space="preserve">
+    <value>Email Verification</value>
+  </data>
+  <data name="UTCCreation" xml:space="preserve">
+    <value>Date Created</value>
+  </data>
+  <data name="UTCRead" xml:space="preserve">
+    <value>Date Read</value>
+  </data>
+  <data name="ViewAll" xml:space="preserve">
+    <value>View All</value>
+  </data>
+  <data name="_App_Copyright" xml:space="preserve">
+    <value>&amp;copy; 2017 Sarto. All Rights Reserved.</value>
+  </data>
+  <data name="_App_Name" xml:space="preserve">
+    <value>.Net Admin</value>
+  </data>
+  <data name="_App_NavigationLabel" xml:space="preserve">
+    <value>Navigation</value>
+  </data>
+  <data name="_App_ToggleSidebarLabel" xml:space="preserve">
+    <value>Toggle Sidebar</value>
+  </data>
+  <data name="_App_Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="_Validation_BlobIdInvalidError" xml:space="preserve">
+    <value>The '{PropertyName}' is invalid or does not exist.</value>
+  </data>
+  <data name="_Validation_BlobImageMimeTypeError" xml:space="preserve">
+    <value>'{0}' is not a valid image file type.</value>
+  </data>
+  <data name="_Validation_BlobSizeLimitError" xml:space="preserve">
+    <value>'{0}' has exceeded the upload size limit.</value>
+  </data>
+  <data name="_Validation_EmailTakenError" xml:space="preserve">
+    <value>The e-mail '{PropertyValue}' is already taken by another user.</value>
+  </data>
+  <data name="_Validation_MaxLength" xml:space="preserve">
+    <value>'{PropertyName}' should have a maximum of {MaxLength} characters.</value>
+  </data>
+  <data name="_Validation_MinLength" xml:space="preserve">
+    <value>'{PropertyName}' should have at least {MinLength} characters.</value>
+  </data>
+  <data name="_Validation_PasswordsDoNotMatchError" xml:space="preserve">
+    <value>Passwords do not match.</value>
+  </data>
+  <data name="_Validation_TermsAcceptanceError" xml:space="preserve">
+    <value>You must agree with the terms of use to proceed.</value>
+  </data>
+  <data name="_Validation_UserNameTakenError" xml:space="preserve">
+    <value>The user name '{PropertyValue}' is already taken by another user.</value>
+  </data>
+  <data name="MessageType_Error" xml:space="preserve">
+    <value>Error!</value>
+  </data>
+  <data name="MessageType_Info" xml:space="preserve">
+    <value>Info!</value>
+  </data>
+  <data name="MessageType_Success" xml:space="preserve">
+    <value>Success!</value>
+  </data>
+  <data name="MessageType_Warning" xml:space="preserve">
+    <value>Warning!</value>
+  </data>
+  <data name="Auth_LockedTitle" xml:space="preserve">
+    <value>Locked</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="Management_Users_UserCreatedMessageSubject" xml:space="preserve">
+    <value>User Created</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="Users_MyScheduleLinkLabel" xml:space="preserve">
+    <value>My Schedule</value>
+  </data>
+  <data name="Users_ScheduleTitle" xml:space="preserve">
+    <value>User Schedule</value>
+  </data>
+  <data name="EndDateTime" xml:space="preserve">
+    <value>End Date &amp; Time</value>
+  </data>
+  <data name="StartDateTime" xml:space="preserve">
+    <value>Start Date &amp; Time</value>
+  </data>
+  <data name="Users_Calendar" xml:space="preserve">
+    <value>View Calendar</value>
+  </data>
+  <data name="Users_ManageEventsActionLabel" xml:space="preserve">
+    <value>Manage Events</value>
+  </data>
+  <data name="Users_ScheduleEventsAddNewLabel" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="Users_ScheduleEventsAddTitle" xml:space="preserve">
+    <value>Add Event</value>
+  </data>
+  <data name="Users_ScheduleEventsEditTitle" xml:space="preserve">
+    <value>Edit Event</value>
+  </data>
+  <data name="Users_ScheduleEventsTitle" xml:space="preserve">
+    <value>User Schedule Events</value>
+  </data>
+  <data name="Users_UpcomingEvents" xml:space="preserve">
+    <value>Upcoming Events</value>
+  </data>
+  <data name="Users_WidgetList" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>End Time</value>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="MaxFileSizeInfo" xml:space="preserve">
+    <value>Max file size {0}.</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Start Time</value>
+  </data>
+  <data name="Users_EventBlob" xml:space="preserve">
+    <value>Event File</value>
+  </data>
+  <data name="Users_EventBlobs" xml:space="preserve">
+    <value>Event Files</value>
+  </data>
+  <data name="Users_EventBlobsSelect" xml:space="preserve">
+    <value>Select Files</value>
+  </data>
+  <data name="Users_EventsNoBlobs" xml:space="preserve">
+    <value>No files uploaded.</value>
+  </data>
+  <data name="Users_EventTimeZoneIdHint" xml:space="preserve">
+    <value>Specify the time zone for this event.</value>
+  </data>
+  <data name="Users_NoUpcomingEventsInfo" xml:space="preserve">
+    <value>No events.</value>
+  </data>
+  <data name="UserId" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="UserIds" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="_Validation_BlobKnownMimeTypeError" xml:space="preserve">
+    <value>'{0}' is not a known valid file type.</value>
+  </data>
+  <data name="Search_EmptyDescriptionMessage" xml:space="preserve">
+    <value>No detailed description available.</value>
+  </data>
+  <data name="Search_TypeAlert" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="Search_TypeEvent" xml:space="preserve">
+    <value>event</value>
+  </data>
+  <data name="Search_TypeUser" xml:space="preserve">
+    <value>user</value>
+  </data>
+</root>

@@ -1,6 +1,4 @@
-﻿using App.UI.Mvc5.Models;
-using Microsoft.AspNet.SignalR;
-using System.Linq;
+﻿using Microsoft.AspNet.SignalR;
 
 namespace App.UI.Mvc5.Infrastructure
 {
@@ -16,18 +14,20 @@ namespace App.UI.Mvc5.Infrastructure
 			_alerts = GlobalHost.ConnectionManager.GetHubContext("alerts");
 		}
 
-		public void NotifyAlertCreated(int senderUserId, AlertViewModel model)
-		{
-			var alertUsers = model.UserIds.Select(u => u.ToString()).ToList();
+#warning review
 
-			_alerts.Clients.Users(alertUsers).alertCreated(model);
+		public void NotifyAlertCreated(int senderUserId, object model)
+		{
+			//var alertUsers = model.UserIds.Select(u => u.ToString()).ToList();
+
+			//_alerts.Clients.Users(alertUsers).alertCreated(model);
 		}
 
-		public void NotifyAlertRead(int senderUserId, AlertViewModel model)
+		public void NotifyAlertRead(int senderUserId, object model)
 		{
-			var alertUsers = model.UserIds.Select(u => u.ToString()).ToList();
+			//var alertUsers = model.UserIds.Select(u => u.ToString()).ToList();
 
-			_alerts.Clients.Users(alertUsers).alertRead(model);
+			//_alerts.Clients.Users(alertUsers).alertRead(model);
 		}
 	}
 }

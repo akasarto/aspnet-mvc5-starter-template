@@ -1,0 +1,23 @@
+﻿@model BaseViewModel
+
+<!-- Page Contents -->
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>[@GetLocalizedString("_App_Name")] @Model.PageTitle</title>
+	<meta charset="utf-8" />
+</head>
+<body>
+	<table>
+		<tr>
+			<td width="100%" valign="top">
+				@RenderBody()
+				<hr />
+				<p>Sender Signature Here</p>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

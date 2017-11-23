@@ -1,6 +1,7 @@
-﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,15 +9,14 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B57A2284-2075-456D-8E5E-60987B88D5BD}</ProjectGuid>
+    <ProjectGuid>{E79AE2B3-C9E9-441C-BE4E-77B8D6291EF9}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>App.UI.Mvc5</RootNamespace>
-    <AssemblyName>App.UI.Mvc5</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <AssemblyName>Sarto.App.UI.Mvc5</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -35,7 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
@@ -44,10 +43,82 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="Cloudinary, Version=1.1.1.0, Culture=neutral, PublicKeyToken=c8234dc617ae7841, processorArchitecture=MSIL">
+      <HintPath>..\packages\CloudinaryDotNet.1.1.1\lib\net\net40\Cloudinary.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.7.2.1\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.Mvc5.7.2.1\lib\net45\FluentValidation.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Humanizer.Core.2.2.0\lib\netstandard1.0\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageResizer.4.1.11\lib\net45\ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\CloudinaryDotNet.1.1.1\lib\net\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Omu.ValueInjecter, Version=3.1.1.0, Culture=neutral, PublicKeyToken=c7694541b0ac80e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\ValueInjecter.3.1.1.5\lib\net40\Omu.ValueInjecter.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.1.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.1.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.0.12.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.0.12\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web, Version=4.0.12.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.4.0.12\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web.Mvc, Version=4.0.12.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.Mvc.4.0.12\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -58,7 +129,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -89,23 +159,43 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Humans.txt" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\_base\website.base.js" />
+    <Content Include="Scripts\_services\notification.service.js" />
+    <Content Include="Scripts\_services\modal.service.js" />
+    <Content Include="Scripts\_services\upload.service.js" />
+    <Content Include="Scripts\_services\validation.service.js" />
+    <Content Include="Scripts\_services\table.service.js" />
+    <Content Include="Scripts\_configs\timepicker.config.js" />
+    <Content Include="Scripts\_configs\jquery.validate.unobtrusive.config.js" />
+    <Content Include="Scripts\_configs\jquery.validate.config.js" />
+    <Content Include="Scripts\_configs\globalization.config.js" />
+    <Content Include="Scripts\_configs\datepicker.config.js" />
+    <Content Include="Scripts\_configs\cookies.config.js" />
+    <Content Include="Scripts\_services\progress.service.js" />
+    <Content Include="Scripts\_services\model.state.service.js" />
+    <Content Include="Scripts\_utils\feedback.utils.js" />
+    <Content Include="Scripts\vue.js" />
+    <Content Include="Scripts\vue.min.js" />
+    <Content Include="Scripts\__tpl.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
+    <Compile Include="..\SharedAppAssemblyInfo.cs">
+      <Link>Properties\SharedAppAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Infrastructure\AppJsonResult.cs" />
-    <Compile Include="Infrastructure\AppViewEngine.cs" />
-    <Compile Include="Infrastructure\AppWebViewPage.cs" />
-    <Compile Include="Infrastructure\AuthorizeAttribute.cs" />
-    <Compile Include="Infrastructure\Blobs\BlobService.cs" />
-    <Compile Include="Infrastructure\Blobs\BlobServiceConfigs.cs" />
+    <Compile Include="AdminResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\BlobsController.cs" />
     <Compile Include="Infrastructure\Blobs\BlobUploadResult.cs" />
-    <Compile Include="Infrastructure\Blobs\IBlobService.cs" />
-    <Compile Include="Infrastructure\Blobs\Thumbnails.cs" />
     <Compile Include="Infrastructure\Cookies\GetCookie.cs" />
     <Compile Include="Infrastructure\Cookies\SetCookie.cs" />
     <Compile Include="Infrastructure\DirectRouteProvider.cs" />
@@ -117,49 +207,76 @@
     <Compile Include="Infrastructure\Globalization\GlobalizationService.cs" />
     <Compile Include="Infrastructure\Globalization\IGlobalizationService.cs" />
     <Compile Include="Infrastructure\Globalization\LocalizedDisplayAttribute.cs" />
-    <Compile Include="Infrastructure\HtmlExtension\CheckBoxForTheme.cs" />
-    <Compile Include="Infrastructure\HtmlExtension\RenderJsonResourcesScriptTag.cs" />
-    <Compile Include="Infrastructure\HtmlExtension\RenderLocalizedScriptTag.cs" />
-    <Compile Include="Infrastructure\HtmlExtension\ToByteSizeLabel.cs" />
-    <Compile Include="Infrastructure\HtmlExtension\WithHtmlLineBreaks.cs" />
-    <Compile Include="Infrastructure\HtmlExtension\WithRawHtmlOutput.cs" />
-    <Compile Include="Infrastructure\ImageResizer\IImageResizerThumbService.cs" />
     <Compile Include="Infrastructure\ImageResizer\ImageResizerInfra.cs" />
-    <Compile Include="Infrastructure\ImageResizer\ImageResizerThumbService.cs" />
     <Compile Include="Infrastructure\ImageResizer\Plugin\ImageResizerThumbPlugin.cs" />
     <Compile Include="Infrastructure\ImageResizer\Plugin\ImageResizerThumbVirtualFile.cs" />
+    <Compile Include="Infrastructure\ImageResizer\IImageResizerThumbService.cs" />
+    <Compile Include="Infrastructure\ImageResizer\ImageResizerThumbService.cs" />
     <Compile Include="Infrastructure\MenuTracker\MenuData.cs" />
     <Compile Include="Infrastructure\MenuTracker\MenuHelperControllers.cs" />
     <Compile Include="Infrastructure\MenuTracker\MenuHelperViewPages.cs" />
     <Compile Include="Infrastructure\MenuTracker\MenuTrackingAgentAttribute.cs" />
     <Compile Include="Infrastructure\MenuTracker\TrackMenuItemAttribute.cs" />
+    <Compile Include="Infrastructure\Realtime\IRealtimeService.cs" />
+    <Compile Include="Infrastructure\Realtime\RealtimeService.cs" />
+    <Compile Include="Infrastructure\Validation\RequiredCheckboxValidator.cs" />
+    <Compile Include="Infrastructure\Validation\ValidationLanguageManager.cs" />
+    <Compile Include="Infrastructure\HtmlExtension\RenderLocalizedScriptTag.cs" />
+    <Compile Include="Infrastructure\HtmlExtension\ToByteSizeLabel.cs" />
+    <Compile Include="Infrastructure\HtmlExtension\WithRawHtmlOutput.cs" />
+    <Compile Include="Infrastructure\HtmlExtension\WithHtmlLineBreaks.cs" />
+    <Compile Include="Infrastructure\Realtime\Hubs\AlertsHub.cs" />
     <Compile Include="Infrastructure\Realtime\Configs\HubActivator.cs" />
     <Compile Include="Infrastructure\Realtime\Configs\SignalRCamelCaseJsonResolver.cs" />
     <Compile Include="Infrastructure\Realtime\Configs\UserIdProvider.cs" />
-    <Compile Include="Infrastructure\Realtime\Hubs\AlertsHub.cs" />
-    <Compile Include="Infrastructure\Realtime\IRealtimeService.cs" />
-    <Compile Include="Infrastructure\Realtime\RealtimeService.cs" />
+    <Compile Include="Infrastructure\HtmlExtension\RenderJsonResourcesScriptTag.cs" />
     <Compile Include="Infrastructure\SetLayout.cs" />
-    <Compile Include="Infrastructure\Validation\RequiredCheckboxValidator.cs" />
-    <Compile Include="Infrastructure\Validation\SimpleInjectorValidatorFactory.cs" />
-    <Compile Include="Infrastructure\Validation\ValidationLanguageManager.cs" />
+    <Compile Include="AppAreas.cs" />
+    <Compile Include="Controllers\__BaseController.cs" />
+    <Compile Include="Controllers\_LandingController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\AuthorizeAttribute.cs" />
+    <Compile Include="Infrastructure\AppJsonResult.cs" />
+    <Compile Include="Infrastructure\AppViewEngine.cs" />
     <Compile Include="Infrastructure\Validation\ValidationSummary.cs" />
-    <Compile Include="Models\BasePartialViewModel.cs" />
-    <Compile Include="Models\BaseViewModel.cs" />
+    <Compile Include="Infrastructure\HtmlExtension\CheckBoxForTheme.cs" />
+    <Compile Include="Infrastructure\AppWebViewPage.cs" />
+    <Compile Include="Infrastructure\Blobs\Thumbnails.cs" />
+    <Compile Include="Infrastructure\Validation\SimpleInjectorValidatorFactory.cs" />
+    <Compile Include="Initializer.cs" />
+    <Compile Include="Infrastructure\Blobs\IBlobService.cs" />
     <Compile Include="Models\EmptyPartialViewModel.cs" />
+    <Compile Include="Models\LayoutOptions.cs" />
+    <Compile Include="Models\BaseViewModel.cs" />
+    <Compile Include="Models\BasePartialViewModel.cs" />
+    <Compile Include="Models\Blobs\UploadAnyViewModelValidator.cs" />
+    <Compile Include="Models\Blobs\UploadAnyViewModel.cs" />
+    <Compile Include="Models\Blobs\UploadPictureViewModel.cs" />
+    <Compile Include="Models\Blobs\UploadPictureViewModelValidator.cs" />
     <Compile Include="Models\EmptyViewModel.cs" />
     <Compile Include="Models\Errors\ErrorViewModel.cs" />
-    <Compile Include="Models\LayoutOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="Infrastructure\Blobs\BlobService.cs" />
+    <Compile Include="Infrastructure\Blobs\BlobServiceConfigs.cs" />
+    <Compile Include="AdminScriptResources.Designer.cs">
+      <DependentUpon>AdminScriptResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
-    <Content Include=".editorconfig" />
-    <None Include="packages.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Packages.config" />
     <Content Include="Views\_Layout.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Errors\Index.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\_LayoutEmails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -168,6 +285,63 @@
     </None>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\App.Data\App.Data.csproj">
+      <Project>{01367635-B331-458F-BF5A-7369925864D6}</Project>
+      <Name>App.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Identity\App.Identity.csproj">
+      <Project>{1325D974-1E9A-49C1-BC71-A5F4B9EA3293}</Project>
+      <Name>App.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sarto.Infrastructure\Sarto.Infrastructure.csproj">
+      <Project>{bf47ae35-d535-4842-a89a-061b6ef70315}</Project>
+      <Name>Sarto.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sarto.Extensions\Sarto.Extensions.csproj">
+      <Project>{18AD2A68-3598-4B0C-9A49-9D6D06BC2164}</Project>
+      <Name>Sarto.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sarto.Infrastructure.Azure\Sarto.Infrastructure.Azure.csproj">
+      <Project>{3cd39eff-063e-4f38-9f73-84c0d9b3c3cc}</Project>
+      <Name>Sarto.Infrastructure.Azure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sarto.Infrastructure.Cloudinary\Sarto.Infrastructure.Cloudinary.csproj">
+      <Project>{ec24b7bc-7091-4718-90ba-8281bbbe5dac}</Project>
+      <Name>Sarto.Infrastructure.Cloudinary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sarto.Infrastructure.DynamicImage\Sarto.Infrastructure.DynamicImage.csproj">
+      <Project>{E4BFB48B-C53A-4172-B612-999AFDE10C2F}</Project>
+      <Name>Sarto.Infrastructure.DynamicImage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sarto.Infrastructure.FileSystem\Sarto.Infrastructure.FileSystem.csproj">
+      <Project>{800B272C-1753-476D-A75B-13D03F2B8DE7}</Project>
+      <Name>Sarto.Infrastructure.FileSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sarto.Infrastructure.MailGun\Sarto.Infrastructure.MailGun.csproj">
+      <Project>{88869511-342d-4785-8fa0-b16d80fbc1c8}</Project>
+      <Name>Sarto.Infrastructure.MailGun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sarto.Infrastructure.Smtp\Sarto.Infrastructure.Smtp.csproj">
+      <Project>{C0921F18-4F1B-4A00-8D7D-DE09CB184ABC}</Project>
+      <Name>Sarto.Infrastructure.Smtp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Core\App.Core.csproj">
+      <Project>{1fd4b39d-6971-45c1-8bef-f6ac0f78a2c9}</Project>
+      <Name>App.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AdminResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdminResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminScriptResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdminScriptResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -179,16 +353,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62832</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56522/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
@@ -197,8 +362,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

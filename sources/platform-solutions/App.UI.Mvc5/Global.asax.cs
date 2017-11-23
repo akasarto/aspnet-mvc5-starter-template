@@ -1,4 +1,5 @@
-﻿using App.UI.Mvc5.Infrastructure;
+﻿using App.UI.Mvc5.Controllers;
+using App.UI.Mvc5.Infrastructure;
 using System;
 using System.Diagnostics;
 using System.Net;
@@ -53,10 +54,9 @@ namespace App.UI.Mvc5
 			RouteTable.Routes.MapRoute(
 				name: "Error",
 				url: "error/{code}",
-				defaults: new
-				{
+				defaults: new {
 					controller = "Errors",
-					action = "Index",
+					action = nameof(ErrorsController.Index),
 					code = UrlParameter.Optional
 				}
 			);
@@ -67,7 +67,7 @@ namespace App.UI.Mvc5
 				defaults: new
 				{
 					controller = "Errors",
-					action = "Index",
+					action = nameof(ErrorsController.Index),
 					code = 404
 				}
 			);
@@ -104,26 +104,14 @@ namespace App.UI.Mvc5
 
 				data.Values["ex"] = exception;
 				data.Values["code"] = httpStatusCode;
-				data.Values["action"] = "Index";
+				data.Values["action"] = nameof(ErrorsController.Index);
 				data.Values["controller"] = "Errors";
 
-				Response.Write(exception.Message);
-				if (httpException != null)
-				{
-					Response.Write("<hr>");
-					Response.Write(httpException.GetHtmlErrorMessage());
-				}
-				Response.Write("<hr>");
-				Response.Write(exception.ToString());
-
-#warning error redirect
-				/*
 				var controller = DependencyResolver.Current.GetService<ErrorsController>() as IController;
 
 				var requestContext = new RequestContext(new HttpContextWrapper(Context), data);
 
 				controller.Execute(requestContext);
-				*/
 			}
 		}
 	}

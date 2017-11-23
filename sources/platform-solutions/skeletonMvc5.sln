@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Data", "App.Data\App.Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sarto.Extensions", "Sarto.Extensions\Sarto.Extensions.csproj", "{18AD2A68-3598-4B0C-9A49-9D6D06BC2164}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.UI.Mvc5", "App.UI.Mvc5\App.UI.Mvc5.csproj", "{B57A2284-2075-456D-8E5E-60987B88D5BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.UI.Mvc5", "App.UI.Mvc5\App.UI.Mvc5.csproj", "{E79AE2B3-C9E9-441C-BE4E-77B8D6291EF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,10 +79,10 @@ Global
 		{18AD2A68-3598-4B0C-9A49-9D6D06BC2164}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18AD2A68-3598-4B0C-9A49-9D6D06BC2164}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18AD2A68-3598-4B0C-9A49-9D6D06BC2164}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B57A2284-2075-456D-8E5E-60987B88D5BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B57A2284-2075-456D-8E5E-60987B88D5BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B57A2284-2075-456D-8E5E-60987B88D5BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B57A2284-2075-456D-8E5E-60987B88D5BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E79AE2B3-C9E9-441C-BE4E-77B8D6291EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E79AE2B3-C9E9-441C-BE4E-77B8D6291EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E79AE2B3-C9E9-441C-BE4E-77B8D6291EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E79AE2B3-C9E9-441C-BE4E-77B8D6291EF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
