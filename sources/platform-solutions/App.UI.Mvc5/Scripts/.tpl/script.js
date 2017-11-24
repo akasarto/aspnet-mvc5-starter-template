@@ -3,11 +3,6 @@
 	'use strict';
 
 	//
-	var defaults = {
-		/*...*/
-	};
-
-	//
 	$.extend(website, {
 		/*...*/
 	});

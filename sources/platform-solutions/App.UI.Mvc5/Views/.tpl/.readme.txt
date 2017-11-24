@@ -1,7 +1,7 @@
 ﻿
 The following is expected:
 
-- View @models should inherit from 'BaseViewModel'.
-- Partial view @models should inherit from 'BasePartialViewModel'.
+- Views @model should inherit from 'BaseViewModel'.
+- Partial views @model should inherit from 'BasePartialViewModel'.
 
 You can copy the templates in this folder and rename the copy as needed.
