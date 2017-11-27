@@ -3,6 +3,17 @@ body {
 	padding-top: 3.5rem;
 }
 
+/* Nav
+-------------------------------------------------- */
+
+.user-picture {
+	padding: 0px;
+}
+
+	.user-picture .dropdown-toggle::after {
+		display: none
+	}
+
 /* Jumbotron
 -------------------------------------------------- */
 
