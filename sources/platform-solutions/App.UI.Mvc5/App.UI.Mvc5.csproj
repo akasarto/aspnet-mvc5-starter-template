@@ -171,6 +171,8 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\material-design\mdb.css" />
+    <Content Include="Content\material-design\mdb.min.css" />
     <Content Include="Controllers\.tpl\.readme.txt" />
     <Content Include="Favicon.ico" />
     <Content Include="Global.asax" />
@@ -334,7 +336,6 @@
     <Content Include="Views\Errors\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\_LayoutEmails.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\.tpl\View.cshtml" />
     <Content Include="Views\.tpl\PartialView.cshtml" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
@@ -348,6 +349,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -419,7 +421,8 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
+    <Folder Include="Areas\" />
+    <Folder Include="Vendor\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
