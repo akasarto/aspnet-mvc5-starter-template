@@ -13,17 +13,38 @@
 <html data-region="@culture.Name" lang="@uiCulture.TwoLetterISOLanguageName">
 
 <head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
 	<title>@pageTitle</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="~/content/bootstrap.min.css" rel="stylesheet">
+	<link href="~/content/material-design/mdb.min.css" rel="stylesheet">
+
 	@RenderSection("page_styles", required: false)
+
 </head>
 
 <body>
+
+	<nav class="navbar fixed-top navbar-light bg-light">
+		<a class="navbar-brand" href="#">Fixed top</a>
+	</nav>
 
 	@RenderBody()
 
 	@Html.FeedbackSummary()
 
 	@Html.RenderAdminScriptResourcesTag(User.Culture, User.UICulture)
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript" src="~/scripts/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="~/scripts/popper.min.js"></script>
+	<script type="text/javascript" src="~/scripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="~/content/material-design/mdb.min.js"></script>
 
 	@RenderSection("page_scripts", required: false)
 
