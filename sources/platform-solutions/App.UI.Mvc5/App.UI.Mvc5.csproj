@@ -165,6 +165,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\holder\holder.min.js" />
+    <Content Include="Content\img\overlays\01.png" />
+    <Content Include="Content\img\overlays\02.png" />
+    <Content Include="Content\img\overlays\03.png" />
+    <Content Include="Content\img\overlays\04.png" />
+    <Content Include="Content\img\overlays\05.png" />
+    <Content Include="Content\img\overlays\06.png" />
+    <Content Include="Content\img\overlays\07.png" />
+    <Content Include="Content\img\overlays\08.png" />
+    <Content Include="Content\img\overlays\09.png" />
+    <Content Include="Content\img\svg\arrow_left.svg" />
+    <Content Include="Content\img\svg\arrow_right.svg" />
     <Content Include="Content\material-design\mdb.js" />
     <Content Include="Content\material-design\mdb.min.js" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -176,6 +188,7 @@
     <Content Include="Content\material-design\mdb.css" />
     <Content Include="Content\material-design\mdb.min.css" />
     <Content Include="Content\material-design\license.txt" />
+    <Content Include="Content\website-custom.css" />
     <Content Include="Controllers\.tpl\.readme.txt" />
     <Content Include="Favicon.ico" />
     <Content Include="Global.asax" />
@@ -197,6 +210,26 @@
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Content\font\roboto\Roboto-Bold.eot" />
+    <Content Include="Content\font\roboto\Roboto-Bold.ttf" />
+    <Content Include="Content\font\roboto\Roboto-Bold.woff" />
+    <Content Include="Content\font\roboto\Roboto-Bold.woff2" />
+    <Content Include="Content\font\roboto\Roboto-Light.eot" />
+    <Content Include="Content\font\roboto\Roboto-Light.ttf" />
+    <Content Include="Content\font\roboto\Roboto-Light.woff" />
+    <Content Include="Content\font\roboto\Roboto-Light.woff2" />
+    <Content Include="Content\font\roboto\Roboto-Medium.eot" />
+    <Content Include="Content\font\roboto\Roboto-Medium.ttf" />
+    <Content Include="Content\font\roboto\Roboto-Medium.woff" />
+    <Content Include="Content\font\roboto\Roboto-Medium.woff2" />
+    <Content Include="Content\font\roboto\Roboto-Regular.eot" />
+    <Content Include="Content\font\roboto\Roboto-Regular.ttf" />
+    <Content Include="Content\font\roboto\Roboto-Regular.woff" />
+    <Content Include="Content\font\roboto\Roboto-Regular.woff2" />
+    <Content Include="Content\font\roboto\Roboto-Thin.eot" />
+    <Content Include="Content\font\roboto\Roboto-Thin.ttf" />
+    <Content Include="Content\font\roboto\Roboto-Thin.woff" />
+    <Content Include="Content\font\roboto\Roboto-Thin.woff2" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />

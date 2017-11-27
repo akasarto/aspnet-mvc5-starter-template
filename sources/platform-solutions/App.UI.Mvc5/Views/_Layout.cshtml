@@ -22,7 +22,8 @@
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="~/content/bootstrap.min.css" rel="stylesheet">
-	<link href="~/content/material-design/mdb.min.css" rel="stylesheet">
+	@*<link href="~/content/material-design/mdb.min.css" rel="stylesheet">*@
+	<link href="~/content/website-custom.css" rel="stylesheet" />
 
 	@RenderSection("page_styles", required: false)
 
@@ -30,9 +31,11 @@
 
 <body>
 
-	<nav class="navbar fixed-top navbar-light bg-light">
-		<a class="navbar-brand" href="#">Fixed top</a>
-	</nav>
+	<header>
+		<nav class="navbar navbar-light bg-light">
+			<a class="navbar-brand" href="@Url.Action("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) })">[Skeleton]</a>
+		</nav>
+	</header>
 
 	@RenderBody()
 
@@ -41,11 +44,11 @@
 	@Html.RenderAdminScriptResourcesTag(User.Culture, User.UICulture)
 
 	<!-- SCRIPTS -->
-	<script type="text/javascript" src="~/scripts/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="~/scripts/popper.min.js"></script>
-	<script type="text/javascript" src="~/scripts/bootstrap.min.js"></script>
-	<script type="text/javascript" src="~/content/material-design/mdb.min.js"></script>
-
+	<script src="~/scripts/jquery-3.2.1.min.js"></script>
+	<script src="~/scripts/umd/popper.min.js"></script>
+	<script src="~/scripts/bootstrap.min.js"></script>
+	@*<script src="~/content/material-design/mdb.min.js"></script>*@
+	<script src="~/content/holder/holder.min.js"></script>
 	@RenderSection("page_scripts", required: false)
 
 	@RenderSection("page_scripts_init", required: false)

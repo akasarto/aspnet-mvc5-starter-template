@@ -3,9 +3,6 @@
 	public enum Area : int
 	{
 		Root,
-		Dash,
-		Features,
-		HtmlElements,
 		Management,
 		Users
 	}
