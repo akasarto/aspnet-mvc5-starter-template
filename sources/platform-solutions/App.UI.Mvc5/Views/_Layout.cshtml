@@ -22,7 +22,6 @@
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="~/content/bootstrap.min.css" rel="stylesheet">
-	@*<link href="~/content/material-design/mdb.min.css" rel="stylesheet">*@
 	<link href="~/content/website-custom.css" rel="stylesheet" />
 
 	@RenderSection("page_styles", required: false)
@@ -32,9 +31,35 @@
 <body>
 
 	<header>
-		<nav class="navbar navbar-light bg-light">
+
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
 			<a class="navbar-brand" href="@Url.Action("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) })">[Skeleton]</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#">Disabled</a>
+					</li>
+				</ul>
+				<form class="form-inline mt-2 mt-md-0">
+					<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			</div>
+
 		</nav>
+
 	</header>
 
 	@RenderBody()
@@ -47,7 +72,6 @@
 	<script src="~/scripts/jquery-3.2.1.min.js"></script>
 	<script src="~/scripts/umd/popper.min.js"></script>
 	<script src="~/scripts/bootstrap.min.js"></script>
-	@*<script src="~/content/material-design/mdb.min.js"></script>*@
 	<script src="~/content/holder/holder.min.js"></script>
 	@RenderSection("page_scripts", required: false)
 
