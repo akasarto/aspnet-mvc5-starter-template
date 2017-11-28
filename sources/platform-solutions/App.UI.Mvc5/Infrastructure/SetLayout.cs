@@ -6,6 +6,7 @@ namespace App.UI.Mvc5.Infrastructure
 	{
 		Base,
 		Emails,
+		Internal,
 		Null
 	}
 
@@ -23,6 +24,10 @@ namespace App.UI.Mvc5.Infrastructure
 
 				case Layouts.Emails:
 					result = "~/Views/_LayoutEmails.cshtml";
+					break;
+
+				case Layouts.Internal:
+					result = "~/Views/_LayoutInternal.cshtml";
 					break;
 
 				default:

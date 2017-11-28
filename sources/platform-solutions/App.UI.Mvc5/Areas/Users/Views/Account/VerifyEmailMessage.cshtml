@@ -1,0 +1,16 @@
+﻿@using App.UI.Mvc5.Areas.Users.Models
+
+@model AccountVerifyEmailMessageViewModel
+
+<!-- Meta -->
+
+@{
+	this.SetLayout(Layouts.Emails);
+}
+
+<!-- Page Contents -->
+
+<p>@Model.Name,</p>
+<p>To confirm your e-mail, please click on the link bellow:</p>
+<p><a href="@Model.ConfirmationLink">@Model.ConfirmationLink</a></p>
+<p>If you did not requested this message, please ignore this email and no action will be taken.</p>

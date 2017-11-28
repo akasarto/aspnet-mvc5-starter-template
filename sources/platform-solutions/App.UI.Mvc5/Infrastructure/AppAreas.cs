@@ -1,4 +1,4 @@
-﻿namespace App.UI.Mvc5
+﻿namespace App.UI.Mvc5.Infrastructure
 {
 	public enum Area : int
 	{

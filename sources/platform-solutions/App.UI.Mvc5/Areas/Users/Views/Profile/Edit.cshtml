@@ -1,0 +1,22 @@
+﻿@using App.UI.Mvc5.Areas.Users.Models
+
+@model ProfileEditViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageTitle = GetLocalizedString("Users_EditProfileTitle");
+}
+
+<!-- Sections -->
+
+@section breadcrumb_items {
+	<li><span>@Model.PageTitle</span></li>
+}
+
+@section page_scripts_init {
+	<script src="~/areas/users/scripts/profile.edit.js"></script>
+}
+
+<!-- Page Contents -->
+

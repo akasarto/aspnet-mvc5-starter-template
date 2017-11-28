@@ -1,0 +1,56 @@
+﻿@using App.UI.Mvc5.Areas.Users.Models
+
+@model AccountLogInViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageTitle = GetLocalizedString("Auth_LoginTitle");
+}
+
+<!-- Sections -->
+
+@section page_scripts_init {
+	<script src="~/areas/users/scripts/account.login.js"></script>
+}
+
+<!-- Page Contents -->
+
+<div class="container">
+
+	<h2 class="mb-5 text-center">Sign in</h2>
+
+	<div class="card m-3 p-5">
+
+		<form>
+
+			<div class="form-group">
+				<label for="exampleInputEmail1">Email address</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputPassword1">Password</label>
+				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			</div>
+
+			<div class="form-check">
+				<label class="form-check-label">
+					<input type="checkbox" class="form-check-input">
+					Remember me
+				</label>
+			</div>
+
+			<div class="container text-right">
+
+				<a href="#" class="btn btn-link">Cancel</a>
+
+				<button type="submit" class="btn btn-primary">Submit</button>
+
+			</div>
+
+		</form>
+
+	</div>
+
+</div>

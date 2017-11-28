@@ -1,0 +1,29 @@
+﻿@model BaseViewModel
+
+<!-- Meta -->
+
+@{
+	this.SetLayout(Layouts.InternalDefault);
+}
+
+<!-- Sections -->
+
+@section breadcrumb_items {
+	@RenderSection("breadcrumb_items", required: false)
+}
+
+@section page_styles {
+	@RenderSection("page_styles", required: false)
+}
+
+@section page_scripts {
+	@RenderSection("page_scripts", required: false)
+}
+
+@section page_scripts_init {
+	@RenderSection("page_scripts_init", required: false)
+}
+
+<!-- Page Contents -->
+
+@RenderBody()

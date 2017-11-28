@@ -165,6 +165,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Users\Scripts\account.login.js" />
+    <Content Include="Areas\Users\Scripts\account.password-change.js" />
+    <Content Include="Areas\Users\Scripts\account.password-recover.js" />
+    <Content Include="Areas\Users\Scripts\account.password-set-new.js" />
+    <Content Include="Areas\Users\Scripts\account.signup.js" />
+    <Content Include="Areas\Users\Scripts\panel-right.schedule-widget.js" />
+    <Content Include="Areas\Users\Scripts\profile.edit.js" />
+    <Content Include="Areas\Users\Scripts\schedule.events.index.js" />
+    <Content Include="Areas\Users\Scripts\schedule.events.manager.js" />
+    <Content Include="Areas\Users\Scripts\schedule.index.js" />
     <Content Include="Content\font-awesome\css\font-awesome.css" />
     <Content Include="Content\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -204,6 +214,23 @@
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Users\Views\Account\Box.cshtml" />
+    <Content Include="Areas\Users\Views\Account\LogIn.cshtml" />
+    <Content Include="Areas\Users\Views\Account\PasswordChange.cshtml" />
+    <Content Include="Areas\Users\Views\Account\PasswordRecover.cshtml" />
+    <Content Include="Areas\Users\Views\Account\PasswordRecoverMessage.cshtml" />
+    <Content Include="Areas\Users\Views\Account\PasswordRecoverSuccess.cshtml" />
+    <Content Include="Areas\Users\Views\Account\PasswordSetNew.cshtml" />
+    <Content Include="Areas\Users\Views\Account\SignUp.cshtml" />
+    <Content Include="Areas\Users\Views\Account\VerifyEmail.cshtml" />
+    <Content Include="Areas\Users\Views\Account\VerifyEmailMessage.cshtml" />
+    <Content Include="Areas\Users\Views\Account\VerifyEmailMessageSent.cshtml" />
+    <Content Include="Areas\Users\Views\Account\VerifyEmailSuccess.cshtml" />
+    <Content Include="Areas\Users\Views\Account\_Layout.cshtml" />
+    <Content Include="Areas\Users\Views\Account\_ViewStart.cshtml" />
+    <Content Include="Areas\Users\Views\Profile\Edit.cshtml" />
+    <Content Include="Areas\Users\Views\_LayoutArea.cshtml" />
+    <Content Include="Areas\Users\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -263,6 +290,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Users\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Users\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\Users\Controllers\_LandingController.cs" />
+    <Compile Include="Areas\Users\Controllers\__AreaBaseController.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountActionStatus.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountLogInViewModel.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountLogInViewModelValidator.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountPasswordChangeViewModel.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountPasswordChangeViewModelValidator.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountPasswordRecoverMessageViewModel.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountPasswordRecoverResponseViewModel.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountPasswordRecoverResponseViewModelValidator.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountPasswordRecoverViewModel.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountPasswordRecoverViewModelValidator.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountSignUpViewModel.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountSignUpViewModelValidator.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountVerifyEmailMessageViewModel.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountVerifyEmailViewModel.cs" />
+    <Compile Include="Areas\Users\Models\Account\AccountVerifyEmailViewModelValidator.cs" />
+    <Compile Include="Areas\Users\Models\Profile\ProfileEditViewModel.cs" />
+    <Compile Include="Areas\Users\Models\Profile\ProfileEditViewModelValidator.cs" />
     <Compile Include="Controllers\.tpl\Controller.cs" />
     <Compile Include="Controllers\BlobsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -302,7 +350,7 @@
     <Compile Include="Infrastructure\Realtime\Configs\UserIdProvider.cs" />
     <Compile Include="Infrastructure\HtmlExtension\RenderJsonResourcesScriptTag.cs" />
     <Compile Include="Infrastructure\SetLayout.cs" />
-    <Compile Include="AppAreas.cs" />
+    <Compile Include="Infrastructure\AppAreas.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -362,6 +410,7 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\_LayoutInternal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -432,9 +481,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
