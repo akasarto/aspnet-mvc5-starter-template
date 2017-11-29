@@ -35,9 +35,6 @@ namespace App.UI.Mvc5.Areas.Users.Models
 		[LocalizedDisplayName("TimeZoneId")]
 		public string TimeZoneId { get; set; }
 
-		[LocalizedDisplayName("ScreenAutoLockMinutes")]
-		public int ScreenAutoLockMinutes { get; set; }
-
 		public List<string> Roles { get; set; }
 
 		public SelectList Cultures { get; set; }

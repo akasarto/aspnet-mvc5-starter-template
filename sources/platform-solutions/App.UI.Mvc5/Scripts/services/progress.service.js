@@ -16,6 +16,8 @@ Progress Service
 
 var ProgressService = function (options) {
 
+	NProgress.configure({ showSpinner: false });
+
 	var defaults = {
 	};
 

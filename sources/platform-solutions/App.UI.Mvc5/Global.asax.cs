@@ -103,8 +103,8 @@ namespace App.UI.Mvc5
 				if (httpException != null && !string.IsNullOrWhiteSpace(httpException.GetHtmlErrorMessage()))
 				{
 					Response.Write(httpException.GetHtmlErrorMessage());
+					Response.Write("<hr />");
 				}
-				Response.Write("<hr />");
 				Response.Write("<br />");
 				Response.Write(exception.ToString().WithHtmlLineBreaks());
 				Response.Write("<br />");

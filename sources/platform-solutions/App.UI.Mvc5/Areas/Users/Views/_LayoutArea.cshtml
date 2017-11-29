@@ -3,14 +3,10 @@
 <!-- Meta -->
 
 @{
-	this.SetLayout(Layouts.InternalDefault);
+	this.SetLayout(Layouts.Internal);
 }
 
 <!-- Sections -->
-
-@section breadcrumb_items {
-	@RenderSection("breadcrumb_items", required: false)
-}
 
 @section page_styles {
 	@RenderSection("page_styles", required: false)

@@ -171,13 +171,16 @@
     <Content Include="Areas\Users\Scripts\account.password-recover.js" />
     <Content Include="Areas\Users\Scripts\account.password-set-new.js" />
     <Content Include="Areas\Users\Scripts\account.signup.js" />
-    <Content Include="Areas\Users\Scripts\panel-right.schedule-widget.js" />
     <Content Include="Areas\Users\Scripts\profile.edit.js" />
     <Content Include="Areas\Users\Scripts\schedule.events.index.js" />
     <Content Include="Areas\Users\Scripts\schedule.events.manager.js" />
     <Content Include="Areas\Users\Scripts\schedule.index.js" />
     <Content Include="Content\.inf\.readme.txt" />
+    <Content Include="Content\vendor\animatecss\animate.css" />
     <Content Include="Content\vendor\holder\.info.txt" />
+    <Content Include="Content\vendor\nprogress\.info.txt" />
+    <Content Include="Content\vendor\nprogress\nprogress.css" />
+    <Content Include="Content\vendor\nprogress\nprogress.js" />
     <Content Include="Content\vendor\placeholder\.info.txt" />
     <Content Include="Content\vendor\magnific-popup\.info.txt" />
     <Content Include="Content\vendor\magnific-popup\jquery.magnific-popup.js" />
@@ -200,6 +203,10 @@
     <Content Include="Content\vendor\js-cookie\js.cookie-2.2.0.min.js" />
     <Content Include="Content\vendor\placeholder\jquery.placeholder.js" />
     <Content Include="Content\vendor\placeholder\jquery.placeholder.min.js" />
+    <Content Include="Content\vendor\animatecss\.info.txt" />
+    <Content Include="Content\vendor\pnotify\.info.txt" />
+    <Content Include="Content\vendor\pnotify\pnotify.custom.min.css" />
+    <Content Include="Content\vendor\pnotify\pnotify.custom.min.js" />
     <Content Include="Content\website-custom.css" />
     <Content Include="Controllers\,inf\.readme.txt" />
     <Content Include="Favicon.ico" />
@@ -424,6 +431,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_LayoutInternal.cshtml" />
     <Content Include="Views\ValidationSummaryAlerts.cshtml" />
+    <Content Include="Views\TopMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

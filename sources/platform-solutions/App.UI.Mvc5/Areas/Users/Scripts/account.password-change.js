@@ -4,7 +4,6 @@
 
 	var defaultValidationService = new ValidationService();
 
-	// Init
 	$(function () {
 
 		defaultValidationService.init();

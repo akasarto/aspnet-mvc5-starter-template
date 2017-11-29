@@ -699,4 +699,13 @@
   <data name="Search_TypeUser" xml:space="preserve">
     <value>user</value>
   </data>
+  <data name="ActionsLabel" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="CurrentLabel" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="PictureActions" xml:space="preserve">
+    <value>Picture Actions</value>
+  </data>
 </root>

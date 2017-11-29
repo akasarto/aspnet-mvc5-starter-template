@@ -12,6 +12,7 @@ namespace App.Identity
 	/// <summary>
 	/// Represents the current user identity/principal using the system.
 	/// </summary>
+	[Serializable]
 	public class AdminPrincipal : UserPrincipal
 	{
 		private const string IdClaim = ClaimTypes.NameIdentifier;

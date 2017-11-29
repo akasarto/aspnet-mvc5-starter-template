@@ -12,7 +12,7 @@ body {
 	border-radius: 0 !important;
 }
 
-/* Validation
+/* Forms & Validation
 -------------------------------------------------- */
 
 label.is-invalid {
@@ -36,6 +36,10 @@ span.is-invalid {
 }
 
 .popup-default {
+}
+
+.marked-for-deletion {
+	opacity: 0.3;
 }
 
 /* Dividers

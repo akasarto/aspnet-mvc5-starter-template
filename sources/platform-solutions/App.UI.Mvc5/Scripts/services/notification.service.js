@@ -13,7 +13,10 @@ Notification Service
 
 var NotificationService = function (options) {
 
+	PNotify.prototype.options.styling = "fontawesome";
+
 	var defaults = {
+		icon: false,
 		width: '30%',
 		addclass: 'stack-topright',
 		stack: {

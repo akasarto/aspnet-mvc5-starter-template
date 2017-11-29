@@ -196,6 +196,15 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Actions.
+        /// </summary>
+        public static string ActionsLabel {
+            get {
+                return ResourceManager.GetString("ActionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add New.
         /// </summary>
         public static string AddNew {
@@ -516,6 +525,15 @@ namespace App.UI.Mvc5 {
         public static string CultureId_Hint {
             get {
                 return ResourceManager.GetString("CultureId_Hint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current.
+        /// </summary>
+        public static string CurrentLabel {
+            get {
+                return ResourceManager.GetString("CurrentLabel", resourceCulture);
             }
         }
         
@@ -1164,6 +1182,15 @@ namespace App.UI.Mvc5 {
         public static string Password2 {
             get {
                 return ResourceManager.GetString("Password2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Picture Actions.
+        /// </summary>
+        public static string PictureActions {
+            get {
+                return ResourceManager.GetString("PictureActions", resourceCulture);
             }
         }
         
