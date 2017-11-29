@@ -100,14 +100,16 @@ namespace App.UI.Mvc5
 
 				Response.Clear();
 
-				Response.Write(exception.Message);
 				if (httpException != null && !string.IsNullOrWhiteSpace(httpException.GetHtmlErrorMessage()))
 				{
-					Response.Write("<hr />");
 					Response.Write(httpException.GetHtmlErrorMessage());
 				}
 				Response.Write("<hr />");
-				Response.Write(exception.ToString());
+				Response.Write("<br />");
+				Response.Write(exception.ToString().WithHtmlLineBreaks());
+				Response.Write("<br />");
+				Response.Write("<br />");
+				Response.Write("<br />");
 
 				Response.End();
 

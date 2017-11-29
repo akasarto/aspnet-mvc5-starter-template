@@ -10,7 +10,7 @@ using System.Web.Mvc;
 namespace App.UI.Mvc5.Controllers
 {
 	[RoutePrefix("blobs")]
-	public partial class BlobsController : BaseController
+	public partial class BlobsController : __BaseController
 	{
 		private IBlobService _blobService = null;
 

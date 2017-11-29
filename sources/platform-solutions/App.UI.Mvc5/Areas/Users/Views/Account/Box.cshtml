@@ -34,11 +34,12 @@ else
 				<img data-src="holder.js/35x35?text=?" class="img-fluid rounded-circle">
 			</a>
 			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink-5" style="position: absolute;">
-				<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Action</a>
-				<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Another action</a>
+				<a class="dropdown-item" href="@Url.Action("Edit", "Profile", new { area = AppAreas.GetAreaName(Area.Users) })"><i class="fa fa-user"></i> @GetLocalizedString("Users_EditProfileLinkLabel")</a>
+				<a class="dropdown-item" href="@Url.Action("PasswordChange", "Account", new { area = AppAreas.GetAreaName(Area.Users) })"><i class="fa fa-lock"></i> @GetLocalizedString("Users_ChangePasswordLinkLabel")</a>
 				<hr class="dropdown-divider" />
-				<a class="dropdown-item" href="#"><i class="fa fa-pencil"></i> Something else here</a>
+				<a class="dropdown-item" href="@Url.Action("LogOff", "Account", new { area = AppAreas.GetAreaName(Area.Users) })"><i class="fa fa-power-off"></i> @GetLocalizedString("Users_LogOffLinkLabel")</a>
 			</div>
 		</li>
+		<li></li>
 	</ul>
 }

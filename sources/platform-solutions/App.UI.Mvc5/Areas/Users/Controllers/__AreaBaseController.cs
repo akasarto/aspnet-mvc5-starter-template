@@ -7,7 +7,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 	[Authorize]
 	[TrackMenuItem("users.area")]
 	[RouteArea("Users", AreaPrefix = "users")]
-	public class __AreaBaseController : BaseController
+	public class __AreaBaseController : __BaseController
 	{
 	}
 }

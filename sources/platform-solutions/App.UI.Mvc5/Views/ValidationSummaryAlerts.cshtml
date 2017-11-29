@@ -1,0 +1,13 @@
+﻿<!-- Page Contents -->
+
+<div class="feedback-validation feedback-validation-alerts @(ViewData.ModelState.IsValid ? "hidden" : string.Empty)">
+	@foreach (var item in ViewData.ModelState)
+	{
+		foreach (var error in item.Value.Errors)
+		{
+			<div id="@(item.Key)-error" class="alert alert-danger">
+				<i class="fa fa-times mr-sm"></i>@Html.Raw(error.ErrorMessage)
+			</div>
+		}
+	}
+</div>

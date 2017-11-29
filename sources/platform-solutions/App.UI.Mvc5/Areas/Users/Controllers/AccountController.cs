@@ -147,7 +147,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 				{
 					Feedback.AddMessage(FeedbackMessageType.Success, GetLocalizedString("DefaultSuccessMessage"));
 
-					return RedirectToAction("Index", "_Landing", new { area = AppAreas.GetAreaName(Area.Root) });
+					return RedirectToAction("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) });
 				}
 
 				ModelState.AddModelError("Password", GetLocalizedString("Users_InvalidPasswordMessage"));
@@ -421,7 +421,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 				return Redirect(returnUrl);
 			}
 
-			return RedirectToAction("Index", "_Landing", new { area = AppAreas.GetAreaName(Area.Root) });
+			return RedirectToAction("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) });
 		}
 	}
 }

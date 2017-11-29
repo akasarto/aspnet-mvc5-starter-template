@@ -165,6 +165,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\.inf\.readme.txt" />
     <Content Include="Areas\Users\Scripts\account.login.js" />
     <Content Include="Areas\Users\Scripts\account.password-change.js" />
     <Content Include="Areas\Users\Scripts\account.password-recover.js" />
@@ -200,13 +201,13 @@
     <Content Include="Content\vendor\placeholder\jquery.placeholder.js" />
     <Content Include="Content\vendor\placeholder\jquery.placeholder.min.js" />
     <Content Include="Content\website-custom.css" />
-    <Content Include="Controllers\.tpl\.readme.txt" />
+    <Content Include="Controllers\,inf\.readme.txt" />
     <Content Include="Favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Humans.txt" />
-    <Content Include="Models\.tpl\.readme.txt" />
-    <Content Include="Scripts\.tpl\.readme.txt" />
-    <Content Include="Scripts\.tpl\service.js" />
+    <Content Include="Models\.inf\.readme.txt" />
+    <Content Include="Scripts\.inf\.readme.txt" />
+    <Content Include="Scripts\.inf\service.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -287,8 +288,8 @@
     <Content Include="Scripts\utils\feedback.utils.js" />
     <Content Include="Scripts\vue.js" />
     <Content Include="Scripts\vue.min.js" />
-    <Content Include="Scripts\.tpl\script.js" />
-    <Content Include="Views\.tpl\.readme.txt" />
+    <Content Include="Scripts\.inf\script.js" />
+    <Content Include="Views\.inf\.readme.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -323,7 +324,7 @@
     <Compile Include="Areas\Users\Models\Account\AccountVerifyEmailViewModelValidator.cs" />
     <Compile Include="Areas\Users\Models\Profile\ProfileEditViewModel.cs" />
     <Compile Include="Areas\Users\Models\Profile\ProfileEditViewModelValidator.cs" />
-    <Compile Include="Controllers\.tpl\Controller.cs" />
+    <Compile Include="Controllers\,inf\Controller.cs" />
     <Compile Include="Controllers\BlobsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Infrastructure\Blobs\BlobUploadResult.cs" />
@@ -363,7 +364,7 @@
     <Compile Include="Infrastructure\HtmlExtension\RenderJsonResourcesScriptTag.cs" />
     <Compile Include="Infrastructure\SetLayout.cs" />
     <Compile Include="Infrastructure\AppAreas.cs" />
-    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\__BaseController.cs" />
     <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -377,8 +378,8 @@
     <Compile Include="Infrastructure\Validation\SimpleInjectorValidatorFactory.cs" />
     <Compile Include="Initializer.cs" />
     <Compile Include="Infrastructure\Blobs\IBlobService.cs" />
-    <Compile Include="Models\.tpl\PartialViewModel.cs" />
-    <Compile Include="Models\.tpl\ViewModel.cs" />
+    <Compile Include="Models\.inf\PartialViewModel.Tpl.cs" />
+    <Compile Include="Models\.inf\ViewModel.Tpl.cs" />
     <Compile Include="Models\EmptyPartialViewModel.cs" />
     <Compile Include="Models\BaseViewModel.cs" />
     <Compile Include="Models\BasePartialViewModel.cs" />
@@ -407,8 +408,8 @@
     <Content Include="Views\Errors\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\_LayoutEmails.cshtml" />
-    <Content Include="Views\.tpl\View.cshtml" />
-    <Content Include="Views\.tpl\PartialView.cshtml" />
+    <Content Include="Views\.inf\View.Tpl.cshtml" />
+    <Content Include="Views\.inf\PartialView.Tpl.cshtml" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
     <Content Include="Scripts\umd\popper.min.js.map" />
@@ -422,6 +423,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_LayoutInternal.cshtml" />
+    <Content Include="Views\ValidationSummaryAlerts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

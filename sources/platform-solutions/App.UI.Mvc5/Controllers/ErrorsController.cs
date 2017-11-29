@@ -5,7 +5,7 @@ using System.Web.Mvc;
 namespace App.UI.Mvc5.Controllers
 {
 	[RoutePrefix("")]
-	public partial class ErrorsController : BaseController
+	public partial class ErrorsController : __BaseController
 	{
 		/// <summary>
 		/// Constructor method.

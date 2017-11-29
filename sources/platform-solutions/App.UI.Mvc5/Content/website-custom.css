@@ -1,16 +1,25 @@
-﻿
+﻿/* General
+-------------------------------------------------- */
+
 body {
 	padding-top: 3.5rem;
 	padding-bottom: 3rem;
 }
 
-/* Borders
--------------------------------------------------- */
-
 * {
 	-webkit-border-radius: 0 !important;
 	-moz-border-radius: 0 !important;
 	border-radius: 0 !important;
+}
+
+
+/* Dividers
+-------------------------------------------------- */
+
+.divider {
+	/*margin: 0 25rem;*/
+	width: 15%;
+	border-style: dotted;
 }
 
 /* Nav
@@ -59,10 +68,6 @@ body {
 	letter-spacing: -.05rem;
 }
 
-
-/* Responsive css
--------------------------------------------------- */
-
 @media (min-width: 40em) {
 	.featurette-heading {
 		font-size: 50px;
@@ -74,3 +79,4 @@ body {
 		margin-top: 7rem;
 	}
 }
+

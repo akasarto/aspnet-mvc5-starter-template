@@ -8,12 +8,7 @@ namespace App.UI.Mvc5.Infrastructure
 		/// <summary>
 		/// #0 - Bootstrap alerts.
 		/// </summary>
-		Alert = 0,
-
-		/// <summary>
-		/// #1 - Form panels.
-		/// </summary>
-		Panel = 1
+		Alert = 0
 	}
 
 	public static partial class WebsiteExtensions
@@ -23,12 +18,9 @@ namespace App.UI.Mvc5.Infrastructure
 		/// </summary>
 		public static MvcHtmlString ValidationSummary(this HtmlHelper @this, VisualizationMode visualizationMode)
 		{
-			if (visualizationMode == VisualizationMode.Alert)
-			{
-				return @this.Partial("ValidationSummaryAlerts");
-			}
+			//if (visualizationMode == ...)
 
-			return @this.Partial("ValidationSummaryPanels");
+			return @this.Partial("ValidationSummaryAlerts");
 		}
 	}
 }
