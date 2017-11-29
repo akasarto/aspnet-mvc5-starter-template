@@ -6,7 +6,7 @@
 		foreach (var error in item.Value.Errors)
 		{
 			<div id="@(item.Key)-error" class="alert alert-danger">
-				<i class="fa fa-times mr-sm"></i>@Html.Raw(error.ErrorMessage)
+				<i class="fa fa-times mr-3"></i>@Html.Raw(error.ErrorMessage)
 			</div>
 		}
 	}

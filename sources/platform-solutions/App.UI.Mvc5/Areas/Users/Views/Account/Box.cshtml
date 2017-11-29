@@ -7,13 +7,13 @@
 	<ul class="navbar-nav ml-auto">
 		<li class="nav-item">
 			<a class="nav-link text-info" href="@Url.Action("LogIn", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
-				Log in
+				@GetLocalizedString("Auth_LogInLabel")
 			</a>
 		</li>
 		<li class="navbar-text">or</li>
 		<li class="nav-item">
 			<a class="nav-link text-info" href="@Url.Action("SignUp", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
-				Sign Up
+				@GetLocalizedString("Auth_SignUpLabel")
 			</a>
 		</li>
 	</ul>

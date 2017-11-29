@@ -8,6 +8,12 @@
 	Model.PageTitle = GetLocalizedString("Auth_SignUpTitle");
 }
 
+<!-- Sections -->
+
+@section page_scripts_init {
+	<script src="~/areas/users/scripts/account.signup.js"></script>
+}
+
 <!-- Page Contents -->
 
 <form id="mainForm" method="post">
@@ -45,12 +51,23 @@
 		</label>
 	</div>
 
-	<button type="submit" class="btn btn-primary btn-block btn-lg mt-3" tabindex="6">@GetLocalizedString("Auth_LoginLabel")</button>
+	<button type="submit" class="btn btn-primary btn-block btn-lg mt-3" tabindex="6">@GetLocalizedString("Auth_LogInLabel")</button>
 
 </form>
 
 <div class="container text-center">
 
-	<p class="mt-5">@GetLocalizedString("Auth_LoginCallout") <a href="@Url.Action("LogIn", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">@GetLocalizedString("Auth_LoginCalloutAction")</a></p>
+	<p class="mt-5">@GetLocalizedString("Auth_LogInCallout") <a href="@Url.Action("LogIn", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">@GetLocalizedString("Auth_LogInCalloutAction")</a></p>
 
+</div>
+
+<div id="termsModal" class="mfp-hide popup-wrapper popup-default">
+	<h1>Terms of Use</h1>
+	<p>Pellentesque pellentesque eget tempor tellus. Fusce lacllentesque eget tempor tellus ellentesque pelleinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada.</p>
+	<p>Pellentesque pellentesque eget tempor tellus. Fusce lacllentesque eget tempor tellus ellentesque pelleinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada.</p>
+	<p>Pellentesque pellentesque eget tempor tellus. Fusce lacllentesque eget tempor tellus ellentesque pelleinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada.</p>
+	<p>Pellentesque pellentesque eget tempor tellus. Fusce lacllentesque eget tempor tellus ellentesque pelleinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada.</p>
+	<p>Pellentesque pellentesque eget tempor tellus. Fusce lacllentesque eget tempor tellus ellentesque pelleinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada.</p>
+	<p>Pellentesque pellentesque eget tempor tellus. Fusce lacllentesque eget tempor tellus ellentesque pelleinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada.</p>
+	<p>Pellentesque pellentesque eget tempor tellus. Fusce lacllentesque eget tempor tellus ellentesque pelleinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada. Pellentesque pellentesque eget tempor tellus ellentesque pellentesque eget tempor tellus. Fusce lacinia tempor malesuada.</p>
 </div>

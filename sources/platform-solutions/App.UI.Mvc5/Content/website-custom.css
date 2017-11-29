@@ -12,12 +12,36 @@ body {
 	border-radius: 0 !important;
 }
 
+/* Validation
+-------------------------------------------------- */
+
+label.is-invalid {
+	color: #dc3545;
+}
+
+span.is-invalid {
+	color: #dc3545;
+	font-weight: bold;
+	margin-top: 3px;
+	display: block;
+}
+
+.popup-wrapper {
+	max-width: 75%;
+	text-align: left;
+	background: #FFF;
+	position: relative;
+	padding: 20px 30px;
+	margin: 40px auto;
+}
+
+.popup-default {
+}
 
 /* Dividers
 -------------------------------------------------- */
 
 .divider {
-	/*margin: 0 25rem;*/
 	width: 15%;
 	border-style: dotted;
 }

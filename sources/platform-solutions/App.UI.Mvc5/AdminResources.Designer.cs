@@ -297,45 +297,45 @@ namespace App.UI.Mvc5 {
         /// <summary>
         ///   Looks up a localized string similar to Already have an account?.
         /// </summary>
-        public static string Auth_LoginCallout {
+        public static string Auth_LogInCallout {
             get {
-                return ResourceManager.GetString("Auth_LoginCallout", resourceCulture);
+                return ResourceManager.GetString("Auth_LogInCallout", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Log In!.
         /// </summary>
-        public static string Auth_LoginCalloutAction {
+        public static string Auth_LogInCalloutAction {
             get {
-                return ResourceManager.GetString("Auth_LoginCalloutAction", resourceCulture);
+                return ResourceManager.GetString("Auth_LogInCalloutAction", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Remembered?.
         /// </summary>
-        public static string Auth_LoginCalloutAlternate {
+        public static string Auth_LogInCalloutAlternate {
             get {
-                return ResourceManager.GetString("Auth_LoginCalloutAlternate", resourceCulture);
+                return ResourceManager.GetString("Auth_LogInCalloutAlternate", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Log In.
         /// </summary>
-        public static string Auth_LoginLabel {
+        public static string Auth_LogInLabel {
             get {
-                return ResourceManager.GetString("Auth_LoginLabel", resourceCulture);
+                return ResourceManager.GetString("Auth_LogInLabel", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to LogIn.
+        ///   Looks up a localized string similar to Log In.
         /// </summary>
-        public static string Auth_LoginTitle {
+        public static string Auth_LogInTitle {
             get {
-                return ResourceManager.GetString("Auth_LoginTitle", resourceCulture);
+                return ResourceManager.GetString("Auth_LogInTitle", resourceCulture);
             }
         }
         

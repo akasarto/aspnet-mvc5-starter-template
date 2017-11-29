@@ -15,41 +15,38 @@ var ValidationService = function (options) {
 
 	var defaults = {
 		formId: '#mainForm',
-		//errorClass: 'error',
-		//errorElement: 'label',
-		//success: function (element) {
-		//	var $placement = $(element).closest('.form-group');
-		//	if ($placement.get(0)) {
-		//		$placement.removeClass('has-error');
-		//	}
-		//	element.remove();
+		errorClass: 'is-invalid',
+		//highlight: function (element, errorClass, validClass) {
+		//	$(element).addClass(errorClass).removeClass(validClass);
+		//	$(element.form).find("label[for=" + element.id + "]").addClass(errorClass);
 		//},
-		//highlight: function (element) {
-		//	var $placement = $(element).closest('.form-group');
-		//	if ($placement.get(0)) {
-		//		$placement.removeClass('has-success').addClass('has-error');
-		//	}
-		//	$(document).find('.feedback-validation').addClass('hidden');
+		//unhighlight: function (element, errorClass, validClass) {
+		//	$(element).removeClass(errorClass).addClass(validClass);
+		//	$(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
 		//},
-		//unhighlight: function (element) {
-		//	$(element).parent().removeClass('has-error').find('label.error').remove();
-		//},
-		//errorPlacement: function (error, element) {
-		//	var placement = element.closest('.input-group');
-		//	if (element.is(':checkbox')) {
-		//		placement = element.closest('div');
-		//	}
-		//	if (!placement.get(0)) {
-		//		placement = element;
-		//	}
-		//	if (error.text() !== '') {
-		//		placement.after(error);
-		//	}
-		//},
-		//submitHandler: function (form) {
-		//	$(document).find('.feedback-validation').addClass('hidden');
-		//	form.submit();
-		//}
+		errorPlacement: function (error, element) {
+			var placement = element.closest('.input-group');
+			if (element.is(':checkbox')) {
+				placement = element.closest('div');
+			}
+			if (!placement.get(0)) {
+				placement = element;
+			}
+			if (error.text() !== '') {
+				placement.after(error);
+			}
+		},
+		success: function (element) {
+			var $placement = $(element).closest('.form-group');
+			if ($placement.get(0)) {
+				$placement.removeClass('is-invalid');
+			}
+			element.remove();
+		},
+		submitHandler: function (form) {
+			$(':submit', form).attr('disabled', 'disabled');
+			form.submit();
+		}
 	};
 
 	options = options || {};

@@ -150,20 +150,20 @@
   <data name="Auth_InvalidCredentialsMessage" xml:space="preserve">
     <value>Invalid credentials.</value>
   </data>
-  <data name="Auth_LoginCallout" xml:space="preserve">
+  <data name="Auth_LogInCallout" xml:space="preserve">
     <value>Already have an account?</value>
   </data>
-  <data name="Auth_LoginCalloutAction" xml:space="preserve">
+  <data name="Auth_LogInCalloutAction" xml:space="preserve">
     <value>Log In!</value>
   </data>
-  <data name="Auth_LoginCalloutAlternate" xml:space="preserve">
+  <data name="Auth_LogInCalloutAlternate" xml:space="preserve">
     <value>Remembered?</value>
   </data>
-  <data name="Auth_LoginLabel" xml:space="preserve">
+  <data name="Auth_LogInLabel" xml:space="preserve">
     <value>Log In</value>
   </data>
-  <data name="Auth_LoginTitle" xml:space="preserve">
-    <value>LogIn</value>
+  <data name="Auth_LogInTitle" xml:space="preserve">
+    <value>Log In</value>
   </data>
   <data name="Auth_RecoverLabel" xml:space="preserve">
     <value>Recover</value>
