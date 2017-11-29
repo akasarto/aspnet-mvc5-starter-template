@@ -372,7 +372,6 @@
     <Compile Include="Infrastructure\AppJsonResult.cs" />
     <Compile Include="Infrastructure\AppViewEngine.cs" />
     <Compile Include="Infrastructure\Validation\ValidationSummary.cs" />
-    <Compile Include="Infrastructure\HtmlExtension\CheckBoxForTheme.cs" />
     <Compile Include="Infrastructure\AppWebViewPage.cs" />
     <Compile Include="Infrastructure\Blobs\Thumbnails.cs" />
     <Compile Include="Infrastructure\Validation\SimpleInjectorValidatorFactory.cs" />
