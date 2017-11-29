@@ -15,41 +15,41 @@ var ValidationService = function (options) {
 
 	var defaults = {
 		formId: '#mainForm',
-		errorClass: 'error',
-		errorElement: 'label',
-		success: function (element) {
-			var $placement = $(element).closest('.form-group');
-			if ($placement.get(0)) {
-				$placement.removeClass('has-error');
-			}
-			element.remove();
-		},
-		highlight: function (element) {
-			var $placement = $(element).closest('.form-group');
-			if ($placement.get(0)) {
-				$placement.removeClass('has-success').addClass('has-error');
-			}
-			$(document).find('.feedback-validation').addClass('hidden');
-		},
-		unhighlight: function (element) {
-			$(element).parent().removeClass('has-error').find('label.error').remove();
-		},
-		errorPlacement: function (error, element) {
-			var placement = element.closest('.input-group');
-			if (element.is(':checkbox')) {
-				placement = element.closest('div');
-			}
-			if (!placement.get(0)) {
-				placement = element;
-			}
-			if (error.text() !== '') {
-				placement.after(error);
-			}
-		},
-		submitHandler: function (form) {
-			$(document).find('.feedback-validation').addClass('hidden');
-			form.submit();
-		}
+		//errorClass: 'error',
+		//errorElement: 'label',
+		//success: function (element) {
+		//	var $placement = $(element).closest('.form-group');
+		//	if ($placement.get(0)) {
+		//		$placement.removeClass('has-error');
+		//	}
+		//	element.remove();
+		//},
+		//highlight: function (element) {
+		//	var $placement = $(element).closest('.form-group');
+		//	if ($placement.get(0)) {
+		//		$placement.removeClass('has-success').addClass('has-error');
+		//	}
+		//	$(document).find('.feedback-validation').addClass('hidden');
+		//},
+		//unhighlight: function (element) {
+		//	$(element).parent().removeClass('has-error').find('label.error').remove();
+		//},
+		//errorPlacement: function (error, element) {
+		//	var placement = element.closest('.input-group');
+		//	if (element.is(':checkbox')) {
+		//		placement = element.closest('div');
+		//	}
+		//	if (!placement.get(0)) {
+		//		placement = element;
+		//	}
+		//	if (error.text() !== '') {
+		//		placement.after(error);
+		//	}
+		//},
+		//submitHandler: function (form) {
+		//	$(document).find('.feedback-validation').addClass('hidden');
+		//	form.submit();
+		//}
 	};
 
 	options = options || {};

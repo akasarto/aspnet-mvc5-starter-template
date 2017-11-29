@@ -20,8 +20,9 @@
 
 	<title>@pageTitle</title>
 
-	<link href="~/content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 	<link href="~/content/bootstrap.min.css" rel="stylesheet">
+	<link href="~/content/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="~/content/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" />
 	<link href="~/content/website-custom.css" rel="stylesheet" />
 
 	@RenderSection("page_styles", required: false)
@@ -38,10 +39,72 @@
 
 	<!-- SCRIPTS -->
 	<script src="~/scripts/jquery-3.2.1.min.js"></script>
+	<script src="~/content/vendor/js-cookie/js.cookie-2.2.0.min.js"></script>
+	<script src="~/scripts/configs/cookies.config.js"></script>
 	<script src="~/scripts/umd/popper.min.js"></script>
+	
+	@*<script src="~/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>*@
+	
 	<script src="~/scripts/bootstrap.min.js"></script>
-	<script src="~/content/holder/holder.min.js"></script>
+	<script src="~/content/vendor/holder/holder.min.js"></script>
+
+	@*<script src="~/assets/vendor/nanoscroller/nanoscroller.js"></script>*@
+	@*<script src="~/assets/vendor/bootstrap-confirmation/bootstrap-confirmation.js"></script>*@
+	@*<script src="~/assets/vendor/jquery-placeholder/jquery-placeholder.js"></script>*@
+	<script src="~/content/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+	@*<script src="~/assets/vendor/jquery-placeholder/jquery-placeholder.js"></script>*@
+	@*<script src="~/assets/vendor/jquery-ui/jquery-ui.js"></script>*@
+	@*<script src="~/assets/vendor/jqueryui-touch-punch/jqueryui-touch-punch.js"></script>*@
+	@*<script src="~/assets/vendor/pnotify/pnotify.custom.js"></script>*@
+	@*<script src="~/assets/vendor/jquery-idletimer/idle-timer.js"></script>*@
+	@*<script src="~/assets/vendor/nprogress/nprogress.js"></script>*@
+	@*<script src="~/assets/vendor/autosize/autosize.js"></script>*@
+	@*<script src="~/scripts/moment-with-locales.js"></script>*@
+	@*<script src="~/scripts/vue.min.js"></script>*@
+	@*<script src="~/scripts/_configs/globalization.config.js"></script>*@
+	@*<script src="~/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>*@
+	@*@Html.RenderLocalizedScriptTag("~/assets/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.{0}.min.js", User.Culture)*@
+	@*<script src="~/scripts/_configs/datepicker.config.js"></script>*@
+	@*<script src="~/assets/vendor/bootstrap-timepicker/bootstrap-timepicker.js"></script>*@
+	@*<script src="~/scripts/_configs/timepicker.config.js"></script>*@
+	<script src="~/scripts/jquery.validate.min.js"></script>
+	<script src="~/scripts/configs/jquery.validate.config.js"></script>
+	<script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+	<script src="~/scripts/configs/jquery.validate.unobtrusive.config.js"></script>
+	@*<script src="~/scripts/jquery.signalR-2.2.2.min.js"></script>*@
+	@*<script src="~/signalr/hubs"></script>*@
 	@RenderSection("page_scripts", required: false)
+	<script src="~/scripts/base/website.base.js"></script>
+	<script src="~/scripts/services/modal.service.js"></script>
+	<script src="~/scripts/services/model.state.service.js"></script>
+	<script src="~/scripts/services/notification.service.js"></script>
+	<script src="~/scripts/services/progress.service.js"></script>
+	<script src="~/scripts/services/table.service.js"></script>
+	<script src="~/scripts/services/upload.service.js"></script>
+	<script src="~/scripts/services/validation.service.js"></script>
+	<script src="~/scripts/utils/feedback.utils.js"></script>
+
+	<!-- Default Delete Dialog Template -->
+	<div class="modal-dialog mfp-hide confirmation-service-dialog" id="mainDeleteDialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">@GetLocalizedString("DefaultAttentionTitle")</h4>
+			</div>
+			<div class="modal-body">
+				<div class="confirmation-content-template hidden">
+					@GetLocalizedString("DeleteDialogConfirmationMessageTemplate").WithRawHtmlOutput()
+				</div>
+				<div class="confirmation-content-template-with-label hidden">
+					@GetLocalizedString("DeleteDialogConfirmationMessageTemplateWithLabel").WithRawHtmlOutput()
+				</div>
+				<div class="confirmation-content-message"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-link confirmation-cancel">@GetLocalizedString("Cancel")</button>
+				<button type="button" class="btn btn-danger confirmation-confirm">@GetLocalizedString("Confirm")</button>
+			</div>
+		</div>
+	</div>
 
 	@RenderSection("page_scripts_init", required: false)
 

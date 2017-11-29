@@ -4,6 +4,15 @@ body {
 	padding-bottom: 3rem;
 }
 
+/* Borders
+-------------------------------------------------- */
+
+* {
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border-radius: 0 !important;
+}
+
 /* Nav
 -------------------------------------------------- */
 

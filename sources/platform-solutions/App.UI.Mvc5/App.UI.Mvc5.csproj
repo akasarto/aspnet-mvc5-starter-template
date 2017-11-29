@@ -61,7 +61,7 @@
       <HintPath>..\packages\Humanizer.Core.2.2.0\lib\netstandard1.0\Humanizer.dll</HintPath>
     </Reference>
     <Reference Include="ImageResizer, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ImageResizer.4.1.11\lib\net45\ImageResizer.dll</HintPath>
+      <HintPath>..\packages\ImageResizer.4.2.0\lib\net45\ImageResizer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
@@ -175,10 +175,16 @@
     <Content Include="Areas\Users\Scripts\schedule.events.index.js" />
     <Content Include="Areas\Users\Scripts\schedule.events.manager.js" />
     <Content Include="Areas\Users\Scripts\schedule.index.js" />
-    <Content Include="Content\font-awesome\css\font-awesome.css" />
-    <Content Include="Content\font-awesome\css\font-awesome.min.css" />
-    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="Content\holder\holder.min.js" />
+    <Content Include="Content\.inf\.readme.txt" />
+    <Content Include="Content\vendor\holder\.info.txt" />
+    <Content Include="Content\vendor\magnific-popup\.info.txt" />
+    <Content Include="Content\vendor\magnific-popup\jquery.magnific-popup.js" />
+    <Content Include="Content\vendor\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="Content\vendor\magnific-popup\magnific-popup.css" />
+    <Content Include="Content\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\vendor\holder\holder.min.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -187,6 +193,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery.pnotify.css" />
     <Content Include="Content\jquery.pnotify.icons.css" />
+    <Content Include="Content\img\logo.svg" />
+    <Content Include="Content\vendor\js-cookie\.info.txt" />
+    <Content Include="Content\vendor\js-cookie\js.cookie-2.2.0.min.js" />
     <Content Include="Content\website-custom.css" />
     <Content Include="Controllers\.tpl\.readme.txt" />
     <Content Include="Favicon.ico" />
@@ -209,11 +218,11 @@
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper.min.js.map" />
-    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Content\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\vendor\font-awesome\fonts\FontAwesome.otf" />
     <Content Include="Areas\Users\Views\Account\Box.cshtml" />
     <Content Include="Areas\Users\Views\Account\LogIn.cshtml" />
     <Content Include="Areas\Users\Views\Account\PasswordChange.cshtml" />

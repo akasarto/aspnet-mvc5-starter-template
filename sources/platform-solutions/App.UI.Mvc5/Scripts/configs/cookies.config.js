@@ -3,5 +3,5 @@
  * - Customize global options here.
  */
 
-$.cookie.defaults = { path: '/', expires: 365 };
+Cookies.defaults = { path: '/', expires: 365 };
 

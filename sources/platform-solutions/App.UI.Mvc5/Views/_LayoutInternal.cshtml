@@ -26,7 +26,9 @@
 
 	<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
 
-		<a class="navbar-brand" href="@Url.Action("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) })">[Skeleton]</a>
+		<a class="navbar-brand" href="@Url.Action("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) })">
+			<img class="img-fluid" width="35" src="~/content/img/logo.svg" />
+		</a>
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
