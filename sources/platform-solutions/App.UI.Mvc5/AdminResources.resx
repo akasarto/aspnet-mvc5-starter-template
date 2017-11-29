@@ -154,7 +154,7 @@
     <value>Already have an account?</value>
   </data>
   <data name="Auth_LoginCalloutAction" xml:space="preserve">
-    <value>Sign In!</value>
+    <value>Log In!</value>
   </data>
   <data name="Auth_LoginCalloutAlternate" xml:space="preserve">
     <value>Remembered?</value>
@@ -535,10 +535,10 @@
     <value>View All</value>
   </data>
   <data name="_App_Copyright" xml:space="preserve">
-    <value>&amp;copy; 2017 Sarto. All Rights Reserved.</value>
+    <value>&amp;copy; 2017 Thiago Alberto Schneider. All Rights Reserved.</value>
   </data>
   <data name="_App_Name" xml:space="preserve">
-    <value>.Net Admin</value>
+    <value>Skeleton</value>
   </data>
   <data name="_App_NavigationLabel" xml:space="preserve">
     <value>Navigation</value>
@@ -587,9 +587,6 @@
   </data>
   <data name="MessageType_Warning" xml:space="preserve">
     <value>Warning!</value>
-  </data>
-  <data name="Auth_LockedTitle" xml:space="preserve">
-    <value>Locked</value>
   </data>
   <data name="FullName" xml:space="preserve">
     <value>Full Name</value>

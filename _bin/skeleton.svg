@@ -7,12 +7,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   height="364.08499"
-   width="315"
-   viewBox="0 0 315 364.085"
+   height="299.67383"
+   width="295.86719"
+   viewBox="0 0 295.86719 299.67384"
    version="1.1"
    id="svg7"
-   sodipodi:docname="skeleton.svg"
+   sodipodi:docname="logo.svg"
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
   <metadata
      id="metadata13">
@@ -43,8 +43,8 @@
      showgrid="false"
      inkscape:showpageshadow="false"
      inkscape:zoom="0.46093749"
-     inkscape:cx="107.01688"
-     inkscape:cy="62.702519"
+     inkscape:cx="-72.766792"
+     inkscape:cy="-74.998814"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -58,19 +58,16 @@
      inkscape:groupmode="layer"
      id="main"
      inkscape:label="main"
-     transform="translate(-485.66602,533.73993)">
+     transform="translate(-525.23243,506.99186)">
     <g
        aria-label="S"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:400.69644165px;line-height:1.25;font-family:'Perfect Dark BRK';-inkscape-font-specification:'Perfect Dark BRK';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:10.01741028"
        id="text19">
       <path
-         style="stroke-width:10.01741028"
-         d="m 552.00759,-267.55118 h 56.0975 l 28.04875,-28.04875 -112.195,-112.195 h 84.14625 l 112.195,112.195 -84.14625,84.14626 H 495.91009 Z"
-         id="path80" />
-      <path
-         style="stroke-width:10.01741028"
-         d="m 495.91009,-435.84368 56.0975,-56.0975 h 238.41438 l -56.0975,56.0975 z"
-         id="path75" />
+         style="stroke-width:11.56704712;fill:#008080"
+         d="m 582.68555,-506.99186 -56.09765,56.09765 h 238.41405 l 56.09766,-56.09765 z m -25.0664,72.95898 129.55077,129.55078 -32.38672,32.38869 h -64.77538 l -64.77539,64.77539 h 161.93749 l 97.16406,-97.16407 -129.55078,-129.55078 z"
+         id="path34"
+         inkscape:connector-curvature="0" />
     </g>
   </g>
 </svg>

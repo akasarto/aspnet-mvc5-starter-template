@@ -61,7 +61,7 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;copy; 2017 Sarto. All Rights Reserved..
+        ///   Looks up a localized string similar to &amp;copy; 2017 Thiago Alberto Schneider. All Rights Reserved..
         /// </summary>
         public static string _App_Copyright {
             get {
@@ -70,7 +70,7 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .Net Admin.
+        ///   Looks up a localized string similar to Skeleton.
         /// </summary>
         public static string _App_Name {
             get {
@@ -295,15 +295,6 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Locked.
-        /// </summary>
-        public static string Auth_LockedTitle {
-            get {
-                return ResourceManager.GetString("Auth_LockedTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Already have an account?.
         /// </summary>
         public static string Auth_LoginCallout {
@@ -313,7 +304,7 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sign In!.
+        ///   Looks up a localized string similar to Log In!.
         /// </summary>
         public static string Auth_LoginCalloutAction {
             get {

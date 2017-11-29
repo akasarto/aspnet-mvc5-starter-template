@@ -177,6 +177,7 @@
     <Content Include="Areas\Users\Scripts\schedule.index.js" />
     <Content Include="Content\.inf\.readme.txt" />
     <Content Include="Content\vendor\holder\.info.txt" />
+    <Content Include="Content\vendor\placeholder\.info.txt" />
     <Content Include="Content\vendor\magnific-popup\.info.txt" />
     <Content Include="Content\vendor\magnific-popup\jquery.magnific-popup.js" />
     <Content Include="Content\vendor\magnific-popup\jquery.magnific-popup.min.js" />
@@ -196,6 +197,8 @@
     <Content Include="Content\img\logo.svg" />
     <Content Include="Content\vendor\js-cookie\.info.txt" />
     <Content Include="Content\vendor\js-cookie\js.cookie-2.2.0.min.js" />
+    <Content Include="Content\vendor\placeholder\jquery.placeholder.js" />
+    <Content Include="Content\vendor\placeholder\jquery.placeholder.min.js" />
     <Content Include="Content\website-custom.css" />
     <Content Include="Controllers\.tpl\.readme.txt" />
     <Content Include="Favicon.ico" />
