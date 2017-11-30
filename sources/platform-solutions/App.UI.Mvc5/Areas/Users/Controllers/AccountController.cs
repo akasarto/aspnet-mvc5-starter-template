@@ -46,6 +46,14 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 		[HttpGet]
 		[AllowAnonymous]
+		[Route("locked", Name = "AccountLockedGet")]
+		public ActionResult Locked()
+		{
+			return View(new EmptyViewModel());
+		}
+
+		[HttpGet]
+		[AllowAnonymous]
 		[Route("login", Name = "AccountLogInGet")]
 		public ActionResult LogIn(string returnUrl)
 		{

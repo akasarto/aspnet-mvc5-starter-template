@@ -1,0 +1,22 @@
+﻿@model EmptyViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageTitle = GetLocalizedString("Auth_LockedTitle");
+	//
+}
+
+<!-- Page Contents -->
+
+<div class="row justify-content-md-center">
+
+	<div class="col-12 text-center">
+
+		<div class="alert alert-warning">
+			@GetLocalizedString("Auth_LockedInfo")
+		</div>
+
+	</div>
+
+</div>

@@ -248,6 +248,7 @@
     <Content Include="Areas\Users\Views\Profile\Edit.cshtml" />
     <Content Include="Areas\Users\Views\_LayoutArea.cshtml" />
     <Content Include="Areas\Users\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Users\Views\Account\Locked.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />

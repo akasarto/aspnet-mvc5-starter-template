@@ -708,4 +708,10 @@
   <data name="PictureActions" xml:space="preserve">
     <value>Picture Actions</value>
   </data>
+  <data name="Auth_LockedInfo" xml:space="preserve">
+    <value>Too many login attempts. Please try again later.</value>
+  </data>
+  <data name="Auth_LockedTitle" xml:space="preserve">
+    <value>Account Locked</value>
+  </data>
 </root>

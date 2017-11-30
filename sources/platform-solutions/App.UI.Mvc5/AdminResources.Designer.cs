@@ -304,6 +304,24 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Too many login attempts. Please try again later..
+        /// </summary>
+        public static string Auth_LockedInfo {
+            get {
+                return ResourceManager.GetString("Auth_LockedInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account Locked.
+        /// </summary>
+        public static string Auth_LockedTitle {
+            get {
+                return ResourceManager.GetString("Auth_LockedTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Already have an account?.
         /// </summary>
         public static string Auth_LogInCallout {
