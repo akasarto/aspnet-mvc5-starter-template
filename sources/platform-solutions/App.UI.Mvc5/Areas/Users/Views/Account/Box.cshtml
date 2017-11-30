@@ -33,11 +33,14 @@ else
 				</a>
 			</li>
 		}
-		<li class="nav-item">
-			<a href="@Url.Action("VerifyEmail", "Account", new { area = AppAreas.GetAreaName(Area.Users) })" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="@GetLocalizedString("Management_MenuLabel")">
-				<i class="fa fa-cogs text-info"></i>
-			</a>
-		</li>
+		@if (User.IsInRole(Role.SuperUser))
+		{
+			<li class="nav-item">
+				<a href="@Url.Action("Index", "Users", new { area = AppAreas.GetAreaName(Area.Management) })" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="@GetLocalizedString("Management_MenuLabel")">
+					<i class="fa fa-cogs text-info"></i>
+				</a>
+			</li>
+		}
 	</ul>
 
 	<ul class="navbar-nav">

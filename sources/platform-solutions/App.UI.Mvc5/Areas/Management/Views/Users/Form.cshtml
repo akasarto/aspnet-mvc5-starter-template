@@ -1,0 +1,59 @@
+﻿@using App.UI.Mvc5.Areas.Management.Models
+
+@model UserViewModel
+
+<!-- Meta -->
+
+@{
+	var isAdding = Model.Id <= 0;
+}
+
+<!-- Page Contents -->
+
+@if (!isAdding)
+{
+	<div class="form-group">
+		<label for="userId" class="sr-only">@GetLocalizedString("Id")</label>
+		<input type="text" readonly class="form-control-plaintext" id="userId" value="@Model.Id">
+	</div>
+
+	<div class="form-group">
+		<label for="userName" class="sr-only">@GetLocalizedString("UserName")</label>
+		<input type="text" readonly class="form-control-plaintext" id="userName" value="@Model.UserName">
+	</div>
+}
+
+@if (isAdding)
+{
+	<div class="form-group">
+		@Html.LabelFor(model => model.Email)
+		@Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+	</div>
+
+	<div class="form-group">
+		@Html.LabelFor(model => model.FullName)
+		@Html.TextBoxFor(model => model.FullName, new { @class = "form-control" })
+	</div>
+}
+else
+{
+	<div class="form-group">
+		<label for="email" class="sr-only">@GetLocalizedString("Email")</label>
+		<input type="text" readonly class="form-control-plaintext" id="email" value="@Model.Email">
+	</div>
+
+	<div class="form-group">
+		<label for="fullName" class="sr-only">@GetLocalizedString("FullName")</label>
+		<input type="text" readonly class="form-control-plaintext" id="fullName" value="@Model.FullName">
+	</div>
+}
+
+<div class="form-group">
+	@Html.LabelFor(model => model.Realms)
+	@Html.ListBoxFor(model => model.Realms, Model.RealmOptions, new { @class = "form-control", @id = "userRealms" })
+</div>
+
+<div class="form-group">
+	@Html.LabelFor(model => model.Roles)
+	@Html.ListBoxFor(model => model.Roles, Model.RoleOptions, new { @class = "form-control", @id = "userRoles" })
+</div>

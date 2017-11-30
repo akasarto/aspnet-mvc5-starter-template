@@ -1,0 +1,63 @@
+﻿@using App.UI.Mvc5.Areas.Management.Models
+
+@model UsersIndexViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageTitle = GetLocalizedString("Management_Users_Title");
+
+	var dateTimeFormat = User.Culture.DateTimeFormat;
+	var dateTimePattern = $"{dateTimeFormat.ShortDatePattern} {dateTimeFormat.LongTimePattern}";
+}
+
+<!-- Sections -->
+
+@section page_scripts_init{
+	<script src="~/areas/management/scripts/users.index.js"></script>
+}
+
+<!-- Page Contents -->
+
+<h3>@GetLocalizedString("DefaultSectionListLabel")</h3>
+<p>@GetLocalizedString("DefaultSectionListLeadInfo")</p>
+
+<p class="mt-3">
+	<a href="@Url.Action("Add", "Users")" class="btn btn-primary">
+		<i class="fa fa-plus mr-1"></i>@GetLocalizedString("AddNew")
+	</a>
+</p>
+
+<table id="mainTable">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>@GetLocalizedString("UTCCreation")</th>
+			<th>@GetLocalizedString("UserName")</th>
+			<th>@GetLocalizedString("Email")</th>
+			<th>@GetLocalizedString("Name")</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.Users)
+		{
+			var editUrl = Url.Action("Edit", "Users", new { @id = item.Id });
+
+			<tr data-item-id="@item.Id" data-item-label="@item.FullName">
+				<td>@item.Id</td>
+				<td>@item.UTCCreation.ToTimeZone(User.TimeZone).ToString(dateTimePattern)</td>
+				<td>@item.UserName</td>
+				<td>@item.Email</td>
+				<td>@item.FullName</td>
+				<td class="text-right">
+					<div class="table-row-actions">
+						<a href="@editUrl" class="btn btn-sm btn-default" title="@GetLocalizedString("Edit")">
+							<i class="fa fa-pencil"></i>
+						</a>
+					</div>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

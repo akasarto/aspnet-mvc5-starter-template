@@ -1,0 +1,40 @@
+﻿@using App.UI.Mvc5.Areas.Management.Models
+
+@model UserViewModel
+
+<!-- Meta -->
+
+@{
+	var pageTitle = Model.Id <= 0 ? GetLocalizedString("Management_Users_AddTitle") : GetLocalizedString("Management_Users_EditTitle");
+
+	Model.PageTitle = pageTitle;
+}
+
+<!-- Sections -->
+
+@section page_styles{
+	<link href="~/content/vendor/lou-multi-select/css/multi-select.dist.css" rel="stylesheet" />
+}
+
+@section page_scripts{
+	<script src="~/content/vendor/lou-multi-select/js/jquery.multi-select.js"></script>
+}
+
+@section page_scripts_init {
+	<script src="~/areas/management/scripts/users.manager.js"></script>
+}
+
+<!-- Page Contents -->
+
+<form id="mainForm" method="post">
+
+	@Html.AntiForgeryToken()
+	@Html.HiddenFor(model => model.Id)
+	@Html.ValidationSummary(VisualizationMode.Alert)
+
+	@Html.Partial("Form", Model)
+
+	<button type="submit" class="btn btn-primary btn-block btn-lg mt-5" tabindex="6">@GetLocalizedString("Save")</button>
+
+</form>
+
