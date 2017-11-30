@@ -10,8 +10,14 @@
 
 <!-- Page Contents -->
 
-<h3 class="text-weight-semibold mt-none text-center">@GetLocalizedString("Users_VerifyEmailLabel")</h3>
-<p class="text-center">@GetLocalizedString("Users_VerifyEmailLeadInfo")</p>
-<p>
-	<a class="btn btn-primary mt-xlg mb-xlg" href="@Url.Action("VerifyEmailRequest", "Account", new { userId = User.Id })">@GetLocalizedString("Users_VerifyEmailLinkLabel")</a>
-</p>
+<div class="container text-center mt-5">
+
+	<div class="card text-center border-0">
+		<div class="card-body">
+			<h4 class="card-title">@GetLocalizedString("Users_VerifyEmailLabel")</h4>
+			<p class="card-text">@GetLocalizedString("Users_VerifyEmailLeadInfo")</p>
+			<a href="@Url.Action("VerifyEmailRequest", "Account", new { userId = User.Id })" class="btn btn-primary">@GetLocalizedString("Users_VerifyEmailLinkLabel")</a>
+		</div>
+	</div>
+
+</div>
