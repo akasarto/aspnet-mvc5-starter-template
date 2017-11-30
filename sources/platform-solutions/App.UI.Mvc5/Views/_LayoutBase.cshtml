@@ -46,7 +46,7 @@
 	<!-- SCRIPTS -->
 	<script src="~/scripts/jquery-3.2.1.min.js"></script>
 	<script src="~/content/vendor/js-cookie/js.cookie-2.2.0.min.js"></script>
-	<script src="~/scripts/configs/cookies.config.js"></script>
+	<script src="~/scripts/_configs/cookies.config.js"></script>
 	<script src="~/scripts/umd/popper.min.js"></script>
 	
 	@*<script src="~/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>*@
@@ -66,7 +66,6 @@
 	<script src="~/content/vendor/nprogress/nprogress.js"></script>
 	@*<script src="~/assets/vendor/autosize/autosize.js"></script>*@
 	@*<script src="~/scripts/moment-with-locales.js"></script>*@
-	@*<script src="~/scripts/vue.min.js"></script>*@
 	@*<script src="~/scripts/_configs/globalization.config.js"></script>*@
 	@*<script src="~/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>*@
 	@*@Html.RenderLocalizedScriptTag("~/assets/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.{0}.min.js", User.Culture)*@
@@ -74,21 +73,22 @@
 	@*<script src="~/assets/vendor/bootstrap-timepicker/bootstrap-timepicker.js"></script>*@
 	@*<script src="~/scripts/_configs/timepicker.config.js"></script>*@
 	<script src="~/scripts/jquery.validate.js"></script>
-	<script src="~/scripts/configs/jquery.validate.config.js"></script>
+	<script src="~/scripts/_configs/jquery.validate.config.js"></script>
 	<script src="~/scripts/jquery.validate.unobtrusive.js"></script>
-	<script src="~/scripts/configs/jquery.validate.unobtrusive.config.js"></script>
+	<script src="~/scripts/_configs/jquery.validate.unobtrusive.config.js"></script>
 	@*<script src="~/scripts/jquery.signalR-2.2.2.min.js"></script>*@
 	@*<script src="~/signalr/hubs"></script>*@
 	@RenderSection("page_scripts", required: false)
-	<script src="~/scripts/base/website.base.js"></script>
-	<script src="~/scripts/services/modal.service.js"></script>
-	<script src="~/scripts/services/model.state.service.js"></script>
-	<script src="~/scripts/services/notification.service.js"></script>
-	<script src="~/scripts/services/progress.service.js"></script>
-	<script src="~/scripts/services/table.service.js"></script>
-	<script src="~/scripts/services/upload.service.js"></script>
-	<script src="~/scripts/services/validation.service.js"></script>
-	<script src="~/scripts/utils/feedback.utils.js"></script>
+	<script src="~/scripts/_base/website.base.js"></script>
+	<script src="~/scripts/_services/modal.service.js"></script>
+	<script src="~/scripts/_services/model.state.service.js"></script>
+	<script src="~/scripts/_services/notification.service.js"></script>
+	<script src="~/scripts/_services/progress.service.js"></script>
+	<script src="~/scripts/_services/table.service.js"></script>
+	<script src="~/scripts/_services/upload.service.js"></script>
+	<script src="~/scripts/_services/validation.service.js"></script>
+	<script src="~/scripts/_setups/feedback.setup.js"></script>
+	<script src="~/scripts/_setups/tooltips.setup.js"></script>
 
 	<!-- Default Delete Dialog Template -->
 	<div class="modal-dialog mfp-hide confirmation-service-dialog" id="mainDeleteDialog">

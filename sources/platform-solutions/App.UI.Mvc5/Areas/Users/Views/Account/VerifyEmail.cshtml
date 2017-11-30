@@ -10,3 +10,8 @@
 
 <!-- Page Contents -->
 
+<h3 class="text-weight-semibold mt-none text-center">@GetLocalizedString("Users_VerifyEmailLabel")</h3>
+<p class="text-center">@GetLocalizedString("Users_VerifyEmailLeadInfo")</p>
+<p>
+	<a class="btn btn-primary mt-xlg mb-xlg" href="@Url.Action("VerifyEmailRequest", "Account", new { userId = User.Id })">@GetLocalizedString("Users_VerifyEmailLinkLabel")</a>
+</p>

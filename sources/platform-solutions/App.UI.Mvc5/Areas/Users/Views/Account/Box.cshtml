@@ -25,9 +25,17 @@
 else
 {
 	<ul class="navbar-nav ml-auto">
+		@if (!User.EmailConfirmed)
+		{
+			<li class="nav-item">
+				<a href="@Url.Action("VerifyEmail", "Account", new { area = AppAreas.GetAreaName(Area.Users) })" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="@GetLocalizedString("Alerts_EmailVerificationAlertMessage")">
+					<i class="fa fa-exclamation-circle text-warning"></i>
+				</a>
+			</li>
+		}
 		<li class="nav-item">
-			<a href="#" class="nav-link">
-				0 <i class="fa fa-bell"></i>
+			<a href="@Url.Action("VerifyEmail", "Account", new { area = AppAreas.GetAreaName(Area.Users) })" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="@GetLocalizedString("Management_MenuLabel")">
+				<i class="fa fa-cogs text-info"></i>
 			</a>
 		</li>
 	</ul>
