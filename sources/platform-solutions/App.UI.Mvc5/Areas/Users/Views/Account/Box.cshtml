@@ -5,41 +5,57 @@
 @if (!Request.IsAuthenticated)
 {
 	<ul class="navbar-nav ml-auto">
+
 		<li class="nav-item">
 			<a class="nav-link text-info" href="@Url.Action("LogIn", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
 				@GetLocalizedString("Auth_LogInLabel")
 			</a>
 		</li>
+
 		<li class="navbar-text">or</li>
+
 		<li class="nav-item">
 			<a class="nav-link text-info" href="@Url.Action("SignUp", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
 				@GetLocalizedString("Auth_SignUpLabel")
 			</a>
 		</li>
+
 	</ul>
 }
 else
 {
 	<ul class="navbar-nav ml-auto">
 		<li class="nav-item">
-			<a class="nav-link">
-				1 <i class="fa fa-bell"></i>
+			<a href="#" class="nav-link">
+				0 <i class="fa fa-bell"></i>
 			</a>
 		</li>
 	</ul>
 
 	<ul class="navbar-nav">
 		<li class="nav-item user-picture dropdown">
-			<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+			<a class="nav-link dropdown-toggle" id="userMemuItems" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<img src="@Url.BlobThumbnail(User.PictureBlobName, User.UserName, width: 35, height: 35)" class="img-fluid rounded-circle">
 			</a>
-			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink-5" style="position: absolute;">
-				<a class="dropdown-item" href="@Url.Action("Edit", "Profile", new { area = AppAreas.GetAreaName(Area.Users) })"><i class="fa fa-user"></i> @GetLocalizedString("Users_EditProfileLinkLabel")</a>
-				<a class="dropdown-item" href="@Url.Action("PasswordChange", "Account", new { area = AppAreas.GetAreaName(Area.Users) })"><i class="fa fa-lock"></i> @GetLocalizedString("Users_ChangePasswordLinkLabel")</a>
+
+			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMemuItems" style="position: absolute;">
+
+				<a class="dropdown-item" href="@Url.Action("Edit", "Profile", new { area = AppAreas.GetAreaName(Area.Users) })">
+					<i class="fa fa-user mr-3"></i>@GetLocalizedString("Users_EditProfileLinkLabel")
+				</a>
+
+				<a class="dropdown-item" href="@Url.Action("PasswordChange", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
+					<i class="fa fa-lock mr-3"></i>@GetLocalizedString("Users_ChangePasswordLinkLabel")
+				</a>
+
 				<div role="separator" class="dropdown-divider"></div>
-				<a class="dropdown-item" href="@Url.Action("LogOff", "Account", new { area = AppAreas.GetAreaName(Area.Users) })"><i class="fa fa-power-off"></i> @GetLocalizedString("Users_LogOffLinkLabel")</a>
+
+				<a class="dropdown-item" href="@Url.Action("LogOff", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
+					<i class="fa fa-power-off mr-3"></i>@GetLocalizedString("Users_LogOffLinkLabel")
+				</a>
+
 			</div>
 		</li>
-		<li></li>
 	</ul>
 }

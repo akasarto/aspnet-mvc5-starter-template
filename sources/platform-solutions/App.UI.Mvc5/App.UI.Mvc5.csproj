@@ -411,7 +411,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Packages.config" />
-    <Content Include="Views\_Layout.cshtml" />
+    <Content Include="Views\_LayoutBase.cshtml" />
     <Content Include="Views\Errors\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\_LayoutEmails.cshtml" />
@@ -431,7 +431,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_LayoutInternal.cshtml" />
     <Content Include="Views\ValidationSummaryAlerts.cshtml" />
-    <Content Include="Views\TopMenu.cshtml" />
+    <Content Include="Views\Header.cshtml" />
+    <Content Include="Views\Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

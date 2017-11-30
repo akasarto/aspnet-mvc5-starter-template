@@ -22,37 +22,12 @@
 
 <!-- Page Contents -->
 
-<header>
+@Html.Partial("Header")
 
-	<nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
-
-		<a class="navbar-brand" href="@Url.Action("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) })">
-			<img class="img-fluid" width="35" src="~/content/img/logo.svg" />
-		</a>
-
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-
-			@Html.Partial("TopMenu")
-
-			@Html.Action("Box", "Account", new { area = AppAreas.GetAreaName(Area.Users) })
-
-		</div>
-
-	</nav>
-
-</header>
-
-<main role="main">
+<main role="main" class="pb-5">
 
 	@RenderBody()
 
-	<footer class="container mt-5">
-		<p class="float-right"><a href="#">Back to top</a></p>
-		<p>&copy; 2017 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-	</footer>
-
 </main>
+
+@Html.Partial("Footer")

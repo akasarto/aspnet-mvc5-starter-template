@@ -19,7 +19,7 @@ namespace App.UI.Mvc5.Infrastructure
 			switch (layout)
 			{
 				case Layouts.Base:
-					result = "~/Views/_Layout.cshtml";
+					result = "~/Views/_LayoutBase.cshtml";
 					break;
 
 				case Layouts.Emails:

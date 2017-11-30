@@ -61,7 +61,7 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;copy; 2017 Thiago Alberto Schneider. All Rights Reserved..
+        ///   Looks up a localized string similar to &amp;copy; 2017 Thiago A. Schneider..
         /// </summary>
         public static string _App_Copyright {
             get {
