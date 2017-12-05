@@ -185,7 +185,7 @@ namespace App.UI.Mvc5
 				logger = logger.WriteTo.Async((log) => log.File(
 					new SerilogTextFormatter(),
 					loggerFilePath,
-					rollingInterval: RollingInterval.Minute,
+					rollingInterval: RollingInterval.Day,
 					shared: true
 				), bufferSize: 100);
 

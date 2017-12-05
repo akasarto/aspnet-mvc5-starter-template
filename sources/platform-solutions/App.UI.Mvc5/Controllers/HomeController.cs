@@ -22,10 +22,6 @@ namespace App.UI.Mvc5.Controllers
 		{
 			var model = new EmptyViewModel();
 
-			_logger.Information("Testing this thing with user {user} at {time}", User, System.DateTime.Now);
-
-			model = null;
-
 			return View(model);
 		}
 	}

@@ -1,7 +1,7 @@
 ﻿using Serilog.Formatting;
 using Serilog.Events;
 using System.IO;
-using Newtonsoft.Json;
+using Sarto.Extensions;
 
 namespace App.UI.Mvc5.Infrastructure
 {
@@ -9,12 +9,7 @@ namespace App.UI.Mvc5.Infrastructure
 	{
 		public void Format(LogEvent logEvent, TextWriter output)
 		{
-			output.WriteLine();
-			output.WriteLine("------------------------------------------------------------------------");
-			output.WriteLine($" => {logEvent.RenderMessage()}");
-			output.WriteLine();
-			output.WriteLine($"Level: {logEvent.Level}");
-			output.WriteLine($"Timestamp: {logEvent.Timestamp}");
+			output.WriteLine($"[{logEvent.Level.ToUpperCaseString()}] [{logEvent.Timestamp}] {logEvent.RenderMessage()}");
 			output.WriteLine();
 
 			foreach (var prop in logEvent.Properties)
@@ -25,8 +20,12 @@ namespace App.UI.Mvc5.Infrastructure
 			if (logEvent.Exception != null)
 			{
 				output.WriteLine();
-				output.WriteLine(logEvent.Exception);
+				output.WriteLine($" - {logEvent.Exception}");
 			}
+
+			output.WriteLine();
+			output.WriteLine("-------------------------------------------------------");
+			output.WriteLine();
 		}
 	}
 }
