@@ -31,6 +31,10 @@ body {
 	display: none
 }
 
+.multiselect-full-width {
+	width: 100% !important;
+}
+
 .marked-for-deletion {
 	opacity: 0.3;
 }

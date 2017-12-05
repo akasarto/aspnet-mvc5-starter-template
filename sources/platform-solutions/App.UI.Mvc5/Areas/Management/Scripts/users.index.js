@@ -2,12 +2,10 @@
 
 	'use strict';
 
-	var tableService = new TableService();
 
-	// Init
 	$(function () {
 
-		var usersTable = tableService.create();
+		
 
 	});
 

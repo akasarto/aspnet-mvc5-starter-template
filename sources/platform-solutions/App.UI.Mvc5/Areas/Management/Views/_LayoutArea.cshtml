@@ -8,10 +8,6 @@
 
 <!-- Sections -->
 
-@*@section submenu {
-	@Html.Partial("Submenu")
-}*@
-
 @section page_styles {
 	@RenderSection("page_styles", required: false)
 }
@@ -26,4 +22,16 @@
 
 <!-- Page Contents -->
 
-@RenderBody()
+<div class="container">
+
+	<h3 class="mt-5 text-center text-uppercase">@GetLocalizedString("Management_MenuLabel")</h3>
+
+	<hr class="divider mt-5 mb-3" />
+
+	@Html.Partial("Submenu")
+
+	<hr class="divider mt-3 mb-5" />
+
+	@RenderBody()
+
+</div>

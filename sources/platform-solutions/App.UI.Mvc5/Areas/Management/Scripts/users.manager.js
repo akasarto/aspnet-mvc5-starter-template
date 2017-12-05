@@ -12,13 +12,11 @@
 
 		//
 		$('#userRealms').multiSelect({
-			dblClick: true,
 			cssClass: 'multiselect-full-width'
 		});
 
 		//
 		$('#userRoles').multiSelect({
-			dblClick: true,
 			cssClass: 'multiselect-full-width'
 		});
 	});

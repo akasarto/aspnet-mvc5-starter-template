@@ -36,7 +36,7 @@ else
 		@if (User.IsInRole(Role.SuperUser))
 		{
 			<li class="nav-item">
-				<a href="@Url.Action("Index", "Users", new { area = AppAreas.GetAreaName(Area.Management) })" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="@GetLocalizedString("Management_MenuLabel")">
+				<a href="@Url.Action("Index", "_Landing", new { area = AppAreas.GetAreaName(Area.Management) })" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="@GetLocalizedString("Management_MenuLabel")">
 					<i class="fa fa-cogs text-info"></i>
 				</a>
 			</li>

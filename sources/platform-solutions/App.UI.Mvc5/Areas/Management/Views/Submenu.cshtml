@@ -1,20 +1,14 @@
 ﻿<!-- Page Contents -->
 
-<nav id="menu" class="nav-main" role="navigation">
-
-	<ul class="nav nav-main">
-		<li class="@Menu.IfActiveItem("management.logs", "nav-active")">
-			<a href="@Url.Action("Index", "Logs", new { area = AppAreas.GetAreaName(Area.Management) })">
-				<i class="fa fa-bug" aria-hidden="true"></i>
-				<span>@GetLocalizedString("Management_Logs_MenuLabel")</span>
-			</a>
-		</li>
-		<li class="@Menu.IfActiveItem("management.users", "nav-active")">
-			<a href="@Url.Action("Index", "Users", new { area = AppAreas.GetAreaName(Area.Management) })">
-				<i class="fa fa-user" aria-hidden="true"></i>
-				<span>@GetLocalizedString("Management_Users_MenuLabel")</span>
-			</a>
-		</li>
-	</ul>
-
-</nav>
+<ul class="nav nav-pills nav-fill">
+	<li class="nav-item">
+		<a href="@Url.Action("Index", "Logs", new { area = AppAreas.GetAreaName(Area.Management) })" class="nav-link @Menu.IfActiveItem("management.logs", "active")">
+			@GetLocalizedString("Management_Logs_MenuLabel")
+		</a>
+	</li>
+	<li class="nav-item">
+		<a href="@Url.Action("Index", "Users", new { area = AppAreas.GetAreaName(Area.Management) })" class="nav-link @Menu.IfActiveItem("management.users", "active")">
+			@GetLocalizedString("Management_Users_MenuLabel")
+		</a>
+	</li>
+</ul>

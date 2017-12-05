@@ -13,11 +13,11 @@
 <!-- Sections -->
 
 @section page_styles{
-	<link href="~/content/vendor/lou-multi-select/css/multi-select.dist.css" rel="stylesheet" />
+	<link href="~/content/vendor/multi-select/css/multi-select.css" rel="stylesheet" />
 }
 
 @section page_scripts{
-	<script src="~/content/vendor/lou-multi-select/js/jquery.multi-select.js"></script>
+	<script src="~/content/vendor/multi-select/js/jquery.multi-select.js"></script>
 }
 
 @section page_scripts_init {
@@ -34,7 +34,7 @@
 
 	@Html.Partial("Form", Model)
 
-	<button type="submit" class="btn btn-primary btn-block btn-lg mt-5" tabindex="6">@GetLocalizedString("Save")</button>
+	<button type="submit" class="btn btn-primary btn-block btn-lg mt-5">@GetLocalizedString("Save")</button>
 
 </form>
 
