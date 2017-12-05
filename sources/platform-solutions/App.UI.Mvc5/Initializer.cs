@@ -20,12 +20,14 @@ using Sarto.Infrastructure.Cloudinary;
 using Sarto.Infrastructure.FileSystem;
 using Sarto.Infrastructure.MailGun;
 using Sarto.Infrastructure.Smtp;
+using Serilog;
 using SimpleInjector;
 using SimpleInjector.Advanced;
 using SimpleInjector.Integration.Web;
 using SimpleInjector.Integration.Web.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Reflection;
@@ -166,6 +168,35 @@ namespace App.UI.Mvc5
 
 			//
 			container.Register<IPasswordHasher, PasswordHasher>();
+
+			//
+			container.RegisterSingleton<ILogger>(() =>
+			{
+				var logger = new LoggerConfiguration();
+
+				var loggerFilePath = Path.Combine(
+					AppDomain.CurrentDomain.BaseDirectory,
+					AppSettings.Logger.StorageFolder.Trim('~').Trim('\\', '/').Replace("/", "\\"),
+					"log_.txt"
+				);
+
+				logger = logger.Enrich.With<SerilogActivityIdEnricher>();
+
+				logger = logger.WriteTo.Async((log) => log.File(
+					new SerilogTextFormatter(),
+					loggerFilePath,
+					rollingInterval: RollingInterval.Minute,
+					shared: true
+				), bufferSize: 100);
+
+				logger = logger.WriteTo.Async((log) => log.MSSqlServer(
+					connectionString,
+					tableName: "Logs",
+					autoCreateSqlTable: true
+				), bufferSize: 100);
+
+				return logger.CreateLogger();
+			});
 
 			//
 			container.Register<AlertsHub>();

@@ -62,6 +62,11 @@ namespace App.UI.Mvc5
 			public static string SupportedUICultures => _provider.Get("globalization.supportedUICultures");
 		}
 
+		public class Logger
+		{
+			public static string StorageFolder => _provider.Get("logger.storageFolder");
+		}
+
 		public class MailGun
 		{
 			public static string ApiKey => _provider.Get("mailGun.ApiKey");

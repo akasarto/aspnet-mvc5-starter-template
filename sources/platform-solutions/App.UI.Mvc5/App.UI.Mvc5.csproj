@@ -109,6 +109,21 @@
     <Reference Include="RestSharp, Version=106.1.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.106.1.0\lib\net452\RestSharp.dll</HintPath>
     </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.6.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Async, Version=1.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Async.1.1.0\lib\net45\Serilog.Sinks.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.4.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.MSSqlServer, Version=5.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.MSSqlServer.5.0.0\lib\net45\Serilog.Sinks.MSSqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.PeriodicBatching.2.1.1\lib\net45\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+    </Reference>
     <Reference Include="SimpleInjector, Version=4.0.12.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.4.0.12\lib\net45\SimpleInjector.dll</HintPath>
     </Reference>
@@ -221,7 +236,7 @@
     <Content Include="Content\vendor\pnotify\pnotify.custom.min.css" />
     <Content Include="Content\vendor\pnotify\pnotify.custom.min.js" />
     <Content Include="Content\website-custom.css" />
-    <Content Include="Controllers\,inf\.readme.txt" />
+    <Content Include="Controllers\.inf\.readme.txt" />
     <Content Include="Favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Humans.txt" />
@@ -367,12 +382,13 @@
     <Compile Include="Areas\Users\Models\Account\AccountVerifyEmailViewModelValidator.cs" />
     <Compile Include="Areas\Users\Models\Profile\ProfileEditViewModel.cs" />
     <Compile Include="Areas\Users\Models\Profile\ProfileEditViewModelValidator.cs" />
-    <Compile Include="Controllers\,inf\Controller.cs" />
+    <Compile Include="Controllers\.inf\Controller.cs" />
     <Compile Include="Controllers\BlobsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Infrastructure\Blobs\BlobUploadResult.cs" />
     <Compile Include="Infrastructure\Cookies\GetCookie.cs" />
     <Compile Include="Infrastructure\Cookies\SetCookie.cs" />
+    <Compile Include="Infrastructure\SerilogActivityIdEnricher.cs" />
     <Compile Include="Infrastructure\DirectRouteProvider.cs" />
     <Compile Include="Infrastructure\Feedback\FeedbackContext.cs" />
     <Compile Include="Infrastructure\Feedback\FeedbackMessage.cs" />
@@ -394,6 +410,7 @@
     <Compile Include="Infrastructure\MenuTracker\TrackMenuItemAttribute.cs" />
     <Compile Include="Infrastructure\Realtime\IRealtimeService.cs" />
     <Compile Include="Infrastructure\Realtime\RealtimeService.cs" />
+    <Compile Include="Infrastructure\SerilogTextFormatter.cs" />
     <Compile Include="Infrastructure\Validation\RequiredCheckboxValidator.cs" />
     <Compile Include="Infrastructure\Validation\ValidationLanguageManager.cs" />
     <Compile Include="Infrastructure\HtmlExtension\RenderLocalizedScriptTag.cs" />

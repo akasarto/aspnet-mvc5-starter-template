@@ -1,5 +1,6 @@
 ﻿using App.UI.Mvc5.Controllers;
 using App.UI.Mvc5.Infrastructure;
+using Serilog;
 using System;
 using System.Diagnostics;
 using System.Net;
@@ -82,10 +83,9 @@ namespace App.UI.Mvc5
 		{
 			var exception = Server.GetLastError();
 			var httpException = exception as HttpException;
+			var loggerInstance = DependencyResolver.Current.GetService<ILogger>();
 
-#warning logger
-			//var _logger = LogManager.GetCurrentClassLogger();
-			//_logger.Log(LogLevel.Fatal, exception, exception.Message);
+			loggerInstance?.Fatal(exception, exception.Message);
 
 			if (Initialized)
 			{
