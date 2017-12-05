@@ -12,14 +12,18 @@
 
 @if (!isAdding)
 {
-	<div class="form-group">
-		<label for="userId" class="sr-only">@GetLocalizedString("Id")</label>
-		<input type="text" readonly class="form-control-plaintext" id="userId" value="@Model.Id">
+	<div class="form-group row">
+		@Html.LabelFor(model => model.Id, new { @class = "col-sm-2 col-form-label" })
+		<div class="col-sm-10">
+			@Html.TextBoxFor(model => model.Id, new { @class = "form-control-plaintext font-weight-bold" })
+		</div>
 	</div>
 
-	<div class="form-group">
-		<label for="userName" class="sr-only">@GetLocalizedString("UserName")</label>
-		<input type="text" readonly class="form-control-plaintext" id="userName" value="@Model.UserName">
+	<div class="form-group row">
+		@Html.LabelFor(model => model.UserName, new { @class = "col-sm-2 col-form-label" })
+		<div class="col-sm-10">
+			@Html.TextBoxFor(model => model.UserName, new { @class = "form-control-plaintext font-weight-bold" })
+		</div>
 	</div>
 }
 
@@ -37,14 +41,18 @@
 }
 else
 {
-	<div class="form-group">
-		<label for="email" class="sr-only">@GetLocalizedString("Email")</label>
-		<input type="text" readonly class="form-control-plaintext" id="email" value="@Model.Email">
+	<div class="form-group row">
+		@Html.LabelFor(model => model.Email, new { @class = "col-sm-2 col-form-label" })
+		<div class="col-sm-10">
+			@Html.TextBoxFor(model => model.Email, new { @class = "form-control-plaintext font-weight-bold" })
+		</div>
 	</div>
 
-	<div class="form-group">
-		<label for="fullName" class="sr-only">@GetLocalizedString("FullName")</label>
-		<input type="text" readonly class="form-control-plaintext" id="fullName" value="@Model.FullName">
+	<div class="form-group row mb-5">
+		@Html.LabelFor(model => model.FullName, new { @class = "col-sm-2 col-form-label" })
+		<div class="col-sm-10">
+			@Html.TextBoxFor(model => model.FullName, new { @class = "form-control-plaintext font-weight-bold" })
+		</div>
 	</div>
 }
 
