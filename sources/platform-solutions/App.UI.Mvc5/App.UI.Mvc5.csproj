@@ -181,6 +181,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\.inf\.readme.txt" />
+    <Content Include="Areas\Features\Scripts\forms-and-validation.js" />
+    <Content Include="Areas\Features\Scripts\realtime.js" />
     <Content Include="Areas\Management\Scripts\logs.index.js" />
     <Content Include="Areas\Management\Scripts\users.index.js" />
     <Content Include="Areas\Management\Scripts\users.manager.js" />
@@ -292,6 +294,11 @@
     <Content Include="Content\vendor\multi-select\multi-select.jquery.json" />
     <Content Include="Content\vendor\multi-select\README.markdown" />
     <Content Include="Content\vendor\multi-select\test\lib\jasmine-1.2.0\MIT.LICENSE" />
+    <Content Include="Areas\Features\Views\FormsAndValidation\Index.cshtml" />
+    <Content Include="Areas\Features\Views\Globalization\Index.cshtml" />
+    <Content Include="Areas\Features\Views\Realtime\Index.cshtml" />
+    <Content Include="Areas\Features\Views\_LayoutArea.cshtml" />
+    <Content Include="Areas\Features\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -350,6 +357,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Features\Controllers\FormsAndValidationController.cs" />
+    <Compile Include="Areas\Features\Controllers\GlobalizationController.cs" />
+    <Compile Include="Areas\Features\Controllers\RealtimeController.cs" />
+    <Compile Include="Areas\Features\Controllers\_LandingController.cs" />
+    <Compile Include="Areas\Features\Controllers\__AreaBaseController.cs" />
+    <Compile Include="Areas\Features\Models\FormsAndValidationViewModel.cs" />
+    <Compile Include="Areas\Features\Models\FormsAndValidationViewModelValidator.cs" />
+    <Compile Include="Areas\Features\Models\SamplesEnum.cs" />
     <Compile Include="Areas\Management\Controllers\LogsController.cs" />
     <Compile Include="Areas\Management\Controllers\UsersController.cs" />
     <Compile Include="Areas\Management\Controllers\_LandingController.cs" />

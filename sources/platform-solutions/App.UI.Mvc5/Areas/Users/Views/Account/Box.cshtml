@@ -36,7 +36,7 @@ else
 		@if (User.IsInRole(Role.SuperUser))
 		{
 			<li class="nav-item">
-				<a href="@Url.Action("Index", "_Landing", new { area = AppAreas.GetAreaName(Area.Management) })" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="@GetLocalizedString("Management_MenuLabel")">
+				<a href="@Url.Action("Index", "_Landing", new { area = AppAreas.GetAreaName(Area.Management) })" class="nav-link @Menu.IfActiveItem("management.area", "active", string.Empty)" data-toggle="tooltip" data-placement="bottom" title="@GetLocalizedString("Management_MenuLabel")">
 					<i class="fa fa-cogs text-info"></i>
 				</a>
 			</li>
@@ -46,7 +46,7 @@ else
 	<ul class="navbar-nav">
 		<li class="nav-item user-picture dropdown">
 
-			<a class="nav-link dropdown-toggle" id="userMemuItems" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<a class="nav-link dropdown-toggle @Menu.IfActiveItem("users.area", "active", string.Empty)" id="userMemuItems" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<img src="@Url.BlobThumbnail(User.PictureBlobName, User.UserName, width: 35, height: 35)" class="img-fluid rounded-circle">
 			</a>
 

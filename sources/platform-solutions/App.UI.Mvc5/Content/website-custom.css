@@ -24,6 +24,10 @@ body {
 	bottom: 0;
 }
 
+.nav-link.active {
+	font-weight: bold;
+}
+
 /* FORMS & VALIDATION
 *************************/
 

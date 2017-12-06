@@ -18,14 +18,17 @@
 			<!--Top Menu-->
 
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="@Url.Action("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) })">Home <span class="sr-only">(@GetLocalizedString("CurrentLabel").ToLower())</span></a>
+				<li class="nav-item">
+					<a class="nav-link @Menu.IfActiveItem("root.landing", "active", string.Empty)" href="@Url.Action("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) })">Home <span class="sr-only">(@GetLocalizedString("CurrentLabel").ToLower())</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Link</a>
+					<a class="nav-link @Menu.IfActiveItem("features.realtime", "active")" href="@Url.Action("Index", "Realtime", new { area = AppAreas.GetAreaName(Area.Features) })">Realtime</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link disabled" href="#">Disabled</a>
+					<a class="nav-link @Menu.IfActiveItem("features.globalization", "active")" href="@Url.Action("Index", "Globalization", new { area = AppAreas.GetAreaName(Area.Features) })">Globalization</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link @Menu.IfActiveItem("features.formsandvalidation", "active")" href="@Url.Action("Index", "FormsAndValidation", new { area = AppAreas.GetAreaName(Area.Features) })">Forms &amp; Validation</a>
 				</li>
 			</ul>
 

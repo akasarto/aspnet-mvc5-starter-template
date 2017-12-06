@@ -253,7 +253,7 @@
     <value>Form Data</value>
   </data>
   <data name="DefaultSectionFormLeadInfo" xml:space="preserve">
-    <value>Set the required entry data to proceed.</value>
+    <value>Set the required form data to proceed.</value>
   </data>
   <data name="DefaultSectionListLabel" xml:space="preserve">
     <value>List</value>

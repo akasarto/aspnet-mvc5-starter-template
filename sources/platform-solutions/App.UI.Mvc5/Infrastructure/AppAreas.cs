@@ -3,6 +3,7 @@
 	public enum Area : int
 	{
 		Root,
+		Features,
 		Management,
 		Users
 	}

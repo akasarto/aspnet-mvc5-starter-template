@@ -646,7 +646,7 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set the required entry data to proceed..
+        ///   Looks up a localized string similar to Set the required form data to proceed..
         /// </summary>
         public static string DefaultSectionFormLeadInfo {
             get {

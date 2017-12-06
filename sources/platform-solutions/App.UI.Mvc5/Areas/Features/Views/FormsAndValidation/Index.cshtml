@@ -1,0 +1,38 @@
+﻿@using App.UI.Mvc5.Areas.Features.Models
+
+@model FormsAndValidationViewModel
+
+<!-- Meta -->
+
+@{
+	Model.PageTitle = "Forms & Validation";
+
+	var datePickerFormat = User.Culture.DateTimeFormat.ShortDatePattern.ToLowerCaseString();
+	var timePickerMeridiem = !User.Culture.Is24HoursClock();
+}
+
+<!-- Sections -->
+
+@section page_styles{
+	<link href="~/content/vendor/multi-select/css/multi-select.css" rel="stylesheet" />
+}
+
+@section page_scripts{
+	<script src="~/content/vendor/multi-select/js/jquery.multi-select.js"></script>
+}
+
+@section page_scripts_init {
+	<script src="~/areas/features/scripts/forms-and-validation.js"></script>
+}
+
+<!-- Page Contents -->
+
+<div class="jumbotron bg-transparent">
+	<div class="container">
+		<h1 class="display-3">@Model.PageTitle</h1>
+		<p>Asdasd ajsdkla jsdlajskl dajsdlkajs lkajsdlajsd laksjdal sjalskdj açlsdj açls.</p>
+	</div>
+</div>
+
+<hr class="divider" />
+
