@@ -187,13 +187,13 @@ namespace App.UI.Mvc5
 					loggerFilePath,
 					rollingInterval: RollingInterval.Day,
 					shared: true
-				), bufferSize: 100);
+				));
 
 				logger = logger.WriteTo.Async((log) => log.MSSqlServer(
 					connectionString,
 					tableName: "Logs",
 					autoCreateSqlTable: true
-				), bufferSize: 100);
+				));
 
 				return logger.CreateLogger();
 			});

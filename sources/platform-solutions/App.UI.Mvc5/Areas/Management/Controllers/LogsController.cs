@@ -1,11 +1,12 @@
-﻿using App.UI.Mvc5.Areas.Management.Models;
-using Omu.ValueInjecter;
+﻿using App.Core.Entities;
+using App.Core.Repositories;
+using App.UI.Mvc5.Areas.Management.Models;
 using App.UI.Mvc5.Infrastructure;
+using Omu.ValueInjecter;
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using App.Core.Repositories;
-using App.Core.Entities;
+using System.Xml;
 
 namespace App.UI.Mvc5.Areas.Management.Controllers
 {
@@ -40,6 +41,23 @@ namespace App.UI.Mvc5.Areas.Management.Controllers
 			if (entity != null)
 			{
 				model.InjectFrom(entity);
+
+				if (!string.IsNullOrWhiteSpace(entity.Properties))
+				{
+					var xDoc = new XmlDocument();
+
+					xDoc.LoadXml(entity.Properties);
+
+					var nodes = xDoc.FirstChild.SelectNodes("property");
+
+					foreach (XmlNode node in nodes)
+					{
+						model.Properties.Add(
+							node.Attributes["key"].Value,
+							node.InnerText
+						);
+					}
+				}
 			}
 
 			return model;

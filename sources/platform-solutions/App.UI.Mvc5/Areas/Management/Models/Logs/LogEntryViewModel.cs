@@ -1,5 +1,6 @@
 ﻿using Sarto.Extensions;
 using System;
+using System.Collections.Generic;
 
 namespace App.UI.Mvc5.Areas.Management.Models
 {
@@ -7,48 +8,48 @@ namespace App.UI.Mvc5.Areas.Management.Models
 	{
 		public long Id { get; set; }
 
-		public string Type { get; set; }
+		public string Level { get; set; }
 
 		public string Message { get; set; }
 
-		public string Properties { get; set; }
+		public string Exception { get; set; }
 
-		public DateTime UTCCreation { get; set; }
+		public Dictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
 
-		public Guid ActivityId { get; set; }
+		public DateTime TimeStamp { get; set; }
 
 		public string Icon
 		{
 			get
 			{
-				var type = Type.ToLowerCaseString();
+				var type = Level.ToLowerCaseString();
 
 				if ("fatal".Equals(type))
 				{
-					return "fa fa-ban fa-fw text-danger";
+					return "fa fa-ban text-danger";
 				}
 
 				if ("error".Equals(type))
 				{
-					return "fa fa-times-circle fa-fw text-danger";
+					return "fa fa-times-circletext-danger";
 				}
 
 				if ("warn".Equals(type))
 				{
-					return "fa fa-warning fa-fw text-warning";
+					return "fa fa-warning text-warning";
 				}
 
-				if ("info".Equals(type))
+				if ("information".Equals(type))
 				{
-					return "fa fa-info fa-fw text-info";
+					return "fa fa-info text-info";
 				}
 
 				if ("debug".Equals(type))
 				{
-					return "fa fa-bug fa-fw text-muted";
+					return "fa fa-bug text-muted";
 				}
 
-				return "fa fa-paw fa-fw text-muted";
+				return "fa fa-paw text-muted";
 			}
 		}
 	}

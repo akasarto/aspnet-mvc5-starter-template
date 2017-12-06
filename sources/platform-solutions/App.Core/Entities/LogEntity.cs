@@ -13,14 +13,19 @@ namespace App.Core.Entities
 		public long Id { get; set; }
 
 		/// <summary>
-		/// Gets or sets the type.
+		/// Gets or sets the level type.
 		/// </summary>
-		public string Type { get; set; }
+		public string Level { get; set; }
 
 		/// <summary>
 		/// Gets or sets the message.
 		/// </summary>
 		public string Message { get; set; }
+
+		/// <summary>
+		/// Gets or sets the exception.
+		/// </summary>
+		public string Exception { get; set; }
 
 		/// <summary>
 		/// Gets or sets the properties.
@@ -30,7 +35,7 @@ namespace App.Core.Entities
 		/// <summary>
 		/// Gets or sets the creation date.
 		/// </summary>
-		public DateTime UTCCreation { get; set; }
+		public DateTime TimeStamp { get; set; }
 
 		/// <summary>
 		/// Gets or sets the associated activity id.

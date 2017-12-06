@@ -288,7 +288,6 @@
     <Content Include="Areas\Management\Views\Users\UserCreatedMessage.cshtml" />
     <Content Include="Areas\Management\Views\_LayoutArea.cshtml" />
     <Content Include="Areas\Management\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Management\Views\Logs\Entries.cshtml" />
     <Content Include="Content\vendor\multi-select\bower.json" />
     <Content Include="Content\vendor\multi-select\multi-select.jquery.json" />
     <Content Include="Content\vendor\multi-select\README.markdown" />

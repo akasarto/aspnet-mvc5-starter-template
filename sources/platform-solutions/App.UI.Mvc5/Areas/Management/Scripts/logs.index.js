@@ -10,16 +10,13 @@
 			document.location.href = $item.data('url');
 		});
 
-		$(document).on('click', '.modal-dismiss', function (e) {
-			e.preventDefault();
-			$.magnificPopup.close();
-		});
-
 		$('a.log-details').magnificPopup({
 			type: 'inline',
+			closeOnBgClick: true,
+			enableEscapeKey: true,
 			closeBtnInside: true,
-			preloader: false,
-			modal: true
+			showCloseBtn: true,
+			preloader: false
 		});
 
 	});

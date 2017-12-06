@@ -961,6 +961,33 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Level.
+        /// </summary>
+        public static string Level {
+            get {
+                return ResourceManager.GetString("Level", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entries.
+        /// </summary>
+        public static string LogEntriesLabel {
+            get {
+                return ResourceManager.GetString("LogEntriesLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latest captured log entries..
+        /// </summary>
+        public static string LogEntriesLabelLeadInfo {
+            get {
+                return ResourceManager.GetString("LogEntriesLabelLeadInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All.
         /// </summary>
         public static string Logs_AllLabel {
@@ -1380,6 +1407,15 @@ namespace App.UI.Mvc5 {
         public static string TermsAcceptance {
             get {
                 return ResourceManager.GetString("TermsAcceptance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time Stamp.
+        /// </summary>
+        public static string TimeStamp {
+            get {
+                return ResourceManager.GetString("TimeStamp", resourceCulture);
             }
         }
         

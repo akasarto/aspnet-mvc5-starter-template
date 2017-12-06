@@ -714,4 +714,16 @@
   <data name="Auth_LockedTitle" xml:space="preserve">
     <value>Account Locked</value>
   </data>
+  <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="LogEntriesLabel" xml:space="preserve">
+    <value>Entries</value>
+  </data>
+  <data name="LogEntriesLabelLeadInfo" xml:space="preserve">
+    <value>Latest captured log entries.</value>
+  </data>
+  <data name="TimeStamp" xml:space="preserve">
+    <value>Time Stamp</value>
+  </data>
 </root>
