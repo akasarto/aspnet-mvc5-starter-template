@@ -5,9 +5,10 @@
 	// Init
 	$(function () {
 
-		$('#logsRefresh').bind('click', function () {
-			var $item = $(this);
-			document.location.href = $item.data('url');
+		$('#logsRefresh').on('click', function (e) {
+			e.preventDefault();
+			var $this = $(this);
+			document.location.href = $this.attr('href');
 		});
 
 		$('a.log-details').magnificPopup({

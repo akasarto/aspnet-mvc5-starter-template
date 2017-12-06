@@ -27,7 +27,7 @@
 	</div>
 
 	<div class="col text-right">
-		<a id="logsRefresh" data-url="@Url.Action("Index", "Logs")" class="btn btn-outline-dark">
+		<a id="logsRefresh" href="@Url.Action("Index", "Logs")" class="btn btn-outline-dark">
 			<i class="fa fa-refresh mr-1"></i>@GetLocalizedString("RefreshLabel")
 		</a>
 	</div>
@@ -44,47 +44,56 @@
 		</tr>
 	</thead>
 	<tbody>
-
-	<tbody>
-		@foreach (var entry in Model.Entries)
+		@if (Model.Entries.Count > 0)
 		{
-			<tr>
-				<td class="text-nowrap">
-					<i class="@entry.Icon align-middle"></i>
-					<span class="align-middle">@entry.Level</span>
-				</td>
-				<td class="text-nowrap">
-					@entry.TimeStamp.ToTimeZone(User.TimeZone).ToString(logDatePattern)
-				</td>
-				<td>
-					@entry.Message
-				</td>
-				<td>
-					<a href="#log-details-@entry.Id" class="btn btn-link log-details text-lowercase text-right">@GetLocalizedString("Details")</a>
-					<div id="log-details-@entry.Id" class="mfp-hide popup-wrapper">
-						<h4>
-							<i class="@entry.Icon" style="font-size:inherit;"></i>
-							<span>@entry.Level</span>
-						</h4>
-						<p class="lead mt-3">@entry.Message</p>
-						<div class="mt-3">
-							<table class="table table-bordered">
-								<tbody>
-									@foreach (var prop in entry.Properties)
-									{
-										<tr>
-											<td>@prop.Key</td>
-											<td>@prop.Value</td>
-										</tr>
-									}
-								</tbody>
-							</table>
+			foreach (var entry in Model.Entries)
+			{
+				<tr>
+					<td class="text-nowrap">
+						<i class="@entry.Icon align-middle"></i>
+						<span class="align-middle">@entry.Level</span>
+					</td>
+					<td class="text-nowrap">
+						@entry.TimeStamp.ToTimeZone(User.TimeZone).ToString(logDatePattern)
+					</td>
+					<td>
+						@entry.Message
+					</td>
+					<td>
+						<a href="#log-details-@entry.Id" class="btn btn-link log-details text-lowercase text-right">@GetLocalizedString("Details")</a>
+						<div id="log-details-@entry.Id" class="mfp-hide popup-wrapper">
+							<h4>
+								<i class="@entry.Icon" style="font-size:inherit;"></i>
+								<span>@entry.Level</span>
+							</h4>
+							<p class="lead mt-3">@entry.Message</p>
+							<div class="mt-3">
+								<table class="table table-bordered">
+									<tbody>
+										@foreach (var prop in entry.Properties)
+										{
+											<tr>
+												<td>@prop.Key</td>
+												<td>@prop.Value</td>
+											</tr>
+										}
+									</tbody>
+								</table>
+							</div>
+							@if (!string.IsNullOrWhiteSpace(entry.Exception))
+							{
+								<p class="mt-3">@Html.Raw(Html.Encode(entry.Exception).Replace(Environment.NewLine, @"<br/>"))</p>
+							}
 						</div>
-						@if (!string.IsNullOrWhiteSpace(entry.Exception))
-						{
-							<p class="mt-3">@Html.Raw(Html.Encode(entry.Exception).Replace(Environment.NewLine, @"<br/>"))</p>
-						}
-					</div>
+					</td>
+				</tr>
+			}
+		}
+		else
+		{
+			<tr class="disabled bg-transparent">
+				<td colspan="4">
+					<p class="text-muted m-5 p-5 text-center">@GetLocalizedString("EmptyListInfo")</p>
 				</td>
 			</tr>
 		}
