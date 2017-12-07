@@ -295,7 +295,6 @@
     <Content Include="Content\vendor\multi-select\README.markdown" />
     <Content Include="Content\vendor\multi-select\test\lib\jasmine-1.2.0\MIT.LICENSE" />
     <Content Include="Areas\Features\Views\FormsAndValidation\Index.cshtml" />
-    <Content Include="Areas\Features\Views\Globalization\Index.cshtml" />
     <Content Include="Areas\Features\Views\Realtime\Index.cshtml" />
     <Content Include="Areas\Features\Views\_LayoutArea.cshtml" />
     <Content Include="Areas\Features\Views\_ViewStart.cshtml" />
@@ -358,7 +357,6 @@
       <DependentUpon>AdminResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Features\Controllers\FormsAndValidationController.cs" />
-    <Compile Include="Areas\Features\Controllers\GlobalizationController.cs" />
     <Compile Include="Areas\Features\Controllers\RealtimeController.cs" />
     <Compile Include="Areas\Features\Controllers\_LandingController.cs" />
     <Compile Include="Areas\Features\Controllers\__AreaBaseController.cs" />

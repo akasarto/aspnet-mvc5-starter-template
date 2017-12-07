@@ -2,13 +2,15 @@
 
 	'use strict';
 
-	var validationService = new ValidationService();
+	var sampleForm1Validation = new ValidationService({ formId: '#sampleForm1Validation' });
+	//var sampleForm2Validation = new ValidationService({ formId: '#sampleForm2Validation' });
 
 	// Init
 	$(function () {
 
 		//
-		validationService.init();
+		sampleForm1Validation.init();
+		//sampleForm2Validation.init(); => Not initialize the service to disable client validation
 
 		//
 		$('.date-picker').each(function (item) {

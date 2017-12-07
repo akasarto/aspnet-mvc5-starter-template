@@ -2,7 +2,6 @@
 using App.UI.Mvc5.Infrastructure;
 using System.Web.Mvc;
 using System;
-using Sarto.Extensions;
 
 namespace App.UI.Mvc5.Areas.Features.Controllers
 {

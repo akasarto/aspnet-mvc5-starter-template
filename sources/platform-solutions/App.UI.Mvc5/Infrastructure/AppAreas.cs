@@ -5,7 +5,8 @@
 		Root,
 		Features,
 		Management,
-		Users
+		Users,
+		Docs
 	}
 
 	public class AppAreas

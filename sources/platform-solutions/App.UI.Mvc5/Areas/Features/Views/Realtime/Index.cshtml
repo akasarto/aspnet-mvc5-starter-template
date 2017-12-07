@@ -24,36 +24,26 @@
 <hr class="divider" />
 
 <div class="container">
+	<form>
+		<div class="row">
 
-	<div class="row">
-
-		<div class="col">
-
-			<form>
-
+			<div class="col-lg">
 				@Html.AntiForgeryToken()
-
 				<div class="form-group">
 					<label>Payload</label>
 					<textarea name="payload" id="payload" class="form-control" rows="5"></textarea>
 					<small class="form-text text-muted">* Try opening other windows in different browsers and devices to check this out.</small>
 				</div>
-
 				<a id="realtimeSampleData" class="btn btn-outline-primary pull-right" href="@Url.Action("BroadcastData", "Realtime")">Broadcast</a>
+			</div>
 
-			</form>
-
-		</div>
-
-		<div class="col">
-
-			<div class="form-group">
-				<label>Received Data</label>
-				<div id="receivedData" class="bg-light" style="white-space: pre-wrap;min-height:300px;"></div>
+			<div class="col-lg">
+				<div class="form-group">
+					<label>Received Data</label>
+					<div id="receivedData" class="bg-light" style="white-space: pre-wrap;min-height:300px;"></div>
+				</div>
 			</div>
 
 		</div>
-
-	</div>
-
+	</form>
 </div>

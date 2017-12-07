@@ -1,23 +1,16 @@
-﻿using App.UI.Mvc5.Infrastructure;
-using System.Web.Mvc;
-using App.UI.Mvc5.Areas.Features.Models;
+﻿using App.UI.Mvc5.Areas.Features.Models;
+using App.UI.Mvc5.Infrastructure;
 using Omu.ValueInjecter;
 using System;
 using System.Linq;
+using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Areas.Features.Controllers
 {
-	[TrackMenuItem("features.formsandvalidation")]
 	[RoutePrefix("forms-and-validation")]
+	[TrackMenuItem("features.formsandvalidation")]
 	public partial class FormsAndValidationController : __AreaBaseController
 	{
-		/// <summary>
-		/// Constructor method.
-		/// </summary>
-		public FormsAndValidationController()
-		{
-		}
-
 		[Route(Name = "FormsAndValidationIndexGet")]
 		public ActionResult Index()
 		{

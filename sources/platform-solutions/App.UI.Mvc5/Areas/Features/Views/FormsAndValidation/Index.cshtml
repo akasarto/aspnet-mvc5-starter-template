@@ -30,9 +30,116 @@
 <div class="jumbotron bg-transparent">
 	<div class="container">
 		<h1 class="display-3">@Model.PageTitle</h1>
-		<p>Asdasd ajsdkla jsdlajskl dajsdlkajs lkajsdlajsd laksjdal sjalskdj açlsdj açls.</p>
+		<p>A set with the most commonly used input fields and available validation options.</p>
 	</div>
 </div>
 
 <hr class="divider" />
 
+<div class="container">
+
+	<div class="card mt-5">
+		<div class="card-header">
+			<h4 class="mt-2">Client and server validation.</h4>
+			<p class="lead">Although validation will occur first in client side, it will be validated in the server side as well.</p>
+		</div>
+		<div class="card-body">
+
+			<div class="container">
+				<form id="sampleForm1Validation" method="post" action="@Url.Action("SampleForm1", "FormsAndValidation", new { area = AppAreas.GetAreaName(Area.Features) })" enctype="multipart/form-data">
+
+					@Html.AntiForgeryToken()
+					@Html.ValidationSummary(VisualizationMode.Alert)
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.StandadUpload)
+						<div class="row">
+							<div class="col-lg-6">
+								<input type="file" name="@Html.NameFor(model => model.StandadUpload)" />
+							</div>
+							<div class="col col-lg-6">
+								<label class="radio-inline mr-3">
+									<input type="radio" name="uploadValidate" id="uploadValidateAny" value="any" checked="checked"> Accept any file
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="uploadValidate" id="uploadValidateImage" value="image" @(Model.UploadValidate == "image" ? "checked=checked" : string.Empty)> Accept only images
+								</label>
+							</div>
+						</div>
+						@if (Model.StandadUpload != null)
+						{
+							<small class="form-text text-muted">The uploaded file name is <strong>@Model.StandadUpload.FileName</strong> with type <strong>@Model.StandadUpload.ContentType</strong> and length of <strong>@Html.ToByteSizeLabel(Model.StandadUpload.ContentLength)</strong>.</small>
+							Model.StandadUpload = null;
+						}
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.RequiredText)
+						@Html.TextBoxFor(model => model.RequiredText, new { @class = "form-control" })
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.RequiredEmail)
+						@Html.TextBoxFor(model => model.RequiredEmail, new { @class = "form-control" })
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.Date)
+						@Html.TextBoxFor(model => model.Date, "{0:d}", new { @class = "form-control date-picker", @data_format = datePickerFormat })
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.Time)
+						@Html.TextBoxFor(model => model.Time, "{0:t}", new { @class = "form-control time-picker", @data_meridiem = timePickerMeridiem.ToLowerCaseString() })
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.SingleRequiredEnumValue)
+						@Html.EnumDropDownListFor(model => model.SingleRequiredEnumValue, new { @class = "form-control" })
+					</div>
+
+					<div class="form-group">
+						<label>
+							@*@Html.DisplayNameFor(model => model.SingleOptionalEnumValue)*@
+							<!-- Custom text can be used as well. instead of extracting from the property attributes. -->
+							Custom Label for Optional Enum Dropdown.
+						</label>
+						@Html.EnumDropDownListFor(model => model.SingleOptionalEnumValue, new { @class = "form-control" })
+					</div>
+
+					<div class="form-group">
+						@Html.LabelFor(model => model.SelectedSingle)
+						@Html.DropDownListFor(model => model.SelectedSingle, Model.SampleOptionsSingle, "Select...", new { @class = "form-control" })
+					</div>
+
+					<div class="form-group">
+						<label>
+							@Html.DisplayNameFor(model => model.SelectedMulti) <span class="text-danger">*</span>
+						</label>
+						@Html.ListBoxFor(model => model.SelectedMulti, Model.SampleOptionsMulti, new { @class = "form-control", @id = "sampleMulti" })
+					</div>
+
+					@*<div class="form-row mt-3 mb-3">
+							<div class="form-group">
+								<label>
+									Custom Ajax Uploads
+								</label>
+								<div class="col">
+									@{
+						var editProfileUrl = Url.Action("Edit", "Profile", new { area = AppAreas.GetAreaName(Area.Users) });
+						var scheduleUrl = Url.Action("EventsAdd", "Schedule", new { area = AppAreas.GetAreaName(Area.Users) });
+									}
+									<p class="form-control-static">Custom implementations can be seen in the <a href="@editProfileUrl" target="_blank">edit profile</a> and <a href="@scheduleUrl" target="_blank">schedule events</a> forms.</p>
+								</div>
+							</div>
+						</div>*@
+
+					<input type="submit" class="btn btn-primary pull-right" value="Submit" />
+
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+</div>
