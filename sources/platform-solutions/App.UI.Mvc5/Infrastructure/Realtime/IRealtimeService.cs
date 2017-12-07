@@ -2,8 +2,6 @@
 {
 	public interface IRealtimeService
 	{
-		void NotifyAlertCreated(int senderUserId, object model);
-
-		void NotifyAlertRead(int senderUserId, object model);
+		void Broadcast(int senderUserId, object payload);
 	}
 }

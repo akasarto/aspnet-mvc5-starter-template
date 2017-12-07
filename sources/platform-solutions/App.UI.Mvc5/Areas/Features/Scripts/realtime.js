@@ -2,11 +2,28 @@
 
 	'use strict';
 
-	// Init
+	//
+	var $databus = $.connection.databus;
+
+	$databus.client.dataReceived = function (payload) {
+
+		var existingData = $('#receivedData').text();
+
+		if (existingData) {
+			existingData += '\n';
+		}
+
+		$('#receivedData').text(existingData + payload);
+
+	};
+
+	$.connection.hub.start().done(function () {
+	});
+
 	$(function () {
 
 		//
-		$('#realtimeSampleAlert').on('click', function (e) {
+		$('#realtimeSampleData').on('click', function (e) {
 
 			e.preventDefault();
 			e.stopPropagation();
@@ -14,8 +31,11 @@
 			var url = $(this).attr('href');
 
 			$.post(url, {
-				__RequestVerificationToken: $('input[name=__RequestVerificationToken]').val()
+				__RequestVerificationToken: $('input[name=__RequestVerificationToken]').val(),
+				payload: $('#payload').val()
 			});
+
+			$('#payload').val('');
 
 		});
 

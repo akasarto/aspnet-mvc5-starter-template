@@ -431,7 +431,7 @@
     <Compile Include="Infrastructure\HtmlExtension\ToByteSizeLabel.cs" />
     <Compile Include="Infrastructure\HtmlExtension\WithRawHtmlOutput.cs" />
     <Compile Include="Infrastructure\HtmlExtension\WithHtmlLineBreaks.cs" />
-    <Compile Include="Infrastructure\Realtime\Hubs\AlertsHub.cs" />
+    <Compile Include="Infrastructure\Realtime\Hubs\DatabusHub.cs" />
     <Compile Include="Infrastructure\Realtime\Configs\HubActivator.cs" />
     <Compile Include="Infrastructure\Realtime\Configs\SignalRCamelCaseJsonResolver.cs" />
     <Compile Include="Infrastructure\Realtime\Configs\UserIdProvider.cs" />

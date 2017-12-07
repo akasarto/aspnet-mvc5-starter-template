@@ -28,24 +28,19 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 			return View(model);
 		}
 
-		//[HttpPost]
-		//[ValidateAntiForgeryToken]
-		//[Route("create-alert", Name = "RealtimeSamplePost")]
-		//public ActionResult CreateAlert()
-		//{
-		//	var alertModel = new AlertViewModel()
-		//	{
-		//		ActionLink = "#",
-		//		Message = "Sample Alert",
-		//		Type = Core.Entities.AlertType.Info,
-		//		UserTimeZoneCreationDate = DateTime.UtcNow.ToTimeZone(User.TimeZone)
-		//	};
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		[Route("broadcast-data", Name = "RealtimeBroadcastDataPost")]
+		public ActionResult BroadcastData(string payload)
+		{
+			if (string.IsNullOrWhiteSpace(payload))
+			{
+				return Json(new { success = false });
+			}
 
-		//	alertModel.UserIds.Add(User.Id);
+			_realtimeService.Broadcast(User.Id, payload);
 
-		//	_realtimeService.NotifyAlertCreated(User.Id, alertModel);
-
-		//	return Json(new { success = true });
-		//}
+			return Json(new { success = true });
+		}
 	}
 }

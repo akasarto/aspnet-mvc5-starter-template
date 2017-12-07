@@ -3,8 +3,8 @@ using Microsoft.AspNet.SignalR.Hubs;
 
 namespace App.UI.Mvc5.Infrastructure
 {
-	[HubName("alerts")]
-	public class AlertsHub : Hub
+	[HubName("databus")]
+	public class DatabusHub : Hub
 	{
 		public void Hello()
 		{

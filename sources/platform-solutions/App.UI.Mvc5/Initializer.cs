@@ -199,7 +199,7 @@ namespace App.UI.Mvc5
 			});
 
 			//
-			container.Register<AlertsHub>();
+			container.Register<DatabusHub>();
 
 			//
 			container.Verify();

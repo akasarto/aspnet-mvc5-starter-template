@@ -17,8 +17,43 @@
 <div class="jumbotron bg-transparent">
 	<div class="container">
 		<h1 class="display-3">@Model.PageTitle</h1>
-		<p>Asdasd ajsdkla jsdlajskl dajsdlkajs lkajsdlajsd laksjdal sjalskdj açlsdj açls.</p>
+		<p>Integrated SignalR databus for realtime data processing.</p>
 	</div>
 </div>
 
 <hr class="divider" />
+
+<div class="container">
+
+	<div class="row">
+
+		<div class="col">
+
+			<form>
+
+				@Html.AntiForgeryToken()
+
+				<div class="form-group">
+					<label>Payload</label>
+					<textarea name="payload" id="payload" class="form-control" rows="5"></textarea>
+					<small class="form-text text-muted">* Try opening other windows in different browsers and devices to check this out.</small>
+				</div>
+
+				<a id="realtimeSampleData" class="btn btn-outline-primary pull-right" href="@Url.Action("BroadcastData", "Realtime")">Broadcast</a>
+
+			</form>
+
+		</div>
+
+		<div class="col">
+
+			<div class="form-group">
+				<label>Received Data</label>
+				<div id="receivedData" class="bg-light" style="white-space: pre-wrap;min-height:300px;"></div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

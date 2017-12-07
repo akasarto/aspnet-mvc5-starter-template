@@ -4,30 +4,19 @@ namespace App.UI.Mvc5.Infrastructure
 {
 	public class RealtimeService : IRealtimeService
 	{
-		private IHubContext _alerts = null;
+		private IHubContext _databus = null;
 
 		/// <summary>
 		/// Constructor method.
 		/// </summary>
 		public RealtimeService()
 		{
-			_alerts = GlobalHost.ConnectionManager.GetHubContext("alerts");
+			_databus = GlobalHost.ConnectionManager.GetHubContext("databus");
 		}
 
-#warning review
-
-		public void NotifyAlertCreated(int senderUserId, object model)
+		public void Broadcast(int senderUserId, object payload)
 		{
-			//var alertUsers = model.UserIds.Select(u => u.ToString()).ToList();
-
-			//_alerts.Clients.Users(alertUsers).alertCreated(model);
-		}
-
-		public void NotifyAlertRead(int senderUserId, object model)
-		{
-			//var alertUsers = model.UserIds.Select(u => u.ToString()).ToList();
-
-			//_alerts.Clients.Users(alertUsers).alertRead(model);
+			_databus.Clients.All.dataReceived(payload);
 		}
 	}
 }
