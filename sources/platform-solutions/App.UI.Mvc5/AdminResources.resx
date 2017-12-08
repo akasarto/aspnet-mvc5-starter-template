@@ -120,33 +120,6 @@
   <data name="AddNew" xml:space="preserve">
     <value>Add New</value>
   </data>
-  <data name="Alerts_AddTitle" xml:space="preserve">
-    <value>Add Alert</value>
-  </data>
-  <data name="Alerts_BoxTitle" xml:space="preserve">
-    <value>Alerts</value>
-  </data>
-  <data name="Alerts_DetailsTitle" xml:space="preserve">
-    <value>Alert Details</value>
-  </data>
-  <data name="Alerts_EditTitle" xml:space="preserve">
-    <value>Edit Alert</value>
-  </data>
-  <data name="Alerts_EmailVerificationAlertMessage" xml:space="preserve">
-    <value>Email verification required.</value>
-  </data>
-  <data name="Alerts_LoadUnreadErrorMessage" xml:space="preserve">
-    <value>Unable to load unread alerts summary.</value>
-  </data>
-  <data name="Alerts_MarkAsReadLabel" xml:space="preserve">
-    <value>Mark as Read</value>
-  </data>
-  <data name="Alerts_Title" xml:space="preserve">
-    <value>Alerts</value>
-  </data>
-  <data name="Alerts_UnreadLabel" xml:space="preserve">
-    <value>Not read yet</value>
-  </data>
   <data name="Auth_InvalidCredentialsMessage" xml:space="preserve">
     <value>Invalid credentials.</value>
   </data>
@@ -411,21 +384,6 @@
   <data name="ScreenAutoLockMinutes" xml:space="preserve">
     <value>Lock Screen</value>
   </data>
-  <data name="Search_AllLabel" xml:space="preserve">
-    <value>All</value>
-  </data>
-  <data name="Search_MediaLabel" xml:space="preserve">
-    <value>Media</value>
-  </data>
-  <data name="Search_PlaceholderLabel" xml:space="preserve">
-    <value>search...</value>
-  </data>
-  <data name="Search_ResultsTitle" xml:space="preserve">
-    <value>Search Results</value>
-  </data>
-  <data name="Search_SearchLabel" xml:space="preserve">
-    <value>Search</value>
-  </data>
   <data name="Tasks_BoxTitle" xml:space="preserve">
     <value>Tasks</value>
   </data>
@@ -468,32 +426,11 @@
   <data name="Users_InvalidPasswordMessage" xml:space="preserve">
     <value>Invalid password.</value>
   </data>
-  <data name="Users_LockScreenLinkLabel" xml:space="preserve">
-    <value>Lock Screen</value>
-  </data>
-  <data name="Users_LockScreenSettingsAutoLabel" xml:space="preserve">
-    <value>Auto lock:</value>
-  </data>
-  <data name="Users_LockScreenSettingsAutoValudeDisabled" xml:space="preserve">
-    <value>Disabled</value>
-  </data>
-  <data name="Users_LockScreenSettingsAutoValueTemplate" xml:space="preserve">
-    <value>After {interval} minutes.</value>
-  </data>
   <data name="Users_LogOffLinkLabel" xml:space="preserve">
     <value>Log Off</value>
   </data>
-  <data name="Users_ScreenLockedTitle" xml:space="preserve">
-    <value>Screen Locked</value>
-  </data>
   <data name="Users_SelectPictureLabel" xml:space="preserve">
     <value>Select Picture</value>
-  </data>
-  <data name="Users_UnlockLabel" xml:space="preserve">
-    <value>Unlock</value>
-  </data>
-  <data name="Users_UnlockScreenCalloutTemplate" xml:space="preserve">
-    <value>Not {0}?</value>
   </data>
   <data name="Users_VerifyEmailLabel" xml:space="preserve">
     <value>Email Verification</value>
@@ -535,16 +472,10 @@
     <value>View All</value>
   </data>
   <data name="_App_Copyright" xml:space="preserve">
-    <value>&amp;copy; 2017 Thiago A. Schneider.</value>
+    <value>&amp;copy; 2017 Sarto Research</value>
   </data>
   <data name="_App_Name" xml:space="preserve">
     <value>Skeleton</value>
-  </data>
-  <data name="_App_NavigationLabel" xml:space="preserve">
-    <value>Navigation</value>
-  </data>
-  <data name="_App_ToggleSidebarLabel" xml:space="preserve">
-    <value>Toggle Sidebar</value>
   </data>
   <data name="_App_Welcome" xml:space="preserve">
     <value>Welcome</value>
@@ -600,12 +531,6 @@
   <data name="Download" xml:space="preserve">
     <value>Download</value>
   </data>
-  <data name="Users_MyScheduleLinkLabel" xml:space="preserve">
-    <value>My Schedule</value>
-  </data>
-  <data name="Users_ScheduleTitle" xml:space="preserve">
-    <value>User Schedule</value>
-  </data>
   <data name="EndDateTime" xml:space="preserve">
     <value>End Date &amp; Time</value>
   </data>
@@ -617,21 +542,6 @@
   </data>
   <data name="Users_ManageEventsActionLabel" xml:space="preserve">
     <value>Manage Events</value>
-  </data>
-  <data name="Users_ScheduleEventsAddNewLabel" xml:space="preserve">
-    <value>Add New</value>
-  </data>
-  <data name="Users_ScheduleEventsAddTitle" xml:space="preserve">
-    <value>Add Event</value>
-  </data>
-  <data name="Users_ScheduleEventsEditTitle" xml:space="preserve">
-    <value>Edit Event</value>
-  </data>
-  <data name="Users_ScheduleEventsTitle" xml:space="preserve">
-    <value>User Schedule Events</value>
-  </data>
-  <data name="Users_UpcomingEvents" xml:space="preserve">
-    <value>Upcoming Events</value>
   </data>
   <data name="Users_WidgetList" xml:space="preserve">
     <value>Users</value>
@@ -660,24 +570,6 @@
   <data name="StartTime" xml:space="preserve">
     <value>Start Time</value>
   </data>
-  <data name="Users_EventBlob" xml:space="preserve">
-    <value>Event File</value>
-  </data>
-  <data name="Users_EventBlobs" xml:space="preserve">
-    <value>Event Files</value>
-  </data>
-  <data name="Users_EventBlobsSelect" xml:space="preserve">
-    <value>Select Files</value>
-  </data>
-  <data name="Users_EventsNoBlobs" xml:space="preserve">
-    <value>No files uploaded.</value>
-  </data>
-  <data name="Users_EventTimeZoneIdHint" xml:space="preserve">
-    <value>Specify the time zone for this event.</value>
-  </data>
-  <data name="Users_NoUpcomingEventsInfo" xml:space="preserve">
-    <value>No events.</value>
-  </data>
   <data name="UserId" xml:space="preserve">
     <value>User</value>
   </data>
@@ -686,18 +578,6 @@
   </data>
   <data name="_Validation_BlobKnownMimeTypeError" xml:space="preserve">
     <value>'{0}' is not a known valid file type.</value>
-  </data>
-  <data name="Search_EmptyDescriptionMessage" xml:space="preserve">
-    <value>No detailed description available.</value>
-  </data>
-  <data name="Search_TypeAlert" xml:space="preserve">
-    <value>alert</value>
-  </data>
-  <data name="Search_TypeEvent" xml:space="preserve">
-    <value>event</value>
-  </data>
-  <data name="Search_TypeUser" xml:space="preserve">
-    <value>user</value>
   </data>
   <data name="ActionsLabel" xml:space="preserve">
     <value>Actions</value>

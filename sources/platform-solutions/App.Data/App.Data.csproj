@@ -46,9 +46,7 @@
     <Compile Include="..\SharedAppAssemblyInfo.cs">
       <Link>Properties\SharedAppAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="AlertsRepository.cs" />
     <Compile Include="BlobsRepository.cs" />
-    <Compile Include="EventsRepository.cs" />
     <Compile Include="LogsRepository.cs" />
     <Compile Include="UsersRepository.cs" />
     <Compile Include="SqlConnectionFactory.cs" />

@@ -61,7 +61,7 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &amp;copy; 2017 Thiago A. Schneider..
+        ///   Looks up a localized string similar to &amp;copy; 2017 Sarto Research.
         /// </summary>
         public static string _App_Copyright {
             get {
@@ -75,24 +75,6 @@ namespace App.UI.Mvc5 {
         public static string _App_Name {
             get {
                 return ResourceManager.GetString("_App_Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Navigation.
-        /// </summary>
-        public static string _App_NavigationLabel {
-            get {
-                return ResourceManager.GetString("_App_NavigationLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Toggle Sidebar.
-        /// </summary>
-        public static string _App_ToggleSidebarLabel {
-            get {
-                return ResourceManager.GetString("_App_ToggleSidebarLabel", resourceCulture);
             }
         }
         
@@ -210,87 +192,6 @@ namespace App.UI.Mvc5 {
         public static string AddNew {
             get {
                 return ResourceManager.GetString("AddNew", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Add Alert.
-        /// </summary>
-        public static string Alerts_AddTitle {
-            get {
-                return ResourceManager.GetString("Alerts_AddTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alerts.
-        /// </summary>
-        public static string Alerts_BoxTitle {
-            get {
-                return ResourceManager.GetString("Alerts_BoxTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alert Details.
-        /// </summary>
-        public static string Alerts_DetailsTitle {
-            get {
-                return ResourceManager.GetString("Alerts_DetailsTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Edit Alert.
-        /// </summary>
-        public static string Alerts_EditTitle {
-            get {
-                return ResourceManager.GetString("Alerts_EditTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Email verification required..
-        /// </summary>
-        public static string Alerts_EmailVerificationAlertMessage {
-            get {
-                return ResourceManager.GetString("Alerts_EmailVerificationAlertMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unable to load unread alerts summary..
-        /// </summary>
-        public static string Alerts_LoadUnreadErrorMessage {
-            get {
-                return ResourceManager.GetString("Alerts_LoadUnreadErrorMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mark as Read.
-        /// </summary>
-        public static string Alerts_MarkAsReadLabel {
-            get {
-                return ResourceManager.GetString("Alerts_MarkAsReadLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Alerts.
-        /// </summary>
-        public static string Alerts_Title {
-            get {
-                return ResourceManager.GetString("Alerts_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Not read yet.
-        /// </summary>
-        public static string Alerts_UnreadLabel {
-            get {
-                return ResourceManager.GetString("Alerts_UnreadLabel", resourceCulture);
             }
         }
         
@@ -1285,87 +1186,6 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All.
-        /// </summary>
-        public static string Search_AllLabel {
-            get {
-                return ResourceManager.GetString("Search_AllLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No detailed description available..
-        /// </summary>
-        public static string Search_EmptyDescriptionMessage {
-            get {
-                return ResourceManager.GetString("Search_EmptyDescriptionMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Media.
-        /// </summary>
-        public static string Search_MediaLabel {
-            get {
-                return ResourceManager.GetString("Search_MediaLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to search....
-        /// </summary>
-        public static string Search_PlaceholderLabel {
-            get {
-                return ResourceManager.GetString("Search_PlaceholderLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Search Results.
-        /// </summary>
-        public static string Search_ResultsTitle {
-            get {
-                return ResourceManager.GetString("Search_ResultsTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Search.
-        /// </summary>
-        public static string Search_SearchLabel {
-            get {
-                return ResourceManager.GetString("Search_SearchLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to alert.
-        /// </summary>
-        public static string Search_TypeAlert {
-            get {
-                return ResourceManager.GetString("Search_TypeAlert", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to event.
-        /// </summary>
-        public static string Search_TypeEvent {
-            get {
-                return ResourceManager.GetString("Search_TypeEvent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to user.
-        /// </summary>
-        public static string Search_TypeUser {
-            get {
-                return ResourceManager.GetString("Search_TypeUser", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Start Date.
         /// </summary>
         public static string StartDate {
@@ -1546,92 +1366,11 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Event File.
-        /// </summary>
-        public static string Users_EventBlob {
-            get {
-                return ResourceManager.GetString("Users_EventBlob", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Event Files.
-        /// </summary>
-        public static string Users_EventBlobs {
-            get {
-                return ResourceManager.GetString("Users_EventBlobs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Select Files.
-        /// </summary>
-        public static string Users_EventBlobsSelect {
-            get {
-                return ResourceManager.GetString("Users_EventBlobsSelect", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No files uploaded..
-        /// </summary>
-        public static string Users_EventsNoBlobs {
-            get {
-                return ResourceManager.GetString("Users_EventsNoBlobs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Specify the time zone for this event..
-        /// </summary>
-        public static string Users_EventTimeZoneIdHint {
-            get {
-                return ResourceManager.GetString("Users_EventTimeZoneIdHint", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Invalid password..
         /// </summary>
         public static string Users_InvalidPasswordMessage {
             get {
                 return ResourceManager.GetString("Users_InvalidPasswordMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Lock Screen.
-        /// </summary>
-        public static string Users_LockScreenLinkLabel {
-            get {
-                return ResourceManager.GetString("Users_LockScreenLinkLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Auto lock:.
-        /// </summary>
-        public static string Users_LockScreenSettingsAutoLabel {
-            get {
-                return ResourceManager.GetString("Users_LockScreenSettingsAutoLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Disabled.
-        /// </summary>
-        public static string Users_LockScreenSettingsAutoValudeDisabled {
-            get {
-                return ResourceManager.GetString("Users_LockScreenSettingsAutoValudeDisabled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to After {interval} minutes..
-        /// </summary>
-        public static string Users_LockScreenSettingsAutoValueTemplate {
-            get {
-                return ResourceManager.GetString("Users_LockScreenSettingsAutoValueTemplate", resourceCulture);
             }
         }
         
@@ -1654,110 +1393,11 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to My Schedule.
-        /// </summary>
-        public static string Users_MyScheduleLinkLabel {
-            get {
-                return ResourceManager.GetString("Users_MyScheduleLinkLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No events..
-        /// </summary>
-        public static string Users_NoUpcomingEventsInfo {
-            get {
-                return ResourceManager.GetString("Users_NoUpcomingEventsInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Add New.
-        /// </summary>
-        public static string Users_ScheduleEventsAddNewLabel {
-            get {
-                return ResourceManager.GetString("Users_ScheduleEventsAddNewLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Add Event.
-        /// </summary>
-        public static string Users_ScheduleEventsAddTitle {
-            get {
-                return ResourceManager.GetString("Users_ScheduleEventsAddTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Edit Event.
-        /// </summary>
-        public static string Users_ScheduleEventsEditTitle {
-            get {
-                return ResourceManager.GetString("Users_ScheduleEventsEditTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User Schedule Events.
-        /// </summary>
-        public static string Users_ScheduleEventsTitle {
-            get {
-                return ResourceManager.GetString("Users_ScheduleEventsTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to User Schedule.
-        /// </summary>
-        public static string Users_ScheduleTitle {
-            get {
-                return ResourceManager.GetString("Users_ScheduleTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Screen Locked.
-        /// </summary>
-        public static string Users_ScreenLockedTitle {
-            get {
-                return ResourceManager.GetString("Users_ScreenLockedTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Select Picture.
         /// </summary>
         public static string Users_SelectPictureLabel {
             get {
                 return ResourceManager.GetString("Users_SelectPictureLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unlock.
-        /// </summary>
-        public static string Users_UnlockLabel {
-            get {
-                return ResourceManager.GetString("Users_UnlockLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Not {0}?.
-        /// </summary>
-        public static string Users_UnlockScreenCalloutTemplate {
-            get {
-                return ResourceManager.GetString("Users_UnlockScreenCalloutTemplate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Upcoming Events.
-        /// </summary>
-        public static string Users_UpcomingEvents {
-            get {
-                return ResourceManager.GetString("Users_UpcomingEvents", resourceCulture);
             }
         }
         

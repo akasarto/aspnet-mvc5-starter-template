@@ -113,13 +113,11 @@ namespace App.UI.Mvc5
 
 			container.Register<IDbConnectionFactory>(() => new SqlConnectionFactory(connectionString));
 
-			container.Register<IAlertsRepository, AlertsRepository>();
 			container.Register<IBlobsRepository, BlobsRepository>();
 			container.Register<ILogsRepository, LogsRepository>();
 
 			container.Register<IIdentityRepository, IdentityRepository>();
 			container.Register<IUsersRepository, UsersRepository>();
-			container.Register<IEventsRepository, EventsRepository>();
 
 			//
 			var mailGunApiKey = AppSettings.MailGun.ApiKey;

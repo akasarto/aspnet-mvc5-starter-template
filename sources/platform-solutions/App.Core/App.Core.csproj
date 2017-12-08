@@ -47,16 +47,9 @@
     <Compile Include="..\SharedAppAssemblyInfo.cs">
       <Link>Properties\SharedAppAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Entities\AlertEntity.cs" />
-    <Compile Include="Entities\AlertType.cs" />
     <Compile Include="Entities\BlobEntity.cs" />
-    <Compile Include="Entities\EventBlobEntity.cs" />
-    <Compile Include="Entities\EventEntity.cs" />
     <Compile Include="Entities\LogEntity.cs" />
-    <Compile Include="Entities\UserAlert.cs" />
-    <Compile Include="Repositories\IAlertsRespository.cs" />
     <Compile Include="Repositories\IBlobsRepository.cs" />
-    <Compile Include="Repositories\IEventsRepository.cs" />
     <Compile Include="Repositories\ILogsRepository.cs" />
     <Compile Include="Repositories\IUsersRepository.cs" />
     <Compile Include="SharedContext.cs" />
