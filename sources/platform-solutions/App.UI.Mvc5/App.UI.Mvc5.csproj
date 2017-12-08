@@ -193,6 +193,7 @@
     <Content Include="Areas\Users\Scripts\account.signup.js" />
     <Content Include="Areas\Users\Scripts\profile.edit.js" />
     <Content Include="Content\.inf\.readme.txt" />
+    <Content Include="Content\img\solid_di.png" />
     <Content Include="Content\vendor\bootstrap-datepicker\.info.txt" />
     <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker.css" />
     <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker.min.css" />
@@ -407,6 +408,9 @@
     <Content Include="Content\vendor\bootstrap-timepicker\css\timepicker.less" />
     <Content Include="Content\vendor\bootstrap-timepicker\package.json" />
     <Content Include="Content\vendor\bootstrap-timepicker\README.md" />
+    <Content Include="Areas\Docs\Views\_LayoutArea.cshtml" />
+    <Content Include="Areas\Docs\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Docs\Views\Docs\Index.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -465,6 +469,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Areas\Docs\Controllers\DocsController.cs" />
+    <Compile Include="Areas\Docs\Controllers\_LandingController.cs" />
+    <Compile Include="Areas\Docs\Controllers\__AreaBaseController.cs" />
     <Compile Include="Areas\Features\Controllers\FormsAndValidationController.cs" />
     <Compile Include="Areas\Features\Controllers\RealtimeController.cs" />
     <Compile Include="Areas\Features\Controllers\_LandingController.cs" />

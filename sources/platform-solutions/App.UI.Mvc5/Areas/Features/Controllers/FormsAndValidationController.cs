@@ -26,12 +26,11 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				// Here you would persist information and redirect to a success page, etc...
 				Feedback.AddMessage(FeedbackMessageType.Success, "All fields validated correctly.", "Contratulations!");
 			}
 			else
 			{
-				Feedback.AddMessage(FeedbackMessageType.Success, "Some fields are not valid.", "Oops!");
+				Feedback.AddMessage(FeedbackMessageType.Error, "Some fields are not valid.", "Oops!");
 			}
 
 			model = BuildFormsAndValidationViewModel(model);

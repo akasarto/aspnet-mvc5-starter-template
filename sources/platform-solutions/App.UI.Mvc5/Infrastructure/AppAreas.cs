@@ -3,10 +3,10 @@
 	public enum Area : int
 	{
 		Root,
+		Docs,
 		Features,
 		Management,
-		Users,
-		Docs
+		Users
 	}
 
 	public class AppAreas
