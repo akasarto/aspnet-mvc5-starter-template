@@ -34,7 +34,6 @@
 
 		//
 		$('#sampleMulti').multiSelect({
-			dblClick: true,
 			cssClass: 'multiselect-full-width'
 		});
 

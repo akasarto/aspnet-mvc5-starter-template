@@ -193,7 +193,6 @@
     <Content Include="Areas\Users\Scripts\account.signup.js" />
     <Content Include="Areas\Users\Scripts\profile.edit.js" />
     <Content Include="Content\.inf\.readme.txt" />
-    <Content Include="Content\img\solid_di.png" />
     <Content Include="Content\vendor\bootstrap-datepicker\.info.txt" />
     <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker.css" />
     <Content Include="Content\vendor\bootstrap-datepicker\css\bootstrap-datepicker.min.css" />
