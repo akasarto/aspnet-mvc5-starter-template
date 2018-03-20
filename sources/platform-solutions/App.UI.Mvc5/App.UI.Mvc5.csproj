@@ -96,8 +96,8 @@
     <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\CloudinaryDotNet.1.2.0\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Omu.ValueInjecter, Version=3.1.1.0, Culture=neutral, PublicKeyToken=c7694541b0ac80e4, processorArchitecture=MSIL">
       <HintPath>..\packages\ValueInjecter.3.1.1.5\lib\net40\Omu.ValueInjecter.dll</HintPath>
@@ -475,10 +475,10 @@
     <Compile Include="..\SharedAppAssemblyInfo.cs">
       <Link>Properties\SharedAppAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="AdminResources.Designer.cs">
+    <Compile Include="AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AdminResources.resx</DependentUpon>
+      <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Docs\Controllers\DocsController.cs" />
     <Compile Include="Areas\Docs\Controllers\_LandingController.cs" />
@@ -592,8 +592,8 @@
     <Compile Include="AppSettings.cs" />
     <Compile Include="Infrastructure\Blobs\BlobService.cs" />
     <Compile Include="Infrastructure\Blobs\BlobServiceConfigs.cs" />
-    <Compile Include="AdminScriptResources.Designer.cs">
-      <DependentUpon>AdminScriptResources.resx</DependentUpon>
+    <Compile Include="AppScriptResources.Designer.cs">
+      <DependentUpon>AppScriptResources.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -677,14 +677,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AdminResources.resx">
+    <EmbeddedResource Include="AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AdminResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminScriptResources.resx">
+    <EmbeddedResource Include="AppScriptResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AdminScriptResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>AppScriptResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -14,7 +14,7 @@ namespace App.UI.Mvc5.Infrastructure
 			var virtualSrc = string.Empty;
 			var scriptTagBuilder = new TagBuilder("script");
 
-			var resources = AdminScriptResources.ResourceManager.GetResourceSet(
+			var resources = AppScriptResources.ResourceManager.GetResourceSet(
 				uiCulture,
 				createIfNotExists: true,
 				tryParents: true

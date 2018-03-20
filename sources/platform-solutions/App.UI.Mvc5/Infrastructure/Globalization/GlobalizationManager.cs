@@ -9,7 +9,7 @@
 				return "[missing-key]";
 			}
 
-			var result = AdminResources.ResourceManager.GetString(resourceKey) ?? $"<{resourceKey}>";
+			var result = AppResources.ResourceManager.GetString(resourceKey) ?? $"<{resourceKey}>";
 
 			if ((formatParams?.Length ?? 0) > 0)
 			{
