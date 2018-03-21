@@ -1,4 +1,4 @@
 ﻿
-Controllers should always inherit from 'BaseController'.
+Controllers should always inherit from '__BaseController'.
 
 You can copy the templates in this folder and rename the copy as needed.

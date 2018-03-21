@@ -521,7 +521,7 @@
     <Compile Include="Areas\Users\Models\Account\AccountVerifyEmailViewModelValidator.cs" />
     <Compile Include="Areas\Users\Models\Profile\ProfileEditViewModel.cs" />
     <Compile Include="Areas\Users\Models\Profile\ProfileEditViewModelValidator.cs" />
-    <Compile Include="Controllers\.inf\Controller.cs" />
+    <Compile Include="Controllers\.inf\ControllerTpl.cs" />
     <Compile Include="Controllers\BlobsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Infrastructure\Blobs\BlobUploadResult.cs" />
