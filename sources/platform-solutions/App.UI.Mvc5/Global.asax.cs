@@ -26,7 +26,7 @@ namespace App.UI.Mvc5
 		protected void Application_BeginRequest(object sender, EventArgs e)
 		{
 			// Create a new id for the current request.
-			// This id will spread to child threads and will help tracking errors and user activity.
+			// This id will spread to child threads and can be used to track errors and user activity.
 			Trace.CorrelationManager.ActivityId = Guid.NewGuid();
 		}
 
