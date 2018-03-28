@@ -11,7 +11,13 @@ This is a MVC5 starter kit application with all the initial (and boring) boilerp
 
 And more to come...
 
-![Overview](/media/ss1.png?raw=true "Overview")
+## License
+
+> This project is free for non-commercial use. To use it commercially, please purchase a one time license for only **$15**.  
+>\
+> [![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TX5U3WZZDZYEQ)
+>
+> \* Price is in United States Dollar (USD).
 
 ## Running
 
@@ -28,3 +34,7 @@ And more to come...
   - Set _App.UI.Mvc5_ as the startup project.
   - Compile and you're good to go.
   - Hit F5 to start.
+
+## Screenshots
+
+![Overview](/media/ss1.png?raw=true "Overview")
