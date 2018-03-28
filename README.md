@@ -1,6 +1,7 @@
 # About
 This is a MVC5 starter kit application with all the initial (and boring) boilerplate already implemented. Some of the main features are:
 
+- Bootstrap 4 based layout.
 - Realtime ready with SignalR.
 - Asp.Net Identity with role permissions.
 - Dependency injection with SimpleInjector.
@@ -36,6 +37,11 @@ This project is free for non-commercial use. To use it commercially, please purc
   - Set _App.UI.Mvc5_ as the startup project.
   - Compile and you're good to go.
   - Hit F5 to start.
+
+## Recommended Layout Templates
+
+- [Porto HTML5 Template](http://themeforest.net/item/porto-responsive-html5-template/4106987?ref=Sartor)
+- [Porto Admin HTML5 Template](https://themeforest.net/item/porto-admin-responsive-html5-template/8539472?ref=Sartor)
 
 ## Screenshots
 
