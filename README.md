@@ -20,6 +20,7 @@ And more to come...
 >
 > \* Licenses are per project.  
 > \* Price is in United States Dollar (USD).  
+> \* Price may vary depending on currency conversion rates.  
 > \* This project took a lot of effort. Please avoid piracy.  
 > \* Payment receipt will be under the name _SCHNEIDER SYSTEMS LTDA - ME_.
 
