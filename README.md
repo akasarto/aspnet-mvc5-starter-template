@@ -13,11 +13,13 @@ And more to come...
 
 ## License
 
-This project is free for non-commercial use. To use it commercially, please purchase a one time license for only **$15**.  
-\
+This project is free for non-commercial use. To use it commercially, please purchase a one time license* for only **$15**.
+
 [![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TX5U3WZZDZYEQ)
 
-\* Price is in United States Dollar (USD).
+- Licenses are per project._  
+- Price is in United States Dollar (USD)._  
+- This project took a lot of effort. Please avoid piracy._
 
 ## Running
 
@@ -29,7 +31,7 @@ This project is free for non-commercial use. To use it commercially, please purc
 
 - Web App
   - Get Visual Studio 2017 Community v15.5+.
-  - `https://github.com/akasarto/skeleton-system-netfx-mvc5.git`.
+  - Get the code from this repository _master_ branch.
   - Make sure nuget packages are set to auto restore.
   - Set _App.UI.Mvc5_ as the startup project.
   - Compile and you're good to go.
