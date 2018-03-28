@@ -13,11 +13,11 @@ And more to come...
 
 ## License
 
-> This project is free for non-commercial use. To use it commercially, please purchase a one time license for only **$15**.  
->\
-> [![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TX5U3WZZDZYEQ)
->
-> \* Price is in United States Dollar (USD).
+This project is free for non-commercial use. To use it commercially, please purchase a one time license for only **$15**.  
+\
+[![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TX5U3WZZDZYEQ)
+
+\* Price is in United States Dollar (USD).
 
 ## Running
 
