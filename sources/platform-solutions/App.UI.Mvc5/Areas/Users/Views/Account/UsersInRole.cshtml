@@ -1,0 +1,55 @@
+@model IEnumerable<MVC5Demo.UI.ViewModels.Users_in_Role_ViewModel>  
+   
+@{  
+    ViewBag.Title = "Users With Roles";  
+    Layout = "~/Views/Shared/_Layout.cshtml";  
+}  
+   
+<div class="panel panel-primary">  
+    <div class="panel-heading">  
+        <h3 class="box-title">  
+            <b>Users with Roles</b>  
+        </h3>  
+    </div>  
+    <!-- /.box-header -->  
+    <div class="panel-body">  
+        <table class="table table-hover table-bordered table-condensed" id="UsersWithRoles">  
+            <thead>  
+                <tr>  
+                    <td><b>Username</b></td>  
+                    <td><b>Email</b></td>  
+                    <td><b>Roles</b></td>  
+                </tr>  
+            </thead>  
+            @foreach (var user in Model)  
+            {  
+                <tr>  
+                    <td>@user.Username</td>  
+                    <td>@user.Email</td>  
+                    <td>@user.Role</td>  
+                      
+                </tr>  
+            }  
+        </table>  
+    </div>  
+   
+    <div class="panel-footer">  
+        <p class="box-title"><b>Total Users till @String.Format("{0 : dddd, MMMM d, yyyy}", DateTime.Now)  : </b><span class="label label-primary">@Model.Count()</span></p>  
+    </div>  
+</div>  
+   
+   
+@section scripts{  
+    <script>  
+        $(function () {  
+            $('#UsersWithRoles').DataTable({  
+                "paging": true,  
+                "lengthChange": true,  
+                "searching": true,  
+                "ordering": true,  
+                "info": true,  
+                "autoWidth": true  
+            });  
+        });  
+    </script>  
+}  
