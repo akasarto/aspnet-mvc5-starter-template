@@ -15,7 +15,7 @@ And more to come...
 ## Running
 
 - Db
-  - Create a database named `skeletonMvc5`
+  - Create a database named `mvc5Starter`
   - Execute the script under `/sources/db-schemas/create_Db.sql` to create the db objects.
   - Execute the script under `/sources/db-schemas/create_Users.sql` to create the default user.
   - If necessary, change the _web.config_ connection string to point to your server.
