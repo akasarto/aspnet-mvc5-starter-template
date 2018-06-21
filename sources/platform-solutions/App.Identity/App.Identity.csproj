@@ -90,7 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".editorconfig" />
-    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
