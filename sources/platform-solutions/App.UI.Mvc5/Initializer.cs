@@ -43,22 +43,29 @@ namespace App.UI.Mvc5
 	{
 		public void Initialize(IAppBuilder appBuilder)
 		{
-			/*
-			 * 
-			 * Globals
-			 * 
-			 *********************************/
-
-			//
+			// Set global json serialization
 			JsonConvert.DefaultSettings = () => new SharedJsonSettings();
 
-			/*
-			 * 
-			 * DI / IoC Registrar
-			 * 
-			 *********************************/
+			// Build composition root
+			var container = ConfigureDependencyInjectionContainer(appBuilder);
 
-			var container = GetContiner();
+			// Configure application
+			SetupApplicationRuntime(appBuilder, container);
+
+			// Apply database changes
+			RunDataMigrations(container);
+		}
+
+		private void RunDataMigrations(Container container)
+		{
+			var runner = container.GetInstance<IMigrationService>();
+
+			runner.MigrateUp();
+		}
+
+		private Container ConfigureDependencyInjectionContainer(IAppBuilder appBuilder)
+		{
+			var container = GetContainer();
 			var domainAssemblies = GetKnownDomainAssemblies();
 
 			//
@@ -197,17 +204,19 @@ namespace App.UI.Mvc5
 			});
 
 			//
+			container.Register<IMigrationService>(() => new SqlServerMigrationService(connectionString));
+
+			//
 			container.Register<DatabusHub>();
 
 			//
 			container.Verify();
 
-			/*
-			 * 
-			 * Init Functionalities
-			 * 
-			 *********************************/
+			return container;
+		}
 
+		private void SetupApplicationRuntime(IAppBuilder appBuilder, Container container)
+		{
 			//
 			appBuilder.UseCookieAuthentication(new CookieAuthenticationOptions
 			{
@@ -285,7 +294,7 @@ namespace App.UI.Mvc5
 			).ToList();
 		}
 
-		private static Container GetContiner()
+		private static Container GetContainer()
 		{
 			var container = new Container();
 
