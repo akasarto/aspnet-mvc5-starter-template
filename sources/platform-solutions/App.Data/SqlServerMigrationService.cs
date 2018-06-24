@@ -67,8 +67,7 @@ namespace App.Data
 			using (var connection = new SqlConnection(connectionInfo.baseConnectionString))
 			{
 				connection.Execute(
-					"USE [master]; CREATE DATABASE @databaseName",
-					param: new { connectionInfo.databaseName }
+					$"USE [master]; CREATE DATABASE [{connectionInfo.databaseName}]"
 				);
 			}
 		}
