@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sarto.Extensions", "Sarto.E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.UI.Mvc5", "App.UI.Mvc5\App.UI.Mvc5.csproj", "{E79AE2B3-C9E9-441C-BE4E-77B8D6291EF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Data.Migrator", "App.Data.Migrator\App.Data.Migrator.csproj", "{4B3A666D-9AFB-4307-AFF4-FFC7A1C02282}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{E79AE2B3-C9E9-441C-BE4E-77B8D6291EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E79AE2B3-C9E9-441C-BE4E-77B8D6291EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E79AE2B3-C9E9-441C-BE4E-77B8D6291EF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B3A666D-9AFB-4307-AFF4-FFC7A1C02282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B3A666D-9AFB-4307-AFF4-FFC7A1C02282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B3A666D-9AFB-4307-AFF4-FFC7A1C02282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B3A666D-9AFB-4307-AFF4-FFC7A1C02282}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,7 @@
 ﻿using App.Core;
 using App.Core.Repositories;
 using App.Data;
+using App.Data.Configs;
 using App.Identity;
 using App.UI.Mvc5.Infrastructure;
 using FluentValidation;
@@ -51,16 +52,6 @@ namespace App.UI.Mvc5
 
 			// Configure application
 			SetupApplicationRuntime(appBuilder, container);
-
-			// Apply database changes
-			RunDataMigrations(container);
-		}
-
-		private void RunDataMigrations(Container container)
-		{
-			var runner = container.GetInstance<IMigrationService>();
-
-			runner.MigrateUp();
 		}
 
 		private Container ConfigureDependencyInjectionContainer(IAppBuilder appBuilder)

@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Data.SqlClient;
 
-namespace App.Data
+namespace App.Data.Configs
 {
 	public class SqlServerMigrationService : IMigrationService
 	{

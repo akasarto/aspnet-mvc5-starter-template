@@ -1,4 +1,4 @@
-﻿namespace App.Data
+﻿namespace App.Data.Configs
 {
 	public interface IMigrationService
 	{
