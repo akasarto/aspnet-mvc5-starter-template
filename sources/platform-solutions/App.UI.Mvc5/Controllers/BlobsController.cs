@@ -1,7 +1,7 @@
 ﻿using App.UI.Mvc5.Infrastructure;
 using App.UI.Mvc5.Models;
-using Sarto.Infrastructure;
-using Sarto.Extensions;
+using Shared.Infrastructure;
+using Shared.Extensions;
 using System;
 using System.Net;
 using System.Net.Mime;

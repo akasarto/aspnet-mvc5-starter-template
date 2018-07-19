@@ -1,5 +1,5 @@
-﻿using App.Core.Entities;
-using App.Core.Repositories;
+﻿using Domain.Core.Entities;
+using Domain.Core.Repositories;
 using App.UI.Mvc5.Areas.Management.Models;
 using App.UI.Mvc5.Infrastructure;
 using Omu.ValueInjecter;

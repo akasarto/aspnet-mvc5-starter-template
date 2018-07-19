@@ -1,5 +1,5 @@
 ﻿using ImageResizer;
-using Sarto.Infrastructure;
+using Shared.Infrastructure;
 using System;
 
 namespace App.UI.Mvc5.Infrastructure

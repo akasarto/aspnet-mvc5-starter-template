@@ -1,12 +1,12 @@
-﻿using App.Core;
-using App.Core.Entities;
-using App.Core.Repositories;
+﻿using Domain.Core;
+using Domain.Core.Entities;
+using Domain.Core.Repositories;
 using App.UI.Mvc5.Areas.Management.Models;
 using App.UI.Mvc5.Infrastructure;
 using Microsoft.AspNet.Identity;
 using Omu.ValueInjecter;
-using Sarto.Extensions;
-using Sarto.Infrastructure;
+using Shared.Extensions;
+using Shared.Infrastructure;
 using System;
 using System.Linq;
 using System.Net;
@@ -181,7 +181,7 @@ namespace App.UI.Mvc5.Areas.Management.Controllers
 		/// <summary>
 		/// Buids an <see cref="UserViewModel"/> instance to be passed to the views.
 		/// </summary>
-		/// <param name="userEntity">The <see cref="App.Core.UserEntity"/> instance to map initial data from.</param>
+		/// <param name="userEntity">The <see cref="Domain.Core.UserEntity"/> instance to map initial data from.</param>
 		/// <param name="postedModel">If in edit action, this is the instance that was posted.</param>
 		/// <returns>An instance of <see cref="UserViewModel"/> with relevant data loaded.</returns>
 		private UserViewModel BuildUserViewModel(UserEntity userEntity = null, UserViewModel postedModel = null)

@@ -67,13 +67,13 @@
       <HintPath>..\packages\CloudinaryDotNet.1.3.1\lib\net40\CloudinaryDotNet.dll</HintPath>
     </Reference>
     <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentValidation.7.6.103\lib\net45\FluentValidation.dll</HintPath>
+      <HintPath>..\packages\FluentValidation.7.6.104\lib\net45\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="FluentValidation.Mvc, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentValidation.Mvc5.7.6.103\lib\net45\FluentValidation.Mvc.dll</HintPath>
+      <HintPath>..\packages\FluentValidation.Mvc5.7.6.104\lib\net45\FluentValidation.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Humanizer, Version=2.3.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Humanizer.Core.2.3.3\lib\netstandard2.0\Humanizer.dll</HintPath>
+    <Reference Include="Humanizer, Version=2.4.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Humanizer.Core.2.4.2\lib\netstandard2.0\Humanizer.dll</HintPath>
     </Reference>
     <Reference Include="ImageResizer, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ImageResizer.4.2.5\lib\net45\ImageResizer.dll</HintPath>
@@ -647,49 +647,49 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\App.Data\App.Data.csproj">
+    <ProjectReference Include="..\Data.Core\Data.Core.csproj">
       <Project>{01367635-B331-458F-BF5A-7369925864D6}</Project>
-      <Name>App.Data</Name>
+      <Name>Data.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\App.Identity\App.Identity.csproj">
       <Project>{1325D974-1E9A-49C1-BC71-A5F4B9EA3293}</Project>
       <Name>App.Identity</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sarto.Infrastructure\Sarto.Infrastructure.csproj">
+    <ProjectReference Include="..\Shared.Infrastructure\Shared.Infrastructure.csproj">
       <Project>{bf47ae35-d535-4842-a89a-061b6ef70315}</Project>
-      <Name>Sarto.Infrastructure</Name>
+      <Name>Shared.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sarto.Extensions\Sarto.Extensions.csproj">
+    <ProjectReference Include="..\Shared.Extensions\Shared.Extensions.csproj">
       <Project>{18AD2A68-3598-4B0C-9A49-9D6D06BC2164}</Project>
-      <Name>Sarto.Extensions</Name>
+      <Name>Shared.Extensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sarto.Infrastructure.Azure\Sarto.Infrastructure.Azure.csproj">
+    <ProjectReference Include="..\Shared.Infrastructure.Azure\Shared.Infrastructure.Azure.csproj">
       <Project>{3cd39eff-063e-4f38-9f73-84c0d9b3c3cc}</Project>
-      <Name>Sarto.Infrastructure.Azure</Name>
+      <Name>Shared.Infrastructure.Azure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sarto.Infrastructure.Cloudinary\Sarto.Infrastructure.Cloudinary.csproj">
+    <ProjectReference Include="..\Shared.Infrastructure.Cloudinary\Shared.Infrastructure.Cloudinary.csproj">
       <Project>{ec24b7bc-7091-4718-90ba-8281bbbe5dac}</Project>
-      <Name>Sarto.Infrastructure.Cloudinary</Name>
+      <Name>Shared.Infrastructure.Cloudinary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sarto.Infrastructure.DynamicImage\Sarto.Infrastructure.DynamicImage.csproj">
+    <ProjectReference Include="..\Shared.Infrastructure.DynamicImage\Shared.Infrastructure.DynamicImage.csproj">
       <Project>{E4BFB48B-C53A-4172-B612-999AFDE10C2F}</Project>
-      <Name>Sarto.Infrastructure.DynamicImage</Name>
+      <Name>Shared.Infrastructure.DynamicImage</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sarto.Infrastructure.FileSystem\Sarto.Infrastructure.FileSystem.csproj">
+    <ProjectReference Include="..\Shared.Infrastructure.FileSystem\Shared.Infrastructure.FileSystem.csproj">
       <Project>{800B272C-1753-476D-A75B-13D03F2B8DE7}</Project>
-      <Name>Sarto.Infrastructure.FileSystem</Name>
+      <Name>Shared.Infrastructure.FileSystem</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sarto.Infrastructure.MailGun\Sarto.Infrastructure.MailGun.csproj">
+    <ProjectReference Include="..\Shared.Infrastructure.MailGun\Shared.Infrastructure.MailGun.csproj">
       <Project>{88869511-342d-4785-8fa0-b16d80fbc1c8}</Project>
-      <Name>Sarto.Infrastructure.MailGun</Name>
+      <Name>Shared.Infrastructure.MailGun</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sarto.Infrastructure.Smtp\Sarto.Infrastructure.Smtp.csproj">
+    <ProjectReference Include="..\Shared.Infrastructure.Smtp\Shared.Infrastructure.Smtp.csproj">
       <Project>{C0921F18-4F1B-4A00-8D7D-DE09CB184ABC}</Project>
-      <Name>Sarto.Infrastructure.Smtp</Name>
+      <Name>Shared.Infrastructure.Smtp</Name>
     </ProjectReference>
-    <ProjectReference Include="..\App.Core\App.Core.csproj">
+    <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
       <Project>{1fd4b39d-6971-45c1-8bef-f6ac0f78a2c9}</Project>
-      <Name>App.Core</Name>
+      <Name>Domain.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

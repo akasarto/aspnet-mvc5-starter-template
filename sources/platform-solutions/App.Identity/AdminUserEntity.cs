@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using App.Core.Entities;
+using Domain.Core.Entities;
 
 namespace App.Identity
 {

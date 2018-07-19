@@ -93,17 +93,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sarto.Infrastructure\Sarto.Infrastructure.csproj">
+    <ProjectReference Include="..\Shared.Infrastructure\Shared.Infrastructure.csproj">
       <Project>{BF47AE35-D535-4842-A89A-061B6EF70315}</Project>
-      <Name>Sarto.Infrastructure</Name>
+      <Name>Shared.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sarto.Extensions\Sarto.Extensions.csproj">
+    <ProjectReference Include="..\Shared.Extensions\Shared.Extensions.csproj">
       <Project>{18AD2A68-3598-4B0C-9A49-9D6D06BC2164}</Project>
-      <Name>Sarto.Extensions</Name>
+      <Name>Shared.Extensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\App.Core\App.Core.csproj">
+    <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
       <Project>{1FD4B39D-6971-45C1-8BEF-F6AC0F78A2C9}</Project>
-      <Name>App.Core</Name>
+      <Name>Domain.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

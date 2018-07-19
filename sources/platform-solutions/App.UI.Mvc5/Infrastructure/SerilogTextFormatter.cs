@@ -1,7 +1,7 @@
 ﻿using Serilog.Formatting;
 using Serilog.Events;
 using System.IO;
-using Sarto.Extensions;
+using Shared.Extensions;
 
 namespace App.UI.Mvc5.Infrastructure
 {

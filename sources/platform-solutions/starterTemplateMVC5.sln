@@ -3,33 +3,44 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{8BA052B9-3051-491C-8C47-571DBA5A67AC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Shared Libs", "1.Shared Libs", "{8BA052B9-3051-491C-8C47-571DBA5A67AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sarto.Infrastructure.Cloudinary", "Sarto.Infrastructure.Cloudinary\Sarto.Infrastructure.Cloudinary.csproj", "{EC24B7BC-7091-4718-90BA-8281BBBE5DAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Infrastructure.Cloudinary", "Shared.Infrastructure.Cloudinary\Shared.Infrastructure.Cloudinary.csproj", "{EC24B7BC-7091-4718-90BA-8281BBBE5DAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sarto.Infrastructure.MailGun", "Sarto.Infrastructure.MailGun\Sarto.Infrastructure.MailGun.csproj", "{88869511-342D-4785-8FA0-B16D80FBC1C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Infrastructure.MailGun", "Shared.Infrastructure.MailGun\Shared.Infrastructure.MailGun.csproj", "{88869511-342D-4785-8FA0-B16D80FBC1C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Core", "App.Core\App.Core.csproj", "{1FD4B39D-6971-45C1-8BEF-F6AC0F78A2C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Core", "Domain.Core\Domain.Core.csproj", "{1FD4B39D-6971-45C1-8BEF-F6AC0F78A2C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sarto.Infrastructure.FileSystem", "Sarto.Infrastructure.FileSystem\Sarto.Infrastructure.FileSystem.csproj", "{800B272C-1753-476D-A75B-13D03F2B8DE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Infrastructure.FileSystem", "Shared.Infrastructure.FileSystem\Shared.Infrastructure.FileSystem.csproj", "{800B272C-1753-476D-A75B-13D03F2B8DE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sarto.Infrastructure.Smtp", "Sarto.Infrastructure.Smtp\Sarto.Infrastructure.Smtp.csproj", "{C0921F18-4F1B-4A00-8D7D-DE09CB184ABC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Infrastructure.Smtp", "Shared.Infrastructure.Smtp\Shared.Infrastructure.Smtp.csproj", "{C0921F18-4F1B-4A00-8D7D-DE09CB184ABC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sarto.Infrastructure.Azure", "Sarto.Infrastructure.Azure\Sarto.Infrastructure.Azure.csproj", "{3CD39EFF-063E-4F38-9F73-84C0D9B3C3CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Infrastructure.Azure", "Shared.Infrastructure.Azure\Shared.Infrastructure.Azure.csproj", "{3CD39EFF-063E-4F38-9F73-84C0D9B3C3CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sarto.Infrastructure.DynamicImage", "Sarto.Infrastructure.DynamicImage\Sarto.Infrastructure.DynamicImage.csproj", "{E4BFB48B-C53A-4172-B612-999AFDE10C2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Infrastructure.DynamicImage", "Shared.Infrastructure.DynamicImage\Shared.Infrastructure.DynamicImage.csproj", "{E4BFB48B-C53A-4172-B612-999AFDE10C2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sarto.Infrastructure", "Sarto.Infrastructure\Sarto.Infrastructure.csproj", "{BF47AE35-D535-4842-A89A-061B6EF70315}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Infrastructure", "Shared.Infrastructure\Shared.Infrastructure.csproj", "{BF47AE35-D535-4842-A89A-061B6EF70315}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Identity", "App.Identity\App.Identity.csproj", "{1325D974-1E9A-49C1-BC71-A5F4B9EA3293}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Data", "App.Data\App.Data.csproj", "{01367635-B331-458F-BF5A-7369925864D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Core", "Data.Core\Data.Core.csproj", "{01367635-B331-458F-BF5A-7369925864D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sarto.Extensions", "Sarto.Extensions\Sarto.Extensions.csproj", "{18AD2A68-3598-4B0C-9A49-9D6D06BC2164}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Extensions", "Shared.Extensions\Shared.Extensions.csproj", "{18AD2A68-3598-4B0C-9A49-9D6D06BC2164}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.UI.Mvc5", "App.UI.Mvc5\App.UI.Mvc5.csproj", "{E79AE2B3-C9E9-441C-BE4E-77B8D6291EF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Data.Migrator", "App.Data.Migrator\App.Data.Migrator.csproj", "{4B3A666D-9AFB-4307-AFF4-FFC7A1C02282}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Migrator", "Tools.Migrator\Tools.Migrator.csproj", "{4B3A666D-9AFB-4307-AFF4-FFC7A1C02282}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Solution Items", "0.Solution Items", "{DC06B7D6-71E6-45B2-B85A-0A384F988209}"
+	ProjectSection(SolutionItems) = preProject
+		migrate_up.ps1 = migrate_up.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Domain", "2.Domain", "{8D5C1D06-0A8D-4068-B877-E3B51D82823B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Data", "3.Data", "{D4B0F2B4-6E32-4756-88E5-6C54365CD6D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.Tools", "6.Tools", "{DB46184A-4BE8-4DCD-BF0E-96B8879B18BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,12 +107,15 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{EC24B7BC-7091-4718-90BA-8281BBBE5DAC} = {8BA052B9-3051-491C-8C47-571DBA5A67AC}
 		{88869511-342D-4785-8FA0-B16D80FBC1C8} = {8BA052B9-3051-491C-8C47-571DBA5A67AC}
+		{1FD4B39D-6971-45C1-8BEF-F6AC0F78A2C9} = {8D5C1D06-0A8D-4068-B877-E3B51D82823B}
 		{800B272C-1753-476D-A75B-13D03F2B8DE7} = {8BA052B9-3051-491C-8C47-571DBA5A67AC}
 		{C0921F18-4F1B-4A00-8D7D-DE09CB184ABC} = {8BA052B9-3051-491C-8C47-571DBA5A67AC}
 		{3CD39EFF-063E-4F38-9F73-84C0D9B3C3CC} = {8BA052B9-3051-491C-8C47-571DBA5A67AC}
 		{E4BFB48B-C53A-4172-B612-999AFDE10C2F} = {8BA052B9-3051-491C-8C47-571DBA5A67AC}
 		{BF47AE35-D535-4842-A89A-061B6EF70315} = {8BA052B9-3051-491C-8C47-571DBA5A67AC}
+		{01367635-B331-458F-BF5A-7369925864D6} = {D4B0F2B4-6E32-4756-88E5-6C54365CD6D4}
 		{18AD2A68-3598-4B0C-9A49-9D6D06BC2164} = {8BA052B9-3051-491C-8C47-571DBA5A67AC}
+		{4B3A666D-9AFB-4307-AFF4-FFC7A1C02282} = {DB46184A-4BE8-4DCD-BF0E-96B8879B18BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B0EB4C6-368E-4F7C-8179-C12A1933125B}

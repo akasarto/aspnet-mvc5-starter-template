@@ -1,5 +1,5 @@
-﻿using Sarto.Extensions;
-using App.Core;
+﻿using Shared.Extensions;
+using Domain.Core;
 
 /// <summary>
 /// Overrides the default mvc 'AuthorizeAttribute' class.

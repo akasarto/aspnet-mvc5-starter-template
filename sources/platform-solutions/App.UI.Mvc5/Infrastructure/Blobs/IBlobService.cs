@@ -1,5 +1,5 @@
-﻿using App.Core.Entities;
-using Sarto.Infrastructure;
+﻿using Domain.Core.Entities;
+using Shared.Infrastructure;
 using System;
 using System.IO;
 

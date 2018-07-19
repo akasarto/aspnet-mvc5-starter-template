@@ -1,7 +1,7 @@
 ﻿using App.Identity;
 using FluentValidation;
 using App.UI.Mvc5.Infrastructure;
-using App.Core;
+using Domain.Core;
 using System;
 
 namespace App.UI.Mvc5.Areas.Users.Models

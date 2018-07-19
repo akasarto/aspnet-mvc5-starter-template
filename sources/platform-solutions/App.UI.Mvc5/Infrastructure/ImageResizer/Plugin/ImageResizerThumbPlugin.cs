@@ -1,6 +1,6 @@
 ﻿using ImageResizer.Configuration;
 using ImageResizer.Plugins;
-using Sarto.Infrastructure;
+using Shared.Infrastructure;
 using System;
 using System.Collections.Specialized;
 

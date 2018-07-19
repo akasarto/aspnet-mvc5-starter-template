@@ -1,4 +1,4 @@
-﻿using App.Core;
+﻿using Domain.Core;
 using App.Identity;
 using App.UI.Mvc5.Areas.Users.Models;
 using App.UI.Mvc5.Infrastructure;
@@ -6,8 +6,8 @@ using App.UI.Mvc5.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Sarto.Extensions;
-using Sarto.Infrastructure;
+using Shared.Extensions;
+using Shared.Infrastructure;
 using System;
 using System.Net;
 using System.Net.Mail;

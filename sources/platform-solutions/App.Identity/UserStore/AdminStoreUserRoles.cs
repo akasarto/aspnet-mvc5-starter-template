@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
-using Sarto.Extensions;
-using App.Core;
+using Shared.Extensions;
+using Domain.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;

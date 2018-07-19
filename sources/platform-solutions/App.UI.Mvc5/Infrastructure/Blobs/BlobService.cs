@@ -1,7 +1,7 @@
-﻿using App.Core.Entities;
-using App.Core.Repositories;
-using Sarto.Infrastructure;
-using Sarto.Infrastructure.DynamicImage;
+﻿using Domain.Core.Entities;
+using Domain.Core.Repositories;
+using Shared.Infrastructure;
+using Shared.Infrastructure.DynamicImage;
 using System;
 using System.IO;
 using System.Linq;

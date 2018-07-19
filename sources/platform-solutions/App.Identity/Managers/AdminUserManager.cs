@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security.DataProtection;
-using App.Core;
+using Domain.Core;
 using System;
 using System.Threading.Tasks;
 

@@ -1,5 +1,5 @@
-﻿using App.Core.Entities;
-using Sarto.Infrastructure;
+﻿using Domain.Core.Entities;
+using Shared.Infrastructure;
 
 namespace App.UI.Mvc5.Infrastructure
 {

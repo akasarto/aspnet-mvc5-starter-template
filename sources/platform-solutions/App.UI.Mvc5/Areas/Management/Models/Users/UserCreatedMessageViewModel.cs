@@ -1,5 +1,5 @@
 ﻿using App.UI.Mvc5.Models;
-using App.Core;
+using Domain.Core;
 using System;
 using System.Collections.Generic;
 

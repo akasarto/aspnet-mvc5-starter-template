@@ -1,4 +1,4 @@
-﻿using App.Core;
+﻿using Domain.Core;
 using App.UI.Mvc5.Controllers;
 using App.UI.Mvc5.Infrastructure;
 using System.Web.Mvc;
