@@ -76,11 +76,11 @@
     <Content Include=".editorconfig" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sarto.Infrastructure\Shared.Infrastructure.csproj">
+    <ProjectReference Include="..\Shared.Infrastructure\Shared.Infrastructure.csproj">
       <Project>{bf47ae35-d535-4842-a89a-061b6ef70315}</Project>
       <Name>Shared.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sarto.Extensions\Shared.Extensions.csproj">
+    <ProjectReference Include="..\Shared.Extensions\Shared.Extensions.csproj">
       <Project>{18AD2A68-3598-4B0C-9A49-9D6D06BC2164}</Project>
       <Name>Shared.Extensions</Name>
     </ProjectReference>

@@ -61,7 +61,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sarto.Infrastructure\Shared.Infrastructure.csproj">
+    <ProjectReference Include="..\Shared.Infrastructure\Shared.Infrastructure.csproj">
       <Project>{bf47ae35-d535-4842-a89a-061b6ef70315}</Project>
       <Name>Shared.Infrastructure</Name>
     </ProjectReference>
