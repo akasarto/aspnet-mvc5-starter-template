@@ -36,9 +36,9 @@ GOTO :EXIT
 
 :MSBUILDFOUND
 ECHO [32mFound MSBuild.exe tool. Building data migrator tool...[0m
-ECHO [37m%MSBUILDEXEPATH%[0m
-
+ECHO [37mRestoring nuget packages...[0m
 CALL .\tools\nuget.exe restore .\sources\platform-solutions\starterTemplateMVC5.sln -verbosity quiet
+ECHO [37mBuilding the solution...[0m
 CALL "%MSBUILDEXEPATH%" /nologo /verbosity:minimal /p:Configuration=Debug .\sources\platform-solutions\starterTemplateMVC5.sln
 
 :EXIT
