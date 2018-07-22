@@ -38,6 +38,6 @@ GOTO :EXIT
 ECHO [32mFound MSBuild.exe tool. Building data migrator tool...[0m
 ECHO [37m%MSBUILDEXEPATH%[0m
 
-CALL "%MSBUILDEXEPATH%" /p:Configuration=Debug .\sources\platform-solutions\starterTemplateMVC5.sln
+CALL "%MSBUILDEXEPATH%" /t:restore /p:Configuration=Debug .\sources\platform-solutions\starterTemplateMVC5.sln
 
 :EXIT
