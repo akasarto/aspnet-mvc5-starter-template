@@ -1,3 +1,5 @@
+:: This script will build the application and execute the 
+
 @ECHO OFF
 
 SETLOCAL ENABLEDELAYEDEXPANSION
@@ -35,6 +37,10 @@ GOTO :EXIT
 :MSBUILDFOUND
 ECHO [32mFound MSBuild.exe tool. Building data migrator tool...[0m
 ECHO [37m%MSBUILDEXEPATH%[0m
-GOTO :EXIT
+
+call %MSBUILDEXEPATH% /p:Configuration=Debug .\sources\platform-solutions\starterTemplateMVC5.sln
+
+
+
 
 :EXIT
