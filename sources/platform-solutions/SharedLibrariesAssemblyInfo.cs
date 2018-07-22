@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 
 // General Info
-[assembly: AssemblyCompany("Sarto")]
-[assembly: AssemblyProduct("Skeleton Libraries")]
-[assembly: AssemblyCopyright("Copyright © 2017 Sarto")]
+[assembly: AssemblyCompany("Sarto Research")]
+[assembly: AssemblyProduct("Starter Suite Libraries")]
+[assembly: AssemblyCopyright("Copyright © 2018 Thiago Alberto Schneider")]
 
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug")]

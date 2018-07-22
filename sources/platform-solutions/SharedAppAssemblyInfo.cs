@@ -2,8 +2,8 @@
 
 // General Info
 [assembly: AssemblyCompany("Sarto")]
-[assembly: AssemblyProduct("Skeleton MVC5 Starter Kit")]
-[assembly: AssemblyCopyright("Copyright © 2017 Thiago Alberto Schneider")]
+[assembly: AssemblyProduct("Starter Suite Libraries")]
+[assembly: AssemblyCopyright("Copyright © 2018 Thiago Alberto Schneider")]
 
 #if DEBUG
 [assembly: AssemblyConfiguration("Debug")]
