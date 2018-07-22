@@ -5,6 +5,8 @@
 
 SETLOCAL ENABLEDELAYEDEXPANSION
 
+SET CONFIG=Debug
+
 @REM https://github.com/Microsoft/vswhere/wiki/Installing
 @REM AS PER DOCS, THE 'VSWHERE.EXE' TOOL WILL EXIST IN THE FIXED LOCATION BELLOW
 SET VSWHEREEXE="%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
@@ -12,8 +14,6 @@ SET VSWHEREEXE="%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.ex
 IF NOT EXIST %VSWHEREEXE% (
 	GOTO :VSWHERENOTFOUND
 )
-
-ECHO [32mFound vswhere.exe tool. Locating MSBuild.exe...[0m
 
 @REM FIND LATEST VISUAL STUDIO INSTALLATION FOLDER.
 FOR /f "usebackq tokens=*" %%i IN (`call %VSWHEREEXE% -latest -products * -requires Microsoft.Component.MSBuild -property installationPath`) DO (
@@ -42,10 +42,11 @@ GOTO :EXIT
 
 :MSBUILDFOUND
 @REM RESTORE NUGET PACKAGES, BUILD THE SOLUTION AND RUN MIGRATIONS.
-ECHO [32mFound MSBuild.exe tool. Building data migrator tool...[0m
-ECHO [37mRestoring nuget packages...[0m
+ECHO [36mRestoring nuget packages...[0m
 CALL .\tools\nuget.exe restore .\sources\platform-solutions\starterTemplateMVC5.sln -verbosity quiet
-ECHO [37mBuilding the solution...[0m
-CALL "%MSBUILDEXEPATH%" /nologo /verbosity:quiet /p:Configuration=Debug .\sources\platform-solutions\starterTemplateMVC5.sln
+ECHO [36mBuilding the solution...[0m
+CALL "%MSBUILDEXEPATH%" /nologo /verbosity:quiet /p:Configuration=%CONFIG% .\sources\platform-solutions\starterTemplateMVC5.sln
+ECHO [36mRunning data migrations...[0m
+CALL .\sources\platform-solutions\Data.Tools.Migrator\bin\%CONFIG%\migrator.exe
 
 :EXIT
