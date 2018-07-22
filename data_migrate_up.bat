@@ -1,4 +1,4 @@
-:: This script will build the application and execute the 
+:: This script will build the application and execute the
 
 @ECHO OFF
 
