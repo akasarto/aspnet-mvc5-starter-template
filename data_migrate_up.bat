@@ -44,9 +44,9 @@ GOTO :EXIT
 @REM RESTORE NUGET PACKAGES, BUILD THE SOLUTION AND RUN MIGRATIONS.
 ECHO [36mRestoring nuget packages...[0m
 CALL .\tools\nuget.exe restore .\sources\platform-solutions\starterTemplateMVC5.sln -verbosity quiet
-ECHO [36mBuilding the solution...[0m
+ECHO [36mBuilding the solution projects...[0m
 CALL "%MSBUILDEXEPATH%" /nologo /verbosity:quiet /p:Configuration=%CONFIG% .\sources\platform-solutions\starterTemplateMVC5.sln
-ECHO [36mRunning data migrations...[0m
+ECHO [36mRunning data migration scripts...[0m
 CALL .\sources\platform-solutions\Data.Tools.Migrator\bin\%CONFIG%\migrator.exe
 
 :EXIT
