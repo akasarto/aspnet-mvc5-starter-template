@@ -14,7 +14,8 @@ namespace Data.Tools.Migrator
 
 			//}
 
-			var service = new SqlServerMigrationService("Server=(localdb)\\mssqllocaldb;Database=starterTemplateMVC5;Trusted_Connection=True;");
+			//var service = new SqlServerMigrationService("Server=(localdb)\\mssqllocaldb;Database=starterTemplateMVC5;Trusted_Connection=True;");
+			var service = new SqlServerMigrationService("SqlServerConnection");
 
 			service.MigrateUp();
 
