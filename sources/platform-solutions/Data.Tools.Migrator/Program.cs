@@ -2,6 +2,7 @@
 using FluentMigrator.Runner;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Configuration;
 
 namespace Data.Tools.Migrator
 {
@@ -14,8 +15,7 @@ namespace Data.Tools.Migrator
 
 			//}
 
-			//var service = new SqlServerMigrationService("Server=(localdb)\\mssqllocaldb;Database=starterTemplateMVC5;Trusted_Connection=True;");
-			var service = new SqlServerMigrationService("SqlServerConnection");
+			var service = new SqlServerMigrationService(ConfigurationManager.ConnectionStrings["SqlServerConnection"].ConnectionString);
 
 			service.MigrateUp();
 
