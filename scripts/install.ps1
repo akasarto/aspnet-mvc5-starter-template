@@ -35,10 +35,4 @@ if ($netFrameworkVersionOk -eq $false) {
     break
 }
 
-Write-Host 'PowerShell Ok' -f Cyan
-Write-Host '.NET Framework SDK Ok' -f Cyan
-
-# Restore nuget packages and build solution
-
-# Execute data migration based on the main app config
-
+Invoke-Expression ".\build-solution.ps1"

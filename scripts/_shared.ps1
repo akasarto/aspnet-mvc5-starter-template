@@ -42,3 +42,22 @@ function is-required-net-framework-sdk-or-greater-installed($installedNetFramewo
     }
     return $false
 }
+
+# Gets the current MSBuild.exe too path
+# For more details regarding the VSWhere tool, please check the docs at:
+# https://github.com/Microsoft/vswhere/wiki
+function get-msbuild-executable-path()
+{
+    $vsWhereToolExe = "..\tools\vswhere.exe"
+    $vsInstallationPath = & $vsWhereToolExe -latest -products * -requires Microsoft.Component.MSBuild -property installationPath
+    if ($vsInstallationPath) {
+        $vsInstallationPath = Join-Path $vsInstallationPath "MSBuild\*\Bin"
+        $pathMatches = Get-Childitem $vsInstallationPath -Recurse -Filter MSBuild.exe
+        ForEach($pathMatch in $pathMatches) {
+            if ($pathMatch -like "*\Bin\MSBuild.exe"){
+                return $pathMatch
+            }
+        }
+    }
+    return ""
+}
