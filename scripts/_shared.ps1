@@ -1,3 +1,8 @@
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
+# \t char
+$tab = [char]9
 
 # Gets the current powershell major version
 # For more details regarding powershell installation, check the official docs at:
@@ -59,5 +64,5 @@ function get-msbuild-executable-path()
             }
         }
     }
-    return ""
+    return $null
 }
