@@ -1,23 +1,44 @@
 
 param (
-    # Powershell
-    # The value to check is the corresponding major version
-    # PowerShell version 5 (Shipped with Windows 10 installation)
-    # For more details regarding other versions, please check the official docs at:
-    # https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell
-    [int]$requiredPowerShellMajorVersion = 5,
-
-    # .NET Framework SDK
-    # The value to check is the corresponding release number value
-    # .NET Framework 4.7.1 (Included in Visual Studio 2017 Community or higher)
-    # For more details regarding other release versions, please check the official docs at:
-    # https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed
-    [int]$requiredNetFrameworkReleaseVersion = 461308
+    [int]$requiredPowerShellMajorVersion = 5, # Version shipped with Windows 10
+    [int]$requiredNetFrameworkReleaseVersion = 461308, # Included in Visual Studio 2017 versions
+    [string]$migratorToolExePathTemplate = "sources\platform-solutions\Data.Tools.Migrator\bin\{0}\migrator.exe", # Relative to root
+    [string]$solutionFilePath = "sources\platform-solutions\starterTemplateMVC5.sln", # Relative to root
+    [string]$builConfigName = "Debug" # Debug or Release
 )
 
-. ".\_shared.ps1"
+$rootFolder = ((get-item (split-path $MyInvocation.MyCommand.Definition)).Parent).FullName
 
-Invoke-Expression ".\base-check.ps1 -requiredPowerShellMajorVersion $requiredPowerShellMajorVersion -requiredNetFrameworkReleaseVersion $requiredNetFrameworkReleaseVersion"
+$sharedFile = Join-Path $rootFolder "\scripts\_shared.ps1"
+$vsWhereToolExe = Join-Path $rootFolder "tools\vswhere.exe"
+$nugetToolExe = Join-Path $rootFolder "tools\nuget.exe"
+$migratorToolExe = Join-Path $rootFolder ($migratorToolExePathTemplate -f $builConfigName)
+$solutionFilePath = Join-Path $rootFolder $solutionFilePath
 
-Invoke-Expression ".\build-solution.ps1"
+. $sharedFile
 
+# Clear screen
+Clear-Host
+
+# Add empty line
+Write-Host ""
+
+# Check current powershell version
+check-required-powershell-version -requiredNetFrameworkReleaseVersion $requiredPowerShellMajorVersion
+
+# Check current .NET Framework SDK version
+check-required-net-framework-version -requiredPowerShellMajorVersion $requiredNetFrameworkReleaseVersion
+
+# Check MSBuild.exe tool
+check-msbuild-tool-executable -vsWhereToolExe $vsWhereToolExe
+
+# Restore solution Nuget packages
+restore-nuget-packages-for-solution -nugetToolExe $nugetToolExe -solutionFilePath $solutionFilePath
+
+# Building solution projects
+build-solution-projects -vsWhereToolExe $vsWhereToolExe -solutionFilePath $solutionFilePath -builConfigName $builConfigName
+
+# Run data migrations
+run-data-migrations -migratorToolExe $migratorToolExe
+
+Write-Host ""
