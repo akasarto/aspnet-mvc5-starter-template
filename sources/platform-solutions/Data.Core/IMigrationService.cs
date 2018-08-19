@@ -1,4 +1,4 @@
-﻿namespace Data.Core.Configs
+﻿namespace Data.Core
 {
 	public interface IMigrationService
 	{

@@ -20,7 +20,7 @@
 
 		// Access Lockout
 		public const bool UsersLockoutEnabledByDefault = true;
-		public const int UsersLocloutIntervalInMinutes = 5;
+		public const int UsersLockoutIntervalInMinutes = 5;
 		public const int UsersLockoutMaxFailedAccessAttempts = 3;
 
 		// Events

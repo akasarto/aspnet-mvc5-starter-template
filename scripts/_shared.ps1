@@ -1,3 +1,6 @@
+# For more details checking last exit code (e.g.: 2`>`&1 and $?), please check the docs at:
+# https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.0
+
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
@@ -7,7 +10,7 @@ $tab = [char]9
 # Gets the current powershell major version
 # For more details regarding powershell installation, check the official docs at:
 # https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell
-function get-current-powershell-major-version() {
+function get_current_powershell_major_version() {
     $currentMajorVersion = $PSVersionTable.PSVersion.Major
     return $currentMajorVersion
 }
@@ -15,7 +18,7 @@ function get-current-powershell-major-version() {
 # Check the current powershell required major version
 # For more details regarding powershell installation, check the official docs at:
 # https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell
-function is-required-powershell-major-version-or-later($currentMajorVersion, $requiredMajorVersion) {
+function is_required_powershell_major_version_or_later($currentMajorVersion, $requiredMajorVersion) {
     if($currentMajorVersion -ge $requiredMajorVersion) {
         return $true
     }
@@ -24,7 +27,7 @@ function is-required-powershell-major-version-or-later($currentMajorVersion, $re
 
 # Get information about installed .net framework sdks.
 # https://www.microsoft.com/net/download/visual-studio-sdks
-function get-installed-net-framework-sdks()
+function get_installed_net_framework_sdks()
 {
     $existingSdks =
         Get-ChildItem "HKLM:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\" `
@@ -34,7 +37,7 @@ function get-installed-net-framework-sdks()
 
 # Check if the current system has the required .net framework sdk intalled based on the release version value
 # https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed
-function is-required-net-framework-sdk-or-greater-installed($installedNetFrameworkSDKs, $requiredReleaseVersion)
+function is_required_net_framework_sdk_or_greater_installed($installedNetFrameworkSDKs, $requiredReleaseVersion)
 {
     $releases =
         $installedNetFrameworkSDKs `
@@ -51,7 +54,7 @@ function is-required-net-framework-sdk-or-greater-installed($installedNetFramewo
 # Gets the current MSBuild.exe too path
 # For more details regarding the VSWhere tool, please check the docs at:
 # https://github.com/Microsoft/vswhere/wiki
-function get-msbuild-executable-path([string]$vsWhereToolExe)
+function get_msbuild_executable_path([string]$vsWhereToolExe)
 {
     $vsInstallationPath = & $vsWhereToolExe -latest -products * -requires Microsoft.Component.MSBuild -property installationPath
     if ($vsInstallationPath) {
@@ -71,10 +74,10 @@ function get-msbuild-executable-path([string]$vsWhereToolExe)
 # PowerShell version 5 (Shipped with Windows 10 installation)
 # For more details regarding other versions, please check the official docs at:
 # https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell
-function check-required-powershell-version([int]$requiredPowerShellMajorVersion) {
+function check_required_powershell_version([int]$requiredPowerShellMajorVersion) {
     Write-Host "Checking PowerShell version..............." -NoNewline
-    $currentPowershellMajorVersion = get-current-powershell-major-version
-    $powerShellVersionOk = is-required-powershell-major-version-or-later -currentMajorVersion $currentPowershellMajorVersion -requiredMajorVersion $requiredPowerShellMajorVersion
+    $currentPowershellMajorVersion = get_current_powershell_major_version
+    $powerShellVersionOk = is_required_powershell_major_version_or_later -currentMajorVersion $currentPowershellMajorVersion -requiredMajorVersion $requiredPowerShellMajorVersion
     if ($powerShellVersionOk -eq $false) {
         Write-Host "[FAILED]" -f Red
         Write-Host ""
@@ -93,10 +96,10 @@ function check-required-powershell-version([int]$requiredPowerShellMajorVersion)
 # .NET Framework 4.7.1 (Included in Visual Studio 2017 Community or higher)
 # For more details regarding other release versions, please check the official docs at:
 # https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed
-function check-required-net-framework-version([int]$requiredNetFrameworkReleaseVersion) {
+function check_required_net_framework_version([int]$requiredNetFrameworkReleaseVersion) {
     Write-Host "Checking .NET Framework SDK version......." -NoNewline
-    $installedNetFrameworkSDKs = get-installed-net-framework-sdks
-    $netFrameworkVersionOk = is-required-net-framework-sdk-or-greater-installed -installedNetFrameworkSDKs $installedNetFrameworkSDKs -requiredReleaseVersion $requiredNetFrameworkReleaseVersion
+    $installedNetFrameworkSDKs = get_installed_net_framework_sdks
+    $netFrameworkVersionOk = is_required_net_framework_sdk_or_greater_installed -installedNetFrameworkSDKs $installedNetFrameworkSDKs -requiredReleaseVersion $requiredNetFrameworkReleaseVersion
     if ($netFrameworkVersionOk -eq $false) {
         Write-Host "[FAILED]" -f Red
         Write-Host ""
@@ -107,33 +110,30 @@ function check-required-net-framework-version([int]$requiredNetFrameworkReleaseV
         Write-Host $tab "The required release version $requiredNetFrameworkReleaseVersion or greater was not found." -f Red
         Write-Host $tab "For more details on how to install or upgrade your environment, please check the docs at:"
         Write-Host $tab "https://www.microsoft.com/net/download/visual-studio-sdks" -f Cyan
-        Write-Host $tab ""
+        Write-Host ""
         break
     }
     Write-Host "[OK]" -f Green
 }
 
-function check-msbuild-tool-executable([string]$vsWhereToolExe) {
+function check_msbuild_tool_executable([string]$vsWhereToolExe) {
     Write-Host "Checking MSBuild.exe tool installation...." -NoNewline
-    $msBuildToolExe = get-msbuild-executable-path -vsWhereToolExe $vsWhereToolExe
-    if (($msBuildToolExe -eq $null) -or (-Not (Test-Path $msBuildToolExe))) {
+    $msBuildToolExe = get_msbuild_executable_path -vsWhereToolExe $vsWhereToolExe
+    if (($null -eq $msBuildToolExe) -or (-Not (Test-Path $msBuildToolExe))) {
         Write-Host "[FAILED]" -f Red
         Write-Host ""
-        Write-Host "The tool MsBuild.exe was not found. Please make sure you have any Visual Studio 2017(v15.2 or higher) installed." -f Red
-        Write-Host "If this is running on a build server, make sure you have either Visual Studio or visual studio build tool installed."
-        Write-Host "You can find those under 'Visual Studio 2017' and 'Tools for Visual Studio 2017' at:"
-        Write-Host "https://visualstudio.microsoft.com/downloads/" -f Cyan
+        Write-Host $tab "The tool MsBuild.exe was not found. Please make sure you have any Visual Studio 2017(v15.2 or higher) installed." -f Red
+        Write-Host $tab "If this is running on a build server, make sure you have either Visual Studio or visual studio build tool installed."
+        Write-Host $tab "You can find those under 'Visual Studio 2017' and 'Tools for Visual Studio 2017' at:"
+        Write-Host $tab "https://visualstudio.microsoft.com/downloads/" -f Cyan
         Write-Host ""
         break
     }
     Write-Host "[OK]" -f Green
 }
 
-# Attempt to restor nuget packages
-# Check if the last exit code was successfull
-# For more details about this verification, please check the docs at:
-# https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.0
-function restore-nuget-packages-for-solution([string]$nugetToolExe, [string]$solutionFilePath) {
+# Attempt to restore all nuget packages in the given solution file
+function restore_nuget_packages_for_solution([string]$nugetToolExe, [string]$solutionFilePath) {
     Write-Host "Restoring solution nuget packages........." -NoNewline
     $output = & cmd /c $nugetToolExe restore $solutionFilePath -verbosity quiet 2`>`&1
     if (-Not $?)
@@ -147,8 +147,9 @@ function restore-nuget-packages-for-solution([string]$nugetToolExe, [string]$sol
     Write-Host "[OK]" -f Green
 }
 
-function build-solution-projects([string]$vsWhereToolExe, [string]$solutionFilePath, [string]$builConfigName) {
-    $msBuildToolExe = get-msbuild-executable-path -vsWhereToolExe $vsWhereToolExe
+# Attempt to build all projects in the given solution file
+function build_solution_projects([string]$vsWhereToolExe, [string]$solutionFilePath, [string]$builConfigName) {
+    $msBuildToolExe = get_msbuild_executable_path -vsWhereToolExe $vsWhereToolExe
     Write-Host "Building solution projects................" -NoNewline
     $output = & cmd /c $msBuildToolExe /nologo /verbosity:quiet /p:Configuration=$builConfigName $solutionFilePath 2`>`&1
     if (-Not $?)
@@ -162,31 +163,31 @@ function build-solution-projects([string]$vsWhereToolExe, [string]$solutionFileP
     Write-Host "[OK]" -f Green
 }
 
-function run-data-migrations([string]$solutionFilePath, [string]$builConfigName) {
-    $msBuildToolExe = get-msbuild-executable-path
-    Write-Host "Building solution projects................" -NoNewline
-    $output = & cmd /c $msBuildToolExe /nologo /verbosity:quiet /p:Configuration=$builConfigName $solutionFilePath 2`>`&1
-    if (-Not $?)
-    {
+# Checks if the given config file exists
+function check_main_config_file([string]$configFilePath) {
+    Write-Host "Checking main config file................." -NoNewline
+    if (-Not (Test-Path $configFilePath)) {
         Write-Host "[FAILED]" -f Red
         Write-Host ""
-        Write-Host $tab $output -f Red
+        Write-Host $tab "In order to run the database migrations, the connection info must be extracted from the configuration file." -f Red
+        Write-Host $tab "Please make sure that the provided path points to the correct app or web config file." -f Red
         Write-Host ""
         break
     }
     Write-Host "[OK]" -f Green
 }
 
-function run-data-migrations([string]$migratorToolExe) {
-    Write-Host "Running data migrations..................." -NoNewline
-    $output = & cmd /c $migratorToolExe 2`>`&1
-    if (-Not $?)
-    {
-        Write-Host "[FAILED]" -f Red
-        Write-Host ""
-        Write-Host $tab $output -f Red
-        Write-Host ""
-        break
-    }
-    Write-Host "[OK]" -f Green
+function run_data_migrations([string]$migratorToolExe, [string]$configFilePath) {
+    Write-Host "Running data migrations..................."
+    & cmd /c $migratorToolExe /a "a" /b "b"
+    #Write-Host "Running data migrations..................." -NoNewline
+    #$output = & cmd /c $migratorToolExe 2`>`&1
+    #if (-Not $?)
+    #{
+    #    Write-Host "[FAILED]" -f Red
+    #    Write-Host ""
+    #    Write-Host $tab $output -f Red
+    #    break
+    #}
+    #Write-Host "[OK]" -f Green
 }

@@ -94,6 +94,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Data.Core\Data.Core.csproj">
+      <Project>{01367635-B331-458F-BF5A-7369925864D6}</Project>
+      <Name>Data.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared.Infrastructure\Shared.Infrastructure.csproj">
       <Project>{BF47AE35-D535-4842-A89A-061B6EF70315}</Project>
       <Name>Shared.Infrastructure</Name>

@@ -1,8 +1,4 @@
-﻿using Data.Core.Configs;
-using FluentMigrator.Runner;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Configuration;
+﻿using System;
 
 namespace Data.Tools.Migrator
 {
@@ -10,58 +6,20 @@ namespace Data.Tools.Migrator
 	{
 		static void Main(string[] args)
 		{
-			//if ("up".Equals("args[0]"))
-			//{
 
-			//}
-
-			var service = new SqlServerMigrationService(ConfigurationManager.ConnectionStrings["SqlServerConnection"].ConnectionString);
-
-			service.MigrateUp();
-
-			//var serviceProvider = CreateServices();
-
-			//// Put the database update into a scope to ensure
-			//// that all resources will be disposed.
-			//using (var scope = serviceProvider.CreateScope())
-			//{
-			//	UpdateDatabase(scope.ServiceProvider);
-			//}
-
-			//Console.ReadLine();
 		}
 
-		/// <summary>
-		/// Configure the dependency injection services
-		/// </sumamry>
-		private static IServiceProvider CreateServices()
+		private static object ApplySqlServerMigrations()
 		{
-			return new ServiceCollection()
-				// Add common FluentMigrator services
-				.AddFluentMigratorCore()
-				.ConfigureRunner(rb => rb
-					// Add SQLite support to FluentMigrator
-					.AddSqlServer()
-					// Set the connection string
-					.WithGlobalConnectionString("Server=(localdb)\\mssqllocaldb;Database=starterTemplateMVC5;Trusted_Connection=True;")
-					// Define the assembly containing the migrations
-					.ScanIn(typeof(IMigrationService).Assembly).For.Migrations())
-				// Enable logging to console in the FluentMigrator way
-				.AddLogging(lb => lb.AddFluentMigratorConsole())
-				// Build the service provider
-				.BuildServiceProvider(false);
-		}
+			Console.WriteLine("Migrating sql server...");
 
-		/// <summary>
-		/// Update the database
-		/// </sumamry>
-		private static void UpdateDatabase(IServiceProvider serviceProvider)
-		{
-			// Instantiate the runner
-			var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
+			//Console.WriteLine(options.ConnectionString);
 
-			// Execute the migrations
-			runner.MigrateUp();
+			//var service = new SqlServerMigrationService(@"Server=(localdb)\mssqllocaldb;Database=starterTemplateMVC5;Trusted_Connection=True;");
+
+			//service.MigrateUp();
+
+			return 0;
 		}
 	}
 }

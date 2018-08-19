@@ -1,8 +1,8 @@
-﻿using Domain.Core.Repositories;
+﻿using Data.Core;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Data.Core.Configs
+namespace Data.Store.SqlServer
 {
 	/// <summary>
 	/// Sql connection factory implementation.

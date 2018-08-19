@@ -7,8 +7,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Security.Claims;
+using Data.Core;
 
-namespace Data.Core
+namespace Data.Store.SqlServer
 {
 	/// <summary>
 	/// User repository implementation.

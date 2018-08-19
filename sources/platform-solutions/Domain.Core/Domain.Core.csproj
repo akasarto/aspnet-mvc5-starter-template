@@ -56,7 +56,6 @@
     <Compile Include="SharedContext.cs" />
     <Compile Include="Entities\UserEntity.cs" />
     <Compile Include="Entities\UserPrincipal.cs" />
-    <Compile Include="Repositories\IDbConnectionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Realm.cs" />
     <Compile Include="SharedResources.Designer.cs">

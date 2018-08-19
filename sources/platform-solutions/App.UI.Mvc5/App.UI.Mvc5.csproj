@@ -653,6 +653,10 @@
       <Project>{1325D974-1E9A-49C1-BC71-A5F4B9EA3293}</Project>
       <Name>App.Identity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Data.Store.SqlServer\Data.Store.SqlServer.csproj">
+      <Project>{5B6EF0E8-4213-4B43-8462-4518CC93BB56}</Project>
+      <Name>Data.Store.SqlServer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared.Infrastructure\Shared.Infrastructure.csproj">
       <Project>{bf47ae35-d535-4842-a89a-061b6ef70315}</Project>
       <Name>Shared.Infrastructure</Name>

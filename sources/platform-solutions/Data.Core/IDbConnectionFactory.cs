@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Domain.Core.Repositories
+namespace Data.Core
 {
 	/// <summary>
 	/// Database connections factory interface.

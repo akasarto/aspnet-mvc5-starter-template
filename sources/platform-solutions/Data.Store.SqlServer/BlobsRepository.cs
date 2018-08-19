@@ -3,8 +3,9 @@ using Domain.Core.Repositories;
 using Dapper;
 using System;
 using System.Data;
+using Data.Core;
 
-namespace Data.Core
+namespace Data.Store.SqlServer
 {
 	/// <summary>
 	/// Blobs repository implementation.

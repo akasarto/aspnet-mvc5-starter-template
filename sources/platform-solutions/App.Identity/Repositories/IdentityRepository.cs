@@ -1,12 +1,12 @@
 ﻿using Dapper;
+using Data.Core;
 using Domain.Core;
+using Domain.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Security.Claims;
-using Domain.Core.Repositories;
-using Domain.Core.Entities;
 
 namespace App.Identity
 {

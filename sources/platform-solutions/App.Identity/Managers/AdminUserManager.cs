@@ -25,7 +25,7 @@ namespace App.Identity
 			_identityRepository = identityRepository;
 
 			UserLockoutEnabledByDefault = _Constants.UsersLockoutEnabledByDefault;
-			DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(_Constants.UsersLocloutIntervalInMinutes);
+			DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(_Constants.UsersLockoutIntervalInMinutes);
 			MaxFailedAccessAttemptsBeforeLockout = _Constants.UsersLockoutMaxFailedAccessAttempts;
 
 			UserValidator = new UserValidator<AdminUserEntity, int>(this)

@@ -4,8 +4,9 @@ using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using Data.Core;
 
-namespace Data.Core
+namespace Data.Store.SqlServer
 {
 	/// <summary>
 	/// Logs repository implementation.

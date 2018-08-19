@@ -1,9 +1,9 @@
-﻿using Domain.Core;
-using Domain.Core.Repositories;
-using Data.Core;
-using Data.Core.Configs;
-using App.Identity;
+﻿using App.Identity;
 using App.UI.Mvc5.Infrastructure;
+using Data.Core;
+using Data.Store.SqlServer;
+using Domain.Core;
+using Domain.Core.Repositories;
 using FluentValidation;
 using FluentValidation.Mvc;
 using Microsoft.AspNet.Identity;
@@ -15,13 +15,13 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
 using Newtonsoft.Json;
 using Owin;
+using Serilog;
 using Shared.Infrastructure;
 using Shared.Infrastructure.Azure;
 using Shared.Infrastructure.Cloudinary;
 using Shared.Infrastructure.FileSystem;
 using Shared.Infrastructure.MailGun;
 using Shared.Infrastructure.Smtp;
-using Serilog;
 using SimpleInjector;
 using SimpleInjector.Advanced;
 using SimpleInjector.Integration.Web;
@@ -35,6 +35,7 @@ using System.Reflection;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
+using SqlServer = Data.Store.SqlServer;
 
 [assembly: OwinStartup(typeof(App.UI.Mvc5.Initializer), "Initialize")]
 
@@ -111,11 +112,11 @@ namespace App.UI.Mvc5
 
 			container.Register<IDbConnectionFactory>(() => new SqlConnectionFactory(connectionString));
 
-			container.Register<IBlobsRepository, BlobsRepository>();
-			container.Register<ILogsRepository, LogsRepository>();
+			container.Register<IBlobsRepository, SqlServer.BlobsRepository>();
+			container.Register<ILogsRepository, SqlServer.LogsRepository>();
 
 			container.Register<IIdentityRepository, IdentityRepository>();
-			container.Register<IUsersRepository, UsersRepository>();
+			container.Register<IUsersRepository, SqlServer.UsersRepository>();
 
 			//
 			var mailGunApiKey = AppSettings.MailGun.ApiKey;
@@ -195,7 +196,7 @@ namespace App.UI.Mvc5
 			});
 
 			//
-			container.Register<IMigrationService>(() => new SqlServerMigrationService(connectionString));
+			//container.Register<IMigrationService>(() => new SqlServerMigrationService(connectionString));
 
 			//
 			container.Register<DatabusHub>();
