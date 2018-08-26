@@ -19,9 +19,6 @@ $solutionFilePath = Join-Path $rootFolder $solutionFilePath
 
 . $sharedFile
 
-# Clear screen
-Clear-Host
-
 # Add empty line
 Write-Host ""
 

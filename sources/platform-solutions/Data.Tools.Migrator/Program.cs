@@ -6,20 +6,22 @@ namespace Data.Tools.Migrator
 	{
 		static void Main(string[] args)
 		{
-
+			if (args.Length > 0)
+			{
+				var connectionString = args[0];
+				ApplySqlServerMigrations(connectionString);
+			}
 		}
 
-		private static object ApplySqlServerMigrations()
+		private static void ApplySqlServerMigrations(string connectionString)
 		{
 			Console.WriteLine("Migrating sql server...");
-
-			//Console.WriteLine(options.ConnectionString);
+			Console.WriteLine("");
+			Console.WriteLine(connectionString);
 
 			//var service = new SqlServerMigrationService(@"Server=(localdb)\mssqllocaldb;Database=starterTemplateMVC5;Trusted_Connection=True;");
 
 			//service.MigrateUp();
-
-			return 0;
 		}
 	}
 }

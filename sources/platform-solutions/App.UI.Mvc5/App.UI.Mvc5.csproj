@@ -657,6 +657,10 @@
       <Project>{5B6EF0E8-4213-4B43-8462-4518CC93BB56}</Project>
       <Name>Data.Store.SqlServer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Data.Tools.Migrator\Data.Tools.Migrator.csproj">
+      <Project>{4b3a666d-9afb-4307-aff4-ffc7a1c02282}</Project>
+      <Name>Data.Tools.Migrator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared.Infrastructure\Shared.Infrastructure.csproj">
       <Project>{bf47ae35-d535-4842-a89a-061b6ef70315}</Project>
       <Name>Shared.Infrastructure</Name>

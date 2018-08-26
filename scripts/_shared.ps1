@@ -1,11 +1,11 @@
 # For more details checking last exit code (e.g.: 2`>`&1 and $?), please check the docs at:
 # https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.0
 
-Set-StrictMode -Version Latest
-$ErrorActionPreference = "Stop"
-
 # \t char
 $tab = [char]9
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
 
 # Gets the current powershell major version
 # For more details regarding powershell installation, check the official docs at:
