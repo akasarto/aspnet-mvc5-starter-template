@@ -75,7 +75,7 @@ function get_msbuild_executable_path([string]$vsWhereToolExe)
 # For more details regarding other versions, please check the official docs at:
 # https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell
 function check_required_powershell_version([int]$requiredPowerShellMajorVersion) {
-    Write-Host "Checking PowerShell version..............." -NoNewline
+    Write-Host "Checking PowerShell version............... " -NoNewline
     $currentPowershellMajorVersion = get_current_powershell_major_version
     $powerShellVersionOk = is_required_powershell_major_version_or_later -currentMajorVersion $currentPowershellMajorVersion -requiredMajorVersion $requiredPowerShellMajorVersion
     if ($powerShellVersionOk -eq $false) {
@@ -85,7 +85,6 @@ function check_required_powershell_version([int]$requiredPowerShellMajorVersion)
         Write-Host $tab "The required PowerShell version is $requiredPowerShellMajorVersion or greater." -f Red
         Write-Host $tab "For more details on how to update you current PowerShell installation, check the docs at:"
         Write-Host $tab "https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell" -f Cyan
-        Write-Host ""
         break
     }
     Write-Host "[OK]" -f Green
@@ -97,7 +96,7 @@ function check_required_powershell_version([int]$requiredPowerShellMajorVersion)
 # For more details regarding other release versions, please check the official docs at:
 # https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed
 function check_required_net_framework_version([int]$requiredNetFrameworkReleaseVersion) {
-    Write-Host "Checking .NET Framework SDK version......." -NoNewline
+    Write-Host "Checking .NET Framework SDK version....... " -NoNewline
     $installedNetFrameworkSDKs = get_installed_net_framework_sdks
     $netFrameworkVersionOk = is_required_net_framework_sdk_or_greater_installed -installedNetFrameworkSDKs $installedNetFrameworkSDKs -requiredReleaseVersion $requiredNetFrameworkReleaseVersion
     if ($netFrameworkVersionOk -eq $false) {
@@ -110,14 +109,13 @@ function check_required_net_framework_version([int]$requiredNetFrameworkReleaseV
         Write-Host $tab "The required release version $requiredNetFrameworkReleaseVersion or greater was not found." -f Red
         Write-Host $tab "For more details on how to install or upgrade your environment, please check the docs at:"
         Write-Host $tab "https://www.microsoft.com/net/download/visual-studio-sdks" -f Cyan
-        Write-Host ""
         break
     }
     Write-Host "[OK]" -f Green
 }
 
 function check_msbuild_tool_executable([string]$vsWhereToolExe) {
-    Write-Host "Checking MSBuild.exe tool installation...." -NoNewline
+    Write-Host "Checking MSBuild.exe tool installation.... " -NoNewline
     $msBuildToolExe = get_msbuild_executable_path -vsWhereToolExe $vsWhereToolExe
     if (($null -eq $msBuildToolExe) -or (-Not (Test-Path $msBuildToolExe))) {
         Write-Host "[FAILED]" -f Red
@@ -126,7 +124,6 @@ function check_msbuild_tool_executable([string]$vsWhereToolExe) {
         Write-Host $tab "If this is running on a build server, make sure you have either Visual Studio or visual studio build tool installed."
         Write-Host $tab "You can find those under 'Visual Studio 2017' and 'Tools for Visual Studio 2017' at:"
         Write-Host $tab "https://visualstudio.microsoft.com/downloads/" -f Cyan
-        Write-Host ""
         break
     }
     Write-Host "[OK]" -f Green
@@ -134,14 +131,13 @@ function check_msbuild_tool_executable([string]$vsWhereToolExe) {
 
 # Attempt to restore all nuget packages in the given solution file
 function restore_nuget_packages_for_solution([string]$nugetToolExe, [string]$solutionFilePath) {
-    Write-Host "Restoring solution nuget packages........." -NoNewline
+    Write-Host "Restoring solution nuget packages......... " -NoNewline
     $output = & cmd /c $nugetToolExe restore $solutionFilePath -verbosity quiet 2`>`&1
     if (-Not $?)
     {
         Write-Host "[FAILED]" -f Red
         Write-Host ""
         Write-Host $tab $output -f Red
-        Write-Host ""
         break
     }
     Write-Host "[OK]" -f Green
@@ -150,14 +146,15 @@ function restore_nuget_packages_for_solution([string]$nugetToolExe, [string]$sol
 # Attempt to build all projects in the given solution file
 function build_solution_projects([string]$vsWhereToolExe, [string]$solutionFilePath, [string]$builConfigName) {
     $msBuildToolExe = get_msbuild_executable_path -vsWhereToolExe $vsWhereToolExe
-    Write-Host "Building solution projects................" -NoNewline
+    Write-Host "Building solution projects................ " -NoNewline
     $output = & cmd /c $msBuildToolExe /nologo /verbosity:quiet /p:Configuration=$builConfigName $solutionFilePath 2`>`&1
     if (-Not $?)
     {
         Write-Host "[FAILED]" -f Red
         Write-Host ""
-        Write-Host $tab $output -f Red
+        Write-Host $tab "For further details, please check the solution status in Visual Studio." -f Cyan
         Write-Host ""
+        Write-Host $tab $output -f Red
         break
     }
     Write-Host "[OK]" -f Green
@@ -165,29 +162,18 @@ function build_solution_projects([string]$vsWhereToolExe, [string]$solutionFileP
 
 # Checks if the given config file exists
 function check_main_config_file([string]$configFilePath) {
-    Write-Host "Checking main config file................." -NoNewline
+    Write-Host "Checking main config file................. " -NoNewline
     if (-Not (Test-Path $configFilePath)) {
         Write-Host "[FAILED]" -f Red
         Write-Host ""
         Write-Host $tab "In order to run the database migrations, the connection info must be extracted from the configuration file." -f Red
         Write-Host $tab "Please make sure that the provided path points to the correct app or web config file." -f Red
-        Write-Host ""
         break
     }
     Write-Host "[OK]" -f Green
 }
 
 function run_data_migrations([string]$migratorToolExe, [string]$configFilePath) {
-    Write-Host "Running data migrations..................."
+    Write-Host ""
     & cmd /c $migratorToolExe /a "a" /b "b"
-    #Write-Host "Running data migrations..................." -NoNewline
-    #$output = & cmd /c $migratorToolExe 2`>`&1
-    #if (-Not $?)
-    #{
-    #    Write-Host "[FAILED]" -f Red
-    #    Write-Host ""
-    #    Write-Host $tab $output -f Red
-    #    break
-    #}
-    #Write-Host "[OK]" -f Green
 }

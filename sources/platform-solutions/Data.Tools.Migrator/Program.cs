@@ -15,8 +15,12 @@ namespace Data.Tools.Migrator
 
 		private static void ApplySqlServerMigrations(string connectionString)
 		{
-			Console.WriteLine("Migrating sql server...");
+			var fgColor = Console.ForegroundColor;
+			Console.ForegroundColor = ConsoleColor.Cyan;
+			Console.WriteLine("SQL Server migrations:");
+			Console.ForegroundColor = fgColor;
 			Console.WriteLine("");
+
 			Console.WriteLine(connectionString);
 
 			//var service = new SqlServerMigrationService(@"Server=(localdb)\mssqllocaldb;Database=starterTemplateMVC5;Trusted_Connection=True;");
