@@ -11,4 +11,6 @@ powershell ^
     -requiredNetFrameworkReleaseVersion 461308^
     -mainWebProjectFolder "sources\platform-solutions\App.UI.Mvc5"^
     -solutionFilePath "sources\platform-solutions\starterTemplateMVC5.sln"^
-    -builConfigName Debug
+    -builConfigName "Debug"^
+    -conStringName "SqlServerConnection"^
+    -databaseType "SqlServer"

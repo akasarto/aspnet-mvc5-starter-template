@@ -4,7 +4,9 @@ param (
     [int]$requiredNetFrameworkReleaseVersion, # Included in Visual Studio 2017 versions (.Net Framwork 4.7.1)
     [string]$mainWebProjectFolder, # Relative to root (or deploy full path)
     [string]$solutionFilePath, # Relative to root
-    [string]$builConfigName # Debug/Release
+    [string]$builConfigName, # Debug/Release
+    [string]$conStringName,
+    [string]$databaseType
 )
 
 $rootFolder = ((get-item (split-path $MyInvocation.MyCommand.Definition)).Parent).FullName
@@ -41,6 +43,20 @@ build_solution_projects -vsWhereToolExe $vsWhereToolExe -solutionFilePath $solut
 check_main_config_file -configFilePath $configFilePath
 
 # Run data migrations
-run_data_migrations -migratorToolExe $migratorToolExe -connectionStringName ""
+#########################################################################################
+
+Write-Host ""
+
+#load config
+$xml = [Xml](Get-Content $configFilePath)
+$connectionNode = $xml.SelectSingleNode("configuration/connectionStrings/add[@name='$conStringName']")
+
+if($connectionNode) {
+    $provider = $connectionNode.providerName
+    $connectionString = $connectionNode.connectionString
+    & cmd /c $migratorToolExe "[$provider][$connectionString]"
+} else{
+    Write-Host "Unable to locate connection string '$conStringName'" -f Red
+}
 
 Write-Host ""

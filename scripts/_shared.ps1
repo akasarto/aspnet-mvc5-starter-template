@@ -172,8 +172,3 @@ function check_main_config_file([string]$configFilePath) {
     }
     Write-Host "[OK]" -f Green
 }
-
-function run_data_migrations([string]$migratorToolExe, [string]$configFilePath) {
-    Write-Host ""
-    & cmd /c $migratorToolExe /a "a" /b "b"
-}

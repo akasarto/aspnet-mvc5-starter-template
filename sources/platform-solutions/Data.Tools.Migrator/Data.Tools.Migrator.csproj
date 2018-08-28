@@ -59,6 +59,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Data.Store.SqlServer\Data.Store.SqlServer.csproj">
+      <Project>{5b6ef0e8-4213-4b43-8462-4518cc93bb56}</Project>
+      <Name>Data.Store.SqlServer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
       <Project>{1fd4b39d-6971-45c1-8bef-f6ac0f78a2c9}</Project>
       <Name>Domain.Core</Name>
