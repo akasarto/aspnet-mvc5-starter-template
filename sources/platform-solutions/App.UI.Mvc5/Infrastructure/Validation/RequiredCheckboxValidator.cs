@@ -25,11 +25,11 @@ namespace App.UI.Mvc5.Infrastructure
 		public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
 		{
 			var messageFormatter = new MessageFormatter().AppendPropertyName(metadata.DisplayName);
-			var FormatterdMessage = messageFormatter.BuildMessage(ErrorMessageSource.GetString(null));
+			var FormattedMessage = messageFormatter.BuildMessage(Options.ErrorMessageSource.GetString(null));
 
 			var rule = new ModelClientValidationRule
 			{
-				ErrorMessage = FormatterdMessage,
+				ErrorMessage = FormattedMessage,
 				ValidationType = "requiredcheckbox"
 			};
 

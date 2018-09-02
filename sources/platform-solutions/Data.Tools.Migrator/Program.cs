@@ -24,6 +24,10 @@ namespace Data.Tools.Migrator
 			}
 		}
 
+		private static string GetProviderName(string connectionData) => Regex.Replace(connectionData, DATA_EXTRACT_PATTERN, "$1");
+
+		private static string GetConnectionString(string connectionData) => Regex.Replace(connectionData, DATA_EXTRACT_PATTERN, "$2");
+
 		private static void ApplySqlServerMigrations(string connectionString)
 		{
 			WriteDataInfo("SQL Server");
@@ -35,15 +39,11 @@ namespace Data.Tools.Migrator
 			//service.MigrateUp();
 		}
 
-		private static string GetProviderName(string connectionData) => Regex.Replace(connectionData, DATA_EXTRACT_PATTERN, "$1");
-
-		private static string GetConnectionString(string connectionData) => Regex.Replace(connectionData, DATA_EXTRACT_PATTERN, "$2");
-
 		private static void WriteDataInfo(string runnerType)
 		{
 			var fgColor = Console.ForegroundColor;
 			Console.ForegroundColor = ConsoleColor.Cyan;
-			Console.WriteLine($"##### Migrating [{runnerType}]");
+			Console.WriteLine($"### Migrating [{runnerType}]");
 			Console.ForegroundColor = fgColor;
 			Console.WriteLine("");
 		}
