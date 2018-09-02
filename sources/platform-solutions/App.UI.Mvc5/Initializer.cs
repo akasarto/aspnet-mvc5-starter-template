@@ -2,6 +2,7 @@
 using App.UI.Mvc5.Infrastructure;
 using Data.Core;
 using Data.Store.SqlServer;
+using Data.Store.SqlServer.Infrastructure;
 using Domain.Core;
 using Domain.Core.Repositories;
 using FluentValidation;
