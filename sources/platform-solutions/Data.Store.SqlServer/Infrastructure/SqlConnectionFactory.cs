@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Data.Store.SqlServer
+namespace Data.Store.SqlServer.Infrastructure
 {
 	/// <summary>
 	/// Sql connection factory implementation.

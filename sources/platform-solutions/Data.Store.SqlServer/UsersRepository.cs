@@ -1,13 +1,13 @@
-﻿using Domain.Core;
+﻿using Dapper;
+using Data.Core;
+using Domain.Core;
 using Domain.Core.Entities;
 using Domain.Core.Repositories;
-using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Security.Claims;
-using Data.Core;
 
 namespace Data.Store.SqlServer
 {

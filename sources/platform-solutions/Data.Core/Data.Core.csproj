@@ -50,7 +50,6 @@
       <Link>Properties\SharedAppAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="IDbConnectionFactory.cs" />
-    <Compile Include="IMigrationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

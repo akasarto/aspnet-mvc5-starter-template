@@ -47,19 +47,9 @@
       <Link>Properties\SharedAppAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="BlobsRepository.cs" />
-    <Compile Include="ISqlServerMigrationService.cs" />
     <Compile Include="LogsRepository.cs" />
-    <Compile Include="Migrations\_20180525071500_Create_Blobs_Table.cs" />
-    <Compile Include="Migrations\_20180525071501_Create_Users_Table.cs" />
-    <Compile Include="Migrations\_20180525071502_Create_UserRoles_Table.cs" />
-    <Compile Include="Migrations\_20180525071503_Create_UserClaims_Table.cs" />
-    <Compile Include="Migrations\_20180525071504_Create_UserRealms_Table.cs" />
-    <Compile Include="Migrations\_20180525071505_Create_UserBlobs_Table.cs" />
-    <Compile Include="Migrations\_20180525071506_Create_Logs_Table.cs" />
-    <Compile Include="Migrations\_20180525071507_Initial_Seed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlConnectionFactory.cs" />
-    <Compile Include="SqlServerMigrationService.cs" />
+    <Compile Include="Infrastructure\SqlConnectionFactory.cs" />
     <Compile Include="UsersRepository.cs" />
   </ItemGroup>
   <ItemGroup>

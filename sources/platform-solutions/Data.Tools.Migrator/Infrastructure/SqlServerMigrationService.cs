@@ -4,7 +4,7 @@
 //using System;
 //using System.Data.SqlClient;
 
-//namespace Data.Store.SqlServer
+//namespace Data.Tools.Migrator.Infrastructure
 //{
 //	public class SqlServerMigrationService : IMigrationService
 //	{

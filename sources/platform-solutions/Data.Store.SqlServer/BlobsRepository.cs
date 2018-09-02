@@ -1,9 +1,9 @@
-﻿using Domain.Core.Entities;
+﻿using Dapper;
+using Data.Core;
+using Domain.Core.Entities;
 using Domain.Core.Repositories;
-using Dapper;
 using System;
 using System.Data;
-using Data.Core;
 
 namespace Data.Store.SqlServer
 {
