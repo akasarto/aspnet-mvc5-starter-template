@@ -1,8 +1,10 @@
 ﻿using Dapper;
+using Data.Core;
 using FluentMigrator.Runner;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Data.SqlClient;
+using System.Reflection;
 
 namespace Data.Tools.Migrator.Infrastructure
 {
@@ -37,14 +39,15 @@ namespace Data.Tools.Migrator.Infrastructure
 		{
 			return
 				new ServiceCollection()
+				.AddSingleton<IMigrationScriptPathProvider, SqlServerScriptsPathProvider>()
 				.AddFluentMigratorCore()
 				.ConfigureRunner(rb => rb
 					.AddSqlServer()
 					.WithGlobalConnectionString(_connectionString)
-					.ScanIn(typeof(SqlServerMigrationService).Assembly).For.Migrations()
+					.ScanIn(typeof(Program).Assembly).For.Migrations()
 				)
-				.AddLogging(lb => lb.AddFluentMigratorConsole())
-				.BuildServiceProvider(false);
+				.AddLogging(logger => logger.AddFluentMigratorConsole())
+				.BuildServiceProvider(validateScopes: false);
 		}
 
 		private bool DatabaseExists()
@@ -89,7 +92,7 @@ namespace Data.Tools.Migrator.Infrastructure
 			);
 		}
 
-		private static void UpdateDatabase(IServiceProvider serviceProvider)
+		private void UpdateDatabase(IServiceProvider serviceProvider)
 		{
 			var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Tools.Migrator.Infrastructure;
+using System;
 using System.Text.RegularExpressions;
 
 namespace Data.Tools.Migrator
@@ -34,9 +35,9 @@ namespace Data.Tools.Migrator
 
 			Console.WriteLine(connectionString);
 
-			//var service = new SqlServerMigrationService(@"Server=(localdb)\mssqllocaldb;Database=starterTemplateMVC5;Trusted_Connection=True;");
+			var service = new SqlServerMigrationService(connectionString);
 
-			//service.MigrateUp();
+			service.MigrateUp();
 		}
 
 		private static void WriteDataInfo(string runnerType)
