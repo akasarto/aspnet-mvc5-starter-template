@@ -1,4 +1,4 @@
-﻿using Domain.Core.Entities;
+﻿using Domain.Core;
 using Shared.Extensions;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Security.Principal;
 namespace App.Identity
 {
 	[Serializable]
-	public class AppPrincipal : UserPrincipal
+	public class AppPrincipal : DomainPrincipal
 	{
 		private const string IdClaim = ClaimTypes.NameIdentifier;
 		private const string FullNameClaim = "u.full.name";

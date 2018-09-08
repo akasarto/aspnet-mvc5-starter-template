@@ -3,9 +3,6 @@ using Newtonsoft.Json.Serialization;
 
 namespace Domain.Core
 {
-	/// <summary>
-	/// A system wide json serialization settings for the platform.
-	/// </summary>
 	public class SharedJsonSettings : JsonSerializerSettings
 	{
 		/// <summary>

@@ -6,6 +6,7 @@ using App.UI.Mvc5.Infrastructure;
 using Data.Core;
 using Data.Store.SqlServer.Infrastructure;
 using Domain.Core;
+using Domain.Core.Interfaces;
 using Domain.Core.Repositories;
 using FluentValidation;
 using FluentValidation.Mvc;
@@ -152,7 +153,7 @@ namespace App.UI.Mvc5
 
 			//
 			container.Register(typeof(IValidator<>), domainAssemblies);
-			container.Register(() =>
+			container.Register<ISharedContext>(() =>
 			{
 				if (AdvancedExtensions.IsVerifying(container) || HttpContext.Current == null)
 				{

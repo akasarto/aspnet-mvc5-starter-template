@@ -3,27 +3,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Core
 {
-	/// <summary>
-	/// Represent a set of roles that user can be part of.
-	/// </summary>
 	[Flags]
 	public enum Role
 	{
-		/// <summary>
-		/// None #0
-		/// </summary>
 		[Display(Name = "RoleNone", ResourceType = typeof(SharedResources))]
 		None = 0,
 
-		/// <summary>
-		/// Basic #1
-		/// </summary>
 		[Display(Name = "RoleBasic", ResourceType = typeof(SharedResources))]
 		Basic = 1,
 
-		/// <summary>
-		/// SuperUser #2
-		/// </summary>
 		[Display(Name = "RoleSuperUser", ResourceType = typeof(SharedResources))]
 		SuperUser = 2,
 

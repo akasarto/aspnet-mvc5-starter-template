@@ -1,6 +1,7 @@
 ﻿using App.Identity.Repositories;
 using App.UI.Mvc5.Infrastructure;
 using Domain.Core;
+using Domain.Core.Interfaces;
 using FluentValidation;
 using System;
 
@@ -8,15 +9,15 @@ namespace App.UI.Mvc5.Areas.Users.Models
 {
 	public class ProfileEditViewModelValidator : AbstractValidator<ProfileEditViewModel>
 	{
-		private SharedContext _context = null;
+		private ISharedContext _sharedContext = null;
 		private IIdentityRepository _identityRepository = null;
 
 		/// <summary>
 		/// Constructor method.
 		/// </summary>
-		public ProfileEditViewModelValidator(SharedContext context, IIdentityRepository identityRepository)
+		public ProfileEditViewModelValidator(ISharedContext context, IIdentityRepository identityRepository)
 		{
-			_context = context;
+			_sharedContext = context;
 			_identityRepository = identityRepository;
 
 			// Name
@@ -46,7 +47,7 @@ namespace App.UI.Mvc5.Areas.Users.Models
 
 		private bool BeUniqueOrCurrentEmail(string email)
 		{
-			if (string.IsNullOrWhiteSpace(email) || _context == null)
+			if (string.IsNullOrWhiteSpace(email) || _sharedContext == null)
 			{
 				return false;
 			}
@@ -58,12 +59,12 @@ namespace App.UI.Mvc5.Areas.Users.Models
 				return true;
 			}
 
-			return user.Id.Equals(_context.UserId);
+			return user.Id.Equals(_sharedContext.UserId);
 		}
 
 		private bool BeUniqueOrCurrentUsername(string userName)
 		{
-			if (string.IsNullOrWhiteSpace(userName) || _context == null)
+			if (string.IsNullOrWhiteSpace(userName) || _sharedContext == null)
 			{
 				return false;
 			}
@@ -75,7 +76,7 @@ namespace App.UI.Mvc5.Areas.Users.Models
 				return true;
 			}
 
-			return user.Id.Equals(_context.UserId);
+			return user.Id.Equals(_sharedContext.UserId);
 		}
 
 		private bool BeExistingPictureBlobId(Guid? pictureBlobId)
