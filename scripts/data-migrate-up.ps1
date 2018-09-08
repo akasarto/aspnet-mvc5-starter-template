@@ -47,7 +47,6 @@ check_main_config_file -configFilePath $configFilePath
 
 Write-Host ""
 
-#load config
 $xml = [Xml](Get-Content $configFilePath)
 $connectionNode = $xml.SelectSingleNode("configuration/connectionStrings/add[@name='$conStringName']")
 

@@ -7,7 +7,7 @@ namespace App.UI.Mvc5.Infrastructure
 	{
 		public string GetUserId(IRequest request)
 		{
-			var user = new AdminPrincipal(request?.User);
+			var user = new AppPrincipal(request?.User);
 
 			return (user?.Id ?? 0).ToString();
 		}

@@ -2,49 +2,49 @@
 using System;
 using System.Threading.Tasks;
 
-namespace App.Identity
+namespace App.Identity.UserStore
 {
-	public partial class AdminStore : IUserLockoutStore<AdminUserEntity, int>
+	public partial class AppUserStore : IUserLockoutStore<AppUserEntity, int>
 	{
-		public Task<bool> GetLockoutEnabledAsync(AdminUserEntity user)
+		public Task<bool> GetLockoutEnabledAsync(AppUserEntity user)
 		{
 			return Task.FromResult(user.LockoutEnabled);
 		}
 
-		public Task<int> GetAccessFailedCountAsync(AdminUserEntity user)
+		public Task<int> GetAccessFailedCountAsync(AppUserEntity user)
 		{
 			return Task.FromResult(user.AccessFailedCount);
 		}
 
-		public Task<DateTimeOffset> GetLockoutEndDateAsync(AdminUserEntity user)
+		public Task<DateTimeOffset> GetLockoutEndDateAsync(AppUserEntity user)
 		{
 			user.LockoutEndDateUtc = user.LockoutEndDateUtc ?? DateTimeOffset.MinValue;
 
 			return Task.FromResult(user.LockoutEndDateUtc.Value);
 		}
 
-		public Task<int> IncrementAccessFailedCountAsync(AdminUserEntity user)
+		public Task<int> IncrementAccessFailedCountAsync(AppUserEntity user)
 		{
 			user.AccessFailedCount = user.AccessFailedCount + 1;
 
 			return Task.FromResult(user.AccessFailedCount);
 		}
 
-		public Task ResetAccessFailedCountAsync(AdminUserEntity user)
+		public Task ResetAccessFailedCountAsync(AppUserEntity user)
 		{
 			user.AccessFailedCount = 0;
 
 			return Task.CompletedTask;
 		}
 
-		public Task SetLockoutEnabledAsync(AdminUserEntity user, bool enabled)
+		public Task SetLockoutEnabledAsync(AppUserEntity user, bool enabled)
 		{
 			user.LockoutEnabled = enabled;
 
 			return Task.CompletedTask;
 		}
 
-		public Task SetLockoutEndDateAsync(AdminUserEntity user, DateTimeOffset lockoutEnd)
+		public Task SetLockoutEndDateAsync(AppUserEntity user, DateTimeOffset lockoutEnd)
 		{
 			user.LockoutEndDateUtc = lockoutEnd.UtcDateTime;
 

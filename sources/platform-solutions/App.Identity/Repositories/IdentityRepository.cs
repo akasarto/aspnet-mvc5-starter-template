@@ -8,7 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Security.Claims;
 
-namespace App.Identity
+namespace App.Identity.Repositories
 {
 	public class IdentityRepository : IIdentityRepository
 	{
@@ -22,12 +22,7 @@ namespace App.Identity
 			_dbConnectionFactory = dbConnectionFactory ?? throw new ArgumentNullException(nameof(dbConnectionFactory), nameof(IdentityRepository));
 		}
 
-		/// <summary>
-		/// Create a new user.
-		/// </summary>
-		/// <param name="adminUser">The new user instance.</param>
-		/// <returns>Returns the user instance with the updated id.</returns>
-		public AdminUserEntity Create(AdminUserEntity adminUser)
+		public AppUserEntity Create(AppUserEntity adminUser)
 		{
 			using (var connection = _dbConnectionFactory.CreateConnection())
 			{
@@ -72,11 +67,7 @@ namespace App.Identity
 			}
 		}
 
-		/// <summary>
-		/// Get all existing users.
-		/// </summary>
-		/// <returns>Returns a list of admin users.</returns>
-		public IEnumerable<AdminUserEntity> GetAll()
+		public IEnumerable<AppUserEntity> GetAll()
 		{
 			var parameters = new DynamicParameters();
 
@@ -91,12 +82,7 @@ namespace App.Identity
 			}
 		}
 
-		/// <summary>
-		/// Get a single user.
-		/// </summary>
-		/// <param name="userEmail">The email to search.</param>
-		/// <returns>Returns an admin user instance.</returns>
-		public AdminUserEntity GetByEmail(string userEmail)
+		public AppUserEntity GetByEmail(string userEmail)
 		{
 			var parameters = new DynamicParameters();
 
@@ -113,12 +99,7 @@ namespace App.Identity
 			}
 		}
 
-		/// <summary>
-		/// Get a single user.
-		/// </summary>
-		/// <param name="userId">The id to search.</param>
-		/// <returns>Returns an admin user instance.</returns>
-		public AdminUserEntity GetById(int userId)
+		public AppUserEntity GetById(int userId)
 		{
 			var parameters = new DynamicParameters();
 
@@ -135,12 +116,7 @@ namespace App.Identity
 			}
 		}
 
-		/// <summary>
-		/// Get a single user.
-		/// </summary>
-		/// <param name="userName">The 'userName' to search.</param>
-		/// <returns>Returns an admin user instance.</returns>
-		public AdminUserEntity GetByUserName(string userName)
+		public AppUserEntity GetByUserName(string userName)
 		{
 			var parameters = new DynamicParameters();
 
@@ -157,11 +133,7 @@ namespace App.Identity
 			}
 		}
 
-		/// <summary>
-		/// Update the admin user identity information.
-		/// </summary>
-		/// <param name="adminUser">The admin user instance.</param>
-		public void UpdateIdentity(AdminUserEntity adminUser)
+		public void UpdateIdentity(AppUserEntity adminUser)
 		{
 			using (var connection = _dbConnectionFactory.CreateConnection())
 			{
@@ -202,11 +174,7 @@ namespace App.Identity
 			}
 		}
 
-		/// <summary>
-		/// Update only the information related to the user profile.
-		/// </summary>
-		/// <param name="adminUser">The admin user instance.</param>
-		public void UpdateProfile(AdminUserEntity adminUser)
+		public void UpdateProfile(AppUserEntity adminUser)
 		{
 			using (var connection = _dbConnectionFactory.CreateConnection())
 			{
@@ -240,22 +208,14 @@ namespace App.Identity
 			}
 		}
 
-		/// <summary>
-		/// Maps the data reader result to the admin user objects.
-		/// </summary>
-		private Func<AdminUserEntity, BlobEntity, AdminUserEntity> _userMap = (user, blob) =>
+		private readonly Func<AppUserEntity, BlobEntity, AppUserEntity> _userMap = (user, blob) =>
 		{
 			user.PictureInfo = blob?.GetInfo();
 
 			return user;
 		};
 
-		/// <summary>
-		/// Build the full admin user instance.
-		/// </summary>
-		/// <param name="reader">The reader from the executed query.</param>
-		/// <returns>Returns an admin user instance.</returns>
-		private AdminUserEntity BuildEntity(SqlMapper.GridReader reader)
+		private AppUserEntity BuildEntity(SqlMapper.GridReader reader)
 		{
 			var entity = reader.Read(_userMap).SingleOrDefault();
 
@@ -273,12 +233,7 @@ namespace App.Identity
 			return entity;
 		}
 
-		/// <summary>
-		/// Buils a list of full admin user instances.
-		/// </summary>
-		/// <param name="reader">The reader from the executed query.</param>
-		/// <returns>Returns a list of admin user instances.</returns>
-		private IEnumerable<AdminUserEntity> BuildEntitiesList(SqlMapper.GridReader reader)
+		private IEnumerable<AppUserEntity> BuildEntitiesList(SqlMapper.GridReader reader)
 		{
 			var entities = reader.Read(_userMap).ToList();
 
@@ -326,15 +281,7 @@ namespace App.Identity
 			return entities;
 		}
 
-		/// <summary>
-		/// Manages the admin user related claims.
-		/// </summary>
-		/// <param name="dbConnection">Current database connection.</param>
-		/// <param name="transaction">Current database transaction.</param>
-		/// <param name="claims">The current set of claims for the user.</param>
-		/// <param name="user">The user begin managed.</param>
-		/// <param name="cleanup">Remove previous claims before adding the new ones.</param>
-		private void UserClaimsSet(IDbConnection dbConnection, IDbTransaction transaction, List<Claim> claims, AdminUserEntity user, bool cleanup)
+		private void UserClaimsSet(IDbConnection dbConnection, IDbTransaction transaction, List<Claim> claims, AppUserEntity user, bool cleanup)
 		{
 			if (cleanup)
 			{
@@ -367,15 +314,7 @@ namespace App.Identity
 			}
 		}
 
-		/// <summary>
-		/// Manages the admin user related realms.
-		/// </summary>
-		/// <param name="dbConnection">Current database connection.</param>
-		/// <param name="transaction">Current database transaction.</param>
-		/// <param name="realms">The current set of realms for the user.</param>
-		/// <param name="user">The user begin managed.</param>
-		/// <param name="cleanup">Remove previous realms before adding the new ones.</param>
-		private void UserRealmsSet(IDbConnection dbConnection, IDbTransaction transaction, List<Realm> realms, AdminUserEntity user, bool cleanup)
+		private void UserRealmsSet(IDbConnection dbConnection, IDbTransaction transaction, List<Realm> realms, AppUserEntity user, bool cleanup)
 		{
 			if (cleanup)
 			{
@@ -407,15 +346,7 @@ namespace App.Identity
 			}
 		}
 
-		/// <summary>
-		/// Manages the admin user related roles.
-		/// </summary>
-		/// <param name="dbConnection">Current database connection.</param>
-		/// <param name="transaction">Current database transaction.</param>
-		/// <param name="roles">The current set of roles for the user.</param>
-		/// <param name="user">The user begin managed.</param>
-		/// <param name="cleanup">Remove previous roles before adding the new ones.</param>
-		private void UserRolesSet(IDbConnection dbConnection, IDbTransaction transaction, List<Role> roles, AdminUserEntity user, bool cleanup)
+		private void UserRolesSet(IDbConnection dbConnection, IDbTransaction transaction, List<Role> roles, AppUserEntity user, bool cleanup)
 		{
 			if (cleanup)
 			{

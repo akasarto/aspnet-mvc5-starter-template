@@ -1,29 +1,29 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using Domain.Core;
+using Microsoft.AspNet.Identity;
 using Shared.Extensions;
-using Domain.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace App.Identity
+namespace App.Identity.UserStore
 {
-	public partial class AdminStore : IUserRoleStore<AdminUserEntity, int>
+	public partial class AppUserStore : IUserRoleStore<AppUserEntity, int>
 	{
-		public Task<IList<string>> GetRolesAsync(AdminUserEntity user)
+		public Task<IList<string>> GetRolesAsync(AppUserEntity user)
 		{
 			var roles = user.Roles.Select(role => role.ToString()).ToList();
 
 			return Task.FromResult<IList<string>>(roles);
 		}
 
-		public Task AddToRoleAsync(AdminUserEntity user, string roleId)
+		public Task AddToRoleAsync(AppUserEntity user, string roleId)
 		{
 			var role = roleId.ChangeType(Role.None);
 
 			if (role == Role.None)
 			{
-				throw new Exception($"Invalid role at {nameof(AdminStore)} => {nameof(AddToRoleAsync)}.");
+				throw new Exception($"Invalid role at {nameof(AppUserStore)} => {nameof(AddToRoleAsync)}.");
 			}
 
 			user.Roles.Add(role);
@@ -31,7 +31,7 @@ namespace App.Identity
 			return Task.CompletedTask;
 		}
 
-		public Task<bool> IsInRoleAsync(AdminUserEntity user, string roleId)
+		public Task<bool> IsInRoleAsync(AppUserEntity user, string roleId)
 		{
 			var isInRole = user.Roles.Any(role =>
 				role.Equals(
@@ -42,13 +42,13 @@ namespace App.Identity
 			return Task.FromResult(isInRole);
 		}
 
-		public Task RemoveFromRoleAsync(AdminUserEntity user, string roleId)
+		public Task RemoveFromRoleAsync(AppUserEntity user, string roleId)
 		{
 			var role = roleId.ChangeType<Role>();
 
 			if (role == Role.None)
 			{
-				throw new Exception($"Invalid role at {nameof(AdminStore)} => {nameof(RemoveFromRoleAsync)}.");
+				throw new Exception($"Invalid role at {nameof(AppUserStore)} => {nameof(RemoveFromRoleAsync)}.");
 			}
 
 			user.Roles.Remove(role);

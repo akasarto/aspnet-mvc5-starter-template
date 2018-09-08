@@ -1,7 +1,9 @@
 ﻿using App.Identity;
+using App.Identity.Managers;
+using App.Identity.Repositories;
+using App.Identity.UserStore;
 using App.UI.Mvc5.Infrastructure;
 using Data.Core;
-using Data.Store.SqlServer;
 using Data.Store.SqlServer.Infrastructure;
 using Domain.Core;
 using Domain.Core.Repositories;
@@ -62,9 +64,9 @@ namespace App.UI.Mvc5
 			var domainAssemblies = GetKnownDomainAssemblies();
 
 			//
-			container.Register<AdminStore>();
-			container.Register<AdminUserManager>();
-			container.Register<AdminSignInManager>();
+			container.Register<AppUserStore>();
+			container.Register<AppUserManager>();
+			container.Register<AppSignInManager>();
 			container.Register(() => appBuilder.GetDataProtectionProvider());
 
 			container.Register(() =>
@@ -157,7 +159,7 @@ namespace App.UI.Mvc5
 					return SharedContext.Null;
 				}
 
-				var currentPrincipal = new AdminPrincipal(HttpContext.Current.User);
+				var currentPrincipal = new AppPrincipal(HttpContext.Current.User);
 
 				return new SharedContext(
 					userId: currentPrincipal.Id
@@ -219,12 +221,12 @@ namespace App.UI.Mvc5
 
 				Provider = new CookieAuthenticationProvider
 				{
-					OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<AdminUserManager, AdminUserEntity, int>(
+					OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<AppUserManager, AppUserEntity, int>(
 						validateInterval: TimeSpan.FromMinutes(0),
 						regenerateIdentityCallback: (manager, user) =>
 						{
 							var currentPricipal = HttpContext.Current.User;
-							var currentAdminPrincipal = new AdminPrincipal(currentPricipal);
+							var currentAdminPrincipal = new AppPrincipal(currentPricipal);
 
 							var currentIsPersistentState = currentAdminPrincipal.IsPersistent;
 							var currentScreenLockState = currentAdminPrincipal.ScreenLocked;

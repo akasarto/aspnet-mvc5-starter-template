@@ -4,7 +4,6 @@ using FluentMigrator.Runner;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Data.SqlClient;
-using System.Reflection;
 
 namespace Data.Tools.Migrator.Infrastructure
 {

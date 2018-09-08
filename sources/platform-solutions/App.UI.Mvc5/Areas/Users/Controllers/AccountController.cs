@@ -1,8 +1,9 @@
-﻿using Domain.Core;
-using App.Identity;
+﻿using App.Identity;
+using App.Identity.Managers;
 using App.UI.Mvc5.Areas.Users.Models;
 using App.UI.Mvc5.Infrastructure;
 using App.UI.Mvc5.Models;
+using Domain.Core;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -19,18 +20,18 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 	[RoutePrefix("account")]
 	public partial class AccountController : __AreaBaseController
 	{
-		private AdminUserManager _adminUserManager = null;
-		private AdminSignInManager _adminSignInManager = null;
+		private AppUserManager _appUserManager = null;
+		private AppSignInManager _signInManager = null;
 		private IAuthenticationManager _authenticationManager = null;
 		private IEmailDispatcherService _emailDispatcherService = null;
 
 		/// <summary>
 		/// Constructor method.
 		/// </summary>
-		public AccountController(AdminUserManager adminUserManager, AdminSignInManager adminSignInManager, IAuthenticationManager authenticationManager, IEmailDispatcherService emailDispatcherService)
+		public AccountController(AppUserManager appUserManager, AppSignInManager signInManager, IAuthenticationManager authenticationManager, IEmailDispatcherService emailDispatcherService)
 		{
-			_adminUserManager = adminUserManager ?? throw new ArgumentNullException(nameof(adminUserManager), nameof(AccountController));
-			_adminSignInManager = adminSignInManager ?? throw new ArgumentNullException(nameof(adminSignInManager), nameof(AccountController));
+			_appUserManager = appUserManager ?? throw new ArgumentNullException(nameof(appUserManager), nameof(AccountController));
+			_signInManager = signInManager ?? throw new ArgumentNullException(nameof(signInManager), nameof(AccountController));
 			_authenticationManager = authenticationManager ?? throw new ArgumentNullException(nameof(authenticationManager), nameof(AccountController));
 			_emailDispatcherService = emailDispatcherService ?? throw new ArgumentNullException(nameof(emailDispatcherService), nameof(AccountController));
 		}
@@ -75,24 +76,24 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				AdminUserEntity user = null;
+				AppUserEntity user = null;
 
 				//
 				if (_RegularExpressions.SimpleEmail.IsMatch(model.EmailOrUsername))
 				{
-					user = await _adminUserManager.FindByEmailAsync(model.EmailOrUsername);
+					user = await _appUserManager.FindByEmailAsync(model.EmailOrUsername);
 				}
 				else
 				{
-					user = await _adminUserManager.FindByNameAsync(model.EmailOrUsername);
+					user = await _appUserManager.FindByNameAsync(model.EmailOrUsername);
 				}
 
 				//
 				if (user != null && user.Realms.Contains(Realm.AdminWebsite))
 				{
-					_adminSignInManager.InitialPersistenceState = model.RememberMe;
+					_signInManager.InitialPersistenceState = model.RememberMe;
 
-					var result = await _adminSignInManager.PasswordSignInAsync(
+					var result = await _signInManager.PasswordSignInAsync(
 						user.UserName,
 						model.Password,
 						model.RememberMe,
@@ -145,7 +146,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				var result = await _adminUserManager.ChangePasswordAsync(
+				var result = await _appUserManager.ChangePasswordAsync(
 					User.Id,
 					model.Password,
 					model.NewPassword
@@ -192,7 +193,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 			if (ModelState.IsValid)
 			{
 				//
-				var adminUser = await _adminUserManager.FindByEmailAsync(model.Email);
+				var adminUser = await _appUserManager.FindByEmailAsync(model.Email);
 
 				//
 				if (adminUser != null && adminUser.Realms.Contains(Realm.AdminWebsite))
@@ -204,7 +205,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 						PageTitle = GetLocalizedString("Auth_RecoverPasswordTitle"),
 						ResetLink = Url.Action(nameof(PasswordSetNew), "Account", new
 						{
-							resetToken = await _adminUserManager.GeneratePasswordResetTokenAsync(adminUser.Id),
+							resetToken = await _appUserManager.GeneratePasswordResetTokenAsync(adminUser.Id),
 							area = AppAreas.GetAreaName(Area.Users)
 						}, protocol: Request.Url.Scheme)
 					};
@@ -254,11 +255,11 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				var adminUser = await _adminUserManager.FindByEmailAsync(model.Email);
+				var adminUser = await _appUserManager.FindByEmailAsync(model.Email);
 
 				if (adminUser != null && adminUser.Realms.Contains(Realm.AdminWebsite))
 				{
-					var result = await _adminUserManager.ResetPasswordAsync(
+					var result = await _appUserManager.ResetPasswordAsync(
 						adminUser.Id,
 						model.ResetToken,
 						model.NewPassword
@@ -266,7 +267,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 					if (result.Succeeded)
 					{
-						await _adminSignInManager.PasswordSignInAsync(
+						await _signInManager.PasswordSignInAsync(
 							adminUser.UserName,
 							model.NewPassword,
 							isPersistent: false,
@@ -306,7 +307,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				var adminUser = new AdminUserEntity
+				var adminUser = new AppUserEntity
 				{
 					FullName = model.Name,
 					Email = model.Email,
@@ -325,15 +326,15 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 				adminUser.Roles.Add(Role.Basic);
 
 				//
-				var result = await _adminUserManager.CreateAsync(adminUser, model.Password);
+				var result = await _appUserManager.CreateAsync(adminUser, model.Password);
 
 				if (result.Succeeded)
 				{
 					var isPersistent = false;
 
-					_adminSignInManager.InitialPersistenceState = isPersistent;
+					_signInManager.InitialPersistenceState = isPersistent;
 
-					await _adminSignInManager.SignInAsync(
+					await _signInManager.SignInAsync(
 						adminUser,
 						isPersistent,
 						rememberBrowser: false
@@ -375,13 +376,13 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 			var userId = User.Id;
 
 			//
-			if (await _adminUserManager.IsEmailConfirmedAsync(userId))
+			if (await _appUserManager.IsEmailConfirmedAsync(userId))
 			{
 				return RedirectToAction(nameof(VerifyEmail), new { status = AccountActionStatus.VerifyEmailResponseSuccess.ToLowerCaseString() });
 			}
 
 			//
-			var adminUser = await _adminUserManager.FindByIdAsync(userId);
+			var adminUser = await _appUserManager.FindByIdAsync(userId);
 
 			var mailModel = new AccountVerifyEmailMessageViewModel()
 			{
@@ -389,7 +390,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 				PageTitle = GetLocalizedString("Users_VerifyEmailTitle"),
 				ConfirmationLink = Url.Action("VerifyEmailResponse", "Account", new
 				{
-					verifyToken = await _adminUserManager.GenerateEmailConfirmationTokenAsync(adminUser.Id)
+					verifyToken = await _appUserManager.GenerateEmailConfirmationTokenAsync(adminUser.Id)
 				}, protocol: Request.Url.Scheme)
 			};
 
@@ -407,7 +408,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		{
 			var userId = User.Id;
 
-			var result = await _adminUserManager.ConfirmEmailAsync(userId, verifyToken);
+			var result = await _appUserManager.ConfirmEmailAsync(userId, verifyToken);
 
 			if (!result.Succeeded)
 			{
@@ -416,7 +417,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 			User.EmailConfirmed = true;
 
-			await _adminSignInManager.RefreshIdentity(User);
+			await _signInManager.RefreshIdentity(User);
 
 			return RedirectToAction(nameof(VerifyEmail), new { status = AccountActionStatus.VerifyEmailResponseSuccess.ToLowerCaseString() });
 		}

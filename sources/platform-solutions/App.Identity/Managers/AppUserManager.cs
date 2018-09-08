@@ -1,26 +1,22 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using App.Identity.Repositories;
+using App.Identity.UserStore;
+using Domain.Core;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security.DataProtection;
-using Domain.Core;
 using System;
 using System.Threading.Tasks;
 
-namespace App.Identity
+namespace App.Identity.Managers
 {
-	/// <summary>
-	/// Asp.Net identity user manager for the admin website.
-	/// </summary>
-	public class AdminUserManager : UserManager<AdminUserEntity, int>
+	public class AppUserManager : UserManager<AppUserEntity, int>
 	{
 		private IIdentityRepository _identityRepository = null;
 
 		/// <summary>
 		/// Constructor method.
 		/// </summary>
-		/// <param name="identityRepository">The identity specialized repository.</param>
-		/// <param name="dataProtectionProvider">The current data protection provider.</param>
-		/// <param name="userStore">The current user store.</param>
-		public AdminUserManager(IIdentityRepository identityRepository, IDataProtectionProvider dataProtectionProvider, AdminStore userStore) : base(userStore)
+		public AppUserManager(IIdentityRepository identityRepository, IDataProtectionProvider dataProtectionProvider, AppUserStore store) : base(store)
 		{
 			_identityRepository = identityRepository;
 
@@ -28,7 +24,7 @@ namespace App.Identity
 			DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(_Constants.UsersLockoutIntervalInMinutes);
 			MaxFailedAccessAttemptsBeforeLockout = _Constants.UsersLockoutMaxFailedAccessAttempts;
 
-			UserValidator = new UserValidator<AdminUserEntity, int>(this)
+			UserValidator = new UserValidator<AppUserEntity, int>(this)
 			{
 				AllowOnlyAlphanumericUserNames = false,
 				RequireUniqueEmail = true
@@ -45,16 +41,11 @@ namespace App.Identity
 
 			if (dataProtectionProvider != null)
 			{
-				UserTokenProvider = new DataProtectorTokenProvider<AdminUserEntity, int>(dataProtectionProvider.Create("Skeleton [Admin Identity]"));
+				UserTokenProvider = new DataProtectorTokenProvider<AppUserEntity, int>(dataProtectionProvider.Create("Skeleton [Admin Identity]"));
 			}
 		}
 
-		/// <summary>
-		/// Update the user profile data keeping identity information intact.
-		/// </summary>
-		/// <param name="adminUser">The current admin user instance.</param>
-		/// <returns>A <see cref="Task"/>.</returns>
-		public Task UpdateProfileAsync(AdminUserEntity adminUser)
+		public Task UpdateProfileAsync(AppUserEntity adminUser)
 		{
 			_identityRepository.UpdateProfile(adminUser);
 
@@ -63,13 +54,13 @@ namespace App.Identity
 			return Task.CompletedTask;
 		}
 
-		[Obsolete("This method is not supported. Please use the current IEmailDispatcherService instance instead.", error: true)]
+		[Obsolete("This method is not used. Please use the current IEmailDispatcherService instance instead.", error: true)]
 		public new Task SendEmailAsync(int userId, string subject, string body)
 		{
 			return base.SendEmailAsync(userId, subject, body);
 		}
 
-		[Obsolete("This method is currently not supported.", error: true)]
+		[Obsolete("This method is currently not used.", error: true)]
 		public new Task SendSmsAsync(int userId, string message)
 		{
 			return base.SendSmsAsync(userId, message);

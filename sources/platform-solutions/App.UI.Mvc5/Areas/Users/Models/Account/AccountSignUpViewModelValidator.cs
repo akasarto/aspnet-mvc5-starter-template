@@ -1,7 +1,7 @@
-﻿using App.Identity;
-using App.UI.Mvc5.Infrastructure;
+﻿using App.UI.Mvc5.Infrastructure;
 using FluentValidation;
 using Domain.Core;
+using App.Identity.Repositories;
 
 namespace App.UI.Mvc5.Areas.Users.Models
 {
@@ -9,6 +9,9 @@ namespace App.UI.Mvc5.Areas.Users.Models
 	{
 		private IIdentityRepository _identityRepository = null;
 
+		/// <summary>
+		/// Constructor method.
+		/// </summary>
 		public AccountSignUpViewModelValidator(IIdentityRepository identityRepository)
 		{
 			_identityRepository = identityRepository;

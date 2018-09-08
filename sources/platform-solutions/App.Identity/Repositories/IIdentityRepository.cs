@@ -1,17 +1,17 @@
-﻿namespace App.Identity
+﻿namespace App.Identity.Repositories
 {
 	public interface IIdentityRepository
 	{
-		AdminUserEntity Create(AdminUserEntity adminUser);
+		AppUserEntity Create(AppUserEntity adminUser);
 
-		AdminUserEntity GetById(int userId);
+		AppUserEntity GetById(int userId);
 
-		AdminUserEntity GetByEmail(string userEmail);
+		AppUserEntity GetByEmail(string userEmail);
 
-		AdminUserEntity GetByUserName(string userName);
+		AppUserEntity GetByUserName(string userName);
 
-		void UpdateIdentity(AdminUserEntity adminUser);
+		void UpdateIdentity(AppUserEntity adminUser);
 
-		void UpdateProfile(AdminUserEntity adminUser);
+		void UpdateProfile(AppUserEntity adminUser);
 	}
 }

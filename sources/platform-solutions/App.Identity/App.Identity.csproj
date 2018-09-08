@@ -71,19 +71,19 @@
     <Compile Include="..\SharedAppAssemblyInfo.cs">
       <Link>Properties\SharedAppAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="AdminUserEntity.cs" />
-    <Compile Include="Managers\AdminUserManager.cs" />
-    <Compile Include="Managers\AdminSignInManager.cs" />
-    <Compile Include="UserStore\AdminStoreUserTwoFactor.cs" />
-    <Compile Include="UserStore\AdminStoreUserLockout.cs" />
-    <Compile Include="UserStore\AdminStoreUserPassword.cs" />
-    <Compile Include="UserStore\AdminStoreUserRoles.cs" />
-    <Compile Include="UserStore\AdminStoreUser.cs" />
-    <Compile Include="UserStore\AdminStoreUserClaims.cs" />
-    <Compile Include="UserStore\AdminStoreUserEmail.cs" />
-    <Compile Include="UserStore\AdminStoreUserSecurityStamp.cs" />
-    <Compile Include="UserStore\AdminStore.cs" />
-    <Compile Include="AdminPrincipal.cs" />
+    <Compile Include="AppUserEntity.cs" />
+    <Compile Include="Managers\AppUserManager.cs" />
+    <Compile Include="Managers\AppSignInManager.cs" />
+    <Compile Include="UserStore\AppUserStore.UserTwoFactor.cs" />
+    <Compile Include="UserStore\AppUserStore.UserLockout.cs" />
+    <Compile Include="UserStore\AppUserStore.UserPassword.cs" />
+    <Compile Include="UserStore\AppUserStore.UserRoles.cs" />
+    <Compile Include="UserStore\AppUserStore.User.cs" />
+    <Compile Include="UserStore\AppUserStore.UserClaims.cs" />
+    <Compile Include="UserStore\AppUserStore.UserEmail.cs" />
+    <Compile Include="UserStore\AppUserStore.UserSecurityStamp.cs" />
+    <Compile Include="UserStore\AppUserStore.cs" />
+    <Compile Include="AppPrincipal.cs" />
     <Compile Include="Repositories\IdentityRepository.cs" />
     <Compile Include="Repositories\IIdentityRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

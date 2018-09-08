@@ -8,7 +8,7 @@ namespace App.UI.Mvc5.Infrastructure
 	{
 		public MenuHelperViewPages Menu { get; private set; }
 
-		public new AdminPrincipal User => Thread.CurrentPrincipal as AdminPrincipal;
+		public new AppPrincipal User => Thread.CurrentPrincipal as AppPrincipal;
 
 		public override void InitHelpers()
 		{

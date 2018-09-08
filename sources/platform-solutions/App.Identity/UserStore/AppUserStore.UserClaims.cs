@@ -4,23 +4,23 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace App.Identity
+namespace App.Identity.UserStore
 {
-	public partial class AdminStore : IUserClaimStore<AdminUserEntity, int>
+	public partial class AppUserStore : IUserClaimStore<AppUserEntity, int>
 	{
-		public Task AddClaimAsync(AdminUserEntity user, Claim claim)
+		public Task AddClaimAsync(AppUserEntity user, Claim claim)
 		{
 			user.Claims.Add(claim);
 
 			return Task.CompletedTask;
 		}
 
-		public Task<IList<Claim>> GetClaimsAsync(AdminUserEntity user)
+		public Task<IList<Claim>> GetClaimsAsync(AppUserEntity user)
 		{
 			return Task.FromResult<IList<Claim>>(user.Claims);
 		}
 
-		public Task RemoveClaimAsync(AdminUserEntity user, Claim claim)
+		public Task RemoveClaimAsync(AppUserEntity user, Claim claim)
 		{
 			claim = user.Claims.SingleOrDefault(uc => uc.Type == claim.Type);
 

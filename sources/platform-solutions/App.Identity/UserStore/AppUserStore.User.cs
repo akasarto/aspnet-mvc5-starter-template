@@ -2,44 +2,44 @@
 using System;
 using System.Threading.Tasks;
 
-namespace App.Identity
+namespace App.Identity.UserStore
 {
-	public partial class AdminStore : IUserStore<AdminUserEntity, int>
+	public partial class AppUserStore : IUserStore<AppUserEntity, int>
 	{
-		public Task CreateAsync(AdminUserEntity user)
+		public Task CreateAsync(AppUserEntity user)
 		{
 			user.Id = _identityRepository.Create(user).Id;
 
 			if (user.Id <= 0)
 			{
-				throw new Exception($"Invalid user id at {nameof(AdminStore)} => {nameof(CreateAsync)}.");
+				throw new Exception($"Invalid user id at {nameof(AppUserStore)} => {nameof(CreateAsync)}.");
 			}
 
 			return Task.CompletedTask;
 		}
 
-		public Task<AdminUserEntity> FindByIdAsync(int userId)
+		public Task<AppUserEntity> FindByIdAsync(int userId)
 		{
 			var user = _identityRepository.GetById(userId);
 
 			return Task.FromResult(user);
 		}
 
-		public Task<AdminUserEntity> FindByNameAsync(string userName)
+		public Task<AppUserEntity> FindByNameAsync(string userName)
 		{
 			var user = _identityRepository.GetByUserName(userName);
 
 			return Task.FromResult(user);
 		}
 
-		public Task UpdateAsync(AdminUserEntity user)
+		public Task UpdateAsync(AppUserEntity user)
 		{
 			_identityRepository.UpdateIdentity(user);
 
 			return Task.CompletedTask;
 		}
 
-		public Task DeleteAsync(AdminUserEntity user)
+		public Task DeleteAsync(AppUserEntity user)
 		{
 			return Task.CompletedTask;
 		}

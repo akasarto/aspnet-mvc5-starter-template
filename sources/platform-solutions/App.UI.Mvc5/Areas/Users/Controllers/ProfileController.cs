@@ -1,4 +1,5 @@
 ﻿using App.Identity;
+using App.Identity.Managers;
 using App.UI.Mvc5.Areas.Users.Models;
 using App.UI.Mvc5.Infrastructure;
 using Omu.ValueInjecter;
@@ -13,14 +14,14 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 	[TrackMenuItem("users.profile")]
 	public partial class ProfileController : __AreaBaseController
 	{
-		private AdminUserManager _userManager = null;
-		private AdminSignInManager _signInManager = null;
+		private AppUserManager _userManager = null;
+		private AppSignInManager _signInManager = null;
 		private IGlobalizationService _globalizationService = null;
 
 		/// <summary>
 		/// Constructor method.
 		/// </summary>
-		public ProfileController(AdminUserManager userManager, AdminSignInManager signInManager, IGlobalizationService globalizationService)
+		public ProfileController(AppUserManager userManager, AppSignInManager signInManager, IGlobalizationService globalizationService)
 		{
 			_userManager = userManager ?? throw new ArgumentNullException(nameof(userManager), nameof(ProfileController));
 			_signInManager = signInManager ?? throw new ArgumentNullException(nameof(signInManager), nameof(ProfileController));
@@ -65,16 +66,16 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 			return View(model);
 		}
 
-		private AdminUserEntity BuildAdminUserEntity(ProfileEditViewModel model)
+		private AppUserEntity BuildAdminUserEntity(ProfileEditViewModel model)
 		{
-			var entity = new AdminUserEntity();
+			var entity = new AppUserEntity();
 
 			entity.InjectFrom(model);
 
 			return entity;
 		}
 
-		private ProfileEditViewModel BuildEditProfileViewModel(AdminUserEntity adminUser = null, ProfileEditViewModel postedModel = null)
+		private ProfileEditViewModel BuildEditProfileViewModel(AppUserEntity adminUser = null, ProfileEditViewModel postedModel = null)
 		{
 			var model = new ProfileEditViewModel();
 

@@ -40,13 +40,13 @@ namespace App.UI.Mvc5.Controllers
 			return GlobalizationManager.GetLocalizedString(resourceKey, formatParams);
 		}
 
-		public new AdminPrincipal User => Thread.CurrentPrincipal as AdminPrincipal;
+		public new AppPrincipal User => Thread.CurrentPrincipal as AppPrincipal;
 
 		protected override void Initialize(System.Web.Routing.RequestContext requestContext)
 		{
 			base.Initialize(requestContext);
 
-			Thread.CurrentPrincipal = new AdminPrincipal(base.User);
+			Thread.CurrentPrincipal = new AppPrincipal(base.User);
 			requestContext.HttpContext.User = Thread.CurrentPrincipal;
 
 			ConfigureGlobalizationContext(requestContext.HttpContext);
