@@ -8,9 +8,6 @@ using System.Data;
 
 namespace Data.Store.SqlServer
 {
-	/// <summary>
-	/// Logs repository implementation.
-	/// </summary>
 	public partial class LogsRepository : ILogsRepository
 	{
 		internal readonly IDbConnectionFactory _dbConnectionFactory = null;
@@ -18,17 +15,11 @@ namespace Data.Store.SqlServer
 		/// <summary>
 		/// Contructor method.
 		/// </summary>
-		/// <param name="dbConnectionFactory">The current connection factory instance.</param>
 		public LogsRepository(IDbConnectionFactory dbConnectionFactory)
 		{
 			_dbConnectionFactory = dbConnectionFactory ?? throw new ArgumentNullException(nameof(dbConnectionFactory), nameof(UsersRepository));
 		}
 
-		/// <summary>
-		/// Get a list of log entities.
-		/// </summary>
-		/// <param name="top">The maximum numbers expected in the resulting list.</param>
-		/// <returns>A collection of <see cref="LogEntity"/> instances.</returns>
 		public IEnumerable<LogEntity> GetAll(int top = 30)
 		{
 			var parameters = new DynamicParameters();

@@ -4,32 +4,17 @@ using System.Net.Mail;
 
 namespace Shared.Infrastructure.Smtp
 {
-	/// <summary>
-	/// System.Net SMTP service.
-	/// </summary>
 	public class SystemNetSmtpEmailDispatcherService : ISystemNetSmtpEmailDispatcherService
 	{
-		private SmtpClient _smtpClient = null;
-		private MailAddress _defaultFromAddress = null;
+		private readonly MailAddress _defaultFromAddress = null;
+		private readonly SmtpClient _smtpClient = null;
 
-		/// <summary>
-		/// Constructor method.
-		/// </summary>
-		/// <param name="defaultFromAddress">The default address to be used when no sender is specified.</param>
-		/// <param name="smtpClient">A custom rest client to be used.</param>
 		public SystemNetSmtpEmailDispatcherService(MailAddress defaultFromAddress, SmtpClient smtpClient = null)
 		{
 			_defaultFromAddress = defaultFromAddress ?? throw new ArgumentNullException(nameof(defaultFromAddress), nameof(SystemNetSmtpEmailDispatcherService));
 			_smtpClient = smtpClient;
 		}
 
-		/// <summary>
-		/// Dispatch email messages.
-		/// </summary>
-		/// <param name="body">The message body.</param>
-		/// <param name="subject">The message subject.</param>
-		/// <param name="toAddress">The targed recipient address.</param>
-		/// <param name="fromAddress">The sender address.</param>
 		public virtual void Dispatch(string body, string subject, MailAddress toAddress, MailAddress fromAddress = null)
 		{
 			body = body ?? throw new ArgumentNullException(nameof(body), nameof(Dispatch));
@@ -52,10 +37,6 @@ namespace Shared.Infrastructure.Smtp
 			Send(message);
 		}
 
-		/// <summary>
-		/// Send a message using the specified information.
-		/// </summary>
-		/// <param name="message">The previously build message instance.</param>
 		public virtual void Send(MailMessage message)
 		{
 			using (var client = _smtpClient ?? new SmtpClient())

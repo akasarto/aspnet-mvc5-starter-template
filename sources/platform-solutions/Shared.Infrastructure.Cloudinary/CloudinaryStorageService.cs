@@ -6,19 +6,10 @@ using System.Net;
 
 namespace Shared.Infrastructure.Cloudinary
 {
-	/// <summary>
-	/// Cloudinary storage service.
-	/// </summary>
 	public class CloudinaryStorageService : ICloudinaryStorageService
 	{
 		private CloudinaryDotNet.Cloudinary _client = null;
 
-		/// <summary>
-		/// Constructor method.
-		/// </summary>
-		/// <param name="cloudName">Cloudinary cloud name.</param>
-		/// <param name="cloudApiKey">Cloudinary api key.</param>
-		/// <param name="cloudApiSecret">Cloudinary api secret.</param>
 		public CloudinaryStorageService(string cloudName, string cloudApiKey, string cloudApiSecret)
 		{
 			cloudName = cloudName ?? throw new ArgumentNullException(nameof(cloudName), nameof(CloudinaryStorageService));
@@ -34,32 +25,18 @@ namespace Shared.Infrastructure.Cloudinary
 			);
 		}
 
-		/// <summary>
-		/// Delete a blob.
-		/// </summary>
-		/// <param name="blobName">Virtual blob name.</param>
 		public virtual void Delete(string blobName)
 		{
 			var deletion = new DeletionParams(GetPublicId(blobName));
 			var result = _client.Destroy(deletion);
 		}
 
-		/// <summary>
-		/// Checks if the blob exists.
-		/// </summary>
-		/// <param name="blobName">Virtual blob name.</param>
-		/// <returns><c>True</c> or <c>false</c>.</returns>
 		public virtual bool Exists(string blobName)
 		{
 			var resource = _client.GetResource(GetPublicId(blobName));
 			return resource.StatusCode == System.Net.HttpStatusCode.OK;
 		}
 
-		/// <summary>
-		/// Get the endpoint to the blob within the storage service.
-		/// </summary>
-		/// <param name="blobName">Virtual blob name.</param>
-		/// <returns>The <see cref="Uri"/> pointing to the bob file.</returns>
 		public virtual Uri GetEndpoint(string blobName)
 		{
 			var blobInfo = BlobInfo.FromName(blobName);
@@ -84,11 +61,6 @@ namespace Shared.Infrastructure.Cloudinary
 			return new Uri(_client.Api.Url.CSubDomain(true).BuildUrl(blobName), UriKind.Absolute);
 		}
 
-		/// <summary>
-		/// Get an open stream for the blob contents.
-		/// </summary>
-		/// <param name="blobName">Virtual blob name.</param>
-		/// <returns>The open <see cref="Stream"/> instance.</returns>
 		public virtual Stream ReadStream(string blobName)
 		{
 			var blobInfo = BlobInfo.FromName(blobName);
@@ -104,11 +76,6 @@ namespace Shared.Infrastructure.Cloudinary
 			}
 		}
 
-		/// <summary>
-		/// Writes a stream to the blob.
-		/// </summary>
-		/// <param name="blobName">Virtual blob name.</param>
-		/// <param name="blobStream">The <see cref="Stream"/> with data to be writen to the blob.</param>
 		public virtual void WriteStream(string blobName, Stream blobStream)
 		{
 			blobName = blobName ?? throw new ArgumentNullException(nameof(blobName), nameof(CloudinaryStorageService));
@@ -130,11 +97,6 @@ namespace Shared.Infrastructure.Cloudinary
 			var result = _client.Upload(rawUploadParams);
 		}
 
-		/// <summary>
-		/// Gets the cloudinary internal public id from the blob name.
-		/// </summary>
-		/// <param name="blobName">The blob name to get the public id.</param>
-		/// <returns>The blob name as a cloudinary infrastructure internal id.</returns>
 		protected virtual string GetPublicId(string blobName) => blobName?.Replace(Path.GetExtension(blobName), string.Empty).Trim('/') ?? string.Empty;
 	}
 }

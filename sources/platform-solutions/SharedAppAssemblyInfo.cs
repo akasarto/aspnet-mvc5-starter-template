@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 
 // General Info
-[assembly: AssemblyCompany("Sarto")]
+[assembly: AssemblyCompany("Sarto Research")]
 [assembly: AssemblyProduct("Starter Suite Libraries")]
 [assembly: AssemblyCopyright("Copyright (C) 2017-2018 Thiago Alberto Schneider")]
 

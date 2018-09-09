@@ -8,11 +8,6 @@ namespace Shared.Extensions
 {
 	public static partial class EnumExtensions
 	{
-		/// <summary>
-		/// Gets the decorated <see cref="DisplayAttribute"/> or <see cref="DisplayNameAttribute"/> inforamtion from the <see cref="Enum"/> value.
-		/// </summary>
-		/// <param name="this">The extended <see cref="Enum"/>.</param>
-		/// <returns>The string value from any of the attributes of the <see cref="Enum"/> value as string.</returns>
 		public static string GetDisplayName(this Enum @this)
 		{
 			if (@this == null)

@@ -11,27 +11,24 @@ using System.Security.Claims;
 
 namespace Data.Store.SqlServer
 {
-	/// <summary>
-	/// User repository implementation.
-	/// </summary>
 	public class UsersRepository : IUsersRepository
 	{
 		internal readonly IDbConnectionFactory _dbConnectionFactory = null;
 
+		private readonly Func<UserEntity, BlobEntity, UserEntity> _userMap = (user, blob) =>
+		{
+			user.PictureInfo = blob?.GetInfo();
+			return user;
+		};
+
 		/// <summary>
 		/// Contructor method.
 		/// </summary>
-		/// <param name="dbConnectionFactory">The current connection factory instance.</param>
 		public UsersRepository(IDbConnectionFactory dbConnectionFactory)
 		{
 			_dbConnectionFactory = dbConnectionFactory ?? throw new ArgumentNullException(nameof(dbConnectionFactory), nameof(UsersRepository));
 		}
 
-		/// <summary>
-		/// Create an user.
-		/// </summary>
-		/// <param name="userEntity">The instance with data for the new user.</param>
-		/// <returns>An <see cref="UserEntity"/> instance with the new id set.</returns>
 		public UserEntity Create(UserEntity userEntity)
 		{
 			userEntity.SecurityStamp = Guid.NewGuid().ToString();
@@ -70,10 +67,6 @@ namespace Data.Store.SqlServer
 			}
 		}
 
-		/// <summary>
-		/// Get a list of users.
-		/// </summary>
-		/// <returns>A collection of <see cref="UserEntity"/> instances.</returns>
 		public IEnumerable<UserEntity> GetAll()
 		{
 			using (var connection = _dbConnectionFactory.CreateConnection())
@@ -87,11 +80,6 @@ namespace Data.Store.SqlServer
 			}
 		}
 
-		/// <summary>
-		/// Get an user by email.
-		/// </summary>
-		/// <param name="userEmail">The email of the user to lookup.</param>
-		/// <returns>A single <see cref="UserEntity"/> instance.</returns>
 		public UserEntity GetByEmail(string userEmail)
 		{
 			using (var connection = _dbConnectionFactory.CreateConnection())
@@ -107,11 +95,6 @@ namespace Data.Store.SqlServer
 			}
 		}
 
-		/// <summary>
-		/// Get an user by id.
-		/// </summary>
-		/// <param name="userId">The id of the user to lookup.</param>
-		/// <returns>A single <see cref="UserEntity"/> instance.</returns>
 		public UserEntity GetById(int userId)
 		{
 			using (var connection = _dbConnectionFactory.CreateConnection())
@@ -127,11 +110,6 @@ namespace Data.Store.SqlServer
 			}
 		}
 
-		/// <summary>
-		/// Get an user by username.
-		/// </summary>
-		/// <param name="userName">The username of the user to lookup.</param>
-		/// <returns>A single <see cref="UserEntity"/> instance.</returns>
 		public UserEntity GetByUserName(string userName)
 		{
 			using (var connection = _dbConnectionFactory.CreateConnection())
@@ -147,10 +125,6 @@ namespace Data.Store.SqlServer
 			}
 		}
 
-		/// <summary>
-		/// Update an user.
-		/// </summary>
-		/// <param name="userEntity">The instance with updated data.</param>
 		public void Update(UserEntity userEntity)
 		{
 			userEntity.SecurityStamp = Guid.NewGuid().ToString();
@@ -183,44 +157,6 @@ namespace Data.Store.SqlServer
 			}
 		}
 
-		/// <summary>
-		/// Maps the data reader result to the user object.
-		/// </summary>
-		private Func<UserEntity, BlobEntity, UserEntity> _userMap = (user, blob) =>
-		{
-			user.PictureInfo = blob?.GetInfo();
-
-			return user;
-		};
-
-		/// <summary>
-		/// Build a full user instance.
-		/// </summary>
-		/// <param name="reader">The reader from the executed query.</param>
-		/// <returns>Returns a single <see cref="UserEntity"/> instance.</returns>
-		private UserEntity BuildEntity(SqlMapper.GridReader reader)
-		{
-			var entity = reader.Read(_userMap).SingleOrDefault();
-
-			if (entity != null)
-			{
-				var claims = reader.Read<UserClaim>().ToList();
-				var realms = reader.Read<UserRealm>().ToList();
-				var roles = reader.Read<UserRole>().ToList();
-
-				entity.Claims = claims.Select(claim => new Claim(claim.Type, claim.Value)).ToList();
-				entity.Realms = realms.Select(realm => realm.Realm).ToList();
-				entity.Roles = roles.Select(role => role.Role).ToList();
-			}
-
-			return entity;
-		}
-
-		/// <summary>
-		/// Buils a list of full user instances.
-		/// </summary>
-		/// <param name="reader">The reader from the executed query.</param>
-		/// <returns>Returns a collection of <see cref="UserEntity"/> instances.</returns>
 		private IEnumerable<UserEntity> BuildEntities(SqlMapper.GridReader reader)
 		{
 			var entities = reader.Read(_userMap).ToList();
@@ -269,14 +205,24 @@ namespace Data.Store.SqlServer
 			return entities;
 		}
 
-		/// <summary>
-		/// Manages the user related claims.
-		/// </summary>
-		/// <param name="dbConnection">Current database connection.</param>
-		/// <param name="transaction">Current database transaction.</param>
-		/// <param name="claims">The current set of claims for the user.</param>
-		/// <param name="user">The user begin managed.</param>
-		/// <param name="cleanup">Remove previous claims before adding the new ones.</param>
+		private UserEntity BuildEntity(SqlMapper.GridReader reader)
+		{
+			var entity = reader.Read(_userMap).SingleOrDefault();
+
+			if (entity != null)
+			{
+				var claims = reader.Read<UserClaim>().ToList();
+				var realms = reader.Read<UserRealm>().ToList();
+				var roles = reader.Read<UserRole>().ToList();
+
+				entity.Claims = claims.Select(claim => new Claim(claim.Type, claim.Value)).ToList();
+				entity.Realms = realms.Select(realm => realm.Realm).ToList();
+				entity.Roles = roles.Select(role => role.Role).ToList();
+			}
+
+			return entity;
+		}
+
 		private void UserClaimsSet(IDbConnection dbConnection, IDbTransaction transaction, List<Claim> claims, UserEntity user, bool cleanup)
 		{
 			if (cleanup)
@@ -310,14 +256,6 @@ namespace Data.Store.SqlServer
 			}
 		}
 
-		/// <summary>
-		/// Manages the user related realms.
-		/// </summary>
-		/// <param name="dbConnection">Current database connection.</param>
-		/// <param name="transaction">Current database transaction.</param>
-		/// <param name="realms">The current set of realms for the user.</param>
-		/// <param name="user">The user begin managed.</param>
-		/// <param name="cleanup">Remove previous realms before adding the new ones.</param>
 		private void UserRealmsSet(IDbConnection dbConnection, IDbTransaction transaction, List<Realm> realms, UserEntity user, bool cleanup)
 		{
 			if (cleanup)
@@ -350,14 +288,6 @@ namespace Data.Store.SqlServer
 			}
 		}
 
-		/// <summary>
-		/// Manages the user related roles.
-		/// </summary>
-		/// <param name="dbConnection">Current database connection.</param>
-		/// <param name="transaction">Current database transaction.</param>
-		/// <param name="roles">The current set of roles for the user.</param>
-		/// <param name="user">The user begin managed.</param>
-		/// <param name="cleanup">Remove previous roles before adding the new ones.</param>
 		private void UserRolesSet(IDbConnection dbConnection, IDbTransaction transaction, List<Role> roles, UserEntity user, bool cleanup)
 		{
 			if (cleanup)

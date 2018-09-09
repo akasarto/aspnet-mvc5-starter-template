@@ -7,18 +7,8 @@ namespace Shared.Extensions
 {
 	public static partial class ObjectExtensions
 	{
-		/// <summary>
-		/// Detects characters that are known to be invalid in enums.
-		/// </summary>
 		public static readonly Regex InvalidEnumValueChars = new Regex(@"[^a-zA-Z0-9_]", RegexOptions.Compiled);
 
-		/// <summary>
-		/// Convert between types.
-		/// </summary>
-		/// <typeparam name="T">The expected resulting type.</typeparam>
-		/// <param name="this">The extended object.</param>
-		/// <param name="defaultValue">The expected default value in case coversion fails.</param>
-		/// <returns>The converted value.</returns>
 		public static T ChangeType<T>(this object @this, T defaultValue = default(T))
 		{
 			try

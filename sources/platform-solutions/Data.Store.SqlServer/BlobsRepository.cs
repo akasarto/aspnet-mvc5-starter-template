@@ -7,9 +7,6 @@ using System.Data;
 
 namespace Data.Store.SqlServer
 {
-	/// <summary>
-	/// Blobs repository implementation.
-	/// </summary>
 	public partial class BlobsRepository : IBlobsRepository
 	{
 		internal readonly IDbConnectionFactory _dbConnectionFactory = null;
@@ -17,18 +14,11 @@ namespace Data.Store.SqlServer
 		/// <summary>
 		/// Contructor method.
 		/// </summary>
-		/// <param name="dbConnectionFactory">The current connection factory instance.</param>
 		public BlobsRepository(IDbConnectionFactory dbConnectionFactory)
 		{
 			_dbConnectionFactory = dbConnectionFactory ?? throw new ArgumentNullException(nameof(dbConnectionFactory), nameof(BlobsRepository));
 		}
 
-		/// <summary>
-		/// Create a blob.
-		/// </summary>
-		/// <param name="blobEntity">The instance with data for the new blob.</param>
-		/// <param name="userId">The if of the user creating this blob.</param>
-		/// <returns>A updated <see cref="BlobEntity"/> instance.</returns>
 		public BlobEntity Create(BlobEntity blobEntity, int userId)
 		{
 			using (var connection = _dbConnectionFactory.CreateConnection())

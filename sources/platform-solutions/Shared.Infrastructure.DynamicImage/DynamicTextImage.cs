@@ -7,25 +7,14 @@ using System.IO;
 
 namespace Shared.Infrastructure.DynamicImage
 {
-	/// <summary>
-	/// Class that allows building dynamic images from text.
-	/// </summary>
 	public sealed class DynamicTextImage
 	{
-		private int _width;
-		private int _height;
 		private string _backgroundHexColor = null;
+		private readonly Func<Font> _fontInstanceCreator = null;
 		private string _foregroundHexColor = null;
-		private Func<Font> _fontInstanceCreator = null;
+		private readonly int _height;
+		private readonly int _width;
 
-		/// <summary>
-		/// Constructor method.
-		/// </summary>
-		/// <param name="width">The expected width.</param>
-		/// <param name="height">The expected height.</param>
-		/// <param name="backgroundHexColor">The image background color.</param>
-		/// <param name="foregroundHexColor">The image font color.</param>
-		/// <param name="fontFamilyName">The font family to use for the text.</param>
 		public DynamicTextImage(int width, int height, string backgroundHexColor, string foregroundHexColor, string fontFamilyName = null)
 		{
 			if (width <= 0)
@@ -46,11 +35,6 @@ namespace Shared.Infrastructure.DynamicImage
 			_fontInstanceCreator = (() => new Font(fontFamilyName ?? "GenericSansSerif", 15, FontStyle.Regular, GraphicsUnit.Pixel));
 		}
 
-		/// <summary>
-		/// Dynamically build an text image with the specified text.
-		/// </summary>
-		/// <param name="text">The text to be writeen in the image.</param>
-		/// <returns>A <see cref="MemoryStream"/> with the new image information.</returns>
 		public MemoryStream Build(string text)
 		{
 			text = text ?? "?";

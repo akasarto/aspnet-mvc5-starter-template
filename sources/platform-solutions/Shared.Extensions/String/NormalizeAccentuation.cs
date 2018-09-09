@@ -5,11 +5,6 @@ namespace Shared.Extensions
 {
 	public static partial class StringExtensions
 	{
-		/// <summary>
-		/// Convert accentuated chars into ther ASCII correspondent.
-		/// </summary>
-		/// <param name="this">The extended string.</param>
-		/// <returns>The filtered string.</returns>
 		public static string NormalizeAccentuation(this string @this)
 		{
 			if (string.IsNullOrWhiteSpace(@this))

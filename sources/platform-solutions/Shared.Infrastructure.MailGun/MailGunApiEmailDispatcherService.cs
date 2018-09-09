@@ -5,23 +5,13 @@ using System.Net.Mail;
 
 namespace Shared.Infrastructure.MailGun
 {
-	/// <summary>
-	/// MailGun email dispatcher service.
-	/// </summary>
 	public class MailGunApiEmailDispatcherService : IMailGunApiEmailDispatcherService
 	{
-		private string _apiKey = null;
-		private string _domainName = null;
-		private MailAddress _defaultFromAddress = null;
+		private readonly string _apiKey = null;
 		private RestClient _client = null;
+		private readonly MailAddress _defaultFromAddress = null;
+		private readonly string _domainName = null;
 
-		/// <summary>
-		/// Constructor method.
-		/// </summary>
-		/// <param name="apiKey">The account api key.</param>
-		/// <param name="domainName">The account target domain name.</param>
-		/// <param name="defaultFromAddress">The default address to be used when no sender is specified.</param>
-		/// <param name="client">A custom rest client to be used.</param>
 		public MailGunApiEmailDispatcherService(string apiKey, string domainName, MailAddress defaultFromAddress, RestClient client = null)
 		{
 			_apiKey = apiKey ?? throw new ArgumentNullException(nameof(apiKey), nameof(MailGunApiEmailDispatcherService));
@@ -34,26 +24,11 @@ namespace Shared.Infrastructure.MailGun
 			};
 		}
 
-		/// <summary>
-		/// Dispatch email messages.
-		/// </summary>
-		/// <param name="body">The message body.</param>
-		/// <param name="subject">The message subject.</param>
-		/// <param name="toAddress">The targed recipient address.</param>
-		/// <param name="fromAddress">The sender address.</param>
 		public void Dispatch(string body, string subject, MailAddress toAddress, MailAddress fromAddress = null)
 		{
 			var restponse = SendRequest(body, subject, toAddress, fromAddress);
 		}
 
-		/// <summary>
-		/// Send an email dispatch request to the MailGun api.
-		/// </summary>
-		/// <param name="body"></param>
-		/// <param name="subject"></param>
-		/// <param name="toAddress"></param>
-		/// <param name="fromAddress"></param>
-		/// <returns>An <see cref="IRestResponse"/> instance.</returns>
 		public IRestResponse SendRequest(string body, string subject, MailAddress toAddress, MailAddress fromAddress = null)
 		{
 			body = body ?? throw new ArgumentNullException(nameof(body), nameof(Dispatch));
@@ -71,11 +46,6 @@ namespace Shared.Infrastructure.MailGun
 			return SendRequest(request);
 		}
 
-		/// <summary>
-		/// Send an email dispatch request to the MailGun api.
-		/// </summary>
-		/// <param name="request">The previously build request information to be sent.</param>
-		/// <returns>An <see cref="IRestResponse"/> instance.</returns>
 		public IRestResponse SendRequest(RestRequest request)
 		{
 			request = request ?? throw new ArgumentNullException(nameof(request), nameof(SendRequest));

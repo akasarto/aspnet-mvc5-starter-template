@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 
 /// <summary>
-/// https://github.com/sarto-research/MimeTypeMap
+/// Credits: https://github.com/samuelneff/MimeTypeMap
 /// </summary>
 namespace Shared.Infrastructure
 {
-	/// <summary>
-	/// Provide mapping between known extensions and content types.
-	/// </summary>
 	public static class MimeTypeMap
 	{
 		private static readonly Lazy<IDictionary<string, string>> _mappings = new Lazy<IDictionary<string, string>>(BuildMappings);
@@ -294,6 +291,9 @@ namespace Shared.Infrastructure
 				{".midi", "audio/mid"},
 				{".mix", "application/octet-stream"},
 				{".mk", "text/plain"},
+				{".mk3d", "video/x-matroska-3d"},
+				{".mka", "audio/x-matroska"},
+				{".mkv", "video/x-matroska"},
 				{".mmf", "application/x-smaf"},
 				{".mno", "text/xml"},
 				{".mny", "application/x-msmoney"},
@@ -557,7 +557,9 @@ namespace Shared.Infrastructure
 				{".vsto", "application/x-ms-vsto"},
 				{".vsw", "application/vnd.visio"},
 				{".vsx", "application/vnd.visio"},
+				{".vtt", "text/vtt"},
 				{".vtx", "application/vnd.visio"},
+				{".wasm", "application/wasm"},
 				{".wav", "audio/wav"},
 				{".wave", "audio/wav"},
 				{".wax", "audio/x-ms-wax"},
@@ -589,6 +591,7 @@ namespace Shared.Infrastructure
 				{".wmx", "video/x-ms-wmx"},
 				{".wmz", "application/x-ms-wmz"},
 				{".woff", "application/font-woff"},
+				{".woff2", "application/font-woff2"},
 				{".wpl", "application/vnd.ms-wpl"},
 				{".wps", "application/vnd.ms-works"},
 				{".wri", "application/x-mswrite"},
@@ -671,8 +674,9 @@ namespace Shared.Infrastructure
 				{"image/bmp", ".bmp"},
 				{"image/jpeg", ".jpg"},
 				{"image/pict", ".pic"},
-				{"image/png", ".png"},
-				{"image/tiff", ".tiff"},
+				{"image/png", ".png"}, //Defined in [RFC-2045], [RFC-2048]
+                {"image/x-png", ".png"}, //See https://www.w3.org/TR/PNG/#A-Media-type :"It is recommended that implementations also recognize the media type "image/x-png"."
+                {"image/tiff", ".tiff"},
 				{"image/x-macpaint", ".mac"},
 				{"image/x-quicktime", ".qti"},
 				{"message/rfc822", ".eml"},
