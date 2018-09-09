@@ -8,6 +8,17 @@ namespace Data.Tools.Migrator
 	{
 		private const string DATA_EXTRACT_PATTERN = @"^\[(.*)\]\[(.*)\]$";
 
+		private static void ApplySqlServerMigrations(string connectionString)
+		{
+			WriteDataInfo("SQL Server");
+
+			SqlServerMigrationService.MigrateUp(connectionString);
+		}
+
+		private static string GetConnectionString(string connectionData) => Regex.Replace(connectionData, DATA_EXTRACT_PATTERN, "$2");
+
+		private static string GetProviderName(string connectionData) => Regex.Replace(connectionData, DATA_EXTRACT_PATTERN, "$1");
+
 		private static void Main(string[] args)
 		{
 			if (args.Length > 0)
@@ -23,21 +34,6 @@ namespace Data.Tools.Migrator
 						break;
 				}
 			}
-		}
-
-		private static string GetProviderName(string connectionData) => Regex.Replace(connectionData, DATA_EXTRACT_PATTERN, "$1");
-
-		private static string GetConnectionString(string connectionData) => Regex.Replace(connectionData, DATA_EXTRACT_PATTERN, "$2");
-
-		private static void ApplySqlServerMigrations(string connectionString)
-		{
-			WriteDataInfo("SQL Server");
-
-			Console.WriteLine(connectionString);
-
-			var service = new SqlServerMigrationService(connectionString);
-
-			service.MigrateUp();
 		}
 
 		private static void WriteDataInfo(string runnerType)

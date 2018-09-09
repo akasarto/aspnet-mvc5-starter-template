@@ -8,6 +8,9 @@ namespace Data.Tools.Migrator
 	{
 		private readonly IMigrationScriptPathProvider _migrationScriptPathProvider;
 
+		/// <summary>
+		/// Constructor method.
+		/// </summary>
 		public _20180901150100_Create_Initial_SuperUserAccount(IMigrationScriptPathProvider migrationScriptPathProvider)
 		{
 			_migrationScriptPathProvider = migrationScriptPathProvider;
@@ -21,7 +24,7 @@ namespace Data.Tools.Migrator
 		{
 			var script = _migrationScriptPathProvider.GetPath("Create_Initial_SuperUser_Account.sql");
 
-			IfDatabase("SqlServer").Execute.Script(script);
+			IfDatabase(_Constants.SqlServer).Execute.Script(script);
 		}
 	}
 }

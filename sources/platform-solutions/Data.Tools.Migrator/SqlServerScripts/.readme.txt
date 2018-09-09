@@ -1,0 +1,5 @@
+﻿
+Make sure you set the following properties to the scripts in this folder (under File => Properties):
+
+- Build Action: Contend
+- Copy to Output Directory: Copy always

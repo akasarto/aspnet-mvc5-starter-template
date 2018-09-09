@@ -9,49 +9,53 @@ namespace Data.Tools.Migrator.Infrastructure
 {
 	public class SqlServerMigrationService
 	{
-		private readonly string _connectionString = null;
-
-		/// <summary>
-		/// Contructor method.
-		/// </summary>
-		public SqlServerMigrationService(string connectionString)
+		public static void MigrateUp(string connectionString)
 		{
-			_connectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString), nameof(SqlServerMigrationService));
-		}
-
-		public void MigrateUp()
-		{
-			var provider = CreateProvider();
+			var provider = CreateProvider(connectionString);
 
 			using (var scope = provider.CreateScope())
 			{
-				if (!DatabaseExists())
+				if (!DatabaseExists(connectionString))
 				{
-					CreateDatabase();
+					CreateDatabase(connectionString);
 				}
 
-				UpdateDatabase(scope.ServiceProvider);
+				var runner = GetRunner(scope);
+
+				runner.MigrateUp();
 			}
 		}
 
-		private IServiceProvider CreateProvider()
+		private static void CreateDatabase(string connectionString)
+		{
+			var connectionInfo = GetConnectionInfo(connectionString);
+
+			using (var connection = new SqlConnection(connectionInfo.baseConnectionString))
+			{
+				connection.Execute(
+					$"USE [master]; CREATE DATABASE [{connectionInfo.databaseName}]"
+				);
+			}
+		}
+
+		private static IServiceProvider CreateProvider(string connectionString)
 		{
 			return
 				new ServiceCollection()
 				.AddSingleton<IMigrationScriptPathProvider, SqlServerScriptsPathProvider>()
 				.AddFluentMigratorCore()
-				.ConfigureRunner(rb => rb
+				.ConfigureRunner(runner => runner
 					.AddSqlServer()
-					.WithGlobalConnectionString(_connectionString)
+					.WithGlobalConnectionString(connectionString)
 					.ScanIn(typeof(Program).Assembly).For.Migrations()
 				)
 				.AddLogging(logger => logger.AddFluentMigratorConsole())
 				.BuildServiceProvider(validateScopes: false);
 		}
 
-		private bool DatabaseExists()
+		private static bool DatabaseExists(string connectionString)
 		{
-			var connectionInfo = GetConnectionInfo();
+			var connectionInfo = GetConnectionInfo(connectionString);
 
 			using (var connection = new SqlConnection(connectionInfo.baseConnectionString))
 			{
@@ -64,21 +68,9 @@ namespace Data.Tools.Migrator.Infrastructure
 			}
 		}
 
-		private void CreateDatabase()
+		private static (string baseConnectionString, string databaseName) GetConnectionInfo(string connectionString)
 		{
-			var connectionInfo = GetConnectionInfo();
-
-			using (var connection = new SqlConnection(connectionInfo.baseConnectionString))
-			{
-				connection.Execute(
-					$"USE [master]; CREATE DATABASE [{connectionInfo.databaseName}]"
-				);
-			}
-		}
-
-		private (string baseConnectionString, string databaseName) GetConnectionInfo()
-		{
-			var connectionBuilder = new SqlConnectionStringBuilder(_connectionString);
+			var connectionBuilder = new SqlConnectionStringBuilder(connectionString);
 			var initialCatalog = connectionBuilder.InitialCatalog;
 
 			connectionBuilder.Remove("AttachDBFilename");
@@ -91,11 +83,10 @@ namespace Data.Tools.Migrator.Infrastructure
 			);
 		}
 
-		private void UpdateDatabase(IServiceProvider serviceProvider)
+		private static IMigrationRunner GetRunner(IServiceScope serviceScope)
 		{
-			var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
-
-			runner.MigrateUp();
+			var provider = serviceScope.ServiceProvider;
+			return provider.GetRequiredService<IMigrationRunner>();
 		}
 	}
 }

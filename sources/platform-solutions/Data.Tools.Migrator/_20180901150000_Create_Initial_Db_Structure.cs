@@ -8,6 +8,9 @@ namespace Data.Tools.Migrator
 	{
 		private readonly IMigrationScriptPathProvider _migrationScriptPathProvider;
 
+		/// <summary>
+		/// Constructor method.
+		/// </summary>
 		public _20180901150000_Create_Initial_Db_Structure(IMigrationScriptPathProvider migrationScriptPathProvider)
 		{
 			_migrationScriptPathProvider = migrationScriptPathProvider;
@@ -21,7 +24,7 @@ namespace Data.Tools.Migrator
 		{
 			var script = _migrationScriptPathProvider.GetPath("Create_Initial_Db_Structure.sql");
 
-			IfDatabase("SqlServer").Execute.Script(script);
+			IfDatabase(_Constants.SqlServer).Execute.Script(script);
 		}
 	}
 }
