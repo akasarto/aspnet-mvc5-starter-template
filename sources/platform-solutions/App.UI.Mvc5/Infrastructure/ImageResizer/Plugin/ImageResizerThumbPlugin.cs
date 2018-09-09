@@ -45,13 +45,13 @@ namespace App.UI.Mvc5.Infrastructure
 			return true;
 		}
 
-		private string Sanitize(string path) => path?.Trim('\\', '/', '~') ?? string.Empty;
-
 		private string RemovePrefix(string virtualPath) => Sanitize(
 			virtualPath?.Replace(
-				Sanitize(ImageResizerInfra.VirtualFileSystemPrefix ?? string.Empty), 
+				Sanitize(ImageResizerInfra.VirtualFileSystemPrefix ?? string.Empty),
 				string.Empty
 			)
 		);
+
+		private string Sanitize(string path) => path?.Trim('\\', '/', '~') ?? string.Empty;
 	}
 }

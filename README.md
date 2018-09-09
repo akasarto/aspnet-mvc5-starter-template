@@ -21,7 +21,7 @@ And more to come...
   - If necessary, change the _web.config_ connection string to point to your server.
 
 - Web App
-  - Get Visual Studio 2017 Community v15.5+.
+  - Get Visual Studio 2017 Community v15.8.3+.
   - Get the code from this repository _master_ branch.
   - Make sure nuget packages are set to auto restore.
   - Set _App.UI.Mvc5_ as the startup project.
@@ -63,6 +63,6 @@ SOFTWARE.
 
 ## Donation
 
-If you liked this work, please consider a small donation to help keeping it up.  
+If you liked this work, please consider a small donation to help keeping it up.
 
 [![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V5RS2ZLZKG37E)

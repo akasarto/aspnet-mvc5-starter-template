@@ -14,9 +14,9 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 	[TrackMenuItem("users.profile")]
 	public partial class ProfileController : __AreaBaseController
 	{
-		private AppUserManager _userManager = null;
-		private AppSignInManager _signInManager = null;
 		private IGlobalizationService _globalizationService = null;
+		private AppSignInManager _signInManager = null;
+		private AppUserManager _userManager = null;
 
 		/// <summary>
 		/// Constructor method.

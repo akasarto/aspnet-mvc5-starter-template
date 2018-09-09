@@ -14,7 +14,6 @@ namespace App.UI.Mvc5.Infrastructure
 		/// </summary>
 		public GlobalizationService()
 		{
-
 		}
 
 		public IEnumerable<CultureInfo> GetCultures()

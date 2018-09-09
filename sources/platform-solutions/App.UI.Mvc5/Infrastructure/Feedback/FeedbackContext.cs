@@ -15,16 +15,16 @@ namespace App.UI.Mvc5.Infrastructure
 
 		public List<FeedbackMessage> Messages => _messages;
 
-		private void AddMessage(FeedbackMessage message)
-		{
-			_messages.Add(message);
-		}
-
 		public void AddMessage(FeedbackMessageType type, string content, string title = null)
 		{
 			var message = new FeedbackMessage(type, content, title);
 
 			AddMessage(message);
+		}
+
+		private void AddMessage(FeedbackMessage message)
+		{
+			_messages.Add(message);
 		}
 	}
 }

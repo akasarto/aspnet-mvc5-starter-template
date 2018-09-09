@@ -6,8 +6,8 @@ namespace App.UI.Mvc5.Infrastructure
 {
 	public class ImageResizerThumbVirtualFile : IVirtualFile
 	{
-		private string _virtualPath = null;
-		private Stream _stream = null;
+		private readonly Stream _stream = null;
+		private readonly string _virtualPath = null;
 
 		/// <summary>
 		/// Constructor method.

@@ -1,6 +1,6 @@
-﻿using System;
-using ImageResizer;
+﻿using ImageResizer;
 using Shared.Infrastructure;
+using System;
 
 namespace App.UI.Mvc5.Infrastructure
 {

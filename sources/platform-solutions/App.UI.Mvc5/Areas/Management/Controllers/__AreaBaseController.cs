@@ -1,6 +1,6 @@
-﻿using Domain.Core;
-using App.UI.Mvc5.Controllers;
+﻿using App.UI.Mvc5.Controllers;
 using App.UI.Mvc5.Infrastructure;
+using Domain.Core;
 using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Areas.Management.Controllers

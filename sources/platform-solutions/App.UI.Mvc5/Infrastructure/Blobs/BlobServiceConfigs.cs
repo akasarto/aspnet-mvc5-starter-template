@@ -3,7 +3,6 @@
 	public class BlobServiceConfigs
 	{
 		public string DefaultThumbBackgroundHexColor { get; set; }
-
 		public string DefaultThumbForegroundHexColor { get; set; }
 	}
 }

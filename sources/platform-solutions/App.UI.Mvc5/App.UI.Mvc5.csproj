@@ -201,7 +201,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\.inf\.readme.txt" />
+    <Content Include="Areas\.readme.txt" />
     <Content Include="Areas\Features\Scripts\forms-and-validation.js" />
     <Content Include="Areas\Features\Scripts\realtime.js" />
     <Content Include="Areas\Management\Scripts\logs.index.js" />
@@ -213,7 +213,7 @@
     <Content Include="Areas\Users\Scripts\account.password-set-new.js" />
     <Content Include="Areas\Users\Scripts\account.signup.js" />
     <Content Include="Areas\Users\Scripts\profile.edit.js" />
-    <Content Include="Content\.inf\.readme.txt" />
+    <Content Include="Content\.readme.txt" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -358,7 +358,7 @@
     <Content Include="Content\vendor\pnotify\pnotify.custom.min.css" />
     <Content Include="Content\vendor\pnotify\pnotify.custom.min.js" />
     <Content Include="Content\website-custom.css" />
-    <Content Include="Controllers\.inf\.readme.txt" />
+    <Content Include="Controllers\.readme.txt" />
     <Content Include="Favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Humans.txt" />
@@ -538,7 +538,6 @@
     <Compile Include="Areas\Users\Models\Account\AccountVerifyEmailViewModelValidator.cs" />
     <Compile Include="Areas\Users\Models\Profile\ProfileEditViewModel.cs" />
     <Compile Include="Areas\Users\Models\Profile\ProfileEditViewModelValidator.cs" />
-    <Compile Include="Controllers\.inf\ControllerTpl.cs" />
     <Compile Include="Controllers\BlobsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Infrastructure\Blobs\BlobUploadResult.cs" />

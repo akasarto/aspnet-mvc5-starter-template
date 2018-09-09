@@ -1,5 +1,5 @@
-﻿using App.UI.Mvc5.Models;
-using App.UI.Mvc5.Infrastructure;
+﻿using App.UI.Mvc5.Infrastructure;
+using App.UI.Mvc5.Models;
 using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Areas.Docs.Controllers

@@ -6,17 +6,7 @@ namespace App.UI.Mvc5.Areas.Management.Models
 {
 	public class LogEntryViewModel
 	{
-		public long Id { get; set; }
-
-		public string Level { get; set; }
-
-		public string Message { get; set; }
-
 		public string Exception { get; set; }
-
-		public Dictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
-
-		public DateTime TimeStamp { get; set; }
 
 		public string Icon
 		{
@@ -52,5 +42,14 @@ namespace App.UI.Mvc5.Areas.Management.Models
 				return "fa fa-paw text-muted";
 			}
 		}
+
+		public long Id { get; set; }
+
+		public string Level { get; set; }
+
+		public string Message { get; set; }
+		public Dictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
+
+		public DateTime TimeStamp { get; set; }
 	}
 }

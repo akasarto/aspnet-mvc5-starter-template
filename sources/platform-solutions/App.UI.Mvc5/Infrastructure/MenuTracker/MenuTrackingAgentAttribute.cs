@@ -8,21 +8,22 @@ namespace App.UI.Mvc5.Infrastructure
 	[AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
 	public class MenuTrackingAgentAttribute : ActionFilterAttribute
 	{
-		public override void OnActionExecuting(ActionExecutingContext filterContext)
+		public List<string> GetActionItems(ActionExecutingContext filterContext)
 		{
-			var itemsKey = nameof(MenuData);
+			var items = new List<string>();
 
-			var menuData = filterContext.HttpContext.Items[itemsKey] as MenuData;
+			var actionDescriptor = filterContext?.ActionDescriptor;
+			var attributes = actionDescriptor?.GetCustomAttributes(typeof(TrackMenuItemAttribute), false).Cast<TrackMenuItemAttribute>().ToList();
 
-			if (menuData == null)
+			if (attributes != null && attributes.Count > 0)
 			{
-				menuData = new MenuData();
+				foreach (var attribute in attributes)
+				{
+					items.Add(attribute.Key);
+				}
 			}
 
-			menuData.Items.AddRange(GetControllerItems(filterContext));
-			menuData.Items.AddRange(GetActionItems(filterContext));
-
-			filterContext.HttpContext.Items[itemsKey] = menuData;
+			return items;
 		}
 
 		public List<string> GetControllerItems(ActionExecutingContext filterContext)
@@ -43,22 +44,21 @@ namespace App.UI.Mvc5.Infrastructure
 			return items;
 		}
 
-		public List<string> GetActionItems(ActionExecutingContext filterContext)
+		public override void OnActionExecuting(ActionExecutingContext filterContext)
 		{
-			var items = new List<string>();
+			var itemsKey = nameof(MenuData);
 
-			var actionDescriptor = filterContext?.ActionDescriptor;
-			var attributes = actionDescriptor?.GetCustomAttributes(typeof(TrackMenuItemAttribute), false).Cast<TrackMenuItemAttribute>().ToList();
+			var menuData = filterContext.HttpContext.Items[itemsKey] as MenuData;
 
-			if (attributes != null && attributes.Count > 0)
+			if (menuData == null)
 			{
-				foreach (var attribute in attributes)
-				{
-					items.Add(attribute.Key);
-				}
+				menuData = new MenuData();
 			}
 
-			return items;
+			menuData.Items.AddRange(GetControllerItems(filterContext));
+			menuData.Items.AddRange(GetActionItems(filterContext));
+
+			filterContext.HttpContext.Items[itemsKey] = menuData;
 		}
 	}
 }

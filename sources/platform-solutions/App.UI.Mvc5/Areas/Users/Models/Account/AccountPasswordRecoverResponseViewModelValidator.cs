@@ -1,6 +1,6 @@
 ﻿using App.UI.Mvc5.Infrastructure;
-using FluentValidation;
 using Domain.Core;
+using FluentValidation;
 
 namespace App.UI.Mvc5.Areas.Users.Models
 {

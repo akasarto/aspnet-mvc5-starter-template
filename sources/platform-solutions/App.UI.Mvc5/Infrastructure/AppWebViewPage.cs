@@ -10,16 +10,16 @@ namespace App.UI.Mvc5.Infrastructure
 
 		public new AppPrincipal User => Thread.CurrentPrincipal as AppPrincipal;
 
+		public string GetLocalizedString(string resourceKey, params object[] formatParams)
+		{
+			return GlobalizationManager.GetLocalizedString(resourceKey, formatParams);
+		}
+
 		public override void InitHelpers()
 		{
 			base.InitHelpers();
 
 			Menu = new MenuHelperViewPages(Html);
-		}
-
-		public string GetLocalizedString(string resourceKey, params object[] formatParams)
-		{
-			return GlobalizationManager.GetLocalizedString(resourceKey, formatParams);
 		}
 	}
 }

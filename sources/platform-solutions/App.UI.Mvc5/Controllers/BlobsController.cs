@@ -1,7 +1,7 @@
 ﻿using App.UI.Mvc5.Infrastructure;
 using App.UI.Mvc5.Models;
-using Shared.Infrastructure;
 using Shared.Extensions;
+using Shared.Infrastructure;
 using System;
 using System.Net;
 using System.Net.Mime;
@@ -55,8 +55,8 @@ namespace App.UI.Mvc5.Controllers
 				var sourceStream = model.Blob.InputStream;
 
 				var blobInfo = _blobService.Upload(
-					sourceName, 
-					sourceStream, 
+					sourceName,
+					sourceStream,
 					User.Id
 				).GetInfo();
 
@@ -80,8 +80,8 @@ namespace App.UI.Mvc5.Controllers
 				var sourceStream = model.Picture.InputStream;
 
 				var blobInfo = _blobService.Upload(
-					sourceName, 
-					sourceStream, 
+					sourceName,
+					sourceStream,
 					User.Id
 				).GetInfo();
 

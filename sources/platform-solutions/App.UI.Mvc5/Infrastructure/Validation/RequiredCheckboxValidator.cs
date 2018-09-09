@@ -15,13 +15,6 @@ namespace App.UI.Mvc5.Infrastructure
 		{
 		}
 
-		protected override bool IsValid(PropertyValidatorContext context)
-		{
-			var state = context.PropertyValue.ChangeType<bool?>();
-
-			return state.HasValue && state.Value;
-		}
-
 		public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
 		{
 			var messageFormatter = new MessageFormatter().AppendPropertyName(metadata.DisplayName);
@@ -34,6 +27,13 @@ namespace App.UI.Mvc5.Infrastructure
 			};
 
 			yield return rule;
+		}
+
+		protected override bool IsValid(PropertyValidatorContext context)
+		{
+			var state = context.PropertyValue.ChangeType<bool?>();
+
+			return state.HasValue && state.Value;
 		}
 	}
 }

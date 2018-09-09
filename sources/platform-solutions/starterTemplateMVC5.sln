@@ -40,13 +40,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Domain", "2.Domain", "{8D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Data", "3.Data", "{D4B0F2B4-6E32-4756-88E5-6C54365CD6D4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Application", "5.Application", "{DB46184A-4BE8-4DCD-BF0E-96B8879B18BB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Services", "4.Services", "{17130F6D-BE0E-4A3A-83D4-D685DAE5EBCB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Application", "4.Application", "{DB46184A-4BE8-4DCD-BF0E-96B8879B18BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Store.SqlServer", "Data.Store.SqlServer\Data.Store.SqlServer.csproj", "{5B6EF0E8-4213-4B43-8462-4518CC93BB56}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.Tests", "6.Tests", "{C48A68CF-5A13-4106-BBBE-6C5D3F3A3082}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Tests", "5.Tests", "{C48A68CF-5A13-4106-BBBE-6C5D3F3A3082}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

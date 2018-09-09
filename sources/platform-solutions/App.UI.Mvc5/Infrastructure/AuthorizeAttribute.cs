@@ -1,14 +1,8 @@
-﻿using Shared.Extensions;
-using Domain.Core;
+﻿using Domain.Core;
+using Shared.Extensions;
 
-/// <summary>
-/// Overrides the default mvc 'AuthorizeAttribute' class.
-/// </summary>
 public class AuthorizeAttribute : System.Web.Mvc.AuthorizeAttribute
 {
-	/// <summary>
-	/// Use enum flags for roles instead of strings.
-	/// </summary>
 	public virtual new Role Roles
 	{
 		get { return base.Roles.ChangeType<Role>(); }

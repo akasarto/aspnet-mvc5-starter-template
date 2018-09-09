@@ -1,7 +1,7 @@
-﻿using App.UI.Mvc5.Models;
-using App.UI.Mvc5.Infrastructure;
-using System.Web.Mvc;
+﻿using App.UI.Mvc5.Infrastructure;
+using App.UI.Mvc5.Models;
 using System;
+using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Areas.Features.Controllers
 {
@@ -19,14 +19,6 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 			_realtimeService = realtimeService ?? throw new ArgumentNullException(nameof(realtimeService), nameof(RealtimeController));
 		}
 
-		[Route(Name = "RealtimeIndexGet")]
-		public ActionResult Index()
-		{
-			var model = new EmptyViewModel();
-
-			return View(model);
-		}
-
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		[Route("broadcast-data", Name = "RealtimeBroadcastDataPost")]
@@ -40,6 +32,14 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 			_realtimeService.Broadcast(User.Id, payload);
 
 			return Json(new { success = true });
+		}
+
+		[Route(Name = "RealtimeIndexGet")]
+		public ActionResult Index()
+		{
+			var model = new EmptyViewModel();
+
+			return View(model);
 		}
 	}
 }

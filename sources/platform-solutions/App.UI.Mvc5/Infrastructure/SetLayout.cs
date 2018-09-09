@@ -12,6 +12,26 @@ namespace App.UI.Mvc5.Infrastructure
 
 	public static partial class WebsiteExtensions
 	{
+		public static void SetLayout(this ViewStartPage @this, Layouts layout)
+		{
+			@this.Layout = GetPath(layout);
+		}
+
+		public static void SetLayout(this ViewStartPage @this, string layoutPath)
+		{
+			@this.Layout = layoutPath;
+		}
+
+		public static void SetLayout(this WebViewPage @this, Layouts layout)
+		{
+			@this.Layout = GetPath(layout);
+		}
+
+		public static void SetLayout(this WebViewPage @this, string layoutPath)
+		{
+			@this.Layout = layoutPath;
+		}
+
 		private static string GetPath(Layouts layout)
 		{
 			string result = string.Empty;
@@ -36,26 +56,6 @@ namespace App.UI.Mvc5.Infrastructure
 			}
 
 			return result;
-		}
-
-		public static void SetLayout(this ViewStartPage @this, Layouts layout)
-		{
-			@this.Layout = GetPath(layout);
-		}
-
-		public static void SetLayout(this ViewStartPage @this, string layoutPath)
-		{
-			@this.Layout = layoutPath;
-		}
-
-		public static void SetLayout(this WebViewPage @this, Layouts layout)
-		{
-			@this.Layout = GetPath(layout);
-		}
-
-		public static void SetLayout(this WebViewPage @this, string layoutPath)
-		{
-			@this.Layout = layoutPath;
 		}
 	}
 }

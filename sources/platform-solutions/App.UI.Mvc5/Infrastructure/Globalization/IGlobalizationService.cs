@@ -8,8 +8,8 @@ namespace App.UI.Mvc5.Infrastructure
 	{
 		IEnumerable<CultureInfo> GetCultures();
 
-		IEnumerable<CultureInfo> GetUICultures();
-
 		IEnumerable<TimeZoneInfo> GetTimeZones();
+
+		IEnumerable<CultureInfo> GetUICultures();
 	}
 }

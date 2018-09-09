@@ -7,13 +7,10 @@ namespace App.UI.Mvc5.Areas.Management.Models
 {
 	public class UserCreatedMessageViewModel : BaseViewModel
 	{
-		public string FullName { get; set; }
-
-		public string Email { get; set; }
-
-		public string InitialPassword { get; set; }
-
 		public List<AllowedRealmInfo> AllowedRealms { get; set; } = new List<AllowedRealmInfo>();
+		public string Email { get; set; }
+		public string FullName { get; set; }
+		public string InitialPassword { get; set; }
 
 		public class AllowedRealmInfo
 		{

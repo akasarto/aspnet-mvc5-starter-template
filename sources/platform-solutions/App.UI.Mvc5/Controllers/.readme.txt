@@ -1,0 +1,3 @@
+﻿
+Controllers should always inherit from '__BaseController' class.
+

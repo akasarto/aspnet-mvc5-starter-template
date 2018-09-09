@@ -21,9 +21,7 @@ namespace App.UI.Mvc5.Infrastructure
 		}
 
 		public string Content { get; private set; }
-
 		public string Title { get; private set; }
-
 		public FeedbackMessageType Type { get; private set; }
 	}
 }

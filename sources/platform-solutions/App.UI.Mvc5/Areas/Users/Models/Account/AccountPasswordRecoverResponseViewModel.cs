@@ -5,8 +5,6 @@ namespace App.UI.Mvc5.Areas.Users.Models
 {
 	public class AccountPasswordRecoverResponseViewModel : BaseViewModel
 	{
-		public string ResetToken { get; set; }
-
 		[LocalizedDisplayName("Email")]
 		public string Email { get; set; }
 
@@ -15,5 +13,7 @@ namespace App.UI.Mvc5.Areas.Users.Models
 
 		[LocalizedDisplayName("NewPassword2")]
 		public string NewPassword2 { get; set; }
+
+		public string ResetToken { get; set; }
 	}
 }

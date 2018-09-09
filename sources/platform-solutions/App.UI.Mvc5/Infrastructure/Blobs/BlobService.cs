@@ -10,8 +10,8 @@ namespace App.UI.Mvc5.Infrastructure
 {
 	public class BlobService : IBlobService
 	{
-		private BlobServiceConfigs _configs = null;
 		private IBlobsRepository _blobsRepository = null;
+		private BlobServiceConfigs _configs = null;
 		private IBlobStorageService _storageService = null;
 		private IBlobThumbService _thumbService = null;
 
@@ -93,7 +93,7 @@ namespace App.UI.Mvc5.Infrastructure
 
 			_storageService.WriteStream(blobInfo.Name, sourceFileStream);
 
-			blobEntity =_blobsRepository.Create(blobEntity, userId);
+			blobEntity = _blobsRepository.Create(blobEntity, userId);
 
 			return blobEntity;
 		}

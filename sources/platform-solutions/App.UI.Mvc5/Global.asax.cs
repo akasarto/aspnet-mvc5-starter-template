@@ -10,19 +10,10 @@ using System.Web.Routing;
 
 namespace App.UI.Mvc5
 {
-	/// <summary>
-	/// Base configuration class.
-	/// </summary>
 	public class MvcApplication : HttpApplication
 	{
-		/// <summary>
-		/// Tracks if the application started successfully.
-		/// </summary>
 		private static bool Initialized { get; set; } = false;
 
-		/// <summary>
-		/// Called whenever a new request starts.
-		/// </summary>
 		protected void Application_BeginRequest(object sender, EventArgs e)
 		{
 			// Create a new id for the current request.
@@ -30,9 +21,6 @@ namespace App.UI.Mvc5
 			Trace.CorrelationManager.ActivityId = Guid.NewGuid();
 		}
 
-		/// <summary>
-		/// Called once when the application starts.
-		/// </summary>
 		protected void Application_Start()
 		{
 			//
@@ -76,9 +64,6 @@ namespace App.UI.Mvc5
 			Initialized = true;
 		}
 
-		/// <summary>
-		/// Called each time an exception is not correctly handled by the application
-		/// </summary>
 		protected void Application_Error()
 		{
 			var exception = Server.GetLastError();
@@ -113,7 +98,6 @@ namespace App.UI.Mvc5
 
 				Response.End();
 
-				/*
 				var data = new RouteData();
 
 				data.Values["ex"] = exception;
@@ -126,7 +110,6 @@ namespace App.UI.Mvc5
 				var requestContext = new RequestContext(new HttpContextWrapper(Context), data);
 
 				controller.Execute(requestContext);
-				*/
 			}
 		}
 	}

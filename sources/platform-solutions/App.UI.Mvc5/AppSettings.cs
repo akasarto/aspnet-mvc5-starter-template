@@ -6,10 +6,10 @@ namespace App.UI.Mvc5
 {
 	public class AppSettings
 	{
-		private static NameValueCollection _provider => WebConfigurationManager.AppSettings;
+		private readonly static NameValueCollection _provider = WebConfigurationManager.AppSettings;
 
-		public static string ActiveStorageService => _provider.Get("app.activeStorageService");
 		public static string ActiveEmailDispatcherService => _provider.Get("app.activeEmailDispatcherService");
+		public static string ActiveStorageService => _provider.Get("app.activeStorageService");
 
 		public class Auth
 		{
@@ -25,16 +25,16 @@ namespace App.UI.Mvc5
 
 		public class Blobs
 		{
-			public static long FileUploadMaxLengthInBytes => _provider.Get("blobs.fileUploadMaxLengthInBytes").ChangeType<long>();
 			public static string DefaultThumbBackgroundHexColor => _provider.Get("blobs.defaultThumbBackgroundHexColor");
 			public static string DefaultThumbForegroundHexColor => _provider.Get("blobs.defaultThumbForegroundHexColor");
+			public static long FileUploadMaxLengthInBytes => _provider.Get("blobs.fileUploadMaxLengthInBytes").ChangeType<long>();
 		}
 
 		public class Cloudinary
 		{
-			public static string CloudName => _provider.Get("cloudinary.cloudName");
 			public static string CloudApiKey => _provider.Get("cloudinary.cloudApiKey");
 			public static string CloudApiSecret => _provider.Get("cloudinary.cloudApiSecret");
+			public static string CloudName => _provider.Get("cloudinary.cloudName");
 		}
 
 		public class Emails
@@ -50,16 +50,14 @@ namespace App.UI.Mvc5
 
 		public class Globalization
 		{
-			public static string DefaultCultureId => _provider.Get("globalization.defaultCultureId");
-			public static string DefaultUICultureId => _provider.Get("globalization.defaultUICultureId");
-			public static string DefaultTimeZoneId => _provider.Get("globalization.defaultTimeZoneId");
-
 			public static string CultureCookieName => _provider.Get("globalization.cultureCookieName");
-			public static string UICultureCookieName => _provider.Get("globalization.uiCultureCookieName");
-			public static string TimeZoneCookieName => _provider.Get("globalization.timeZoneCookieName");
-
+			public static string DefaultCultureId => _provider.Get("globalization.defaultCultureId");
+			public static string DefaultTimeZoneId => _provider.Get("globalization.defaultTimeZoneId");
+			public static string DefaultUICultureId => _provider.Get("globalization.defaultUICultureId");
 			public static string SupportedCultures => _provider.Get("globalization.supportedCultures");
 			public static string SupportedUICultures => _provider.Get("globalization.supportedUICultures");
+			public static string TimeZoneCookieName => _provider.Get("globalization.timeZoneCookieName");
+			public static string UICultureCookieName => _provider.Get("globalization.uiCultureCookieName");
 		}
 
 		public class Logger

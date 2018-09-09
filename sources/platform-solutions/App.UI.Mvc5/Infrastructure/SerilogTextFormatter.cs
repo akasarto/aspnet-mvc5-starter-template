@@ -1,7 +1,7 @@
-﻿using Serilog.Formatting;
-using Serilog.Events;
-using System.IO;
+﻿using Serilog.Events;
+using Serilog.Formatting;
 using Shared.Extensions;
+using System.IO;
 
 namespace App.UI.Mvc5.Infrastructure
 {

@@ -1,7 +1,7 @@
-﻿using App.UI.Mvc5.Infrastructure;
-using FluentValidation;
+﻿using App.Identity.Repositories;
+using App.UI.Mvc5.Infrastructure;
 using Domain.Core;
-using App.Identity.Repositories;
+using FluentValidation;
 
 namespace App.UI.Mvc5.Areas.Management.Models
 {

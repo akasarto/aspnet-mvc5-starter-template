@@ -35,30 +35,7 @@ namespace App.UI.Mvc5.Controllers
 
 		public MenuHelperControllers Menu => new MenuHelperControllers(ControllerContext);
 
-		public string GetLocalizedString(string resourceKey, params object[] formatParams)
-		{
-			return GlobalizationManager.GetLocalizedString(resourceKey, formatParams);
-		}
-
 		public new AppPrincipal User => Thread.CurrentPrincipal as AppPrincipal;
-
-		protected override void Initialize(System.Web.Routing.RequestContext requestContext)
-		{
-			base.Initialize(requestContext);
-
-			Thread.CurrentPrincipal = new AppPrincipal(base.User);
-			requestContext.HttpContext.User = Thread.CurrentPrincipal;
-
-			ConfigureGlobalizationContext(requestContext.HttpContext);
-		}
-
-		protected override ITempDataProvider CreateTempDataProvider()
-		{
-			//ToDo: [Feedback related] Implement cloud ready provider in susbtitution to the native one that use sessions.
-			var provider = base.CreateTempDataProvider();
-
-			return provider;
-		}
 
 		public void ConfigureGlobalizationContext(HttpContextBase httpContext)
 		{
@@ -111,12 +88,34 @@ namespace App.UI.Mvc5.Controllers
 			return JsonError(ModelState);
 		}
 
+		public string GetLocalizedString(string resourceKey, params object[] formatParams)
+		{
+			return GlobalizationManager.GetLocalizedString(resourceKey, formatParams);
+		}
+
 		[NonAction]
 		public JsonResult JsonError(ModelStateDictionary modelState, HttpStatusCode statusCode = HttpStatusCode.BadRequest)
 		{
 			Response.StatusCode = (int)statusCode;
 
 			return Json(modelState);
+		}
+
+		[NonAction]
+		public string RenderPartialViewToString(string viewName, object model = null)
+		{
+			ViewData.Model = model;
+
+			using (var sw = new StringWriter())
+			{
+				var viewResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
+				var viewContext = new ViewContext(ControllerContext, viewResult.View, ViewData, TempData, sw);
+
+				viewResult.View.Render(viewContext, sw);
+				viewResult.ViewEngine.ReleaseView(ControllerContext, viewResult.View);
+
+				return sw.GetStringBuilder().ToString();
+			}
 		}
 
 		[NonAction]
@@ -136,21 +135,22 @@ namespace App.UI.Mvc5.Controllers
 			}
 		}
 
-		[NonAction]
-		public string RenderPartialViewToString(string viewName, object model = null)
+		protected override ITempDataProvider CreateTempDataProvider()
 		{
-			ViewData.Model = model;
+			//ToDo: [Feedback related] Implement cloud ready provider in susbtitution to the native one that use sessions.
+			var provider = base.CreateTempDataProvider();
 
-			using (var sw = new StringWriter())
-			{
-				var viewResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
-				var viewContext = new ViewContext(ControllerContext, viewResult.View, ViewData, TempData, sw);
+			return provider;
+		}
 
-				viewResult.View.Render(viewContext, sw);
-				viewResult.ViewEngine.ReleaseView(ControllerContext, viewResult.View);
+		protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+		{
+			base.Initialize(requestContext);
 
-				return sw.GetStringBuilder().ToString();
-			}
+			Thread.CurrentPrincipal = new AppPrincipal(base.User);
+			requestContext.HttpContext.User = Thread.CurrentPrincipal;
+
+			ConfigureGlobalizationContext(requestContext.HttpContext);
 		}
 
 		protected override JsonResult Json(object data, string contentType, System.Text.Encoding contentEncoding)

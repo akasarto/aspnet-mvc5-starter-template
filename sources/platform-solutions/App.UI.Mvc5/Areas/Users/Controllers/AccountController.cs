@@ -21,9 +21,9 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 	public partial class AccountController : __AreaBaseController
 	{
 		private AppUserManager _appUserManager = null;
-		private AppSignInManager _signInManager = null;
 		private IAuthenticationManager _authenticationManager = null;
 		private IEmailDispatcherService _emailDispatcherService = null;
+		private AppSignInManager _signInManager = null;
 
 		/// <summary>
 		/// Constructor method.

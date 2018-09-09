@@ -1,8 +1,8 @@
-﻿using Domain.Core;
+﻿using App.UI.Mvc5.Areas.Management.Models;
+using App.UI.Mvc5.Infrastructure;
+using Domain.Core;
 using Domain.Core.Entities;
 using Domain.Core.Repositories;
-using App.UI.Mvc5.Areas.Management.Models;
-using App.UI.Mvc5.Infrastructure;
 using Microsoft.AspNet.Identity;
 using Omu.ValueInjecter;
 using Shared.Extensions;
@@ -19,8 +19,8 @@ namespace App.UI.Mvc5.Areas.Management.Controllers
 	[TrackMenuItem("management.users")]
 	public partial class UsersController : __AreaBaseController
 	{
-		private IUsersRepository _managementUsersRepository = null;
 		private IEmailDispatcherService _emailDispatcherService = null;
+		private IUsersRepository _managementUsersRepository = null;
 		private IPasswordHasher _passwordHasher = null;
 
 		/// <summary>
@@ -31,19 +31,6 @@ namespace App.UI.Mvc5.Areas.Management.Controllers
 			_managementUsersRepository = managementUsersRepository ?? throw new ArgumentNullException(nameof(managementUsersRepository), nameof(UsersController));
 			_emailDispatcherService = emailDispatcherService ?? throw new ArgumentNullException(nameof(emailDispatcherService), nameof(UsersController));
 			_passwordHasher = passwordHasher ?? throw new ArgumentNullException(nameof(passwordHasher), nameof(UsersController));
-		}
-
-		[HttpGet]
-		[Route(Name = "ManagementUsersIndexGet")]
-		public ActionResult Index()
-		{
-			var model = new UsersIndexViewModel();
-
-			var users = _managementUsersRepository.GetAll();
-
-			model.Users = users.Select(user => BuildUserViewModel(user)).ToList();
-
-			return View(model);
 		}
 
 		[HttpGet]
@@ -176,6 +163,19 @@ namespace App.UI.Mvc5.Areas.Management.Controllers
 			model = BuildUserViewModel(userEntity: entity, postedModel: model);
 
 			return View("Manager", model);
+		}
+
+		[HttpGet]
+		[Route(Name = "ManagementUsersIndexGet")]
+		public ActionResult Index()
+		{
+			var model = new UsersIndexViewModel();
+
+			var users = _managementUsersRepository.GetAll();
+
+			model.Users = users.Select(user => BuildUserViewModel(user)).ToList();
+
+			return View(model);
 		}
 
 		/// <summary>

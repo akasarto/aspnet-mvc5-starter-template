@@ -12,7 +12,6 @@ namespace App.UI.Mvc5.Infrastructure
 		}
 
 		public BlobEntity Entity { get; private set; }
-
 		public BlobInfo Info { get; private set; }
 	}
 }

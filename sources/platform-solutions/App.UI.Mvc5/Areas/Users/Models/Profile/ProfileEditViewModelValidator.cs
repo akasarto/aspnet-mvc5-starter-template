@@ -10,14 +10,14 @@ namespace App.UI.Mvc5.Areas.Users.Models
 	public class ProfileEditViewModelValidator : AbstractValidator<ProfileEditViewModel>
 	{
 		private IIdentityRepository _identityRepository = null;
-		private ISessionContext _sharedContext = null;
+		private ISessionContext _sessionContext = null;
 
 		/// <summary>
 		/// Constructor method.
 		/// </summary>
-		public ProfileEditViewModelValidator(ISessionContext context, IIdentityRepository identityRepository)
+		public ProfileEditViewModelValidator(ISessionContext sessionContext, IIdentityRepository identityRepository)
 		{
-			_sharedContext = context;
+			_sessionContext = sessionContext;
 			_identityRepository = identityRepository;
 
 			// Name
@@ -57,7 +57,7 @@ namespace App.UI.Mvc5.Areas.Users.Models
 
 		private bool BeUniqueOrCurrentEmail(string email)
 		{
-			if (string.IsNullOrWhiteSpace(email) || _sharedContext == null)
+			if (string.IsNullOrWhiteSpace(email) || _sessionContext == null)
 			{
 				return false;
 			}
@@ -69,12 +69,12 @@ namespace App.UI.Mvc5.Areas.Users.Models
 				return true;
 			}
 
-			return user.Id.Equals(_sharedContext.UserId);
+			return user.Id.Equals(_sessionContext.UserId);
 		}
 
 		private bool BeUniqueOrCurrentUsername(string userName)
 		{
-			if (string.IsNullOrWhiteSpace(userName) || _sharedContext == null)
+			if (string.IsNullOrWhiteSpace(userName) || _sessionContext == null)
 			{
 				return false;
 			}
@@ -86,7 +86,7 @@ namespace App.UI.Mvc5.Areas.Users.Models
 				return true;
 			}
 
-			return user.Id.Equals(_sharedContext.UserId);
+			return user.Id.Equals(_sessionContext.UserId);
 		}
 	}
 }
