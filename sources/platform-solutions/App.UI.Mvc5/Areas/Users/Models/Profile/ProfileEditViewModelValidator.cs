@@ -1,7 +1,7 @@
 ﻿using App.Identity.Repositories;
 using App.UI.Mvc5.Infrastructure;
 using Domain.Core;
-using Domain.Core.Interfaces;
+using Domain.Core.Sessions;
 using FluentValidation;
 using System;
 
@@ -9,13 +9,13 @@ namespace App.UI.Mvc5.Areas.Users.Models
 {
 	public class ProfileEditViewModelValidator : AbstractValidator<ProfileEditViewModel>
 	{
-		private ISharedContext _sharedContext = null;
 		private IIdentityRepository _identityRepository = null;
+		private ISessionContext _sharedContext = null;
 
 		/// <summary>
 		/// Constructor method.
 		/// </summary>
-		public ProfileEditViewModelValidator(ISharedContext context, IIdentityRepository identityRepository)
+		public ProfileEditViewModelValidator(ISessionContext context, IIdentityRepository identityRepository)
 		{
 			_sharedContext = context;
 			_identityRepository = identityRepository;
@@ -43,6 +43,16 @@ namespace App.UI.Mvc5.Areas.Users.Models
 			RuleFor(model => model.CultureId).NotEmpty();
 			RuleFor(model => model.UICultureId).NotEmpty();
 			RuleFor(model => model.TimeZoneId).NotEmpty();
+		}
+
+		private bool BeExistingPictureBlobId(Guid? pictureBlobId)
+		{
+			if (!pictureBlobId.HasValue)
+			{
+				return true;
+			}
+
+			return pictureBlobId.Value != Guid.Empty;
 		}
 
 		private bool BeUniqueOrCurrentEmail(string email)
@@ -77,16 +87,6 @@ namespace App.UI.Mvc5.Areas.Users.Models
 			}
 
 			return user.Id.Equals(_sharedContext.UserId);
-		}
-
-		private bool BeExistingPictureBlobId(Guid? pictureBlobId)
-		{
-			if (!pictureBlobId.HasValue)
-			{
-				return true;
-			}
-
-			return pictureBlobId.Value != Guid.Empty;
 		}
 	}
 }

@@ -50,11 +50,11 @@
     </Compile>
     <Compile Include="Entities\BlobEntity.cs" />
     <Compile Include="Entities\LogEntity.cs" />
-    <Compile Include="Interfaces\ISharedContext.cs" />
+    <Compile Include="Sessions\ISessionContext.cs" />
     <Compile Include="Repositories\IBlobsRepository.cs" />
     <Compile Include="Repositories\ILogsRepository.cs" />
     <Compile Include="Repositories\IUsersRepository.cs" />
-    <Compile Include="SharedContext.cs" />
+    <Compile Include="Sessions\UserSessionContext.cs" />
     <Compile Include="Entities\UserEntity.cs" />
     <Compile Include="DomainPrincipal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,5 +94,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

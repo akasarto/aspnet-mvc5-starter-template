@@ -6,8 +6,8 @@ using App.UI.Mvc5.Infrastructure;
 using Data.Core;
 using Data.Store.SqlServer.Infrastructure;
 using Domain.Core;
-using Domain.Core.Interfaces;
 using Domain.Core.Repositories;
+using Domain.Core.Sessions;
 using FluentValidation;
 using FluentValidation.Mvc;
 using Microsoft.AspNet.Identity;
@@ -57,6 +57,31 @@ namespace App.UI.Mvc5
 
 			// Configure application
 			SetupApplicationRuntime(appBuilder, container);
+		}
+
+		private static Container GetContainer()
+		{
+			var container = new Container();
+
+			container.Options.DefaultLifestyle = Lifestyle.CreateHybrid(
+				lifestyleSelector: () => HttpContext.Current != null,
+				trueLifestyle: new WebRequestLifestyle(),
+				falseLifestyle: Lifestyle.Transient
+			);
+
+			container.RegisterMvcIntegratedFilterProvider();
+			container.RegisterMvcControllers();
+
+			return container;
+		}
+
+		private static IEnumerable<Assembly> GetKnownDomainAssemblies()
+		{
+			var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+
+			return assemblies.Where(assembly =>
+				assembly.FullName.StartsWith("Sarto.")
+			).ToList();
 		}
 
 		private Container ConfigureDependencyInjectionContainer(IAppBuilder appBuilder)
@@ -153,16 +178,16 @@ namespace App.UI.Mvc5
 
 			//
 			container.Register(typeof(IValidator<>), domainAssemblies);
-			container.Register<ISharedContext>(() =>
+			container.Register<ISessionContext>(() =>
 			{
 				if (AdvancedExtensions.IsVerifying(container) || HttpContext.Current == null)
 				{
-					return SharedContext.Null;
+					return UserSessionContext.Null;
 				}
 
 				var currentPrincipal = new AppPrincipal(HttpContext.Current.User);
 
-				return new SharedContext(
+				return new UserSessionContext(
 					userId: currentPrincipal.Id
 				);
 			});
@@ -279,31 +304,6 @@ namespace App.UI.Mvc5
 
 			//
 			appBuilder.MapSignalR();
-		}
-
-		private static IEnumerable<Assembly> GetKnownDomainAssemblies()
-		{
-			var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-
-			return assemblies.Where(assembly =>
-				assembly.FullName.StartsWith("Sarto.")
-			).ToList();
-		}
-
-		private static Container GetContainer()
-		{
-			var container = new Container();
-
-			container.Options.DefaultLifestyle = Lifestyle.CreateHybrid(
-				lifestyleSelector: () => HttpContext.Current != null,
-				trueLifestyle: new WebRequestLifestyle(),
-				falseLifestyle: Lifestyle.Transient
-			);
-
-			container.RegisterMvcIntegratedFilterProvider();
-			container.RegisterMvcControllers();
-
-			return container;
 		}
 	}
 }
