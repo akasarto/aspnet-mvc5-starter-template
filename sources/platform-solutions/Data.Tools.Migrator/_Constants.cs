@@ -2,6 +2,6 @@
 {
 	public class _Constants
 	{
-		public const string SqlServer = "sqlserver";
+		public const string SqlServer = "SqlServer";
 	}
 }

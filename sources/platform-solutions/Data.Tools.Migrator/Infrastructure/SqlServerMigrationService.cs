@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Data.Tools.Migrator.Infrastructure
 {
-	public class SqlServerMigrationService
+	public static class SqlServerMigrationService
 	{
 		public static void MigrateUp(string connectionString)
 		{
@@ -22,7 +22,7 @@ namespace Data.Tools.Migrator.Infrastructure
 
 				var runner = GetRunner(scope);
 
-				runner.MigrateUp();
+				runner?.MigrateUp();
 			}
 		}
 
