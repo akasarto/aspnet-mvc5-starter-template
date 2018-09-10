@@ -23,15 +23,15 @@
 	<link rel="icon" href="~/Favicon.ico" />
 	<link type="text/plain" rel="author" href="~/Humans.txt" />
 
-	<link href="~/content/bootstrap.min.css" rel="stylesheet">
-	<link href="~/content/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-	<link href="~/content/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" />
-	<link href="~/content/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet" />
-	<link href="~/content/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css" rel="stylesheet" />
-	<link href="~/content/vendor/pnotify/pnotify.custom.min.css" rel="stylesheet" />
-	<link href="~/content/vendor/nprogress/nprogress.css" rel="stylesheet" />
-	<link href="~/content/vendor/animatecss/animate.css" rel="stylesheet" />
-	<link href="~/content/website-custom.css" rel="stylesheet" />
+	<link href="~/Assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="~/Assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="~/Assets/vendor/magnific-popup/magnific-popup.min.css" rel="stylesheet" />
+	<link href="~/Assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet" />
+	<link href="~/Assets/vendor/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+	<link href="~/Assets/vendor/pnotify/pnotify.css" rel="stylesheet" />
+	<link href="~/Assets/vendor/nprogress/nprogress.min.css" rel="stylesheet" />
+	<link href="~/Assets/vendor/animate-css/animate.min.css" rel="stylesheet" />
+	<link href="~/Assets/stylesheet/website-custom.css" rel="stylesheet" />
 
 	@RenderSection("page_styles", required: false)
 
@@ -46,40 +46,39 @@
 	@Html.RenderAdminScriptResourcesTag(User.Culture, User.UICulture)
 
 	<!-- SCRIPTS -->
-	<script src="~/scripts/jquery-3.3.1.min.js"></script>
-	<script src="~/content/vendor/js-cookie/js.cookie-2.2.0.min.js"></script>
-	<script src="~/scripts/_configs/cookies.config.js"></script>
-	<script src="~/scripts/umd/popper.min.js"></script>
-	<script src="~/scripts/bootstrap.min.js"></script>
-	<script src="~/content/vendor/holder/holder.min.js"></script>
-	<script src="~/content/vendor/placeholder/jquery.placeholder.min.js"></script>
-	<script src="~/content/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-	<script src="~/content/vendor/pnotify/pnotify.custom.min.js"></script>
-	<script src="~/content/vendor/nprogress/nprogress.js"></script>
-	<script src="~/content/vendor/moment-js/moment-with-locales.js"></script>
-	<script src="~/scripts/_configs/globalization.config.js"></script>
-	<script src="~/content/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-	@Html.RenderLocalizedScriptTag("~/content/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.{0}.min.js", User.Culture)
-	<script src="~/scripts/_configs/datepicker.config.js"></script>
-	<script src="~/content/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
-	<script src="~/scripts/_configs/timepicker.config.js"></script>
-	<script src="~/scripts/jquery.validate.js"></script>
-	<script src="~/scripts/_configs/jquery.validate.config.js"></script>
-	<script src="~/scripts/jquery.validate.unobtrusive.js"></script>
-	<script src="~/scripts/_configs/jquery.validate.unobtrusive.config.js"></script>
-	<script src="~/scripts/jquery.signalR-2.2.3.js"></script>
+	<script src="~/Assets/vendor/jquery/jquery.min.js"></script>
+	<script src="~/Assets/vendor/js-cookie/js.cookie.min.js"></script>
+	<script src="~/Assets/javascript/config.cookies.js"></script>
+	<script src="~/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="~/Assets/vendor/holder/holder.min.js"></script>
+	<script src="~/Assets/vendor/jquery-placeholder/jquery.placeholder.min.js"></script>
+	<script src="~/Assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="~/Assets/vendor/pnotify/pnotify.js"></script>
+	<script src="~/Assets/vendor/nprogress/nprogress.min.js"></script>
+	<script src="~/Assets/vendor/moment-js/moment-with-locales.min.js"></script>
+	<script src="~/Assets/javascript/config.globalization.js"></script>
+	<script src="~/Assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+	@Html.RenderLocalizedScriptTag("~/Assets/vendor/bootstrap-datepicker/locales/bootstrap-datepicker.{0}.min.js", User.Culture)
+	<script src="~/Assets/javascript/config.datepicker.js"></script>
+	<script src="~/Assets/vendor/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+	<script src="~/Assets/javascript/config.timepicker.js"></script>
+	<script src="~/Assets/vendor/jquery-validate/jquery.validate.min.js"></script>
+	<script src="~/Assets/javascript/config.jquery.validate.js"></script>
+	<script src="~/Assets/vendor/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+	<script src="~/Assets/javascript/config.jquery.validate.unobtrusive.js"></script>
+	<script src="~/Assets/vendor/singalr/jquery.signalR.min.js"></script>
 	<script src="~/signalr/hubs"></script>
 	@RenderSection("page_scripts", required: false)
-	<script src="~/scripts/_base/website.base.js"></script>
-	<script src="~/scripts/_services/modal.service.js"></script>
-	<script src="~/scripts/_services/model.state.service.js"></script>
-	<script src="~/scripts/_services/notification.service.js"></script>
-	<script src="~/scripts/_services/progress.service.js"></script>
-	<script src="~/scripts/_services/table.service.js"></script>
-	<script src="~/scripts/_services/upload.service.js"></script>
-	<script src="~/scripts/_services/validation.service.js"></script>
-	<script src="~/scripts/_setups/feedback.setup.js"></script>
-	<script src="~/scripts/_setups/tooltips.setup.js"></script>
+	<script src="~/Assets/javascript/base.infra.js"></script>
+	<script src="~/Assets/javascript/service.modal.js"></script>
+	<script src="~/Assets/javascript/service.model-state.js"></script>
+	<script src="~/Assets/javascript/service.notification.js"></script>
+	<script src="~/Assets/javascript/service.progress.js"></script>
+	<script src="~/Assets/javascript/service.table.js"></script>
+	<script src="~/Assets/javascript/service.upload.js"></script>
+	<script src="~/Assets/javascript/service.validation.js"></script>
+	<script src="~/Assets/javascript/setup.feedback.js"></script>
+	<script src="~/Assets/javascript/setup.tooltips.js"></script>
 
 	<!-- Default Delete Dialog Template -->
 	<div class="modal-dialog mfp-hide confirmation-service-dialog" id="mainDeleteDialog">

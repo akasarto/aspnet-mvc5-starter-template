@@ -1,6 +1,0 @@
-﻿
-The following is expected:
-
-- All custom script are scoped and expose only what's relevant.
-
-You can copy the templates in this folder and rename the copy as needed.

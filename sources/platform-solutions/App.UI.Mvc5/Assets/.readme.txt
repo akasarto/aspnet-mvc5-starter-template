@@ -1,0 +1,11 @@
+﻿
+This folder contains the client side scripts, styles, images and miscelaneous content required to properly render the application.
+
+Client side libraries will now be managed by Visual Studio Library Mananger (LibMan) instead of nuget packages.
+
+For more details, check the main github repository: https://github.com/aspnet/LibraryManager
+
+The following are templates and are the ones used as base for custom page and service scripts:
+
+- script.template.js / Used in page specific scripts
+- service.template.js / Used in application specific scripts

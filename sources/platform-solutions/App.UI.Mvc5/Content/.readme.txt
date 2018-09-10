@@ -1,2 +1,0 @@
-﻿
-You can organize the contents in this folder as needed, but the default is that it is used as target to nuget libraries and custom libs should be placed under the 'vendor' folder.

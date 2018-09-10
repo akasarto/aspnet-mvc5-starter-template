@@ -1,0 +1,74 @@
+{
+	"version": "1.0",
+	"defaultProvider": "cdnjs",
+	"libraries": [
+		{
+			"library": "jquery@3.3.1",
+			"destination": "Assets/vendor/jquery"
+		},
+		{
+			"library": "twitter-bootstrap@4.1.3",
+			"destination": "Assets/vendor/bootstrap"
+		},
+		{
+			"library": "jquery-validate@1.17.0",
+			"destination": "Assets/vendor/jquery-validate"
+		},
+		{
+			"library": "jquery-validation-unobtrusive@3.2.10",
+			"destination": "Assets/vendor/jquery-validation-unobtrusive"
+		},
+		{
+			"library": "font-awesome@4.7.0",
+			"destination": "Assets/vendor/font-awesome"
+		},
+		{
+			"library": "pnotify@3.2.1",
+			"destination": "Assets/vendor/pnotify"
+		},
+		{
+			"library": "animate.css@3.7.0",
+			"destination": "Assets/vendor/animate-css"
+		},
+		{
+			"library": "bootstrap-datepicker@1.8.0",
+			"destination": "Assets/vendor/bootstrap-datepicker"
+		},
+		{
+			"library": "bootstrap-timepicker@0.5.2",
+			"destination": "Assets/vendor/bootstrap-timepicker"
+		},
+		{
+			"library": "holder@2.9.4",
+			"destination": "Assets/vendor/holder"
+		},
+		{
+			"library": "js-cookie@2.2.0",
+			"destination": "Assets/vendor/js-cookie"
+		},
+		{
+			"library": "magnific-popup.js@1.1.0",
+			"destination": "Assets/vendor/magnific-popup"
+		},
+		{
+			"library": "moment.js@2.22.2",
+			"destination": "Assets/vendor/moment-js"
+		},
+		{
+			"library": "multi-select@0.9.12",
+			"destination": "Assets/vendor/multi-select"
+		},
+		{
+			"library": "nprogress@0.2.0",
+			"destination": "Assets/vendor/nprogress"
+		},
+		{
+			"library": "jquery-placeholder@2.3.1",
+			"destination": "Assets/vendor/jquery-placeholder"
+		},
+		{
+			"library": "signalr.js@2.3.0",
+			"destination": "Assets/vendor/singalr"
+		}
+	]
+}
