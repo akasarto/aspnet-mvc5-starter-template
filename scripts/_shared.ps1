@@ -129,37 +129,6 @@ function check_msbuild_tool_executable([string]$vsWhereToolExe) {
     Write-Host "[OK]" -f Green
 }
 
-# Attempt to restore all nuget packages in the given solution file
-function restore_nuget_packages_for_solution([string]$nugetToolExe, [string]$solutionFilePath) {
-    Write-Host "Restoring solution nuget packages......... " -NoNewline
-    $output = & cmd /c $nugetToolExe restore $solutionFilePath -verbosity quiet 2`>`&1
-    if (-Not $?)
-    {
-        Write-Host "[FAILED]" -f Red
-        Write-Host ""
-        Write-Host $tab $output -f Red
-        break
-    }
-    Write-Host "[OK]" -f Green
-}
-
-# Attempt to build all projects in the given solution file
-function build_solution_projects([string]$vsWhereToolExe, [string]$solutionFilePath, [string]$builConfigName) {
-    $msBuildToolExe = get_msbuild_executable_path -vsWhereToolExe $vsWhereToolExe
-    Write-Host "Building solution projects................ " -NoNewline
-    $output = & cmd /c $msBuildToolExe /nologo /verbosity:quiet /p:Configuration=$builConfigName $solutionFilePath 2`>`&1
-    if (-Not $?)
-    {
-        Write-Host "[FAILED]" -f Red
-        Write-Host ""
-        Write-Host $tab "For further details, please check the solution status in Visual Studio." -f Cyan
-        Write-Host ""
-        Write-Host $tab $output -f Red
-        break
-    }
-    Write-Host "[OK]" -f Green
-}
-
 # Checks if the given config file exists
 function check_main_config_file([string]$configFilePath) {
     Write-Host "Checking main config file................. " -NoNewline
@@ -171,4 +140,13 @@ function check_main_config_file([string]$configFilePath) {
         break
     }
     Write-Host "[OK]" -f Green
+}
+
+# Attempt to build all projects in the given solution file
+function build_solution_projects([string]$vsWhereToolExe, [string]$solutionFilePath, [string]$builConfigName) {
+    $msBuildToolExe = get_msbuild_executable_path -vsWhereToolExe $vsWhereToolExe
+    Write-Host ""
+    Write-Host "### Building solution projects" -f Cyan
+    Write-Host ""
+    & cmd /c $msBuildToolExe /nologo /restore /p:Configuration=$builConfigName $solutionFilePath
 }

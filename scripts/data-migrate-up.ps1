@@ -14,7 +14,6 @@ $rootFolder = ((get-item (split-path $MyInvocation.MyCommand.Definition)).Parent
 $sharedFile = Join-Path $rootFolder "\scripts\_shared.ps1"
 
 $vsWhereToolExe = Join-Path $rootFolder "tools\vswhere.exe"
-$nugetToolExe = Join-Path $rootFolder "tools\nuget.exe"
 $migratorToolExe = Join-Path $rootFolder "$mainWebProjectFolder\bin\data.tools.migrator.exe"
 $configFilePath = Join-Path $rootFolder "$mainWebProjectFolder\web.config"
 $solutionFilePath = Join-Path $rootFolder $solutionFilePath
@@ -33,14 +32,11 @@ check_required_net_framework_version -requiredPowerShellMajorVersion $requiredNe
 # Check MSBuild.exe tool
 check_msbuild_tool_executable -vsWhereToolExe $vsWhereToolExe
 
-# Restore solution nuget packages
-restore_nuget_packages_for_solution -nugetToolExe $nugetToolExe -solutionFilePath $solutionFilePath
+# Check main config file
+check_main_config_file -configFilePath $configFilePath
 
 # Building solution projects
 build_solution_projects -vsWhereToolExe $vsWhereToolExe -solutionFilePath $solutionFilePath -builConfigName $builConfigName
-
-# Check main config file
-check_main_config_file -configFilePath $configFilePath
 
 # Run data migrations
 #########################################################################################
