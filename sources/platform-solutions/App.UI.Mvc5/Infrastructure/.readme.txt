@@ -1,0 +1,2 @@
+﻿
+This folder contains most of the application level shared code.

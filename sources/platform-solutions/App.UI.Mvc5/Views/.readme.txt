@@ -1,0 +1,7 @@
+﻿
+The following is expected:
+
+- Classe used for views '@model' should inherit from 'BaseViewModel'.
+- Classes used for partial views '@model' should inherit from 'BasePartialViewModel'.
+
+You can copy the templates under the .info folder and rename the copy as needed.

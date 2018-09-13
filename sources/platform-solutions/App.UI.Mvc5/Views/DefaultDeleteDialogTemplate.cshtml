@@ -1,0 +1,22 @@
+﻿<!-- View Contents -->
+
+<div class="modal-dialog mfp-hide confirmation-service-dialog" id="mainDeleteDialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h4 class="modal-title">@GetLocalizedString("DefaultAttentionTitle")</h4>
+		</div>
+		<div class="modal-body">
+			<div class="confirmation-content-template hidden">
+				@GetLocalizedString("DeleteDialogConfirmationMessageTemplate").WithRawHtmlOutput()
+			</div>
+			<div class="confirmation-content-template-with-label hidden">
+				@GetLocalizedString("DeleteDialogConfirmationMessageTemplateWithLabel").WithRawHtmlOutput()
+			</div>
+			<div class="confirmation-content-message"></div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-link confirmation-cancel">@GetLocalizedString("Cancel")</button>
+			<button type="button" class="btn btn-danger confirmation-confirm">@GetLocalizedString("Confirm")</button>
+		</div>
+	</div>
+</div>

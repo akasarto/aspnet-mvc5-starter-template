@@ -1,6 +1,6 @@
 ﻿
-This application use areas to isolate code for each of the main top menu and user sections.
+This application use areas to isolate code for each of its main sections (normaly one for each top menu item).
 
-Each area consists of a landing controller, that will direct the request to the area primary controller and also determine the area base route to avoid conflicts and route resolution problems.
+Each area consists of a landing controller, that will direct the request to its primary controller and also determine the area base route to avoid conflicts and route resolution problems as well.
 
 Area controllers should inherit from the specific '__AreaBaseController' which then inherits from '__BaseController'

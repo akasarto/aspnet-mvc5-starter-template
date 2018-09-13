@@ -43,9 +43,12 @@
 
 	@Html.FeedbackSummary()
 
-	@Html.RenderAdminScriptResourcesTag(User.Culture, User.UICulture)
+	@Html.Partial("DefaultDeleteDialogTemplate")
 
 	<!-- SCRIPTS -->
+
+	@Html.RenderAdminScriptResourcesTag(User.Culture, User.UICulture)
+
 	<script src="~/Assets/vendor/jquery/jquery.min.js"></script>
 	<script src="~/Assets/vendor/js-cookie/js.cookie.min.js"></script>
 	<script src="~/Assets/javascript/config.cookies.js"></script>
@@ -79,28 +82,6 @@
 	<script src="~/Assets/javascript/service.validation.js"></script>
 	<script src="~/Assets/javascript/setup.feedback.js"></script>
 	<script src="~/Assets/javascript/setup.tooltips.js"></script>
-
-	<!-- Default Delete Dialog Template -->
-	<div class="modal-dialog mfp-hide confirmation-service-dialog" id="mainDeleteDialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h4 class="modal-title">@GetLocalizedString("DefaultAttentionTitle")</h4>
-			</div>
-			<div class="modal-body">
-				<div class="confirmation-content-template hidden">
-					@GetLocalizedString("DeleteDialogConfirmationMessageTemplate").WithRawHtmlOutput()
-				</div>
-				<div class="confirmation-content-template-with-label hidden">
-					@GetLocalizedString("DeleteDialogConfirmationMessageTemplateWithLabel").WithRawHtmlOutput()
-				</div>
-				<div class="confirmation-content-message"></div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-link confirmation-cancel">@GetLocalizedString("Cancel")</button>
-				<button type="button" class="btn btn-danger confirmation-confirm">@GetLocalizedString("Confirm")</button>
-			</div>
-		</div>
-	</div>
 
 	@RenderSection("page_scripts_init", required: false)
 

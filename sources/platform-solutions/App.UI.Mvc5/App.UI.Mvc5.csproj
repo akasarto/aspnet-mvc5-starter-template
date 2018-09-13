@@ -547,7 +547,8 @@
     <Content Include="Favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Humans.txt" />
-    <Content Include="Models\.inf\.readme.txt" />
+    <Content Include="Infrastructure\.readme.txt" />
+    <Content Include="Models\.readme.txt" />
     <Content Include="Assets\service.template.js" />
     <Content Include="Areas\Users\Views\Account\Box.cshtml" />
     <Content Include="Areas\Users\Views\Account\LogIn.cshtml" />
@@ -603,7 +604,7 @@
     <Content Include="Assets\javascript\setup.tooltips.js" />
     <Content Include="Assets\javascript\setup.feedback.js" />
     <Content Include="Assets\script.template.js" />
-    <Content Include="Views\.inf\.readme.txt" />
+    <Content Include="Views\.readme.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -713,8 +714,8 @@
     <Compile Include="Infrastructure\Validation\SimpleInjectorValidatorFactory.cs" />
     <Compile Include="Initializer.cs" />
     <Compile Include="Infrastructure\Blobs\IBlobService.cs" />
-    <Compile Include="Models\.inf\PartialViewModel.Tpl.cs" />
-    <Compile Include="Models\.inf\ViewModel.Tpl.cs" />
+    <Compile Include="Models\.info\PartialViewModel.Tpl.cs" />
+    <Compile Include="Models\.info\ViewModel.Tpl.cs" />
     <Compile Include="Models\EmptyPartialViewModel.cs" />
     <Compile Include="Models\BaseViewModel.cs" />
     <Compile Include="Models\BasePartialViewModel.cs" />
@@ -742,8 +743,8 @@
     <Content Include="Views\Errors\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\_LayoutEmails.cshtml" />
-    <Content Include="Views\.inf\View.Tpl.cshtml" />
-    <Content Include="Views\.inf\PartialView.Tpl.cshtml" />
+    <Content Include="Views\.info\View.Tpl.cshtml" />
+    <Content Include="Views\.info\PartialView.Tpl.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_LayoutInternal.cshtml" />
     <Content Include="Views\ValidationSummaryAlerts.cshtml" />
@@ -841,6 +842,7 @@
     <Content Include="Assets\vendor\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css.map" />
     <Content Include="Assets\vendor\js-cookie\js.cookie.min.js.map" />
     <Content Include="Assets\vendor\jquery-placeholder\jquery.placeholder.min.js.map" />
+    <Content Include="Views\DefaultDeleteDialogTemplate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
