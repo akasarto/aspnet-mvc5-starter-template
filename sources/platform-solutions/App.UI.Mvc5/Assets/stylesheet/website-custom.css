@@ -9,6 +9,13 @@ html {
 	position: relative;
 	padding-top: 3.5rem;
 	min-height: 100%;
+	font-size: 14px;
+}
+
+@media (min-width: 768px) {
+	html {
+		font-size: 16px;
+	}
 }
 
 body {
@@ -66,12 +73,8 @@ span.is-invalid {
 /* HOME
 *************************/
 
-.jumbotron {
-	text-align: center;
-}
-
-.divider {
-	border-style: dotted;
+.welcome-header {
+	max-width: 700px;
 }
 
 .marketing .col-lg-4 {
@@ -97,16 +100,4 @@ span.is-invalid {
 	font-weight: 300;
 	line-height: 1;
 	letter-spacing: -.05rem;
-}
-
-@media (min-width: 40em) {
-	.featurette-heading {
-		font-size: 50px;
-	}
-}
-
-@media (min-width: 62em) {
-	.featurette-heading {
-		margin-top: 7rem;
-	}
 }

@@ -9,7 +9,7 @@
 /* SITE */
 	Last update:2018/09/09
 	Components: Bootstrap 4+, JQuery
-	Software: ASP.Net MVC5, SQL Server, Razor
-	IDE: Visual Studio Code, Visual Studio 2017 Community 15.8+
+	Software: ASP.Net MVC5, SQL Server, Razor, Dependency Injection, SOLID
+	IDE: Visual Studio Code, Visual Studio 2017 Community 15.8+, VS Library Manager
 	Language: English
 	Doctype: HTML5

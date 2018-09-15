@@ -549,7 +549,7 @@
     <Content Include="Humans.txt" />
     <Content Include="Infrastructure\.readme.txt" />
     <Content Include="Models\.readme.txt" />
-    <Content Include="Assets\service.template.js" />
+    <Content Include="Assets\.info\service.template.js" />
     <Content Include="Areas\Users\Views\Account\Box.cshtml" />
     <Content Include="Areas\Users\Views\Account\LogIn.cshtml" />
     <Content Include="Areas\Users\Views\Account\PasswordChange.cshtml" />
@@ -603,7 +603,7 @@
     <Content Include="Assets\javascript\service.model-state.js" />
     <Content Include="Assets\javascript\setup.tooltips.js" />
     <Content Include="Assets\javascript\setup.feedback.js" />
-    <Content Include="Assets\script.template.js" />
+    <Content Include="Assets\.info\script.template.js" />
     <Content Include="Views\.readme.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -621,6 +621,11 @@
     <Compile Include="Areas\Docs\Controllers\DocsController.cs" />
     <Compile Include="Areas\Docs\Controllers\_LandingController.cs" />
     <Compile Include="Areas\Docs\Controllers\__AreaBaseController.cs" />
+    <Compile Include="Areas\Docs\Docs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Docs.resx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Features\Controllers\FormsAndValidationController.cs" />
     <Compile Include="Areas\Features\Controllers\RealtimeController.cs" />
     <Compile Include="Areas\Features\Controllers\_LandingController.cs" />
@@ -843,6 +848,7 @@
     <Content Include="Assets\vendor\js-cookie\js.cookie.min.js.map" />
     <Content Include="Assets\vendor\jquery-placeholder\jquery.placeholder.min.js.map" />
     <Content Include="Views\DefaultDeleteDialogTemplate.cshtml" />
+    <Content Include="Areas\Docs\Views\Submenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -913,6 +919,10 @@
     <EmbeddedResource Include="AppScriptResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppScriptResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Docs\Docs.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Docs.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

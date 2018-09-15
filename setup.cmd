@@ -1,9 +1,9 @@
-@REM Copyright (C) Thiago Alberto Schneider. All rights reserved.
+@REM Copyright (C) Sarto Research. All rights reserved.
 @REM Licensed under the MIT license. See LICENSE.txt in the project root for license information.
 
-@ECHO OFF
-
 SETLOCAL ENABLEDELAYEDEXPANSION
+
+@ECHO OFF
 
 powershell ^
     "& .\scripts\data-migrate-up.ps1"^

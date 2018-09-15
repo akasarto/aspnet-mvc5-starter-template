@@ -5,7 +5,7 @@ Client side libraries are managed by Visual Studio Library Mananger (LibMan) ins
 
 For more details, check the main github repository: https://github.com/aspnet/LibraryManager
 
-The following are templates that can be used as base for custom scripts:
+The following are script templates that can be found under the '.info' folder:
 
 - script.template.js / Used in page specific scripts
 - service.template.js / Used in application specific scripts

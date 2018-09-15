@@ -15,6 +15,11 @@ namespace App.UI.Mvc5.Infrastructure
 			return GlobalizationManager.GetLocalizedString(resourceKey, formatParams);
 		}
 
+		public string GetLocalizedString<TResource>(string resourceKey, params object[] formatParams)
+		{
+			return GlobalizationManager.GetLocalizedString<TResource>(resourceKey, formatParams);
+		}
+
 		public override void InitHelpers()
 		{
 			base.InitHelpers();
