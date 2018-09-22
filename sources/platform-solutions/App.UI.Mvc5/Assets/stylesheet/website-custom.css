@@ -31,9 +31,47 @@ body {
 	bottom: 0;
 }
 
-.nav-link.active {
+.navbar-nav > li {
+	float: left;
+	position: relative;
+}
+
+.navbar-light .navbar-nav .active a {
 	font-weight: bold;
 }
+
+	.navbar-light .navbar-nav .active a:after {
+		border-bottom: 5px solid teal;
+		bottom: -10px;
+		content: " ";
+		left: 0;
+		position: absolute;
+		right: 0;
+	}
+
+@media screen and (max-width: 768px) {
+	.navbar-light .navbar-nav .active a:after {
+		display: none;
+	}
+}
+
+.submenu > li {
+	float: left;
+	position: relative;
+}
+
+.navbar-light .submenu .active a {
+	font-weight: bold;
+}
+
+	.navbar-light .submenu .active a::after {
+		border-bottom: 3px solid teal;
+		bottom: -5px;
+		content: " ";
+		left: 0;
+		position: absolute;
+		right: 0;
+	}
 
 /* FORMS & VALIDATION
 *************************/

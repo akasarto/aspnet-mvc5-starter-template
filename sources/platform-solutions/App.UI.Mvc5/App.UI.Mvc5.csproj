@@ -582,7 +582,7 @@
     <Content Include="Areas\Features\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Docs\Views\_LayoutArea.cshtml" />
     <Content Include="Areas\Docs\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Docs\Views\Docs\Index.cshtml" />
+    <Content Include="Areas\Docs\Views\Architecture\Index.cshtml" />
     <Content Include=".editorconfig" />
     <Content Include="libman.json" />
     <Content Include="Assets\vendor\jquery\jquery.min.map" />
@@ -618,18 +618,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Docs\Controllers\DocsController.cs" />
-    <Compile Include="Areas\Docs\Controllers\_LandingController.cs" />
+    <Compile Include="Areas\Docs\Controllers\ArchitectureController.cs" />
+    <Compile Include="Areas\Docs\Controllers\_EntryPointController.cs" />
     <Compile Include="Areas\Docs\Controllers\__AreaBaseController.cs" />
-    <Compile Include="Areas\Docs\Docs.Designer.cs">
+    <Compile Include="Areas\Docs\DocsResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Docs.resx</DependentUpon>
+      <DependentUpon>DocsResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Features\Controllers\FormsAndValidationController.cs" />
     <Compile Include="Areas\Features\Controllers\RealtimeController.cs" />
     <Compile Include="Areas\Features\Controllers\_LandingController.cs" />
     <Compile Include="Areas\Features\Controllers\__AreaBaseController.cs" />
+    <Compile Include="Areas\Features\FeaturesResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeaturesResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Areas\Features\Models\FormsAndValidationViewModel.cs" />
     <Compile Include="Areas\Features\Models\FormsAndValidationViewModelValidator.cs" />
     <Compile Include="Areas\Features\Models\SamplesEnum.cs" />
@@ -849,6 +854,7 @@
     <Content Include="Assets\vendor\jquery-placeholder\jquery.placeholder.min.js.map" />
     <Content Include="Views\DefaultDeleteDialogTemplate.cshtml" />
     <Content Include="Areas\Docs\Views\Submenu.cshtml" />
+    <Content Include="Areas\Docs\Views\MainMenuItem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -920,9 +926,13 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppScriptResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Areas\Docs\Docs.resx">
+    <EmbeddedResource Include="Areas\Docs\DocsResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Docs.Designer.cs</LastGenOutput>
+      <LastGenOutput>DocsResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Features\FeaturesResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FeaturesResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

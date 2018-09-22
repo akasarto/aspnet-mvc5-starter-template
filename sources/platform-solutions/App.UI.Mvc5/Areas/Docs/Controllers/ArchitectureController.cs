@@ -4,11 +4,11 @@ using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Areas.Docs.Controllers
 {
-	[RoutePrefix("docs")]
-	[TrackMenuItem("docs.docs")]
-	public partial class DocsController : __AreaBaseController
+	[RoutePrefix("architecture")]
+	[TrackMenuItem("docs.architecture")]
+	public partial class ArchitectureController : __AreaBaseController
 	{
-		[Route(Name = "DocsIndexGet")]
+		[Route(Name = "DocsArchitectureIndexGet")]
 		public ActionResult Index()
 		{
 			var model = new EmptyViewModel();

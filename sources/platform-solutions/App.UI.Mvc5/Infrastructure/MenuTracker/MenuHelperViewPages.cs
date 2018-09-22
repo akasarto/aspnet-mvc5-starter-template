@@ -1,5 +1,6 @@
 ﻿using Shared.Extensions;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Infrastructure
@@ -25,7 +26,7 @@ namespace App.UI.Mvc5.Infrastructure
 				menuData = new MenuData();
 			}
 
-			var result = menuData.Items.Any(i => i.Like(key)) ? thenTrueResult : elseFalseResult;
+			var result = menuData.Items.Any(i => Regex.IsMatch(i, key, RegexOptions.IgnoreCase)) ? thenTrueResult : elseFalseResult;
 
 			return result;
 		}

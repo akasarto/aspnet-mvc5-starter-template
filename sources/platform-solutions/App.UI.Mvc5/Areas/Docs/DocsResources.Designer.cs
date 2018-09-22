@@ -22,14 +22,14 @@ namespace App.UI.Mvc5.Areas.Docs {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Docs {
+    public class DocsResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Docs() {
+        internal DocsResources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace App.UI.Mvc5.Areas.Docs {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("App.UI.Mvc5.Areas.Docs.Docs", typeof(Docs).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("App.UI.Mvc5.Areas.Docs.DocsResources", typeof(DocsResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,18 +63,9 @@ namespace App.UI.Mvc5.Areas.Docs {
         /// <summary>
         ///   Looks up a localized string similar to Documentation.
         /// </summary>
-        public static string _Docs_Section_Tile {
+        public static string Documentation {
             get {
-                return ResourceManager.GetString("_Docs_Section_Tile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        public static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
+                return ResourceManager.GetString("Documentation", resourceCulture);
             }
         }
     }

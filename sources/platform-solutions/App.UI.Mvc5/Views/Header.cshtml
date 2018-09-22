@@ -1,4 +1,5 @@
-﻿
+﻿@using App.UI.Mvc5.Areas.Docs
+
 <!-- View Contents -->
 
 <header>
@@ -17,18 +18,18 @@
 
 			<!--Top Menu-->
 
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link @Menu.IfActiveItem("root.landing", "active", string.Empty)" href="@Url.Action("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) })">Home</a>
+			<ul class="nav navbar-nav mr-auto">
+				<li class="nav-item @Menu.IfActiveItem("root.landing", "active", string.Empty)">
+					<a class="nav-link" href="@Url.Action("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) })">Home</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link @Menu.IfActiveItem("docs.docs", "active")" href="@Url.Action("Index", "Docs", new { area = AppAreas.GetAreaName(Area.Docs) })">Docs &amp; Tutorials</a>
+
+				@Html.Action("MainMenuItem", "_EntryPoint", new { area = AppAreas.GetAreaName(Area.Docs) })
+
+				<li class="nav-item @Menu.IfActiveItem("features.formsandvalidation", "active")">
+					<a class="nav-link" href="@Url.Action("Index", "FormsAndValidation", new { area = AppAreas.GetAreaName(Area.Features) })">Forms &amp; Validation</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link @Menu.IfActiveItem("features.formsandvalidation", "active")" href="@Url.Action("Index", "FormsAndValidation", new { area = AppAreas.GetAreaName(Area.Features) })">Forms &amp; Validation</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link @Menu.IfActiveItem("features.realtime", "active")" href="@Url.Action("Index", "Realtime", new { area = AppAreas.GetAreaName(Area.Features) })">Realtime</a>
+				<li class="nav-item @Menu.IfActiveItem("features.realtime", "active")">
+					<a class="nav-link" href="@Url.Action("Index", "Realtime", new { area = AppAreas.GetAreaName(Area.Features) })">Realtime</a>
 				</li>
 			</ul>
 
