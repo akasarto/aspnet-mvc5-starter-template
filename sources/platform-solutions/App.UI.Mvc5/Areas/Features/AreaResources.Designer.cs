@@ -61,6 +61,105 @@ namespace App.UI.Mvc5.Areas.Features {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address Line 1.
+        /// </summary>
+        public static string AddressLine1 {
+            get {
+                return ResourceManager.GetString("AddressLine1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address Line 2.
+        /// </summary>
+        public static string AddressLine2 {
+            get {
+                return ResourceManager.GetString("AddressLine2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CVV.
+        /// </summary>
+        public static string CardCVV {
+            get {
+                return ResourceManager.GetString("CardCVV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expiration.
+        /// </summary>
+        public static string CardExpiration {
+            get {
+                return ResourceManager.GetString("CardExpiration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name on card.
+        /// </summary>
+        public static string CardName {
+            get {
+                return ResourceManager.GetString("CardName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Credit card number.
+        /// </summary>
+        public static string CardNumber {
+            get {
+                return ResourceManager.GetString("CardNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string CountryId {
+            get {
+                return ResourceManager.GetString("CountryId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Credit Card.
+        /// </summary>
+        public static string CreditCard {
+            get {
+                return ResourceManager.GetString("CreditCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Debit Card.
+        /// </summary>
+        public static string DebitCard {
+            get {
+                return ResourceManager.GetString("DebitCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shipping address is the same as my billing address.
+        /// </summary>
+        public static string DeliverToShipingAddress {
+            get {
+                return ResourceManager.GetString("DeliverToShipingAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Features.
         /// </summary>
         public static string Features {
@@ -70,11 +169,38 @@ namespace App.UI.Mvc5.Areas.Features {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forms &amp; Validation.
+        ///   Looks up a localized string similar to First Name.
         /// </summary>
-        public static string FormsAndValidation {
+        public static string FirstName {
             get {
-                return ResourceManager.GetString("FormsAndValidation", resourceCulture);
+                return ResourceManager.GetString("FirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Form.
+        /// </summary>
+        public static string Form {
+            get {
+                return ResourceManager.GetString("Form", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Globalization.
+        /// </summary>
+        public static string Globalization {
+            get {
+                return ResourceManager.GetString("Globalization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Name.
+        /// </summary>
+        public static string LastName {
+            get {
+                return ResourceManager.GetString("LastName", resourceCulture);
             }
         }
         
@@ -97,11 +223,83 @@ namespace App.UI.Mvc5.Areas.Features {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Payment.
+        /// </summary>
+        public static string PaymentType {
+            get {
+                return ResourceManager.GetString("PaymentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PayPal.
+        /// </summary>
+        public static string PayPal {
+            get {
+                return ResourceManager.GetString("PayPal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Realtime.
         /// </summary>
         public static string Realtime {
             get {
                 return ResourceManager.GetString("Realtime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Feature Samples.
+        /// </summary>
+        public static string Samples {
+            get {
+                return ResourceManager.GetString("Samples", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save this information for next time.
+        /// </summary>
+        public static string SaveShippingAddress {
+            get {
+                return ResourceManager.GetString("SaveShippingAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        public static string StateId {
+            get {
+                return ResourceManager.GetString("StateId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload.
+        /// </summary>
+        public static string Upload {
+            get {
+                return ResourceManager.GetString("Upload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string Username {
+            get {
+                return ResourceManager.GetString("Username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zip.
+        /// </summary>
+        public static string Zip {
+            get {
+                return ResourceManager.GetString("Zip", resourceCulture);
             }
         }
     }

@@ -7,16 +7,10 @@ using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Areas.Features.Models
 {
-	public class FormsAndValidationViewModel : BaseViewModel
+	public class GlobalizationSampleViewModel : BaseViewModel
 	{
 		[Display(Name = "Date")]
 		public DateTime? Date { get; set; }
-
-		[Display(Name = "Required Email")]
-		public string RequiredEmail { get; set; }
-
-		[Display(Name = "Required Text")]
-		public string RequiredText { get; set; }
 
 		public MultiSelectList SampleOptionsMulti { get; set; }
 
@@ -27,12 +21,6 @@ namespace App.UI.Mvc5.Areas.Features.Models
 
 		[Display(Name = "Single Select")]
 		public string SelectedSingle { get; set; }
-
-		[Display(Name = "Optional Enum")]
-		public SamplesEnum? SingleOptionalEnumValue { get; set; }
-
-		[Display(Name = "Required Enum")]
-		public SamplesEnum SingleRequiredEnumValue { get; set; }
 
 		[Display(Name = "Standard Upload")]
 		public HttpPostedFileBase StandadUpload { get; set; }

@@ -576,13 +576,13 @@
     <Content Include="Areas\Management\Views\Users\UserCreatedMessage.cshtml" />
     <Content Include="Areas\Management\Views\_LayoutArea.cshtml" />
     <Content Include="Areas\Management\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Features\Views\FormsAndValidation\Index.cshtml" />
+    <Content Include="Areas\Features\Views\FormSample\Index.cshtml" />
     <Content Include="Areas\Features\Views\Realtime\Index.cshtml" />
     <Content Include="Areas\Features\Views\_LayoutArea.cshtml" />
     <Content Include="Areas\Features\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Docs\Views\_LayoutArea.cshtml" />
     <Content Include="Areas\Docs\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Docs\Views\Architecture\Index.cshtml" />
+    <Content Include="Areas\Docs\Views\Overview\Index.cshtml" />
     <Content Include=".editorconfig" />
     <Content Include="libman.json" />
     <Content Include="Assets\vendor\jquery\jquery.min.map" />
@@ -613,6 +613,13 @@
     <Compile Include="..\SharedAppAssemblyInfo.cs">
       <Link>Properties\SharedAppAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Areas\Features\Controllers\GlobalizationSampleController.cs" />
+    <Compile Include="Areas\Features\Controllers\UploadSampleController.cs" />
+    <Compile Include="Areas\Features\Models\GlobalizationSampleViewModel.cs" />
+    <Compile Include="Areas\Features\Models\GlobalizationSampleViewModelValidator.cs" />
+    <Compile Include="Areas\Features\Models\UploadSampleViewModelValidator.cs" />
+    <Compile Include="Areas\Features\Models\UploadSampleViewModel.cs" />
+    <Compile Include="Areas\Features\Models\SamplePaymentTypesEnum.cs" />
     <Compile Include="TmpResource.Designer.cs">
       <DependentUpon>TmpResource.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -623,7 +630,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Docs\Controllers\ArchitectureController.cs" />
+    <Compile Include="Areas\Docs\Controllers\OverviewController.cs" />
     <Compile Include="Areas\Docs\Controllers\_MenuController.cs" />
     <Compile Include="Areas\Docs\Controllers\_LandingController.cs" />
     <Compile Include="Areas\Docs\Controllers\__AreaBaseController.cs" />
@@ -632,7 +639,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AreaResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Features\Controllers\FormsAndValidationController.cs" />
+    <Compile Include="Areas\Features\Controllers\FormSampleController.cs" />
     <Compile Include="Areas\Features\Controllers\OverviewController.cs" />
     <Compile Include="Areas\Features\Controllers\RealtimeController.cs" />
     <Compile Include="Areas\Features\Controllers\_MenuController.cs" />
@@ -643,9 +650,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AreaResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Areas\Features\Models\FormsAndValidationViewModel.cs" />
-    <Compile Include="Areas\Features\Models\FormsAndValidationViewModelValidator.cs" />
-    <Compile Include="Areas\Features\Models\SamplesEnum.cs" />
+    <Compile Include="Areas\Features\Models\FormSampleViewModel.cs" />
+    <Compile Include="Areas\Features\Models\FormSampleViewModelValidator.cs" />
     <Compile Include="Areas\Management\Controllers\LogsController.cs" />
     <Compile Include="Areas\Management\Controllers\UsersController.cs" />
     <Compile Include="Areas\Management\Controllers\_LandingController.cs" />
@@ -763,8 +769,8 @@
     <Content Include="Views\Errors\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\_LayoutEmails.cshtml" />
-    <Content Include="Views\.info\View.Tpl.cshtml" />
-    <Content Include="Views\.info\PartialView.Tpl.cshtml" />
+    <Content Include="Views\.tpls\View.Tpl.cshtml" />
+    <Content Include="Views\.tpls\PartialView.Tpl.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\_LayoutInternal.cshtml" />
     <Content Include="Views\ValidationSummaryAlerts.cshtml" />

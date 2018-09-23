@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace App.UI.Mvc5.Infrastructure
 {
-	[AttributeUsage(AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = false)]
+	[AttributeUsage(AttributeTargets.All, AllowMultiple = false)]
 	public class LocalizedDisplayNameAttribute : DisplayNameAttribute
 	{
 		private readonly string _resourceKey = null;
@@ -13,6 +13,19 @@ namespace App.UI.Mvc5.Infrastructure
 			_resourceKey = resourceKey;
 		}
 
-		public override string DisplayName => GlobalizationManager.GetLocalizedString(_resourceKey);
+		public override string DisplayName
+		{
+			get
+			{
+				if (ResourceType != null)
+				{
+					return GlobalizationManager.GetLocalizedString(_resourceKey, ResourceType);
+				}
+
+				return GlobalizationManager.GetLocalizedString(_resourceKey);
+			}
+		}
+
+		public Type ResourceType { get; set; }
 	}
 }

@@ -1,18 +1,16 @@
 ﻿using App.UI.Mvc5.Areas.Features.Models;
 using App.UI.Mvc5.Infrastructure;
 using Omu.ValueInjecter;
-using System;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Areas.Features.Controllers
 {
-	[RoutePrefix("forms-and-validation")]
-	[TrackMenuItem("features.formsandvalidation")]
-	public partial class FormsAndValidationController : __AreaBaseController
+	[RoutePrefix("upload-sample")]
+	[TrackMenuItem("features.form-sample")]
+	public partial class GlobalizationSampleController : __AreaBaseController
 	{
 		[HttpGet]
-		[Route(Name = "Features_FormsAndValidation_Index_Post_Get")]
+		[Route(Name = "Features_GlobalizationSample_Index_Post_Get")]
 		public ActionResult Index()
 		{
 			var model = BuildFormsAndValidationViewModel();
@@ -22,8 +20,8 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Route(Name = "Features_FormsAndValidation_Index_Post")]
-		public ActionResult Index(FormsAndValidationViewModel model)
+		[Route(Name = "Features_GlobalizationSample_Index_Post")]
+		public ActionResult Index(FormSampleViewModel model)
 		{
 			if (ModelState.IsValid)
 			{
@@ -39,9 +37,9 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 			return View(model);
 		}
 
-		private FormsAndValidationViewModel BuildFormsAndValidationViewModel(FormsAndValidationViewModel postedModel = null)
+		private FormSampleViewModel BuildFormsAndValidationViewModel(FormSampleViewModel postedModel = null)
 		{
-			var model = new FormsAndValidationViewModel();
+			var model = new FormSampleViewModel();
 
 			if (postedModel != null)
 			{
@@ -49,6 +47,7 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 				model.InjectFrom(postedModel);
 			}
 
+			/*
 			// Combo boxes expect a collection of objects to build the options list.
 			// This could be loaded from a database or any other source. For demonstration purposes we will use the sample enum.
 			var sampleValues = Enum.GetValues(typeof(SamplesEnum)).Cast<SamplesEnum>().Select(r => new
@@ -73,6 +72,7 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 				dataTextField: "value",
 				selectedValues: model.SelectedMulti
 			);
+			*/
 
 			return model;
 		}

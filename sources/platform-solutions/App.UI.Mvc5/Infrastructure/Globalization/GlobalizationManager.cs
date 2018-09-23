@@ -20,12 +20,22 @@ namespace App.UI.Mvc5.Infrastructure
 
 		public static string GetLocalizedString<T>(string resourceKey, params object[] formatParams)
 		{
+			return GetLocalizedString(resourceKey, typeof(T), formatParams);
+		}
+
+		public static string GetLocalizedString(string resourceKey, Type resourceType, params object[] formatParams)
+		{
 			if (string.IsNullOrWhiteSpace(resourceKey))
 			{
 				return "[missing-key]";
 			}
 
-			var resourceManager = GetResourceManager(typeof(T));
+			if (resourceType == null)
+			{
+				return "[invalid-type]";
+			}
+
+			var resourceManager = GetResourceManager(resourceType);
 
 			var result = resourceManager.GetString(resourceKey) ?? $"<<{resourceKey}>>";
 

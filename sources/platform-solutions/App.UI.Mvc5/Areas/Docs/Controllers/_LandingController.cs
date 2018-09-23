@@ -7,6 +7,6 @@ namespace App.UI.Mvc5.Areas.Docs.Controllers
 	{
 		[HttpGet]
 		[Route(Name = "Docs_Landing_Index_Get")]
-		public ActionResult Index() => RedirectToAction("Index", "Architecture");
+		public ActionResult Index() => RedirectToAction("Index", "Overview");
 	}
 }

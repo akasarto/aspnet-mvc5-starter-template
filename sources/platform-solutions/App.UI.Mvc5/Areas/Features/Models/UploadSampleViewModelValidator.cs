@@ -4,17 +4,10 @@ using System.Web;
 
 namespace App.UI.Mvc5.Areas.Features.Models
 {
-	public class FormsAndValidationViewModelValidator : AbstractValidator<FormsAndValidationViewModel>
+	public class UploadSampleViewModelValidator : AbstractValidator<UploadSampleViewModel>
 	{
-		public FormsAndValidationViewModelValidator()
+		public UploadSampleViewModelValidator()
 		{
-			//
-			RuleFor(model => model.RequiredText).NotEmpty();
-
-			//
-			RuleFor(model => model.RequiredEmail).NotEmpty();
-			RuleFor(model => model.RequiredEmail).Matches(_RegularExpressions.SimpleEmailPattern);
-
 			//
 			RuleFor(model => model.Date).Must(BeValidDate).WithMessage("Invalid value for {PropertyName}");
 
