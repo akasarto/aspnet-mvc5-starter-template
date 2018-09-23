@@ -29,7 +29,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		}
 
 		[HttpGet]
-		[Route("edit", Name = "UsersProfileEditGet")]
+		[Route("edit", Name = "Users_Profile_Edit_Get")]
 		public async Task<ActionResult> Edit()
 		{
 			var adminUser = await _userManager.FindByIdAsync(User.Id);
@@ -41,7 +41,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Route("edit", Name = "UsersProfileEditPost")]
+		[Route("edit", Name = "Users_Profile_Edit_Post")]
 		public async Task<ActionResult> Edit(ProfileEditViewModel model)
 		{
 			if (ModelState.IsValid)

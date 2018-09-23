@@ -9,7 +9,7 @@ namespace App.UI.Mvc5.Controllers
 	public class HomeController : __BaseController
 	{
 		[HttpGet]
-		[Route(Name = "HomeIndexGet")]
+		[Route(Name = "Root_Home_Index_Get")]
 		public ActionResult Index()
 		{
 			var model = new EmptyViewModel();

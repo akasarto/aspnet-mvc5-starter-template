@@ -120,4 +120,16 @@
   <data name="Features" xml:space="preserve">
     <value>Features</value>
   </data>
+  <data name="FormsAndValidation" xml:space="preserve">
+    <value>Forms &amp; Validation</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="Payload" xml:space="preserve">
+    <value>Payload</value>
+  </data>
+  <data name="Realtime" xml:space="preserve">
+    <value>Realtime</value>
+  </data>
 </root>

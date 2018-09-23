@@ -22,7 +22,7 @@ namespace App.UI.Mvc5.Controllers
 			_blobService = blobService ?? throw new ArgumentNullException(nameof(blobService), nameof(BlobsController));
 		}
 
-		[Route("download/{*blobName}", Name = "BlobsDownloadGet")]
+		[Route("download/{*blobName}", Name = "Root_Blobs_Download")]
 		public ActionResult Download(string blobName, string donloadFileLabel)
 		{
 			var blobInfo = BlobInfo.FromName(blobName);
@@ -46,7 +46,7 @@ namespace App.UI.Mvc5.Controllers
 		}
 
 		[HttpPost]
-		[Route("upload/any", Name = "BlobsUploadAnyPost")]
+		[Route("upload/any", Name = "Root_Blobs_UploadAny_Post")]
 		public ActionResult UploadAny(UploadAnyViewModel model)
 		{
 			if (ModelState.IsValid)
@@ -71,7 +71,7 @@ namespace App.UI.Mvc5.Controllers
 		}
 
 		[HttpPost]
-		[Route("upload/picture", Name = "BlobsUploadPicturePost")]
+		[Route("upload/picture", Name = "Root_Blobs_UploadPicture_Post")]
 		public ActionResult UploadPicture(UploadPictureViewModel model)
 		{
 			if (ModelState.IsValid)

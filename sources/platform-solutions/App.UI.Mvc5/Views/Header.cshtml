@@ -1,40 +1,24 @@
-﻿@using App.UI.Mvc5.Areas.Docs
-
+﻿
 <!-- View Contents -->
 
 <header>
 
 	<nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
 
-		<a class="navbar-brand" href="@Url.Action("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) })">
+		<a class="navbar-brand" href="@Url.GetHomeUrl()">
 			<img class="img-fluid" width="35" src="~/Assets/images/logo.svg" />
 		</a>
 
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="@GetLocalizedString("ToggleNavigation")">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 
 			<!--Top Menu-->
-
-			<ul class="nav navbar-nav mr-auto">
-				<li class="nav-item @Menu.IfActiveItem("root.landing", "active", string.Empty)">
-					<a class="nav-link" href="@Url.Action("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) })">Home</a>
-				</li>
-
-				@Html.Action("MainMenuItem", "_EntryPoint", new { area = AppAreas.GetAreaName(Area.Docs) })
-
-				<li class="nav-item @Menu.IfActiveItem("features.formsandvalidation", "active")">
-					<a class="nav-link" href="@Url.Action("Index", "FormsAndValidation", new { area = AppAreas.GetAreaName(Area.Features) })">Forms &amp; Validation</a>
-				</li>
-				<li class="nav-item @Menu.IfActiveItem("features.realtime", "active")">
-					<a class="nav-link" href="@Url.Action("Index", "Realtime", new { area = AppAreas.GetAreaName(Area.Features) })">Realtime</a>
-				</li>
-			</ul>
+			@Html.Action("TopMenu", "_Menu", new { area = AppAreas.GetAreaName(Area.Root) })
 
 			<!-- User Box -->
-
 			@Html.Action("Box", "Account", new { area = AppAreas.GetAreaName(Area.Users) })
 
 		</div>

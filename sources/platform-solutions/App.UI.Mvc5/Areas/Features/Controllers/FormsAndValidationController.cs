@@ -11,7 +11,8 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 	[TrackMenuItem("features.formsandvalidation")]
 	public partial class FormsAndValidationController : __AreaBaseController
 	{
-		[Route(Name = "FormsAndValidationIndexGet")]
+		[HttpGet]
+		[Route(Name = "Features_FormsAndValidation_Index_Post_Get")]
 		public ActionResult Index()
 		{
 			var model = BuildFormsAndValidationViewModel();
@@ -21,7 +22,7 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Route(Name = "FormsAndValidationIndexPost")]
+		[Route(Name = "Features_FormsAndValidation_Index_Post")]
 		public ActionResult Index(FormsAndValidationViewModel model)
 		{
 			if (ModelState.IsValid)

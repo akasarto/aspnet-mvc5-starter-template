@@ -5,7 +5,7 @@
 @{
 	var culture = User.Culture;
 	var uiCulture = User.UICulture;
-	var pageTitle = $"{Model?.PageTitle ?? GetLocalizedString("_App_Welcome")} | {GetLocalizedString("_App_Name")}";
+	var pageTitle = $"{Model?.PageTitle ?? GetLocalizedString("Welcome")} | {GetLocalizedString("AppName")}";
 }
 
 <!doctype html>
@@ -31,7 +31,7 @@
 	<link href="~/Assets/vendor/pnotify/pnotify.css" rel="stylesheet" />
 	<link href="~/Assets/vendor/nprogress/nprogress.min.css" rel="stylesheet" />
 	<link href="~/Assets/vendor/animate-css/animate.min.css" rel="stylesheet" />
-	<link href="~/Assets/stylesheet/website-custom.css" rel="stylesheet" />
+	<link href="~/Assets/stylesheet/app.css" rel="stylesheet" />
 
 	@RenderSection("page_styles", required: false)
 

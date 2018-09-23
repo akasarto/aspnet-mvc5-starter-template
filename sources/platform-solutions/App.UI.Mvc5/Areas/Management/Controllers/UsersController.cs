@@ -34,7 +34,20 @@ namespace App.UI.Mvc5.Areas.Management.Controllers
 		}
 
 		[HttpGet]
-		[Route("add", Name = "ManagementUsersAddGet")]
+		[Route(Name = "Management_Users_Index_Get")]
+		public ActionResult Index()
+		{
+			var model = new UsersIndexViewModel();
+
+			var users = _managementUsersRepository.GetAll();
+
+			model.Users = users.Select(user => BuildUserViewModel(user)).ToList();
+
+			return View(model);
+		}
+
+		[HttpGet]
+		[Route("add", Name = "Management_Users_Add_Get")]
 		public ActionResult Add()
 		{
 			var model = BuildUserViewModel();
@@ -44,7 +57,7 @@ namespace App.UI.Mvc5.Areas.Management.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Route("add", Name = "ManagementUsersAddPost")]
+		[Route("add", Name = "Management_Users_Add_Post")]
 		public ActionResult Add(UserViewModel model)
 		{
 			if (ModelState.IsValid)
@@ -104,7 +117,7 @@ namespace App.UI.Mvc5.Areas.Management.Controllers
 					}
 
 					//
-					var subject = $"[{GetLocalizedString("_App_Name")}] {mail.PageTitle}";
+					var subject = $"[{GetLocalizedString("AppName")}] {mail.PageTitle}";
 					var message = RenderViewToString("UserCreatedMessage", model: mail);
 
 					//
@@ -126,7 +139,7 @@ namespace App.UI.Mvc5.Areas.Management.Controllers
 		}
 
 		[HttpGet]
-		[Route("{id:int}/edit", Name = "ManagementUsersEditGet")]
+		[Route("{id:int}/edit", Name = "Management_Users_Edit_Get")]
 		public ActionResult Edit(int id)
 		{
 			var user = _managementUsersRepository.GetById(id);
@@ -143,7 +156,7 @@ namespace App.UI.Mvc5.Areas.Management.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Route("{id:int}/edit", Name = "ManagementUsersEditPost")]
+		[Route("{id:int}/edit", Name = "Management_Users_Edit_Post")]
 		public ActionResult Edit(int id, UserViewModel model)
 		{
 			var entity = _managementUsersRepository.GetById(id);
@@ -165,25 +178,6 @@ namespace App.UI.Mvc5.Areas.Management.Controllers
 			return View("Manager", model);
 		}
 
-		[HttpGet]
-		[Route(Name = "ManagementUsersIndexGet")]
-		public ActionResult Index()
-		{
-			var model = new UsersIndexViewModel();
-
-			var users = _managementUsersRepository.GetAll();
-
-			model.Users = users.Select(user => BuildUserViewModel(user)).ToList();
-
-			return View(model);
-		}
-
-		/// <summary>
-		/// Buids an <see cref="UserViewModel"/> instance to be passed to the views.
-		/// </summary>
-		/// <param name="userEntity">The <see cref="Domain.Core.UserEntity"/> instance to map initial data from.</param>
-		/// <param name="postedModel">If in edit action, this is the instance that was posted.</param>
-		/// <returns>An instance of <see cref="UserViewModel"/> with relevant data loaded.</returns>
 		private UserViewModel BuildUserViewModel(UserEntity userEntity = null, UserViewModel postedModel = null)
 		{
 			var model = new UserViewModel();

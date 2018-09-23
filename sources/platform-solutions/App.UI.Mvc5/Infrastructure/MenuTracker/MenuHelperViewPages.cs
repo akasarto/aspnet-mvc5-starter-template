@@ -1,5 +1,4 @@
-﻿using Shared.Extensions;
-using System.Linq;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Mvc;
 

@@ -19,9 +19,18 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 			_realtimeService = realtimeService ?? throw new ArgumentNullException(nameof(realtimeService), nameof(RealtimeController));
 		}
 
+		[HttpGet]
+		[Route(Name = "Features_Realtime_Index_Get")]
+		public ActionResult Index()
+		{
+			var model = new EmptyViewModel();
+
+			return View(model);
+		}
+
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Route("broadcast-data", Name = "RealtimeBroadcastDataPost")]
+		[Route("broadcast-data", Name = "Features_Realtime_BroadcastData_Post")]
 		public ActionResult BroadcastData(string payload)
 		{
 			if (string.IsNullOrWhiteSpace(payload))
@@ -32,14 +41,6 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 			_realtimeService.Broadcast(User.Id, payload);
 
 			return Json(new { success = true });
-		}
-
-		[Route(Name = "RealtimeIndexGet")]
-		public ActionResult Index()
-		{
-			var model = new EmptyViewModel();
-
-			return View(model);
 		}
 	}
 }

@@ -1,0 +1,14 @@
+﻿
+<!-- View Contents -->
+
+<ul class="nav navbar-nav mr-auto">
+
+	<li class="nav-item @Menu.IfActiveItem("root.landing", "active", string.Empty)">
+		<a class="nav-link" href="@Url.GetHomeUrl()">@GetLocalizedString("Home")</a>
+	</li>
+
+	@Html.Action("TopMenuItem", "_Menu", new { area = AppAreas.GetAreaName(Area.Docs) })
+
+	@Html.Action("TopMenuItem", "_Menu", new { area = AppAreas.GetAreaName(Area.Features) })
+
+</ul>

@@ -540,7 +540,7 @@
     <Content Include="Assets\vendor\pnotify\pnotify.mobile.js" />
     <Content Include="Assets\vendor\pnotify\pnotify.nonblock.css" />
     <Content Include="Assets\vendor\pnotify\pnotify.nonblock.js" />
-    <Content Include="Assets\stylesheet\website-custom.css" />
+    <Content Include="Assets\stylesheet\app.css" />
     <Content Include="Assets\vendor\singalr\jquery.signalR.js" />
     <Content Include="Assets\vendor\singalr\jquery.signalR.min.js" />
     <Content Include="Controllers\.readme.txt" />
@@ -613,27 +613,35 @@
     <Compile Include="..\SharedAppAssemblyInfo.cs">
       <Link>Properties\SharedAppAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="TmpResource.Designer.cs">
+      <DependentUpon>TmpResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Docs\Controllers\ArchitectureController.cs" />
-    <Compile Include="Areas\Docs\Controllers\_EntryPointController.cs" />
+    <Compile Include="Areas\Docs\Controllers\_MenuController.cs" />
+    <Compile Include="Areas\Docs\Controllers\_LandingController.cs" />
     <Compile Include="Areas\Docs\Controllers\__AreaBaseController.cs" />
-    <Compile Include="Areas\Docs\DocsResources.Designer.cs">
+    <Compile Include="Areas\Docs\AreaResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DocsResources.resx</DependentUpon>
+      <DependentUpon>AreaResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Features\Controllers\FormsAndValidationController.cs" />
+    <Compile Include="Areas\Features\Controllers\OverviewController.cs" />
     <Compile Include="Areas\Features\Controllers\RealtimeController.cs" />
+    <Compile Include="Areas\Features\Controllers\_MenuController.cs" />
     <Compile Include="Areas\Features\Controllers\_LandingController.cs" />
     <Compile Include="Areas\Features\Controllers\__AreaBaseController.cs" />
-    <Compile Include="Areas\Features\FeaturesResources.Designer.cs">
+    <Compile Include="Areas\Features\AreaResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FeaturesResources.resx</DependentUpon>
+      <DependentUpon>AreaResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Features\Models\FormsAndValidationViewModel.cs" />
     <Compile Include="Areas\Features\Models\FormsAndValidationViewModelValidator.cs" />
@@ -670,6 +678,7 @@
     <Compile Include="Areas\Users\Models\Profile\ProfileEditViewModel.cs" />
     <Compile Include="Areas\Users\Models\Profile\ProfileEditViewModelValidator.cs" />
     <Compile Include="Controllers\BlobsController.cs" />
+    <Compile Include="Controllers\_MenuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Infrastructure\Blobs\BlobUploadResult.cs" />
     <Compile Include="Infrastructure\Cookies\GetCookie.cs" />
@@ -697,6 +706,7 @@
     <Compile Include="Infrastructure\Realtime\IRealtimeService.cs" />
     <Compile Include="Infrastructure\Realtime\RealtimeService.cs" />
     <Compile Include="Infrastructure\SerilogTextFormatter.cs" />
+    <Compile Include="Infrastructure\UrlExtensions\GetHomeUrl.cs" />
     <Compile Include="Infrastructure\Validation\RequiredCheckboxValidator.cs" />
     <Compile Include="Infrastructure\Validation\ValidationLanguageManager.cs" />
     <Compile Include="Infrastructure\HtmlExtension\RenderLocalizedScriptTag.cs" />
@@ -720,7 +730,7 @@
     <Compile Include="Infrastructure\AppViewEngine.cs" />
     <Compile Include="Infrastructure\Validation\ValidationSummary.cs" />
     <Compile Include="Infrastructure\AppWebViewPage.cs" />
-    <Compile Include="Infrastructure\Blobs\Thumbnails.cs" />
+    <Compile Include="Infrastructure\UrlExtensions\BlobThumbnail.cs" />
     <Compile Include="Infrastructure\Validation\SimpleInjectorValidatorFactory.cs" />
     <Compile Include="Initializer.cs" />
     <Compile Include="Infrastructure\Blobs\IBlobService.cs" />
@@ -853,8 +863,12 @@
     <Content Include="Assets\vendor\js-cookie\js.cookie.min.js.map" />
     <Content Include="Assets\vendor\jquery-placeholder\jquery.placeholder.min.js.map" />
     <Content Include="Views\DefaultDeleteDialogTemplate.cshtml" />
-    <Content Include="Areas\Docs\Views\Submenu.cshtml" />
-    <Content Include="Areas\Docs\Views\MainMenuItem.cshtml" />
+    <Content Include="Areas\Docs\Views\SubMenu.cshtml" />
+    <Content Include="Areas\Docs\Views\TopMenuItem.cshtml" />
+    <Content Include="Areas\Features\Views\TopMenuItem.cshtml" />
+    <Content Include="Areas\Features\Views\SubMenu.cshtml" />
+    <Content Include="Views\TopMenu.cshtml" />
+    <Content Include="Areas\Features\Views\Overview\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -917,6 +931,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="TmpResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TmpResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
@@ -926,13 +945,13 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppScriptResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Areas\Docs\DocsResources.resx">
+    <EmbeddedResource Include="Areas\Docs\AreaResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>DocsResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>AreaResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Areas\Features\FeaturesResources.resx">
+    <EmbeddedResource Include="Areas\Features\AreaResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>FeaturesResources.Designer.cs</LastGenOutput>
+      <LastGenOutput>AreaResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

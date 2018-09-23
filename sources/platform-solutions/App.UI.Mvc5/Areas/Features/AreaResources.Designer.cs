@@ -22,14 +22,14 @@ namespace App.UI.Mvc5.Areas.Features {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class FeaturesResources {
+    public class AreaResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal FeaturesResources() {
+        internal AreaResources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace App.UI.Mvc5.Areas.Features {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("App.UI.Mvc5.Areas.Features.FeaturesResources", typeof(FeaturesResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("App.UI.Mvc5.Areas.Features.AreaResources", typeof(AreaResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -66,6 +66,42 @@ namespace App.UI.Mvc5.Areas.Features {
         public static string Features {
             get {
                 return ResourceManager.GetString("Features", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forms &amp; Validation.
+        /// </summary>
+        public static string FormsAndValidation {
+            get {
+                return ResourceManager.GetString("FormsAndValidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overview.
+        /// </summary>
+        public static string Overview {
+            get {
+                return ResourceManager.GetString("Overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payload.
+        /// </summary>
+        public static string Payload {
+            get {
+                return ResourceManager.GetString("Payload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Realtime.
+        /// </summary>
+        public static string Realtime {
+            get {
+                return ResourceManager.GetString("Realtime", resourceCulture);
             }
         }
     }

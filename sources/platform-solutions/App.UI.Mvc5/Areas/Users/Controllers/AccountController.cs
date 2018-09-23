@@ -37,7 +37,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		}
 
 		[AllowAnonymous]
-		[Route("box", Name = "AccountBoxGet")]
+		[Route("box", Name = "Users_Account_Box")]
 		public ActionResult Box()
 		{
 			var model = new EmptyPartialViewModel();
@@ -47,7 +47,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 		[HttpGet]
 		[AllowAnonymous]
-		[Route("locked", Name = "AccountLockedGet")]
+		[Route("locked", Name = "Users_Account_Locked_Get")]
 		public ActionResult Locked()
 		{
 			return View(new EmptyViewModel());
@@ -55,7 +55,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 		[HttpGet]
 		[AllowAnonymous]
-		[Route("login", Name = "AccountLogInGet")]
+		[Route("login", Name = "Users_Account_LogIn_Get")]
 		public ActionResult LogIn(string returnUrl)
 		{
 			if (Request.IsAuthenticated)
@@ -71,7 +71,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		[HttpPost]
 		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
-		[Route("login", Name = "AccountLogInPost")]
+		[Route("login", Name = "Users_Account_LogIn_Post")]
 		public async Task<ActionResult> LogIn(AccountLogInViewModel model, string returnUrl)
 		{
 			if (ModelState.IsValid)
@@ -122,7 +122,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 			return View(model);
 		}
 
-		[Route("logoff", Name = "AccountLogOff")]
+		[Route("logoff", Name = "Users_Account_LogOff")]
 		public ActionResult LogOff()
 		{
 			_authenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
@@ -131,7 +131,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		}
 
 		[HttpGet]
-		[Route("password/change", Name = "UserPasswordChangeGet")]
+		[Route("password/change", Name = "Users_Account_PasswordChange_Get")]
 		public ActionResult PasswordChange()
 		{
 			var model = new AccountPasswordChangeViewModel();
@@ -141,7 +141,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Route("password/change", Name = "UserPasswordChangePost")]
+		[Route("password/change", Name = "Users_Account_PasswordChange_Post")]
 		public async Task<ActionResult> PasswordChange(AccountPasswordChangeViewModel model)
 		{
 			if (ModelState.IsValid)
@@ -167,7 +167,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 		[HttpGet]
 		[AllowAnonymous]
-		[Route("password/recover", Name = "AccountPasswordRecoverGet")]
+		[Route("password/recover", Name = "Users_Account_PasswordRecover_Get")]
 		public ActionResult PasswordRecover(AccountActionStatus? status)
 		{
 			if (Request.IsAuthenticated)
@@ -187,7 +187,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		[HttpPost]
 		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
-		[Route("password/recover", Name = "AccountPasswordRecoverPost")]
+		[Route("password/recover", Name = "Users_Account_PasswordRecover_Post")]
 		public async Task<ActionResult> PasswordRecover(AccountPasswordRecoverViewModel model)
 		{
 			if (ModelState.IsValid)
@@ -211,7 +211,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 					};
 
 					//
-					var subject = $"[{GetLocalizedString("_App_Name")}] {mailModel.PageTitle}";
+					var subject = $"[{GetLocalizedString("AppName")}] {mailModel.PageTitle}";
 					var message = RenderViewToString("PasswordRecoverMessage", model: mailModel);
 
 					//
@@ -226,7 +226,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 		[HttpGet]
 		[AllowAnonymous]
-		[Route("password/setnew", Name = "AccountPasswordSetNewGet")]
+		[Route("password/setnew", Name = "Users_Account_PasswordSetNew_Get")]
 		public ActionResult PasswordSetNew(string resetToken)
 		{
 			if (Request.IsAuthenticated)
@@ -250,7 +250,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		[HttpPost]
 		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
-		[Route("password/setnew", Name = "AccountPasswordSetNewPost")]
+		[Route("password/setnew", Name = "Users_Account_PasswordSetNew_Post")]
 		public async Task<ActionResult> PasswordSetNew(AccountPasswordRecoverResponseViewModel model)
 		{
 			if (ModelState.IsValid)
@@ -286,7 +286,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 		[HttpGet]
 		[AllowAnonymous]
-		[Route("signup", Name = "AccountSignUpGet")]
+		[Route("signup", Name = "Users_Account_SignUp_Get")]
 		public ActionResult SignUp(string returnUrl)
 		{
 			if (Request.IsAuthenticated)
@@ -302,7 +302,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		[HttpPost]
 		[AllowAnonymous]
 		[ValidateAntiForgeryToken]
-		[Route("signup", Name = "AccountSignUpPost")]
+		[Route("signup", Name = "Users_Account_SignUp_Post")]
 		public async Task<ActionResult> SignUp(AccountSignUpViewModel model, string returnUrl)
 		{
 			if (ModelState.IsValid)
@@ -352,7 +352,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		}
 
 		[HttpGet]
-		[Route("verify/email", Name = "UsersVerifyEmailGet")]
+		[Route("verify/email", Name = "Users_Account_VerifyEmail_Get")]
 		public ActionResult VerifyEmail(AccountActionStatus? status)
 		{
 			var model = new EmptyViewModel();
@@ -370,7 +370,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		}
 
 		[HttpGet]
-		[Route("verify/email/request", Name = "UsersVerifyEmailRequestGet")]
+		[Route("verify/email/request", Name = "Users_Account_VerifyEmailRequest_Get")]
 		public async Task<ActionResult> VerifyEmailRequest()
 		{
 			var userId = User.Id;
@@ -394,7 +394,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 				}, protocol: Request.Url.Scheme)
 			};
 
-			var subject = $"[{GetLocalizedString("_App_Name")}] {mailModel.PageTitle}";
+			var subject = $"[{GetLocalizedString("AppName")}] {mailModel.PageTitle}";
 			var message = RenderViewToString("VerifyEmailMessage", model: mailModel);
 
 			_emailDispatcherService.Dispatch(message, subject, new MailAddress(adminUser.Email, adminUser.FullName));
@@ -403,7 +403,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		}
 
 		[HttpGet]
-		[Route("verify/email/response", Name = "UsersVerifyEmailResponseGet")]
+		[Route("verify/email/response", Name = "Users_Account_VerifyEmailResponse_Get")]
 		public async Task<ActionResult> VerifyEmailResponse(string verifyToken)
 		{
 			var userId = User.Id;

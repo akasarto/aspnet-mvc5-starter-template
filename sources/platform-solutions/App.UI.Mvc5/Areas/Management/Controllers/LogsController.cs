@@ -24,7 +24,7 @@ namespace App.UI.Mvc5.Areas.Management.Controllers
 			_logsRepository = logsRepository ?? throw new ArgumentNullException(nameof(logsRepository), nameof(LogsController));
 		}
 
-		[Route(Name = "ManagementLogsIndexGet")]
+		[Route(Name = "Management_Logs_Index_Get")]
 		public ActionResult Index()
 		{
 			var model = new LogsIndexViewModel();

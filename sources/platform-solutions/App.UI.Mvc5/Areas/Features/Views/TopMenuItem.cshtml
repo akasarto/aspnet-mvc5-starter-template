@@ -1,0 +1,7 @@
+﻿@using App.UI.Mvc5.Areas.Features
+
+<!-- Page Contents -->
+
+<li class="nav-item @Menu.IfActiveItem("features.*", "active")">
+	<a class="nav-link" href="@Url.Action("Index", "_Landing", new { area = AppAreas.GetAreaName(Area.Features) })">@(GetLocalizedString<AreaResources>("Features"))</a>
+</li>

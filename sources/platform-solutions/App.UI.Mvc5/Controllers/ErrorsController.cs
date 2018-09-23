@@ -4,16 +4,10 @@ using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Controllers
 {
-	[RoutePrefix("")]
+	[RoutePrefix("error")]
 	public partial class ErrorsController : __BaseController
 	{
-		/// <summary>
-		/// Constructor method.
-		/// </summary>
-		public ErrorsController()
-		{
-		}
-
+		[Route(Name = "Root_Errors_Index")]
 		public ActionResult Index(int? code)
 		{
 			// Check code

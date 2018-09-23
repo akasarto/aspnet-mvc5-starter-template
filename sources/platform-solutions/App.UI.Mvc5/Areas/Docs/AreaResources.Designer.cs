@@ -22,14 +22,14 @@ namespace App.UI.Mvc5.Areas.Docs {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class DocsResources {
+    public class AreaResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal DocsResources() {
+        internal AreaResources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace App.UI.Mvc5.Areas.Docs {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("App.UI.Mvc5.Areas.Docs.DocsResources", typeof(DocsResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("App.UI.Mvc5.Areas.Docs.AreaResources", typeof(AreaResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
