@@ -18,6 +18,7 @@ using System.Web.Mvc;
 namespace App.UI.Mvc5.Areas.Users.Controllers
 {
 	[RoutePrefix("account")]
+	[TrackMenuItem("users.account")]
 	public partial class AccountController : __AreaBaseController
 	{
 		private AppUserManager _appUserManager = null;
@@ -131,6 +132,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 		}
 
 		[HttpGet]
+		[TrackMenuItem("users.account.change-password")]
 		[Route("password/change", Name = "Users_Account_PasswordChange_Get")]
 		public ActionResult PasswordChange()
 		{
@@ -141,6 +143,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
+		[TrackMenuItem("users.account.change-password")]
 		[Route("password/change", Name = "Users_Account_PasswordChange_Post")]
 		public async Task<ActionResult> PasswordChange(AccountPasswordChangeViewModel model)
 		{

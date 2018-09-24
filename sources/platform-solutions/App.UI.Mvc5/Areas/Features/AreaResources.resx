@@ -180,9 +180,6 @@
   <data name="Realtime" xml:space="preserve">
     <value>Realtime</value>
   </data>
-  <data name="Samples" xml:space="preserve">
-    <value>Feature Samples</value>
-  </data>
   <data name="SaveShippingAddress" xml:space="preserve">
     <value>Save this information for next time</value>
   </data>

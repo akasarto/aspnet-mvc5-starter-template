@@ -1,0 +1,29 @@
+﻿@using App.UI.Mvc5.Areas.Users
+
+<!-- Mesta -->
+
+@{
+	var submenuTitle = ViewBag.MenuSection ?? string.Empty;
+}
+
+<!-- Page Contents -->
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+
+	<h5 class="my-0 mr-md-auto font-weight-normal">@submenuTitle</h5>
+
+	<nav class="navbar navbar-light my-2 my-md-0 mr-md-3">
+		<ul class="nav submenu">
+			<li class="nav-item @Menu.IfActiveItem("users.profile", "active")">
+				<a class="p-2 text-dark nav-link" href="@Url.Action("Edit", "Profile", new { area = AppAreas.GetAreaName(Area.Users) })">@(GetLocalizedString<AreaResources>("EditProfile"))</a>
+			</li>
+			<li class="nav-item @Menu.IfActiveItem("users.account.change-password", "active")">
+				<a class="p-2 text-dark nav-link" href="@Url.Action("PasswordChange", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">@(GetLocalizedString<AreaResources>("ChangePassword"))</a>
+			</li>
+			<li class="nav-item @Menu.IfActiveItem("users.account.logoff", "active")">
+				<a class="p-2 text-dark nav-link" href="@Url.Action("LogOff", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">@(GetLocalizedString<AreaResources>("LogOff"))</a>
+			</li>
+		</ul>
+	</nav>
+
+</div>

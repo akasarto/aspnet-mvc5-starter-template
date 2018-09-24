@@ -97,6 +97,15 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Attention!.
+        /// </summary>
+        public static string DefaultAttentionTitle {
+            get {
+                return ResourceManager.GetString("DefaultAttentionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Something went wrong. Please try again..
         /// </summary>
         public static string DefaultErrorMessage {
@@ -169,11 +178,65 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The selected item will be permanently deleted..
+        /// </summary>
+        public static string DeleteDialogConfirmationMessageTemplate {
+            get {
+                return ResourceManager.GetString("DeleteDialogConfirmationMessageTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;strong class=&quot;delete-item-label&quot;&gt;&lt;/strong&gt; will be permanently deleted..
+        /// </summary>
+        public static string DeleteDialogConfirmationMessageTemplateWithLabel {
+            get {
+                return ResourceManager.GetString("DeleteDialogConfirmationMessageTemplateWithLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error!.
+        /// </summary>
+        public static string MessageTypeError {
+            get {
+                return ResourceManager.GetString("MessageTypeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Info!.
+        /// </summary>
+        public static string MessageTypeInfo {
+            get {
+                return ResourceManager.GetString("MessageTypeInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Success!.
+        /// </summary>
+        public static string MessageTypeSuccess {
+            get {
+                return ResourceManager.GetString("MessageTypeSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning!.
+        /// </summary>
+        public static string MessageTypeWarning {
+            get {
+                return ResourceManager.GetString("MessageTypeWarning", resourceCulture);
             }
         }
         

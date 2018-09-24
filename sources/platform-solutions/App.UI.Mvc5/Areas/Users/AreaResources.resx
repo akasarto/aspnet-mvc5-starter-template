@@ -189,6 +189,9 @@
   <data name="MaxFileSizeInfo" xml:space="preserve">
     <value>Max file size {0}.</value>
   </data>
+  <data name="MyAccount" xml:space="preserve">
+    <value>My Account</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>

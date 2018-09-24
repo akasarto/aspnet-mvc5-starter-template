@@ -250,15 +250,6 @@ namespace App.UI.Mvc5.Areas.Features {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Feature Samples.
-        /// </summary>
-        public static string Samples {
-            get {
-                return ResourceManager.GetString("Samples", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Save this information for next time.
         /// </summary>
         public static string SaveShippingAddress {

@@ -129,6 +129,9 @@
   <data name="CopyrightNotice" xml:space="preserve">
     <value>&amp;copy; 2017-2018 Sarto Research</value>
   </data>
+  <data name="DefaultAttentionTitle" xml:space="preserve">
+    <value>Attention!</value>
+  </data>
   <data name="DefaultErrorMessage" xml:space="preserve">
     <value>Something went wrong. Please try again.</value>
   </data>
@@ -153,8 +156,26 @@
   <data name="DefaultWarningTitle" xml:space="preserve">
     <value>Warning!</value>
   </data>
+  <data name="DeleteDialogConfirmationMessageTemplate" xml:space="preserve">
+    <value>The selected item will be permanently deleted.</value>
+  </data>
+  <data name="DeleteDialogConfirmationMessageTemplateWithLabel" xml:space="preserve">
+    <value>&lt;strong class="delete-item-label"&gt;&lt;/strong&gt; will be permanently deleted.</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="MessageTypeError" xml:space="preserve">
+    <value>Error!</value>
+  </data>
+  <data name="MessageTypeInfo" xml:space="preserve">
+    <value>Info!</value>
+  </data>
+  <data name="MessageTypeSuccess" xml:space="preserve">
+    <value>Success!</value>
+  </data>
+  <data name="MessageTypeWarning" xml:space="preserve">
+    <value>Warning!</value>
   </data>
   <data name="ToggleNavigation" xml:space="preserve">
     <value>Toggle Navigation</value>

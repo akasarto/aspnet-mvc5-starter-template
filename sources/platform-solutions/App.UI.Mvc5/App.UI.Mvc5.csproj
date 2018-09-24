@@ -883,6 +883,7 @@
     <Content Include="Views\TopMenu.cshtml" />
     <Content Include="Areas\Features\Views\Overview\Index.cshtml" />
     <Content Include="Areas\Features\Views\Globalization\Index.cshtml" />
+    <Content Include="Areas\Users\Views\SubMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

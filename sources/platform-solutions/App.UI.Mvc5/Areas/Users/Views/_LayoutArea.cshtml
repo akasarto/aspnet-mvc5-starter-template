@@ -1,9 +1,13 @@
-﻿@model BaseViewModel
+﻿@using App.UI.Mvc5.Areas.Users
+
+@model BaseViewModel
 
 <!-- Meta -->
 
 @{
 	this.SetLayout(Layouts.Internal);
+
+	Model.PageTitle = Model.PageTitle ?? GetLocalizedString<AreaResources>("MyAccount");
 }
 
 <!-- Sections -->
@@ -21,5 +25,7 @@
 }
 
 <!-- Page Contents -->
+
+@Html.Partial("Submenu")
 
 @RenderBody()

@@ -5,25 +5,25 @@
 		/// <summary>
 		/// #0 - Error color.
 		/// </summary>
-		[LocalizedDisplayName("MessageType_Error")]
+		[LocalizedDisplayName("MessageTypeError")]
 		Error = 0,
 
 		/// <summary>
 		/// #1 - Information color.
 		/// </summary>
-		[LocalizedDisplayName("MessageType_Info")]
+		[LocalizedDisplayName("MessageTypeInfo")]
 		Info = 1,
 
 		/// <summary>
 		/// #2 - Success color.
 		/// </summary>
-		[LocalizedDisplayName("MessageType_Success")]
+		[LocalizedDisplayName("MessageTypeSuccess")]
 		Success = 2,
 
 		/// <summary>
 		/// #3 - Warning color.
 		/// </summary>
-		[LocalizedDisplayName("MessageType_Warning")]
+		[LocalizedDisplayName("MessageTypeWarning")]
 		Warning = 3
 	}
 }

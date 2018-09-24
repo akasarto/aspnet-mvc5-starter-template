@@ -13,6 +13,8 @@ namespace App.UI.Mvc5.Infrastructure
 			_resourceManagers = new Dictionary<Type, ResourceManager>();
 		}
 
+		public static Type DefaultResourceType { get; set; } = typeof(AppResources);
+
 		public static string GetLocalizedString(string resourceKey, params object[] formatParams)
 		{
 			return GetLocalizedString(resourceKey, null, formatParams);
@@ -32,12 +34,19 @@ namespace App.UI.Mvc5.Infrastructure
 
 			if (resourceType == null)
 			{
-				resourceType = typeof(AppResources);
+				resourceType = DefaultResourceType;
 			}
 
 			var resourceManager = GetResourceManager(resourceType);
 
-			var result = resourceManager.GetString(resourceKey) ?? $"<<{resourceKey}>>";
+			var result = resourceManager.GetString(resourceKey);
+
+			if (result == null)
+			{
+				resourceManager = GetResourceManager(DefaultResourceType);
+
+				result = resourceManager.GetString(resourceKey) ?? $"_{resourceKey}_";
+			}
 
 			if ((formatParams?.Length ?? 0) > 0)
 			{
