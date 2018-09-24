@@ -156,8 +156,8 @@
   <data name="FirstName" xml:space="preserve">
     <value>First Name</value>
   </data>
-  <data name="Form" xml:space="preserve">
-    <value>Form</value>
+  <data name="FormsAndValidation" xml:space="preserve">
+    <value>Forms &amp; Validation</value>
   </data>
   <data name="Globalization" xml:space="preserve">
     <value>Globalization</value>

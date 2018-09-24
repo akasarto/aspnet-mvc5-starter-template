@@ -2,9 +2,9 @@
 
 namespace App.UI.Mvc5.Areas.Features.Models
 {
-	public class FormSampleViewModelValidator : AbstractValidator<FormSampleViewModel>
+	public class FormsAndValidationViewModelValidator : AbstractValidator<FormsAndValidationViewModel>
 	{
-		public FormSampleViewModelValidator()
+		public FormsAndValidationViewModelValidator()
 		{
 			RuleFor(model => model.FirstName).NotEmpty();
 			RuleFor(model => model.LastName).NotEmpty();

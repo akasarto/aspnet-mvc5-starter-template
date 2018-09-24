@@ -4,9 +4,9 @@ using System.Web;
 
 namespace App.UI.Mvc5.Areas.Features.Models
 {
-	public class UploadSampleViewModelValidator : AbstractValidator<UploadSampleViewModel>
+	public class GlobalizationViewModelValidator : AbstractValidator<GlobalizationViewModel>
 	{
-		public UploadSampleViewModelValidator()
+		public GlobalizationViewModelValidator()
 		{
 			//
 			RuleFor(model => model.Date).Must(BeValidDate).WithMessage("Invalid value for {PropertyName}");

@@ -1,0 +1,293 @@
+﻿@using App.UI.Mvc5.Areas.Features.Models
+
+@model FormsAndValidationViewModel
+
+	<!-- Meta -->
+
+	@{
+		ViewBag.MenuSection = "Forms & Validation";
+
+		var datePickerFormat = User.Culture.DateTimeFormat.ShortDatePattern.ToLowerCaseString();
+		var timePickerMeridiem = !User.Culture.Is24HoursClock();
+	}
+
+	<!-- Sections -->
+
+	@section page_styles{
+		<link href="~/Assets/vendor/multi-select/css/multi-select.min.css" rel="stylesheet" />
+	}
+
+	@section page_scripts{
+		<script src="~/Assets/vendor/multi-select/js/jquery.multi-select.min.js"></script>
+	}
+
+	@section page_scripts_init {
+		<script src="~/areas/features/scripts/forms-and-validation.js"></script>
+	}
+
+	<!-- Page Contents -->
+
+	<div class="container">
+		<div class="py-5 text-center">
+			<h2>Checkout Form</h2>
+			<p class="lead">Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+		</div>
+	</div>
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-4 order-md-2 mb-4">
+
+				<h4 class="d-flex justify-content-between align-items-center mb-3">
+					<span class="text-muted">Your cart</span>
+					<span class="badge badge-secondary badge-pill">3</span>
+				</h4>
+
+				<ul class="list-group mb-3">
+					<li class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Product name</h6>
+							<small class="text-muted">Brief description</small>
+						</div>
+						<span class="text-muted">$12</span>
+					</li>
+					<li class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Second product</h6>
+							<small class="text-muted">Brief description</small>
+						</div>
+						<span class="text-muted">$8</span>
+					</li>
+					<li class="list-group-item d-flex justify-content-between lh-condensed">
+						<div>
+							<h6 class="my-0">Third item</h6>
+							<small class="text-muted">Brief description</small>
+						</div>
+						<span class="text-muted">$5</span>
+					</li>
+					<li class="list-group-item d-flex justify-content-between bg-light">
+						<div class="text-success">
+							<h6 class="my-0">Promo code</h6>
+							<small>EXAMPLECODE</small>
+						</div>
+						<span class="text-success">-$5</span>
+					</li>
+					<li class="list-group-item d-flex justify-content-between">
+						<span>Total (USD)</span>
+						<strong>$20</strong>
+					</li>
+				</ul>
+
+				<form class="card p-2">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Promo code">
+						<div class="input-group-append">
+							<button type="submit" class="btn btn-secondary">Redeem</button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+
+			<div class="col-md-8 order-md-1">
+
+				<h4 class="mb-3">Billing address</h4>
+
+				<form id="sampleForm" class="needs-validation" novalidate>
+
+					@Html.AntiForgeryToken()
+					@Html.ValidationSummary(VisualizationMode.Alert)
+
+					<div class="row">
+						<div class="col-md-6 mb-3">
+							@Html.LabelFor(model => model.FirstName)
+							@Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
+						</div>
+						<div class="col-md-6 mb-3">
+							@Html.LabelFor(model => model.LastName)
+							@Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+						</div>
+					</div>
+
+					<div class="mb-3">
+						@Html.LabelFor(model => model.Username)
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">@@</span>
+							</div>
+							@Html.TextBoxFor(model => model.Username, new { @class = "form-control", @placeholder = "Username" })
+						</div>
+					</div>
+
+					<div class="mb-3">
+						<label for="email">@Html.DisplayNameFor(model => model.Email) <span class="text-muted">(Optional)</span></label>
+						@Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "you@example.com" })
+					</div>
+
+					<div class="mb-3">
+						@Html.LabelFor(model => model.AddressLine1)
+						@Html.TextBoxFor(model => model.AddressLine1, new { @class = "form-control", @placeholder = "1234 Main St" })
+					</div>
+
+					<div class="mb-3">
+						<label for="address2">@Html.DisplayNameFor(model => model.AddressLine2) <span class="text-muted">(Optional)</span></label>
+						@Html.TextBoxFor(model => model.AddressLine2, new { @class = "form-control", @placeholder = "Apartment or suite" })
+					</div>
+
+					<div class="row">
+						<div class="col-md-5 mb-3">
+							@Html.LabelFor(model => model.CountryId)
+							@Html.DropDownListFor(model => model.CountryId, Model.CountrySelectList, "Choose...", new { @class = "custom-select d-block w-100" })
+						</div>
+						<div class="col-md-4 mb-3">
+							@Html.LabelFor(model => model.StateId)
+							@Html.DropDownListFor(model => model.StateId, Model.StateSelectList, "Choose...", new { @class = "custom-select d-block w-100" })
+						</div>
+						<div class="col-md-3 mb-3">
+							@Html.LabelFor(model => model.Zip)
+							@Html.TextBoxFor(model => model.Zip, new { @class = "form-control" })
+						</div>
+					</div>
+
+					<hr class="mb-4">
+
+					<div class="custom-control custom-checkbox">
+						@Html.CheckBoxFor(model => model.DeliverToShipingAddress, new { @class = "custom-control-input" })
+						@Html.LabelFor(model => model.DeliverToShipingAddress, new { @class = "custom-control-label" })
+					</div>
+
+					<div class="custom-control custom-checkbox">
+						@Html.CheckBoxFor(model => model.SaveShippingAddress, new { @class = "custom-control-input" })
+						@Html.LabelFor(model => model.SaveShippingAddress, new { @class = "custom-control-label" })
+					</div>
+
+					<hr class="mb-4">
+
+					<h4 class="mb-3">Payment</h4>
+
+					<div class="d-block my-3">
+						@foreach (var paymentOption in Model.PaymentOptions)
+						{
+							<div class="custom-control custom-radio">
+								@Html.RadioButtonFor(model => model.PaymentType, paymentOption.Id, new { @class = "custom-control-input", @id = paymentOption.Id })
+								@Html.Label(paymentOption.Description, new { @class = "custom-control-label", @for = paymentOption.Id })
+							</div>
+						}
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 mb-3">
+							@Html.LabelFor(model => model.CardName)
+							@Html.TextBoxFor(model => model.CardName, new { @class = "form-control" })
+							<small class="text-muted">Full name as displayed on card</small>
+						</div>
+						<div class="col-md-6 mb-3">
+							@Html.LabelFor(model => model.CardNumber)
+							@Html.TextBoxFor(model => model.CardNumber, new { @class = "form-control" })
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3 mb-3">
+							@Html.LabelFor(model => model.CardExpiration)
+							@Html.TextBoxFor(model => model.CardExpiration, new { @class = "form-control" })
+						</div>
+						<div class="col-md-3 mb-3">
+							@Html.LabelFor(model => model.CardCVV)
+							@Html.TextBoxFor(model => model.CardCVV, new { @class = "form-control" })
+						</div>
+					</div>
+
+					<hr class="mb-4">
+
+					<button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	@*
+		<div class="container pt-5 pb-5">
+
+			<form id="sampleForm" method="post" enctype="multipart/form-data">
+
+				@Html.AntiForgeryToken()
+				@Html.ValidationSummary(VisualizationMode.Alert)
+
+				<div class="form-group">
+					@Html.LabelFor(model => model.StandadUpload)
+					<div class="row">
+						<div class="col-lg-6">
+							<input type="file" name="@Html.NameFor(model => model.StandadUpload)" />
+						</div>
+						<div class="col col-lg-6">
+							<label class="radio-inline mr-3">
+								<input type="radio" name="uploadValidate" id="uploadValidateAny" value="any" checked="checked"> Accept any file
+							</label>
+							<label class="radio-inline">
+								<input type="radio" name="uploadValidate" id="uploadValidateImage" value="image" @(Model.UploadValidate == "image" ? "checked=checked" : string.Empty)> Accept only images
+							</label>
+						</div>
+					</div>
+					@if (Model.StandadUpload != null)
+					{
+						<small class="form-text text-muted">The uploaded file name is <strong>@Model.StandadUpload.FileName</strong> with type <strong>@Model.StandadUpload.ContentType</strong> and length of <strong>@Html.ToByteSizeLabel(Model.StandadUpload.ContentLength)</strong>.</small>
+						Model.StandadUpload = null;
+					}
+				</div>
+
+				<div class="form-group mt-4">
+					@Html.LabelFor(model => model.RequiredText)
+					@Html.TextBoxFor(model => model.RequiredText, new { @class = "form-control" })
+				</div>
+
+				<div class="form-group">
+					@Html.LabelFor(model => model.RequiredEmail)
+					@Html.TextBoxFor(model => model.RequiredEmail, new { @class = "form-control" })
+				</div>
+
+				<div class="form-group">
+					@Html.LabelFor(model => model.Date)
+					@Html.TextBoxFor(model => model.Date, "{0:d}", new { @class = "form-control date-picker", @data_format = datePickerFormat })
+				</div>
+
+				<div class="form-group">
+					@Html.LabelFor(model => model.Time)
+					@Html.TextBoxFor(model => model.Time, "{0:t}", new { @class = "form-control time-picker", @data_meridiem = timePickerMeridiem.ToLowerCaseString() })
+				</div>
+
+				<div class="form-group">
+					@Html.LabelFor(model => model.SingleRequiredEnumValue)
+					@Html.EnumDropDownListFor(model => model.SingleRequiredEnumValue, new { @class = "form-control" })
+				</div>
+
+				<div class="form-group">
+					<label>
+						<!-- Custom text can be used as well. instead of extracting from the property attributes. -->
+						Custom Label for Optional Enum Dropdown.
+					</label>
+					@Html.EnumDropDownListFor(model => model.SingleOptionalEnumValue, new { @class = "form-control" })
+				</div>
+
+				<div class="form-group">
+					@Html.LabelFor(model => model.SelectedSingle)
+					@Html.DropDownListFor(model => model.SelectedSingle, Model.SampleOptionsSingle, "Select...", new { @class = "form-control" })
+				</div>
+
+				<div class="form-group">
+					<label>
+						@Html.DisplayNameFor(model => model.SelectedMulti) <span class="text-danger">*</span>
+					</label>
+					@Html.ListBoxFor(model => model.SelectedMulti, Model.SampleOptionsMulti, new { @class = "form-control", @id = "sampleMulti" })
+				</div>
+
+				<input type="submit" class="btn btn-primary pull-right" value="Submit" />
+
+			</form>
+
+		</div>
+	*@

@@ -2,6 +2,6 @@
 {
 	public abstract class BaseViewModel
 	{
-		public string PageTitle { get; set; } = string.Empty;
+		public string PageTitle { get; set; }
 	}
 }

@@ -9,12 +9,12 @@ using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Areas.Features.Controllers
 {
-	[RoutePrefix("forms-sample")]
-	[TrackMenuItem("features.form-sample")]
-	public partial class FormSampleController : __AreaBaseController
+	[RoutePrefix("forms-and-validation")]
+	[TrackMenuItem("features.forms-and-validation")]
+	public partial class FormsAndValidationController : __AreaBaseController
 	{
 		[HttpGet]
-		[Route(Name = "Features_FormSample_Index_Post_Get")]
+		[Route(Name = "Features_FormsAndValidation_Index_Post_Get")]
 		public ActionResult Index()
 		{
 			var model = BuildFormsAndValidationViewModel();
@@ -24,8 +24,8 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Route(Name = "Features_FormSample_Index_Post")]
-		public ActionResult Index(FormSampleViewModel model)
+		[Route(Name = "Features_FormsAndValidation_Index_Post")]
+		public ActionResult Index(FormsAndValidationViewModel model)
 		{
 			if (ModelState.IsValid)
 			{
@@ -41,9 +41,9 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 			return View(model);
 		}
 
-		private FormSampleViewModel BuildFormsAndValidationViewModel(FormSampleViewModel postedModel = null)
+		private FormsAndValidationViewModel BuildFormsAndValidationViewModel(FormsAndValidationViewModel postedModel = null)
 		{
-			var model = new FormSampleViewModel();
+			var model = new FormsAndValidationViewModel();
 
 			if (postedModel != null)
 			{

@@ -178,11 +178,11 @@ namespace App.UI.Mvc5.Areas.Features {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Form.
+        ///   Looks up a localized string similar to Forms &amp; Validation.
         /// </summary>
-        public static string Form {
+        public static string FormsAndValidation {
             get {
-                return ResourceManager.GetString("Form", resourceCulture);
+                return ResourceManager.GetString("FormsAndValidation", resourceCulture);
             }
         }
         

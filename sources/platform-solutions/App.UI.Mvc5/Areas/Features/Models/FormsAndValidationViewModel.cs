@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Areas.Features.Models
 {
-	public class FormSampleViewModel : BaseViewModel
+	public class FormsAndValidationViewModel : BaseViewModel
 	{
 		[Display(Name = "FirstName", ResourceType = typeof(AreaResources))]
 		public string FirstName { get; set; }

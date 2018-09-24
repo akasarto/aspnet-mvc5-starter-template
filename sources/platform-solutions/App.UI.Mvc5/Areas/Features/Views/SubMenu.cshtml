@@ -1,26 +1,32 @@
 ﻿@using App.UI.Mvc5.Areas.Features
 
+<!-- Mesta -->
+
+@{
+	var submenuTitle = ViewBag.MenuSection ?? GetLocalizedString<AreaResources>("Samples");
+}
+
 <!-- Page Contents -->
 
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-	<h5 class="my-0 mr-md-auto font-weight-normal">@(GetLocalizedString<AreaResources>("Samples"))</h5>
+
+	<h5 class="my-0 mr-md-auto font-weight-normal">@submenuTitle</h5>
+
 	<nav class="navbar navbar-light my-2 my-md-0 mr-md-3">
 		<ul class="nav submenu">
 			<li class="nav-item @Menu.IfActiveItem("features.overview", "active")">
 				<a class="p-2 text-dark nav-link" href="@Url.Action("Index", "Overview", new { area = AppAreas.GetAreaName(Area.Features) })">@(GetLocalizedString<AreaResources>("Overview"))</a>
 			</li>
-			<li class="nav-item @Menu.IfActiveItem("features.form-sample", "active")">
-				<a class="p-2 text-dark nav-link" href="@Url.Action("Index", "FormSample", new { area = AppAreas.GetAreaName(Area.Features) })">@(GetLocalizedString<AreaResources>("Form"))</a>
+			<li class="nav-item @Menu.IfActiveItem("features.globalization", "active")">
+				<a class="p-2 text-dark nav-link" href="@Url.Action("Index", "Globalization", new { area = AppAreas.GetAreaName(Area.Features) })">@(GetLocalizedString<AreaResources>("Globalization"))</a>
 			</li>
-			<li class="nav-item @Menu.IfActiveItem("features.upload-sample", "active")">
-				<a class="p-2 text-dark nav-link" href="@Url.Action("Index", "UploadSample", new { area = AppAreas.GetAreaName(Area.Features) })">@(GetLocalizedString<AreaResources>("Upload"))</a>
-			</li>
-			<li class="nav-item @Menu.IfActiveItem("features.globalization-sample", "active")">
-				<a class="p-2 text-dark nav-link" href="@Url.Action("Index", "GlobalizationSample", new { area = AppAreas.GetAreaName(Area.Features) })">@(GetLocalizedString<AreaResources>("Globalization"))</a>
+			<li class="nav-item @Menu.IfActiveItem("features.forms-and-validation", "active")">
+				<a class="p-2 text-dark nav-link" href="@Url.Action("Index", "FormsAndValidation", new { area = AppAreas.GetAreaName(Area.Features) })">@(GetLocalizedString<AreaResources>("FormsAndValidation"))</a>
 			</li>
 			<li class="nav-item @Menu.IfActiveItem("features.realtime", "active")">
 				<a class="p-2 text-dark nav-link" href="@Url.Action("Index", "Realtime", new { area = AppAreas.GetAreaName(Area.Features) })">@(GetLocalizedString<AreaResources>("Realtime"))</a>
 			</li>
 		</ul>
 	</nav>
+
 </div>

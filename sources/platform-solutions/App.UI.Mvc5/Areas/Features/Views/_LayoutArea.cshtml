@@ -1,9 +1,13 @@
-﻿@model BaseViewModel
+﻿@using App.UI.Mvc5.Areas.Features
+
+@model BaseViewModel
 
 <!-- Meta -->
 
 @{
 	this.SetLayout(Layouts.Internal);
+
+	Model.PageTitle = Model.PageTitle ?? GetLocalizedString<AreaResources>("Features");
 }
 
 <!-- Sections -->

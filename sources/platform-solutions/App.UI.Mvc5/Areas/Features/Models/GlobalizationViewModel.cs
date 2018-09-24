@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Areas.Features.Models
 {
-	public class GlobalizationSampleViewModel : BaseViewModel
+	public class GlobalizationViewModel : BaseViewModel
 	{
 		[Display(Name = "Date")]
 		public DateTime? Date { get; set; }

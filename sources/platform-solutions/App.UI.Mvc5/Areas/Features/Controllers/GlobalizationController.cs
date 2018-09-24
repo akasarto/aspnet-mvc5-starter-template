@@ -5,23 +5,23 @@ using System.Web.Mvc;
 
 namespace App.UI.Mvc5.Areas.Features.Controllers
 {
-	[RoutePrefix("upload-sample")]
-	[TrackMenuItem("features.form-sample")]
-	public partial class GlobalizationSampleController : __AreaBaseController
+	[RoutePrefix("globalization")]
+	[TrackMenuItem("features.globalization")]
+	public partial class GlobalizationController : __AreaBaseController
 	{
 		[HttpGet]
-		[Route(Name = "Features_GlobalizationSample_Index_Post_Get")]
+		[Route(Name = "Features_Globalization_Index_Post_Get")]
 		public ActionResult Index()
 		{
-			var model = BuildFormsAndValidationViewModel();
+			var model = BuildGlobalizationViewModel();
 
 			return View(model);
 		}
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		[Route(Name = "Features_GlobalizationSample_Index_Post")]
-		public ActionResult Index(FormSampleViewModel model)
+		[Route(Name = "Features_Globalization_Index_Post")]
+		public ActionResult Index(GlobalizationViewModel model)
 		{
 			if (ModelState.IsValid)
 			{
@@ -32,14 +32,14 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 				Feedback.AddMessage(FeedbackMessageType.Error, "Some fields are not valid.", "Oops!");
 			}
 
-			model = BuildFormsAndValidationViewModel(model);
+			model = BuildGlobalizationViewModel(model);
 
 			return View(model);
 		}
 
-		private FormSampleViewModel BuildFormsAndValidationViewModel(FormSampleViewModel postedModel = null)
+		private GlobalizationViewModel BuildGlobalizationViewModel(GlobalizationViewModel postedModel = null)
 		{
-			var model = new FormSampleViewModel();
+			var model = new GlobalizationViewModel();
 
 			if (postedModel != null)
 			{
