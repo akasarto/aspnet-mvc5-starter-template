@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="CultureId" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="CultureIdHint" xml:space="preserve">
+    <value>Date, time and numeric format.</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Current Password</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="EditProfile" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
+  <data name="EditProfileLeadInfo" xml:space="preserve">
+    <value>Update your information and customize available settings for a better app experience.</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailOrUsername" xml:space="preserve">
+    <value>Email or Username</value>
+  </data>
+  <data name="EmailVerificationAlertMessage" xml:space="preserve">
+    <value>Email not verified.</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="GlobalizationSettings" xml:space="preserve">
+    <value>Globalization Settings</value>
+  </data>
+  <data name="InvalidCredentialsMessage" xml:space="preserve">
+    <value>Invalid credentials.</value>
+  </data>
+  <data name="InvalidPasswordMessage" xml:space="preserve">
+    <value>Invalid password.</value>
+  </data>
+  <data name="Locked" xml:space="preserve">
+    <value>Account Locked</value>
+  </data>
+  <data name="LockedInfo" xml:space="preserve">
+    <value>Too many login attempts. Please try again later.</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="LogInCallout" xml:space="preserve">
+    <value>Already have an account?</value>
+  </data>
+  <data name="LogInCallout2" xml:space="preserve">
+    <value>Remembered?</value>
+  </data>
+  <data name="LogInCalloutAction" xml:space="preserve">
+    <value>Log In!</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Log Off</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="MaxFileSizeInfo" xml:space="preserve">
+    <value>Max file size {0}.</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="NewPassword2" xml:space="preserve">
+    <value>Repeat New Password</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Password2" xml:space="preserve">
+    <value>Repeat Password</value>
+  </data>
+  <data name="PersonalInfo" xml:space="preserve">
+    <value>Personal Info</value>
+  </data>
+  <data name="PictureBlobId" xml:space="preserve">
+    <value>Picture</value>
+  </data>
+  <data name="Recover" xml:space="preserve">
+    <value>Recover</value>
+  </data>
+  <data name="RecoverPassword" xml:space="preserve">
+    <value>Recover Password</value>
+  </data>
+  <data name="RecoverPasswordCallout" xml:space="preserve">
+    <value>Lost Password?</value>
+  </data>
+  <data name="RecoverPasswordInfo" xml:space="preserve">
+    <value>Enter your email bellow to receive recover instructions.</value>
+  </data>
+  <data name="RecoverPasswordSuccessInfo" xml:space="preserve">
+    <value>Message Sent!</value>
+  </data>
+  <data name="RecoverPasswordSuccessInfoDetails" xml:space="preserve">
+    <value>You'll receive an email with further instructions shortly.</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SelectPicture" xml:space="preserve">
+    <value>Select Picture</value>
+  </data>
+  <data name="SetNewPassword" xml:space="preserve">
+    <value>Set New Password</value>
+  </data>
+  <data name="SetNewPasswordGeneralError" xml:space="preserve">
+    <value>Email verification failed. Please try again or request a new token.</value>
+  </data>
+  <data name="SetPassword" xml:space="preserve">
+    <value>Set Password</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="SignUpCallout" xml:space="preserve">
+    <value>Don't have an account yet?</value>
+  </data>
+  <data name="SignUpCalloutAction" xml:space="preserve">
+    <value>Sign Up Now!</value>
+  </data>
+  <data name="TermsAcceptance" xml:space="preserve">
+    <value>I agree with the &lt;a href="#" class="terms-link"&gt;terms of use&lt;/a&gt;.</value>
+  </data>
+  <data name="TimeZoneId" xml:space="preserve">
+    <value>Time Zone</value>
+  </data>
+  <data name="TimeZoneIdHint" xml:space="preserve">
+    <value>Specify the time zone you are currently in.</value>
+  </data>
+  <data name="UICultureId" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="UICultureIdHint" xml:space="preserve">
+    <value>Supported language translations.</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>UserName</value>
+  </data>
+  <data name="UserNameHint" xml:space="preserve">
+    <value>Only letters and numbers starting with a letter. Ex.: Johnny5</value>
+  </data>
+  <data name="VerifyEmail" xml:space="preserve">
+    <value>Email Verification</value>
+  </data>
+  <data name="VerifyEmailLeadInfo" xml:space="preserve">
+    <value>Confirm your e-mail address to unlock special features in your account.</value>
+  </data>
+  <data name="VerifyEmailLink" xml:space="preserve">
+    <value>Verify Now!</value>
+  </data>
+  <data name="VerifyEmailMessageSent" xml:space="preserve">
+    <value>Message Sent!</value>
+  </data>
+  <data name="VerifyEmailMessageSentLeadInfoTemplate" xml:space="preserve">
+    <value>Verification request sent to &lt;strong&gt;{0}&lt;/strong&gt;.</value>
+  </data>
+  <data name="VerifyEmailResponseError" xml:space="preserve">
+    <value>Unable to verify email. Please try again.</value>
+  </data>
+  <data name="VerifyEmailSuccess" xml:space="preserve">
+    <value>Thanks!</value>
+  </data>
+  <data name="VerifyEmailSuccessLeadInfo" xml:space="preserve">
+    <value>Your email address is now verified.</value>
+  </data>
+  <data name="_Validation_BlobIdInvalidError" xml:space="preserve">
+    <value>The '{PropertyName}' is invalid or does not exist.</value>
+  </data>
+  <data name="_Validation_BlobImageMimeTypeError" xml:space="preserve">
+    <value>'{0}' is not a valid image file type.</value>
+  </data>
+  <data name="_Validation_BlobKnownMimeTypeError" xml:space="preserve">
+    <value>'{0}' is not a known valid file type.</value>
+  </data>
+  <data name="_Validation_BlobSizeLimitError" xml:space="preserve">
+    <value>'{0}' has exceeded the upload size limit.</value>
+  </data>
+  <data name="_Validation_EmailTakenError" xml:space="preserve">
+    <value>The e-mail '{PropertyValue}' is already taken by another user.</value>
+  </data>
+  <data name="_Validation_MaxLength" xml:space="preserve">
+    <value>'{PropertyName}' should have a maximum of {MaxLength} characters.</value>
+  </data>
+  <data name="_Validation_MinLength" xml:space="preserve">
+    <value>'{PropertyName}' should have at least {MinLength} characters.</value>
+  </data>
+  <data name="_Validation_PasswordsDoNotMatchError" xml:space="preserve">
+    <value>Passwords do not match.</value>
+  </data>
+  <data name="_Validation_TermsAcceptanceError" xml:space="preserve">
+    <value>You must agree with the terms of use to proceed.</value>
+  </data>
+  <data name="_Validation_UserNameTakenError" xml:space="preserve">
+    <value>The user name '{PropertyValue}' is already taken by another user.</value>
+  </data>
+</root>

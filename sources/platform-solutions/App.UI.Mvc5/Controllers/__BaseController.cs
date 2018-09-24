@@ -37,7 +37,7 @@ namespace App.UI.Mvc5.Controllers
 
 		public new AppPrincipal User => Thread.CurrentPrincipal as AppPrincipal;
 
-		public void ConfigureGlobalizationContext(HttpContextBase httpContext)
+		protected void ConfigureGlobalizationContext(HttpContextBase httpContext)
 		{
 			var cultureCookieName = AppSettings.Globalization.CultureCookieName;
 			var uiCultureCookieName = AppSettings.Globalization.UICultureCookieName;
@@ -69,8 +69,15 @@ namespace App.UI.Mvc5.Controllers
 			Thread.CurrentThread.CurrentUICulture = User.UICulture;
 		}
 
-		[NonAction]
-		public ActionResult ErrorResult(HttpStatusCode statusCode, string message = null, Exception exception = null)
+		protected override ITempDataProvider CreateTempDataProvider()
+		{
+			//ToDo: [Feedback related] Implement cloud ready provider in susbtitution to the native one that use sessions.
+			var provider = base.CreateTempDataProvider();
+
+			return provider;
+		}
+
+		protected ActionResult ErrorResult(HttpStatusCode statusCode, string message = null, Exception exception = null)
 		{
 			var code = statusCode.ChangeType<string>();
 			var isDebug = HttpContext.IsDebuggingEnabled;
@@ -88,59 +95,14 @@ namespace App.UI.Mvc5.Controllers
 			return JsonError(ModelState);
 		}
 
-		public string GetLocalizedString(string resourceKey, params object[] formatParams)
+		protected string GetLocalizedString(string resourceKey, params object[] formatParams)
 		{
 			return GlobalizationManager.GetLocalizedString(resourceKey, formatParams);
 		}
 
-		[NonAction]
-		public JsonResult JsonError(ModelStateDictionary modelState, HttpStatusCode statusCode = HttpStatusCode.BadRequest)
+		protected string GetLocalizedString<TResourceType>(string resourceKey, params object[] formatParams)
 		{
-			Response.StatusCode = (int)statusCode;
-
-			return Json(modelState);
-		}
-
-		[NonAction]
-		public string RenderPartialViewToString(string viewName, object model = null)
-		{
-			ViewData.Model = model;
-
-			using (var sw = new StringWriter())
-			{
-				var viewResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
-				var viewContext = new ViewContext(ControllerContext, viewResult.View, ViewData, TempData, sw);
-
-				viewResult.View.Render(viewContext, sw);
-				viewResult.ViewEngine.ReleaseView(ControllerContext, viewResult.View);
-
-				return sw.GetStringBuilder().ToString();
-			}
-		}
-
-		[NonAction]
-		public string RenderViewToString(string viewName, string masterName = null, object model = null)
-		{
-			ViewData.Model = model;
-
-			using (var sw = new StringWriter())
-			{
-				var viewResult = ViewEngines.Engines.FindView(ControllerContext, viewName, masterName);
-				var viewContext = new ViewContext(ControllerContext, viewResult.View, ViewData, TempData, sw);
-
-				viewResult.View.Render(viewContext, sw);
-				viewResult.ViewEngine.ReleaseView(ControllerContext, viewResult.View);
-
-				return sw.GetStringBuilder().ToString();
-			}
-		}
-
-		protected override ITempDataProvider CreateTempDataProvider()
-		{
-			//ToDo: [Feedback related] Implement cloud ready provider in susbtitution to the native one that use sessions.
-			var provider = base.CreateTempDataProvider();
-
-			return provider;
+			return GlobalizationManager.GetLocalizedString<TResourceType>(resourceKey, formatParams);
 		}
 
 		protected override void Initialize(System.Web.Routing.RequestContext requestContext)
@@ -172,6 +134,45 @@ namespace App.UI.Mvc5.Controllers
 				ContentEncoding = contentEncoding,
 				JsonRequestBehavior = behavior
 			};
+		}
+
+		protected JsonResult JsonError(ModelStateDictionary modelState, HttpStatusCode statusCode = HttpStatusCode.BadRequest)
+		{
+			Response.StatusCode = (int)statusCode;
+
+			return Json(modelState);
+		}
+
+		protected string RenderPartialViewToString(string viewName, object model = null)
+		{
+			ViewData.Model = model;
+
+			using (var sw = new StringWriter())
+			{
+				var viewResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
+				var viewContext = new ViewContext(ControllerContext, viewResult.View, ViewData, TempData, sw);
+
+				viewResult.View.Render(viewContext, sw);
+				viewResult.ViewEngine.ReleaseView(ControllerContext, viewResult.View);
+
+				return sw.GetStringBuilder().ToString();
+			}
+		}
+
+		protected string RenderViewToString(string viewName, string masterName = null, object model = null)
+		{
+			ViewData.Model = model;
+
+			using (var sw = new StringWriter())
+			{
+				var viewResult = ViewEngines.Engines.FindView(ControllerContext, viewName, masterName);
+				var viewContext = new ViewContext(ControllerContext, viewResult.View, ViewData, TempData, sw);
+
+				viewResult.View.Render(viewContext, sw);
+				viewResult.ViewEngine.ReleaseView(ControllerContext, viewResult.View);
+
+				return sw.GetStringBuilder().ToString();
+			}
 		}
 	}
 }

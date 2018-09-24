@@ -22,22 +22,22 @@ namespace App.UI.Mvc5.Areas.Users.Models
 
 			// Name
 			RuleFor(model => model.FullName).NotEmpty();
-			RuleFor(model => model.FullName).Length(0, _Constants.UsersFullNameMaxLength).WithMessage(GlobalizationManager.GetLocalizedString("_Validation_MaxLength"));
+			RuleFor(model => model.FullName).Length(0, _Constants.UsersFullNameMaxLength).WithMessage(GlobalizationManager.GetLocalizedString<AreaResources>("_Validation_MaxLength"));
 
 			// Email
 			RuleFor(model => model.Email).NotEmpty();
 			RuleFor(model => model.Email).Matches(_RegularExpressions.SimpleEmailPattern);
-			RuleFor(model => model.Email).Length(0, _Constants.UsersEmailMaxLength).WithMessage(GlobalizationManager.GetLocalizedString("_Validation_MaxLength"));
-			RuleFor(model => model.Email).Must(BeUniqueOrCurrentEmail).WithMessage(GlobalizationManager.GetLocalizedString("_Validation_EmailTakenError"));
+			RuleFor(model => model.Email).Length(0, _Constants.UsersEmailMaxLength).WithMessage(GlobalizationManager.GetLocalizedString<AreaResources>("_Validation_MaxLength"));
+			RuleFor(model => model.Email).Must(BeUniqueOrCurrentEmail).WithMessage(GlobalizationManager.GetLocalizedString<AreaResources>("_Validation_EmailTakenError"));
 
 			// Username
 			RuleFor(model => model.UserName).NotEmpty();
 			RuleFor(model => model.UserName).Matches(_RegularExpressions.UserNamePattern);
-			RuleFor(model => model.UserName).Length(0, _Constants.UsersUserNameMaxLength).WithMessage(GlobalizationManager.GetLocalizedString("_Validation_MaxLength"));
-			RuleFor(model => model.UserName).Must(BeUniqueOrCurrentUsername).WithMessage(GlobalizationManager.GetLocalizedString("_Validation_UserNameTakenError"));
+			RuleFor(model => model.UserName).Length(0, _Constants.UsersUserNameMaxLength).WithMessage(GlobalizationManager.GetLocalizedString<AreaResources>("_Validation_MaxLength"));
+			RuleFor(model => model.UserName).Must(BeUniqueOrCurrentUsername).WithMessage(GlobalizationManager.GetLocalizedString<AreaResources>("_Validation_UserNameTakenError"));
 
 			// Picture Blob Id
-			RuleFor(model => model.PictureBlobId).Must(BeExistingPictureBlobId).WithMessage(GlobalizationManager.GetLocalizedString("_Validation_BlobIdInvalidError"));
+			RuleFor(model => model.PictureBlobId).Must(BeExistingPictureBlobId).WithMessage(GlobalizationManager.GetLocalizedString<AreaResources>("_Validation_BlobIdInvalidError"));
 
 			// Globalization
 			RuleFor(model => model.CultureId).NotEmpty();

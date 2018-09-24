@@ -70,11 +70,101 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string Confirm {
+            get {
+                return ResourceManager.GetString("Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;copy; 2017-2018 Sarto Research.
         /// </summary>
         public static string CopyrightNotice {
             get {
                 return ResourceManager.GetString("CopyrightNotice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Something went wrong. Please try again..
+        /// </summary>
+        public static string DefaultErrorMessage {
+            get {
+                return ResourceManager.GetString("DefaultErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error!.
+        /// </summary>
+        public static string DefaultErrorTitle {
+            get {
+                return ResourceManager.GetString("DefaultErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operation completed..
+        /// </summary>
+        public static string DefaultInfoMessage {
+            get {
+                return ResourceManager.GetString("DefaultInfoMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Info!.
+        /// </summary>
+        public static string DefaultInfoTitle {
+            get {
+                return ResourceManager.GetString("DefaultInfoTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The operation completed with no errors..
+        /// </summary>
+        public static string DefaultSuccessMessage {
+            get {
+                return ResourceManager.GetString("DefaultSuccessMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Success!.
+        /// </summary>
+        public static string DefaultSuccessTitle {
+            get {
+                return ResourceManager.GetString("DefaultSuccessTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operation completed but some minor problems occured..
+        /// </summary>
+        public static string DefaultWarningMessage {
+            get {
+                return ResourceManager.GetString("DefaultWarningMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning!.
+        /// </summary>
+        public static string DefaultWarningTitle {
+            get {
+                return ResourceManager.GetString("DefaultWarningTitle", resourceCulture);
             }
         }
         

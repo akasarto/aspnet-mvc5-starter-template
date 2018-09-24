@@ -8,20 +8,20 @@ namespace App.UI.Mvc5.Areas.Users.Models
 {
 	public class ProfileEditViewModel : BaseViewModel
 	{
-		[LocalizedDisplayName("CultureId")]
+		[LocalizedDisplayName("CultureId", ResourceType = typeof(AreaResources))]
 		public string CultureId { get; set; }
 
 		public SelectList Cultures { get; set; }
 
-		[LocalizedDisplayName("Email")]
+		[LocalizedDisplayName("Email", ResourceType = typeof(AreaResources))]
 		public string Email { get; set; }
 
-		[LocalizedDisplayName("FullName")]
+		[LocalizedDisplayName("FullName", ResourceType = typeof(AreaResources))]
 		public string FullName { get; set; }
 
 		public int Id { get; set; }
 
-		[LocalizedDisplayName("PictureBlobId")]
+		[LocalizedDisplayName("PictureBlobId", ResourceType = typeof(AreaResources))]
 		public Guid? PictureBlobId { get; set; }
 
 		public string PictureBlobName { get; set; }
@@ -29,17 +29,17 @@ namespace App.UI.Mvc5.Areas.Users.Models
 		public long PictureUploadMaxLengthInBytes { get; set; }
 		public List<string> Roles { get; set; }
 
-		[LocalizedDisplayName("TimeZoneId")]
+		[LocalizedDisplayName("TimeZoneId", ResourceType = typeof(AreaResources))]
 		public string TimeZoneId { get; set; }
 
 		public SelectList TimeZones { get; set; }
 
-		[LocalizedDisplayName("UICultureId")]
+		[LocalizedDisplayName("UICultureId", ResourceType = typeof(AreaResources))]
 		public string UICultureId { get; set; }
 
 		public SelectList UICultures { get; set; }
 
-		[LocalizedDisplayName("UserName")]
+		[LocalizedDisplayName("UserName", ResourceType = typeof(AreaResources))]
 		public string UserName { get; set; }
 	}
 }

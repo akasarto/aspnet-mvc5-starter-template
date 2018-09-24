@@ -4,6 +4,7 @@ using App.Identity.Repositories;
 using App.Identity.UserStore;
 using App.UI.Mvc5.Infrastructure;
 using Data.Core;
+using Data.Store.SqlServer;
 using Data.Store.SqlServer.Infrastructure;
 using Domain.Core;
 using Domain.Core.Repositories;
@@ -39,7 +40,6 @@ using System.Reflection;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
-using SqlServer = Data.Store.SqlServer;
 
 [assembly: OwinStartup(typeof(App.UI.Mvc5.Initializer), "Initialize")]
 
@@ -141,11 +141,11 @@ namespace App.UI.Mvc5
 
 			container.Register<IDbConnectionFactory>(() => new SqlConnectionFactory(connectionString));
 
-			container.Register<IBlobsRepository, SqlServer.BlobsRepository>();
-			container.Register<ILogsRepository, SqlServer.LogsRepository>();
+			container.Register<IBlobsRepository, BlobsRepository>();
+			container.Register<ILogsRepository, LogsRepository>();
 
 			container.Register<IIdentityRepository, IdentityRepository>();
-			container.Register<IUsersRepository, SqlServer.UsersRepository>();
+			container.Register<IUsersRepository, UsersRepository>();
 
 			//
 			var mailGunApiKey = AppSettings.MailGun.ApiKey;
@@ -223,9 +223,6 @@ namespace App.UI.Mvc5
 
 				return logger.CreateLogger();
 			});
-
-			//
-			//container.Register<IMigrationService>(() => new SqlServerMigrationService(connectionString));
 
 			//
 			container.Register<DatabusHub>();

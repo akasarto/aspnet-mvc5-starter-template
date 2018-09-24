@@ -5,7 +5,7 @@ namespace App.UI.Mvc5.Areas.Users.Models
 {
 	public class AccountPasswordRecoverViewModel : BaseViewModel
 	{
-		[LocalizedDisplayName("Email")]
+		[LocalizedDisplayName("Email", ResourceType = typeof(AreaResources))]
 		public string Email { get; set; }
 	}
 }

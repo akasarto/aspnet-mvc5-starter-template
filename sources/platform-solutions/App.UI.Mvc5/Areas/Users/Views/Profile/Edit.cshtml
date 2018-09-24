@@ -1,11 +1,12 @@
-﻿@using App.UI.Mvc5.Areas.Users.Models
+﻿@using App.UI.Mvc5.Areas.Users
+@using App.UI.Mvc5.Areas.Users.Models
 
 @model ProfileEditViewModel
 
 <!-- Meta -->
 
 @{
-	Model.PageTitle = GetLocalizedString("Users_EditProfileTitle");
+	Model.PageTitle = GetLocalizedString<AreaResources>("EditProfile");
 }
 
 <!-- Sections -->
@@ -17,84 +18,116 @@
 <!-- Page Contents -->
 
 <div class="container">
+	<div class="py-5 text-center">
+		<h2>@(GetLocalizedString<AreaResources>("EditProfile"))</h2>
+		<p class="lead">@(GetLocalizedString<AreaResources>("EditProfileLeadInfo"))</p>
+	</div>
 
-	<h3 class="mt-5 mb-5 text-center text-uppercase">@Model.PageTitle</h3>
+	<div class="row">
 
-	<form id="mainForm" method="post">
+		<div class="col-md-4 order-md-2 mb-4">
 
-		@Html.AntiForgeryToken()
-		@Html.HiddenFor(model => model.PictureBlobId)
-		@Html.HiddenFor(model => model.PictureBlobName)
-		@Html.ValidationSummary(VisualizationMode.Alert)
-
-		<div class="card text-center mb-5">
-			<div class="card-header">
-				@Html.DisplayNameFor(model => model.PictureBlobId)
-			</div>
-			<div class="card-body">
-				<input id="mainUploadFileInput" name="picture" type="file" class="d-none" />
-				<div id="previewContainer">
-					<img id="userPicturePreview" src="@Url.BlobThumbnail(User.PictureBlobName, User.UserName, width: 160, height: 182)" class="img-thumbnail img-responsive" />
+			<div class="row">
+				<div class="col-4">
+					<h4 class="d-flex justify-content-between align-items-center mb-3">
+						<span class="text-muted">@Html.DisplayNameFor(model => model.PictureBlobId)</span>
+					</h4>
 				</div>
-				<p class="mt-3 mb-0">@(string.Format(GetLocalizedString("MaxFileSizeInfo"), Html.ToByteSizeLabel(Model.PictureUploadMaxLengthInBytes)))</p>
+				<div class="col-8 d-flex justify-content-end align-items-end mb-3">
+					<small>@(string.Format(GetLocalizedString<AreaResources>("MaxFileSizeInfo"), Html.ToByteSizeLabel(Model.PictureUploadMaxLengthInBytes)))</small>
+				</div>
 			</div>
-			<div class="card-footer text-muted">
-				<a href="@Url.Action("UploadPicture", "Blobs", new { area = AppAreas.GetAreaName(Area.Root) })" id="mainUploadTrigger">
-					<i class="fa fa-folder-open mr-1"></i>@GetLocalizedString("Users_SelectPictureLabel")
-				</a>
-				@if (User.PictureBlobId.HasValue)
-				{
-					<a href="@Url.Action("Download", "Blobs", new { blobName = User.PictureBlobName, donloadFileLabel = User.FullName, area = AppAreas.GetAreaName(Area.Root) })" class="ml-3">
-						<i class="fa fa-download mr-1 text-dark"></i>@GetLocalizedString("Download")
+
+			<div class="card text-center mb-5">
+				<div class="card-body">
+					<input id="mainUploadFileInput" name="picture" type="file" class="d-none" />
+					<div id="previewContainer">
+						<img id="userPicturePreview" src="@Url.BlobThumbnail(User.PictureBlobName, User.UserName)" class="rounded mx-auto d-block img-fluid" />
+					</div>
+					<a class="btn btn-block btn-outline-primary mt-3" href="@Url.Action("UploadPicture", "Blobs", new { area = AppAreas.GetAreaName(Area.Root) })" id="mainUploadTrigger">
+						<i class="fa fa-folder-open mr-1"></i>@(GetLocalizedString<AreaResources>("SelectPicture"))
 					</a>
-					<a id="deleteUserPicture" href="#" class="ml-3">
-						<i class="fa fa-trash mr-1 text-danger"></i>@GetLocalizedString("Delete")
-					</a>
-				}
+					@if (User.PictureBlobId.HasValue)
+					{
+						<a class="btn btn-block btn-outline-dark" href="@Url.Action("Download", "Blobs", new { blobName = User.PictureBlobName, donloadFileLabel = User.FullName, area = AppAreas.GetAreaName(Area.Root) })">
+							<i class="fa fa-download mr-1"></i>@(GetLocalizedString<AreaResources>("Download"))
+						</a>
+						<a class="btn btn-outline-danger btn-block" id="deleteUserPicture" href="#">
+							<i class="fa fa-trash mr-1"></i>@(GetLocalizedString<AreaResources>("Delete"))
+						</a>
+					}
+				</div>
 			</div>
+
 		</div>
 
-		<div class="form-group">
-			@Html.LabelFor(model => model.FullName)
-			@Html.TextBoxFor(model => model.FullName, new { @class = "form-control" })
+		<div class="col-md-8 order-md-1">
+
+			<form id="mainForm" method="post">
+
+				<h4 class="d-flex justify-content-between align-items-center mb-3">
+					<span class="text-muted">@(GetLocalizedString<AreaResources>("PersonalInfo"))</span>
+				</h4>
+
+				@Html.AntiForgeryToken()
+				@Html.HiddenFor(model => model.PictureBlobId)
+				@Html.HiddenFor(model => model.PictureBlobName)
+				@Html.ValidationSummary(VisualizationMode.Alert)
+
+				<div class="mb-3">
+					@Html.LabelFor(model => model.FullName)
+					@Html.TextBoxFor(model => model.FullName, new { @class = "form-control" })
+				</div>
+
+				<div class="mb-3">
+					@Html.LabelFor(model => model.Email)
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">
+								<i class="fa fa-envelope"></i>
+							</span>
+						</div>
+						@Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+					</div>
+				</div>
+
+				<div class="mb-3">
+					@Html.LabelFor(model => model.UserName)
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">
+								<i class="fa fa-user"></i>
+							</span>
+						</div>
+						@Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+					</div>
+					<small class="text-muted">@(GetLocalizedString<AreaResources>("UserNameHint"))</small>
+				</div>
+
+				<h4 class="d-flex justify-content-between align-items-center mt-5 mb-3">
+					<span class="text-muted">@(GetLocalizedString<AreaResources>("GlobalizationSettings"))</span>
+				</h4>
+
+				<div class="mb-3">
+					@Html.LabelFor(model => model.CultureId)
+					@Html.DropDownListFor(model => model.CultureId, Model.Cultures, new { @class = "custom-select d-block w-100" })
+					<small class="text-muted">@(GetLocalizedString<AreaResources>("CultureIdHint"))</small>
+				</div>
+				<div class="mb-3">
+					@Html.LabelFor(model => model.UICultureId)
+					@Html.DropDownListFor(model => model.UICultureId, Model.UICultures, new { @class = "custom-select d-block w-100" })
+					<small class="text-muted">@(GetLocalizedString<AreaResources>("UICultureIdHint"))</small>
+				</div>
+				<div class="mb-3">
+					@Html.LabelFor(model => model.TimeZoneId)
+					@Html.DropDownListFor(model => model.TimeZoneId, Model.TimeZones, new { @class = "custom-select d-block w-100" })
+					<small class="text-muted">@(GetLocalizedString<AreaResources>("TimeZoneIdHint"))</small>
+				</div>
+
+				<button class="btn btn-primary btn-lg btn-block mt-5" type="submit">@(GetLocalizedString<AreaResources>("Save"))</button>
+
+			</form>
+
 		</div>
-
-		<div class="form-group">
-			@Html.LabelFor(model => model.Email)
-			<div class="input-group">
-				<span class="input-group-addon">
-					<i class="fa fa-envelope"></i>
-				</span>
-				@Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
-			</div>
-		</div>
-
-		<div class="form-group">
-			@Html.LabelFor(model => model.UserName)
-			@Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
-			<small class="form-text text-muted">@GetLocalizedString("UserName_Hint")</small>
-		</div>
-
-		<div class="form-group">
-			@Html.LabelFor(model => model.CultureId)
-			@Html.DropDownListFor(model => model.CultureId, Model.Cultures, new { @class = "form-control" })
-			<small class="form-text text-muted">@GetLocalizedString("CultureId_Hint")</small>
-		</div>
-
-		<div class="form-group">
-			@Html.LabelFor(model => model.UICultureId)
-			@Html.DropDownListFor(model => model.UICultureId, Model.UICultures, new { @class = "form-control" })
-			<small class="form-text text-muted">@GetLocalizedString("UICultureId_Hint")</small>
-		</div>
-
-		<div class="form-group">
-			@Html.LabelFor(model => model.TimeZoneId)
-			@Html.DropDownListFor(model => model.TimeZoneId, Model.TimeZones, new { @class = "form-control" })
-			<small class="form-text text-muted">@GetLocalizedString("TimeZoneId_Hint")</small>
-		</div>
-
-		<button type="submit" class="btn btn-primary btn-block btn-lg mt-5" tabindex="6">@GetLocalizedString("Save")</button>
-
-	</form>
-
+	</div>
 </div>

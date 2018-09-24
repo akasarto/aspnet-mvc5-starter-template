@@ -1,21 +1,23 @@
-﻿@model EmptyViewModel
+﻿@using App.UI.Mvc5.Areas.Users
+
+@model EmptyViewModel
 
 <!-- Meta -->
 
 @{
 	this.SetLayout("~/Areas/Users/Views/_LayoutArea.cshtml");
 
-	Model.PageTitle = GetLocalizedString("Users_VerifyEmailTitle");
+	Model.PageTitle = GetLocalizedString<AreaResources>("VerifyEmail");
 }
 
 <!-- Page Contents -->
 
-<div class="container text-center mt-5">
+<div class="container text-center pt-5 mt-5">
 
 	<div class="card text-center border-0">
 		<div class="card-body">
-			<h4 class="card-title text-success">@GetLocalizedString("Users_VerifyEmailMessageSentLabel")</h4>
-			<p class="card-text">@(string.Format(GetLocalizedString("Users_VerifyEmailMessageSentLeadInfoTemplate"), User.Email))</p>
+			<h4 class="card-title text-success">@(GetLocalizedString<AreaResources>("VerifyEmailMessageSent"))</h4>
+			<p class="card-text">@(string.Format(GetLocalizedString<AreaResources>("VerifyEmailMessageSentLeadInfoTemplate"), User.Email).WithRawHtmlOutput())</p>
 		</div>
 	</div>
 

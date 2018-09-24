@@ -617,6 +617,16 @@
     <Compile Include="Areas\Features\Models\GlobalizationViewModel.cs" />
     <Compile Include="Areas\Features\Models\GlobalizationViewModelValidator.cs" />
     <Compile Include="Areas\Features\Models\SamplePaymentTypesEnum.cs" />
+    <Compile Include="Areas\Management\AreaResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AreaResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Users\AreaResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AreaResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TmpResource.Designer.cs">
       <DependentUpon>TmpResource.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -935,6 +945,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Areas\Management\AreaResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AreaResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Areas\Users\AreaResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AreaResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="TmpResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>TmpResource.Designer.cs</LastGenOutput>

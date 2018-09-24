@@ -11,7 +11,7 @@ namespace App.UI.Mvc5.Areas.Users.Models
 			// Email
 			RuleFor(model => model.Email).NotEmpty();
 			RuleFor(model => model.Email).Matches(_RegularExpressions.SimpleEmailPattern);
-			RuleFor(model => model.Email).Length(0, _Constants.UsersEmailMaxLength).WithMessage(GlobalizationManager.GetLocalizedString("_Validation_MaxLength"));
+			RuleFor(model => model.Email).Length(0, _Constants.UsersEmailMaxLength).WithMessage(GlobalizationManager.GetLocalizedString<AreaResources>("_Validation_MaxLength"));
 		}
 	}
 }

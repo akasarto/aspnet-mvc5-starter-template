@@ -54,7 +54,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 				await _signInManager.RefreshIdentity(User, reloadClaims: true);
 
-				Feedback.AddMessage(FeedbackMessageType.Success, GetLocalizedString("DefaultSuccessMessage"));
+				Feedback.AddMessage(FeedbackMessageType.Success, GetLocalizedString<AreaResources>("DefaultSuccessMessage"));
 
 				return RedirectToAction(nameof(Edit));
 			}

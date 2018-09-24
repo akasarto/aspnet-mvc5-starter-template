@@ -24,7 +24,6 @@ body {
 
 .footer {
 	width: 100%;
-
 	background-color: #f5f5f5;
 	position: absolute;
 	bottom: 0;
@@ -86,10 +85,6 @@ body {
 .marked-for-deletion {
 	opacity: 0.3;
 }
-
-/*label.is-invalid {
-	color: #dc3545;
-}*/
 
 span.is-invalid {
 	display: block;

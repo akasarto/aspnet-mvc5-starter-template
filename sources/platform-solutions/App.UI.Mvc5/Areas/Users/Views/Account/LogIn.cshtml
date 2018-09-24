@@ -1,11 +1,12 @@
-﻿@using App.UI.Mvc5.Areas.Users.Models
+﻿@using App.UI.Mvc5.Areas.Users
+@using App.UI.Mvc5.Areas.Users.Models
 
 @model AccountLogInViewModel
 
 <!-- Meta -->
 
 @{
-	Model.PageTitle = GetLocalizedString("Auth_LogInTitle");
+	Model.PageTitle = GetLocalizedString<AreaResources>("LogIn");
 }
 
 <!-- Sections -->
@@ -28,7 +29,7 @@
 
 	<div class="form-group">
 		@Html.LabelFor(model => model.Password, new { @class = "pull-left" })
-		<a href="@Url.Action("PasswordRecover", "Account", new { area = AppAreas.GetAreaName(Area.Users) })" class="pull-right">@GetLocalizedString("Auth_RecoverPasswordCallout")</a>
+		<a href="@Url.Action("PasswordRecover", "Account", new { area = AppAreas.GetAreaName(Area.Users) })" class="pull-right">@(GetLocalizedString<AreaResources>("RecoverPasswordCallout"))</a>
 		@Html.PasswordFor(model => model.Password, new { @class = "form-control", @tabindex = 2 })
 	</div>
 
@@ -39,12 +40,12 @@
 		</label>
 	</div>
 
-	<button type="submit" class="btn btn-primary btn-block btn-lg mt-3" tabindex="4">@GetLocalizedString("Auth_LogInLabel")</button>
+	<button type="submit" class="btn btn-primary btn-block btn-lg mt-3" tabindex="4">@(GetLocalizedString<AreaResources>("LogIn"))</button>
 
 </form>
 
 <div class="container text-center">
 
-	<p class="mt-5">@GetLocalizedString("Auth_SignUpCallout") <a href="@Url.Action("SignUp", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">@GetLocalizedString("Auth_SignUpCalloutAction")</a></p>
+	<p class="mt-5">@(GetLocalizedString<AreaResources>("SignUpCallout")) <a href="@Url.Action("SignUp", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">@(GetLocalizedString<AreaResources>("SignUpCalloutAction"))</a></p>
 
 </div>

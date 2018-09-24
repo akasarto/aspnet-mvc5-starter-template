@@ -1,10 +1,11 @@
-﻿@model EmptyViewModel
+﻿@using App.UI.Mvc5.Areas.Users
+
+@model EmptyViewModel
 
 <!-- Meta -->
 
 @{
-	Model.PageTitle = GetLocalizedString("Auth_LockedTitle");
-	//
+	Model.PageTitle = GetLocalizedString<AreaResources>("Locked");
 }
 
 <!-- Page Contents -->
@@ -14,7 +15,7 @@
 	<div class="col-12 text-center">
 
 		<div class="alert alert-warning">
-			@GetLocalizedString("Auth_LockedInfo")
+			@(GetLocalizedString<AreaResources>("LockedInfo"))
 		</div>
 
 	</div>

@@ -15,12 +15,12 @@ namespace App.UI.Mvc5.Infrastructure
 
 		public static string GetLocalizedString(string resourceKey, params object[] formatParams)
 		{
-			return GetLocalizedString<AppResources>(resourceKey, formatParams);
+			return GetLocalizedString(resourceKey, null, formatParams);
 		}
 
-		public static string GetLocalizedString<T>(string resourceKey, params object[] formatParams)
+		public static string GetLocalizedString<TResourceType>(string resourceKey, params object[] formatParams)
 		{
-			return GetLocalizedString(resourceKey, typeof(T), formatParams);
+			return GetLocalizedString(resourceKey, typeof(TResourceType), formatParams);
 		}
 
 		public static string GetLocalizedString(string resourceKey, Type resourceType, params object[] formatParams)
@@ -32,7 +32,7 @@ namespace App.UI.Mvc5.Infrastructure
 
 			if (resourceType == null)
 			{
-				return "[invalid-type]";
+				resourceType = typeof(AppResources);
 			}
 
 			var resourceManager = GetResourceManager(resourceType);

@@ -5,19 +5,19 @@ namespace App.UI.Mvc5.Areas.Users.Models
 {
 	public class AccountSignUpViewModel : BaseViewModel
 	{
-		[LocalizedDisplayName("Email")]
+		[LocalizedDisplayName("Email", ResourceType = typeof(AreaResources))]
 		public string Email { get; set; }
 
-		[LocalizedDisplayName("Name")]
+		[LocalizedDisplayName("Name", ResourceType = typeof(AreaResources))]
 		public string Name { get; set; }
 
-		[LocalizedDisplayName("Password")]
+		[LocalizedDisplayName("Password", ResourceType = typeof(AreaResources))]
 		public string Password { get; set; }
 
-		[LocalizedDisplayName("Password2")]
+		[LocalizedDisplayName("Password2", ResourceType = typeof(AreaResources))]
 		public string Password2 { get; set; }
 
-		[LocalizedDisplayName("TermsAcceptance")]
+		[LocalizedDisplayName("TermsAcceptance", ResourceType = typeof(AreaResources))]
 		public bool TermsAcceptance { get; set; }
 	}
 }

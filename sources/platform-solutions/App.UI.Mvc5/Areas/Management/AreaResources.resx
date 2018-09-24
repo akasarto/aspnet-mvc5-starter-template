@@ -117,49 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppName" xml:space="preserve">
-    <value>Skeleton</value>
+  <data name="_Validation_BlobIdInvalidError" xml:space="preserve">
+    <value>The '{PropertyName}' is invalid or does not exist.</value>
   </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+  <data name="_Validation_BlobImageMimeTypeError" xml:space="preserve">
+    <value>'{0}' is not a valid image file type.</value>
   </data>
-  <data name="Confirm" xml:space="preserve">
-    <value>Confirm</value>
+  <data name="_Validation_BlobKnownMimeTypeError" xml:space="preserve">
+    <value>'{0}' is not a known valid file type.</value>
   </data>
-  <data name="CopyrightNotice" xml:space="preserve">
-    <value>&amp;copy; 2017-2018 Sarto Research</value>
+  <data name="_Validation_BlobSizeLimitError" xml:space="preserve">
+    <value>'{0}' has exceeded the upload size limit.</value>
   </data>
-  <data name="DefaultErrorMessage" xml:space="preserve">
-    <value>Something went wrong. Please try again.</value>
+  <data name="_Validation_EmailTakenError" xml:space="preserve">
+    <value>The e-mail '{PropertyValue}' is already taken by another user.</value>
   </data>
-  <data name="DefaultErrorTitle" xml:space="preserve">
-    <value>Error!</value>
+  <data name="_Validation_MaxLength" xml:space="preserve">
+    <value>'{PropertyName}' should have a maximum of {MaxLength} characters.</value>
   </data>
-  <data name="DefaultInfoMessage" xml:space="preserve">
-    <value>Operation completed.</value>
+  <data name="_Validation_MinLength" xml:space="preserve">
+    <value>'{PropertyName}' should have at least {MinLength} characters.</value>
   </data>
-  <data name="DefaultInfoTitle" xml:space="preserve">
-    <value>Info!</value>
+  <data name="_Validation_PasswordsDoNotMatchError" xml:space="preserve">
+    <value>Passwords do not match.</value>
   </data>
-  <data name="DefaultSuccessMessage" xml:space="preserve">
-    <value>The operation completed with no errors.</value>
+  <data name="_Validation_TermsAcceptanceError" xml:space="preserve">
+    <value>You must agree with the terms of use to proceed.</value>
   </data>
-  <data name="DefaultSuccessTitle" xml:space="preserve">
-    <value>Success!</value>
-  </data>
-  <data name="DefaultWarningMessage" xml:space="preserve">
-    <value>Operation completed but some minor problems occured.</value>
-  </data>
-  <data name="DefaultWarningTitle" xml:space="preserve">
-    <value>Warning!</value>
-  </data>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
-  </data>
-  <data name="ToggleNavigation" xml:space="preserve">
-    <value>Toggle Navigation</value>
-  </data>
-  <data name="Welcome" xml:space="preserve">
-    <value>Welcome</value>
+  <data name="_Validation_UserNameTakenError" xml:space="preserve">
+    <value>The user name '{PropertyValue}' is already taken by another user.</value>
   </data>
 </root>

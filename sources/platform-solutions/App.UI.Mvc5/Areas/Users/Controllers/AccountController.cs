@@ -114,7 +114,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 					}
 				}
 
-				ModelState.AddModelError("credentials", GetLocalizedString("Auth_InvalidCredentialsMessage"));
+				ModelState.AddModelError("credentials", GetLocalizedString<AreaResources>("InvalidCredentialsMessage"));
 			}
 
 			ViewBag.ReturnUrl = returnUrl;
@@ -154,12 +154,12 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 				if (result.Succeeded)
 				{
-					Feedback.AddMessage(FeedbackMessageType.Success, GetLocalizedString("DefaultSuccessMessage"));
+					Feedback.AddMessage(FeedbackMessageType.Success, GetLocalizedString<AreaResources>("DefaultSuccessMessage"));
 
 					return RedirectToAction("Index", "Home", new { area = AppAreas.GetAreaName(Area.Root) });
 				}
 
-				ModelState.AddModelError("Password", GetLocalizedString("Users_InvalidPasswordMessage"));
+				ModelState.AddModelError("Password", GetLocalizedString<AreaResources>("InvalidPasswordMessage"));
 			}
 
 			return View(model);
@@ -202,7 +202,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 					var mailModel = new AccountPasswordRecoverMessageViewModel()
 					{
 						Name = adminUser.FullName ?? adminUser.UserName,
-						PageTitle = GetLocalizedString("Auth_RecoverPasswordTitle"),
+						PageTitle = GetLocalizedString<AreaResources>("RecoverPassword"),
 						ResetLink = Url.Action(nameof(PasswordSetNew), "Account", new
 						{
 							resetToken = await _appUserManager.GeneratePasswordResetTokenAsync(adminUser.Id),
@@ -278,7 +278,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 					}
 				}
 
-				ModelState.AddModelError(string.Empty, GetLocalizedString("Auth_SetNewPasswordGeneralError"));
+				ModelState.AddModelError(string.Empty, GetLocalizedString<AreaResources>("SetNewPasswordGeneralError"));
 			}
 
 			return View(model);
@@ -343,7 +343,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 					return RedirectToLocal(returnUrl);
 				}
 
-				ModelState.AddModelError(string.Empty, GetLocalizedString("DefaultErrorMessage"));
+				ModelState.AddModelError(string.Empty, GetLocalizedString<AreaResources>("DefaultErrorMessage"));
 			}
 
 			ViewBag.ReturnUrl = returnUrl;
@@ -387,7 +387,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 			var mailModel = new AccountVerifyEmailMessageViewModel()
 			{
 				Name = adminUser.FullName ?? adminUser.UserName,
-				PageTitle = GetLocalizedString("Users_VerifyEmailTitle"),
+				PageTitle = GetLocalizedString<AreaResources>("VerifyEmail"),
 				ConfirmationLink = Url.Action("VerifyEmailResponse", "Account", new
 				{
 					verifyToken = await _appUserManager.GenerateEmailConfirmationTokenAsync(adminUser.Id)
@@ -412,7 +412,7 @@ namespace App.UI.Mvc5.Areas.Users.Controllers
 
 			if (!result.Succeeded)
 			{
-				return ErrorResult(HttpStatusCode.BadRequest, GetLocalizedString("Users_VerifyEmailResponseError"));
+				return ErrorResult(HttpStatusCode.BadRequest, GetLocalizedString<AreaResources>("VerifyEmailResponseError"));
 			}
 
 			User.EmailConfirmed = true;

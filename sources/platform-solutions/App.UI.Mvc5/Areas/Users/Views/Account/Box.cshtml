@@ -1,26 +1,40 @@
-﻿@model EmptyPartialViewModel
+﻿@using App.UI.Mvc5.Areas.Users
+
+@model EmptyPartialViewModel
 
 <!-- Page Contents -->
 
 @if (!Request.IsAuthenticated)
 {
-	<ul class="navbar-nav ml-auto">
-
-		<li class="nav-item">
-			<a class="nav-link text-info" href="@Url.Action("LogIn", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
-				@GetLocalizedString("Auth_LogInLabel")
+	<div class="d-flex flex-row-reverse align-items-center">
+		<a class="btn btn-outline-dark" href="@Url.Action("LogIn", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
+			@(GetLocalizedString<AreaResources>("LogIn"))
+		</a>
+		<nav class="my-2 my-md-0 mr-md-3">
+			<a class="p-2 text-dark" href="@Url.Action("SignUp", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
+				@(GetLocalizedString<AreaResources>("SignUp"))
 			</a>
-		</li>
+		</nav>
+	</div>
+	@*
+		<ul class="navbar-nav ml-auto">
 
-		<li class="navbar-text">or</li>
+			<li class="nav-item">
+				<a class="nav-link text-info" href="@Url.Action("LogIn", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
+					@(GetLocalizedString<AreaResources>("LogIn"))
+				</a>
+			</li>
 
-		<li class="nav-item">
-			<a class="nav-link text-info" href="@Url.Action("SignUp", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
-				@GetLocalizedString("Auth_SignUpLabel")
-			</a>
-		</li>
+			<li class="navbar-text">or</li>
 
-	</ul>
+			<li class="nav-item">
+				<a class="nav-link text-info" href="@Url.Action("SignUp", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
+					@(GetLocalizedString<AreaResources>("SignUp"))
+				</a>
+			</li>
+
+		</ul>
+	*@
 }
 else
 {
@@ -28,7 +42,7 @@ else
 		@if (!User.EmailConfirmed)
 		{
 			<li class="nav-item">
-				<a href="@Url.Action("VerifyEmail", "Account", new { area = AppAreas.GetAreaName(Area.Users) })" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="@GetLocalizedString("Alerts_EmailVerificationAlertMessage")">
+				<a href="@Url.Action("VerifyEmail", "Account", new { area = AppAreas.GetAreaName(Area.Users) })" class="nav-link" data-toggle="tooltip" data-placement="bottom" title="@(GetLocalizedString<AreaResources>("EmailVerificationAlertMessage"))">
 					<i class="fa fa-exclamation-circle text-warning"></i>
 				</a>
 			</li>
@@ -36,7 +50,7 @@ else
 		@if (User.IsInRole(Role.SuperUser))
 		{
 			<li class="nav-item">
-				<a href="@Url.Action("Index", "_Landing", new { area = AppAreas.GetAreaName(Area.Management) })" class="nav-link @Menu.IfActiveItem("management.area", "active", string.Empty)" data-toggle="tooltip" data-placement="bottom" title="@GetLocalizedString("Management_MenuLabel")">
+				<a href="@Url.Action("Index", "_Landing", new { area = AppAreas.GetAreaName(Area.Management) })" class="nav-link @Menu.IfActiveItem("management.area", "active", string.Empty)" data-toggle="tooltip" data-placement="bottom" title="@(GetLocalizedString<AreaResources>("Management"))">
 					<i class="fa fa-cogs text-info"></i>
 				</a>
 			</li>
@@ -53,17 +67,17 @@ else
 			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMemuItems" style="position: absolute;">
 
 				<a class="dropdown-item" href="@Url.Action("Edit", "Profile", new { area = AppAreas.GetAreaName(Area.Users) })">
-					<i class="fa fa-user mr-3"></i>@GetLocalizedString("Users_EditProfileLinkLabel")
+					<i class="fa fa-user mr-3"></i>@GetLocalizedString("EditProfile")
 				</a>
 
 				<a class="dropdown-item" href="@Url.Action("PasswordChange", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
-					<i class="fa fa-lock mr-3"></i>@GetLocalizedString("Users_ChangePasswordLinkLabel")
+					<i class="fa fa-lock mr-3"></i>@GetLocalizedString("ChangePassword")
 				</a>
 
 				<div role="separator" class="dropdown-divider"></div>
 
 				<a class="dropdown-item" href="@Url.Action("LogOff", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">
-					<i class="fa fa-power-off mr-3"></i>@GetLocalizedString("Users_LogOffLinkLabel")
+					<i class="fa fa-power-off mr-3"></i>@GetLocalizedString("LogOff")
 				</a>
 
 			</div>

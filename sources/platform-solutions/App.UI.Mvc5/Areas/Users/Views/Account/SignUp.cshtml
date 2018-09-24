@@ -1,11 +1,12 @@
-﻿@using App.UI.Mvc5.Areas.Users.Models
+﻿@using App.UI.Mvc5.Areas.Users
+@using App.UI.Mvc5.Areas.Users.Models
 
 @model AccountSignUpViewModel
 
 <!-- Meta -->
 
 @{
-	Model.PageTitle = GetLocalizedString("Auth_SignUpTitle");
+	Model.PageTitle = GetLocalizedString<AreaResources>("SignUp");
 }
 
 <!-- Sections -->
@@ -51,13 +52,13 @@
 		</label>
 	</div>
 
-	<button type="submit" class="btn btn-primary btn-block btn-lg mt-3" tabindex="6">@GetLocalizedString("Auth_LogInLabel")</button>
+	<button type="submit" class="btn btn-primary btn-block btn-lg mt-3" tabindex="6">@(GetLocalizedString<AreaResources>("LogIn"))</button>
 
 </form>
 
 <div class="container text-center">
 
-	<p class="mt-5">@GetLocalizedString("Auth_LogInCallout") <a href="@Url.Action("LogIn", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">@GetLocalizedString("Auth_LogInCalloutAction")</a></p>
+	<p class="mt-5">@(GetLocalizedString<AreaResources>("LogInCallout")) <a href="@Url.Action("LogIn", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">@(GetLocalizedString<AreaResources>("LogInCalloutAction"))</a></p>
 
 </div>
 

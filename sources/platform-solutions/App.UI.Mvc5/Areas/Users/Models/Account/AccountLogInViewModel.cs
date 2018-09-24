@@ -5,13 +5,13 @@ namespace App.UI.Mvc5.Areas.Users.Models
 {
 	public class AccountLogInViewModel : BaseViewModel
 	{
-		[LocalizedDisplayName("EmailOrUsername")]
+		[LocalizedDisplayName("EmailOrUsername", ResourceType = typeof(AreaResources))]
 		public string EmailOrUsername { get; set; }
 
-		[LocalizedDisplayName("Password")]
+		[LocalizedDisplayName("Password", ResourceType = typeof(AreaResources))]
 		public string Password { get; set; }
 
-		[LocalizedDisplayName("RememberMe")]
+		[LocalizedDisplayName("RememberMe", ResourceType = typeof(AreaResources))]
 		public bool RememberMe { get; set; }
 	}
 }

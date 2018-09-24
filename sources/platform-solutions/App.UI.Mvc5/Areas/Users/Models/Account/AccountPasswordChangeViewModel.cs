@@ -5,13 +5,13 @@ namespace App.UI.Mvc5.Areas.Users.Models
 {
 	public class AccountPasswordChangeViewModel : BaseViewModel
 	{
-		[LocalizedDisplayName("NewPassword")]
+		[LocalizedDisplayName("NewPassword", ResourceType = typeof(AreaResources))]
 		public string NewPassword { get; set; }
 
-		[LocalizedDisplayName("NewPassword2")]
+		[LocalizedDisplayName("NewPassword2", ResourceType = typeof(AreaResources))]
 		public string NewPassword2 { get; set; }
 
-		[LocalizedDisplayName("CurrentPassword")]
+		[LocalizedDisplayName("CurrentPassword", ResourceType = typeof(AreaResources))]
 		public string Password { get; set; }
 	}
 }
