@@ -56,9 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".editorconfig" />
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Azure.KeyVault.Core">

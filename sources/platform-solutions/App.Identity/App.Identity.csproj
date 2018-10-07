@@ -63,7 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".editorconfig" />
-    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data.Core\Data.Core.csproj">

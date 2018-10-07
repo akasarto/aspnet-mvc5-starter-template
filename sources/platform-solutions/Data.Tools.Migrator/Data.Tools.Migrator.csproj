@@ -68,7 +68,6 @@
     <Content Include="SqlServerScripts\Create_Initial_SuperUser_Account.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data.Store.SqlServer\Data.Store.SqlServer.csproj">
