@@ -1,6 +1,7 @@
 ﻿using App.UI.Mvc5.Controllers;
 using App.UI.Mvc5.Infrastructure;
 using Serilog;
+using Shared.Extensions;
 using System;
 using System.Diagnostics;
 using System.Net;
@@ -85,25 +86,13 @@ namespace App.UI.Mvc5
 
 				Response.Clear();
 
-				if (httpException != null && !string.IsNullOrWhiteSpace(httpException.GetHtmlErrorMessage()))
-				{
-					Response.Write(httpException.GetHtmlErrorMessage());
-					Response.Write("<hr />");
-				}
-				Response.Write("<br />");
-				Response.Write(exception.ToString().WithHtmlLineBreaks());
-				Response.Write("<br />");
-				Response.Write("<br />");
-				Response.Write("<br />");
-
-				Response.End();
-
 				var data = new RouteData();
 
 				data.Values["ex"] = exception;
 				data.Values["code"] = httpStatusCode;
+				data.Values["area"] = AppAreas.GetAreaName(Area.Root);
 				data.Values["action"] = nameof(ErrorsController.Index);
-				data.Values["controller"] = "Errors";
+				data.Values["controller"] = nameof(ErrorsController).RemoveControllerSuffix();
 
 				var controller = DependencyResolver.Current.GetService<ErrorsController>() as IController;
 

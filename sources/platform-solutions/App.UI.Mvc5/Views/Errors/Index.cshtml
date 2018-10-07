@@ -5,9 +5,19 @@
 @{
 	this.SetLayout(Layouts.Base);
 
-	Model.PageTitle = GetLocalizedString("Errors_Title");
+	Model.PageTitle = GetLocalizedString("Error");
 }
 
 <!-- Page Contents -->
 
-@Model.Code / @Model.Message
+<div class="container text-center pt-5 mt-5">
+
+	<div class="card text-center border-0">
+		<div class="card-body">
+			<h4 class="card-title">@Model.Code</h4>
+			<p class="card-text">@Model.Message</p>
+			<a href="@Url.GetHomeUrl()" class="btn btn-outline-dark">@GetLocalizedString("BackToHome")</a>
+		</div>
+	</div>
+
+</div>

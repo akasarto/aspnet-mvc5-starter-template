@@ -7,7 +7,6 @@ namespace App.UI.Mvc5.Controllers
 	[RoutePrefix("error")]
 	public partial class ErrorsController : __BaseController
 	{
-		[Route(Name = "Root_Errors_Index")]
 		public ActionResult Index(int? code)
 		{
 			// Check code

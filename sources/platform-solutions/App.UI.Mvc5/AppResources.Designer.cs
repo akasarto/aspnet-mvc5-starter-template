@@ -61,6 +61,51 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error! Bad request..
+        /// </summary>
+        public static string _Errors_BadRequestMessage {
+            get {
+                return ResourceManager.GetString("_Errors_BadRequestMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error! Access forbidden..
+        /// </summary>
+        public static string _Errors_ForbiddenMessage {
+            get {
+                return ResourceManager.GetString("_Errors_ForbiddenMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oops! Something went wrong. Please try again..
+        /// </summary>
+        public static string _Errors_GeneralErrorMessage {
+            get {
+                return ResourceManager.GetString("_Errors_GeneralErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error! The page was not found..
+        /// </summary>
+        public static string _Errors_NotFoundMessage {
+            get {
+                return ResourceManager.GetString("_Errors_NotFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error! Please log in to proceed!.
+        /// </summary>
+        public static string _Errors_UnauthorizedMessage {
+            get {
+                return ResourceManager.GetString("_Errors_UnauthorizedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The &apos;{PropertyName}&apos; is invalid or does not exist..
         /// </summary>
         public static string _Validation_BlobIdInvalidError {
@@ -120,6 +165,15 @@ namespace App.UI.Mvc5 {
         public static string AppName {
             get {
                 return ResourceManager.GetString("AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back to Home.
+        /// </summary>
+        public static string BackToHome {
+            get {
+                return ResourceManager.GetString("BackToHome", resourceCulture);
             }
         }
         
@@ -246,6 +300,15 @@ namespace App.UI.Mvc5 {
         public static string DeleteDialogConfirmationMessageTemplateWithLabel {
             get {
                 return ResourceManager.GetString("DeleteDialogConfirmationMessageTemplateWithLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
             }
         }
         

@@ -22,23 +22,23 @@ namespace App.UI.Mvc5.Models
 			switch (statusCode)
 			{
 				case HttpStatusCode.BadRequest:
-					Message = GlobalizationManager.GetLocalizedString("Errors_BadRequestMessage");
+					Message = GlobalizationManager.GetLocalizedString("_Errors_BadRequestMessage");
 					break;
 
 				case HttpStatusCode.Forbidden:
-					Message = GlobalizationManager.GetLocalizedString("Errors_ForbiddenMessage");
+					Message = GlobalizationManager.GetLocalizedString("_Errors_ForbiddenMessage");
 					break;
 
 				case HttpStatusCode.NotFound:
-					Message = GlobalizationManager.GetLocalizedString("Errors_NotFoundMessage");
+					Message = GlobalizationManager.GetLocalizedString("_Errors_NotFoundMessage");
 					break;
 
 				case HttpStatusCode.Unauthorized:
-					Message = GlobalizationManager.GetLocalizedString("Errors_UnauthorizedMessage");
+					Message = GlobalizationManager.GetLocalizedString("_Errors_UnauthorizedMessage");
 					break;
 
 				default:
-					Message = GlobalizationManager.GetLocalizedString("Errors_GeneralErrorMessage");
+					Message = GlobalizationManager.GetLocalizedString("_Errors_GeneralErrorMessage");
 					break;
 			}
 		}

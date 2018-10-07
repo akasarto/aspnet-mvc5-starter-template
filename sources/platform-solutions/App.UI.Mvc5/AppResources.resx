@@ -120,6 +120,9 @@
   <data name="AppName" xml:space="preserve">
     <value>Skeleton</value>
   </data>
+  <data name="BackToHome" xml:space="preserve">
+    <value>Back to Home</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -162,6 +165,9 @@
   <data name="DeleteDialogConfirmationMessageTemplateWithLabel" xml:space="preserve">
     <value>&lt;strong class="delete-item-label"&gt;&lt;/strong&gt; will be permanently deleted.</value>
   </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
@@ -182,6 +188,21 @@
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>
+  </data>
+  <data name="_Errors_BadRequestMessage" xml:space="preserve">
+    <value>Error! Bad request.</value>
+  </data>
+  <data name="_Errors_ForbiddenMessage" xml:space="preserve">
+    <value>Error! Access forbidden.</value>
+  </data>
+  <data name="_Errors_GeneralErrorMessage" xml:space="preserve">
+    <value>Oops! Something went wrong. Please try again.</value>
+  </data>
+  <data name="_Errors_NotFoundMessage" xml:space="preserve">
+    <value>Error! The page was not found.</value>
+  </data>
+  <data name="_Errors_UnauthorizedMessage" xml:space="preserve">
+    <value>Error! Please log in to proceed!</value>
   </data>
   <data name="_Validation_BlobIdInvalidError" xml:space="preserve">
     <value>The '{PropertyName}' is invalid or does not exist.</value>
