@@ -8,10 +8,10 @@ namespace App.UI.Mvc5.Areas.Management.Models
 {
 	public class UserViewModel : BaseViewModel
 	{
-		[LocalizedDisplayName("Email")]
+		[LocalizedDisplayName("Email", ResourceType = typeof(AreaResources))]
 		public string Email { get; set; }
 
-		[LocalizedDisplayName("FullName")]
+		[LocalizedDisplayName("FullName", ResourceType = typeof(AreaResources))]
 		public string FullName { get; set; }
 
 		public int Id { get; set; }
@@ -21,7 +21,7 @@ namespace App.UI.Mvc5.Areas.Management.Models
 		public MultiSelectList RoleOptions { get; set; }
 		public List<string> Roles { get; set; } = new List<string>();
 
-		[LocalizedDisplayName("UserName")]
+		[LocalizedDisplayName("UserName", ResourceType = typeof(AreaResources))]
 		public string UserName { get; set; }
 
 		public DateTime UTCCreation { get; set; }

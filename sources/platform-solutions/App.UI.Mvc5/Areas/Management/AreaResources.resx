@@ -117,34 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="_Validation_BlobIdInvalidError" xml:space="preserve">
-    <value>The '{PropertyName}' is invalid or does not exist.</value>
+  <data name="AddNew" xml:space="preserve">
+    <value>Add New</value>
   </data>
-  <data name="_Validation_BlobImageMimeTypeError" xml:space="preserve">
-    <value>'{0}' is not a valid image file type.</value>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
   </data>
-  <data name="_Validation_BlobKnownMimeTypeError" xml:space="preserve">
-    <value>'{0}' is not a known valid file type.</value>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
   </data>
-  <data name="_Validation_BlobSizeLimitError" xml:space="preserve">
-    <value>'{0}' has exceeded the upload size limit.</value>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmptyListInfo" xml:space="preserve">
+    <value>No entries found.</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="LogsLeadInfo" xml:space="preserve">
+    <value>Latest captured log entries.</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="TimeStamp" xml:space="preserve">
+    <value>Time Stamp</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="UsersLeadInfo" xml:space="preserve">
+    <value>Manage existing users.</value>
+  </data>
+  <data name="UTCCreation" xml:space="preserve">
+    <value>Date Created</value>
   </data>
   <data name="_Validation_EmailTakenError" xml:space="preserve">
     <value>The e-mail '{PropertyValue}' is already taken by another user.</value>
   </data>
-  <data name="_Validation_MaxLength" xml:space="preserve">
-    <value>'{PropertyName}' should have a maximum of {MaxLength} characters.</value>
-  </data>
-  <data name="_Validation_MinLength" xml:space="preserve">
-    <value>'{PropertyName}' should have at least {MinLength} characters.</value>
-  </data>
   <data name="_Validation_PasswordsDoNotMatchError" xml:space="preserve">
     <value>Passwords do not match.</value>
   </data>
-  <data name="_Validation_TermsAcceptanceError" xml:space="preserve">
-    <value>You must agree with the terms of use to proceed.</value>
-  </data>
   <data name="_Validation_UserNameTakenError" xml:space="preserve">
     <value>The user name '{PropertyValue}' is already taken by another user.</value>
+  </data>
+  <data name="AddUser" xml:space="preserve">
+    <value>Add User</value>
+  </data>
+  <data name="EditUser" xml:space="preserve">
+    <value>Edit User</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
   </data>
 </root>

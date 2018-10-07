@@ -61,6 +61,60 @@ namespace App.UI.Mvc5 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The &apos;{PropertyName}&apos; is invalid or does not exist..
+        /// </summary>
+        public static string _Validation_BlobIdInvalidError {
+            get {
+                return ResourceManager.GetString("_Validation_BlobIdInvalidError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;{0}&apos; is not a valid image file type..
+        /// </summary>
+        public static string _Validation_BlobImageMimeTypeError {
+            get {
+                return ResourceManager.GetString("_Validation_BlobImageMimeTypeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;{0}&apos; is not a known valid file type..
+        /// </summary>
+        public static string _Validation_BlobKnownMimeTypeError {
+            get {
+                return ResourceManager.GetString("_Validation_BlobKnownMimeTypeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;{0}&apos; has exceeded the upload size limit..
+        /// </summary>
+        public static string _Validation_BlobSizeLimitError {
+            get {
+                return ResourceManager.GetString("_Validation_BlobSizeLimitError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;{PropertyName}&apos; should have a maximum of {MaxLength} characters..
+        /// </summary>
+        public static string _Validation_MaxLength {
+            get {
+                return ResourceManager.GetString("_Validation_MaxLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &apos;{PropertyName}&apos; should have at least {MinLength} characters..
+        /// </summary>
+        public static string _Validation_MinLength {
+            get {
+                return ResourceManager.GetString("_Validation_MinLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Skeleton.
         /// </summary>
         public static string AppName {

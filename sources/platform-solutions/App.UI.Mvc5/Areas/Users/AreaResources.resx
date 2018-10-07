@@ -120,6 +120,9 @@
   <data name="ChangePassword" xml:space="preserve">
     <value>Change Password</value>
   </data>
+  <data name="ChangePasswordLeadInfo" xml:space="preserve">
+    <value>Update your existing password.</value>
+  </data>
   <data name="CultureId" xml:space="preserve">
     <value>Region</value>
   </data>
@@ -303,26 +306,8 @@
   <data name="VerifyEmailSuccessLeadInfo" xml:space="preserve">
     <value>Your email address is now verified.</value>
   </data>
-  <data name="_Validation_BlobIdInvalidError" xml:space="preserve">
-    <value>The '{PropertyName}' is invalid or does not exist.</value>
-  </data>
-  <data name="_Validation_BlobImageMimeTypeError" xml:space="preserve">
-    <value>'{0}' is not a valid image file type.</value>
-  </data>
-  <data name="_Validation_BlobKnownMimeTypeError" xml:space="preserve">
-    <value>'{0}' is not a known valid file type.</value>
-  </data>
-  <data name="_Validation_BlobSizeLimitError" xml:space="preserve">
-    <value>'{0}' has exceeded the upload size limit.</value>
-  </data>
   <data name="_Validation_EmailTakenError" xml:space="preserve">
     <value>The e-mail '{PropertyValue}' is already taken by another user.</value>
-  </data>
-  <data name="_Validation_MaxLength" xml:space="preserve">
-    <value>'{PropertyName}' should have a maximum of {MaxLength} characters.</value>
-  </data>
-  <data name="_Validation_MinLength" xml:space="preserve">
-    <value>'{PropertyName}' should have at least {MinLength} characters.</value>
   </data>
   <data name="_Validation_PasswordsDoNotMatchError" xml:space="preserve">
     <value>Passwords do not match.</value>

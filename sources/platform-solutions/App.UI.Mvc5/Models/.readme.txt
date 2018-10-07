@@ -2,4 +2,4 @@
 View models should always inherit from 'BaseViewModel'.
 Partial view models should always inherit from 'BasePartialViewModel'.
 
-You can copy the templates under the .info folder and rename the copy as needed.
+You can copy the templates under the '.tpls' folder and rename the copy as needed.

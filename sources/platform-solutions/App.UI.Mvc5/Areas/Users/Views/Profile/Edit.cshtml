@@ -18,12 +18,20 @@
 <!-- Page Contents -->
 
 <div class="container">
+
 	<div class="py-5 text-center">
 		<h2>@(GetLocalizedString<AreaResources>("EditProfile"))</h2>
 		<p class="lead">@(GetLocalizedString<AreaResources>("EditProfileLeadInfo"))</p>
 	</div>
 
 	<div class="row">
+
+		@if (!ViewData.ModelState.IsValid)
+		{
+			<div class="pb-5 col-12">
+				@Html.ValidationSummary(VisualizationMode.Alert)
+			</div>
+		}
 
 		<div class="col-md-4 order-md-2 mb-4">
 
@@ -65,14 +73,13 @@
 
 			<form id="mainForm" method="post">
 
-				<h4 class="d-flex justify-content-between align-items-center mb-3">
-					<span class="text-muted">@(GetLocalizedString<AreaResources>("PersonalInfo"))</span>
-				</h4>
-
 				@Html.AntiForgeryToken()
 				@Html.HiddenFor(model => model.PictureBlobId)
 				@Html.HiddenFor(model => model.PictureBlobName)
-				@Html.ValidationSummary(VisualizationMode.Alert)
+
+				<h4 class="d-flex justify-content-between align-items-center mb-3">
+					<span class="text-muted">@(GetLocalizedString<AreaResources>("PersonalInfo"))</span>
+				</h4>
 
 				<div class="mb-3">
 					@Html.LabelFor(model => model.FullName)
@@ -130,4 +137,5 @@
 
 		</div>
 	</div>
+
 </div>

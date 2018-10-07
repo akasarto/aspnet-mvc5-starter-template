@@ -61,65 +61,11 @@ namespace App.UI.Mvc5.Areas.Management {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The &apos;{PropertyName}&apos; is invalid or does not exist..
-        /// </summary>
-        public static string _Validation_BlobIdInvalidError {
-            get {
-                return ResourceManager.GetString("_Validation_BlobIdInvalidError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &apos;{0}&apos; is not a valid image file type..
-        /// </summary>
-        public static string _Validation_BlobImageMimeTypeError {
-            get {
-                return ResourceManager.GetString("_Validation_BlobImageMimeTypeError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &apos;{0}&apos; is not a known valid file type..
-        /// </summary>
-        public static string _Validation_BlobKnownMimeTypeError {
-            get {
-                return ResourceManager.GetString("_Validation_BlobKnownMimeTypeError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &apos;{0}&apos; has exceeded the upload size limit..
-        /// </summary>
-        public static string _Validation_BlobSizeLimitError {
-            get {
-                return ResourceManager.GetString("_Validation_BlobSizeLimitError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The e-mail &apos;{PropertyValue}&apos; is already taken by another user..
         /// </summary>
         public static string _Validation_EmailTakenError {
             get {
                 return ResourceManager.GetString("_Validation_EmailTakenError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &apos;{PropertyName}&apos; should have a maximum of {MaxLength} characters..
-        /// </summary>
-        public static string _Validation_MaxLength {
-            get {
-                return ResourceManager.GetString("_Validation_MaxLength", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &apos;{PropertyName}&apos; should have at least {MinLength} characters..
-        /// </summary>
-        public static string _Validation_MinLength {
-            get {
-                return ResourceManager.GetString("_Validation_MinLength", resourceCulture);
             }
         }
         
@@ -133,20 +79,200 @@ namespace App.UI.Mvc5.Areas.Management {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You must agree with the terms of use to proceed..
-        /// </summary>
-        public static string _Validation_TermsAcceptanceError {
-            get {
-                return ResourceManager.GetString("_Validation_TermsAcceptanceError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The user name &apos;{PropertyValue}&apos; is already taken by another user..
         /// </summary>
         public static string _Validation_UserNameTakenError {
             get {
                 return ResourceManager.GetString("_Validation_UserNameTakenError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add New.
+        /// </summary>
+        public static string AddNew {
+            get {
+                return ResourceManager.GetString("AddNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add User.
+        /// </summary>
+        public static string AddUser {
+            get {
+                return ResourceManager.GetString("AddUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit User.
+        /// </summary>
+        public static string EditUser {
+            get {
+                return ResourceManager.GetString("EditUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No entries found..
+        /// </summary>
+        public static string EmptyListInfo {
+            get {
+                return ResourceManager.GetString("EmptyListInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Full Name.
+        /// </summary>
+        public static string FullName {
+            get {
+                return ResourceManager.GetString("FullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Level.
+        /// </summary>
+        public static string Level {
+            get {
+                return ResourceManager.GetString("Level", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logs.
+        /// </summary>
+        public static string Logs {
+            get {
+                return ResourceManager.GetString("Logs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latest captured log entries..
+        /// </summary>
+        public static string LogsLeadInfo {
+            get {
+                return ResourceManager.GetString("LogsLeadInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Management.
+        /// </summary>
+        public static string Management {
+            get {
+                return ResourceManager.GetString("Management", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh.
+        /// </summary>
+        public static string Refresh {
+            get {
+                return ResourceManager.GetString("Refresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time Stamp.
+        /// </summary>
+        public static string TimeStamp {
+            get {
+                return ResourceManager.GetString("TimeStamp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string UserName {
+            get {
+                return ResourceManager.GetString("UserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        public static string Users {
+            get {
+                return ResourceManager.GetString("Users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage existing users..
+        /// </summary>
+        public static string UsersLeadInfo {
+            get {
+                return ResourceManager.GetString("UsersLeadInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date Created.
+        /// </summary>
+        public static string UTCCreation {
+            get {
+                return ResourceManager.GetString("UTCCreation", resourceCulture);
             }
         }
     }

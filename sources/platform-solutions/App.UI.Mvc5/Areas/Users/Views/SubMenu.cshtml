@@ -20,9 +20,6 @@
 			<li class="nav-item @Menu.IfActiveItem("users.account.change-password", "active")">
 				<a class="p-2 text-dark nav-link" href="@Url.Action("PasswordChange", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">@(GetLocalizedString<AreaResources>("ChangePassword"))</a>
 			</li>
-			<li class="nav-item @Menu.IfActiveItem("users.account.logoff", "active")">
-				<a class="p-2 text-dark nav-link" href="@Url.Action("LogOff", "Account", new { area = AppAreas.GetAreaName(Area.Users) })">@(GetLocalizedString<AreaResources>("LogOff"))</a>
-			</li>
 		</ul>
 	</nav>
 

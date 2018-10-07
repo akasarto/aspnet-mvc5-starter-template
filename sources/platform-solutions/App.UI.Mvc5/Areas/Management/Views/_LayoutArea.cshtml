@@ -1,9 +1,13 @@
-﻿@model BaseViewModel
+﻿@using App.UI.Mvc5.Areas.Management
+
+@model BaseViewModel
 
 <!-- Meta -->
 
 @{
 	this.SetLayout(Layouts.Internal);
+
+	Model.PageTitle = Model.PageTitle ?? GetLocalizedString<AreaResources>("Management");
 }
 
 <!-- Sections -->
@@ -24,12 +28,4 @@
 
 @Html.Partial("Submenu")
 
-<div class="container">
-
-	<h3 class="mt-5 text-center text-uppercase">@GetLocalizedString("Management_MenuLabel")</h3>
-
-	<hr class="divider mt-3 mb-5" />
-
-	@RenderBody()
-
-</div>
+@RenderBody()

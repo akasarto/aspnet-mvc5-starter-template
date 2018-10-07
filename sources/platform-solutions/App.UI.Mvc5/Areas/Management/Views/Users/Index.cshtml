@@ -1,14 +1,15 @@
-﻿@using App.UI.Mvc5.Areas.Management.Models
+﻿@using App.UI.Mvc5.Areas.Management
+@using App.UI.Mvc5.Areas.Management.Models
 
 @model UsersIndexViewModel
 
 <!-- Meta -->
 
 @{
-	Model.PageTitle = GetLocalizedString("Management_Users_Title");
-
 	var dateTimeFormat = User.Culture.DateTimeFormat;
 	var dateTimePattern = $"{dateTimeFormat.ShortDatePattern} {dateTimeFormat.LongTimePattern}";
+
+	ViewBag.MenuSection = GetLocalizedString<AreaResources>("Users");
 }
 
 <!-- Sections -->
@@ -19,53 +20,65 @@
 
 <!-- Page Contents -->
 
-<div class="row align-items-center mb-3">
+<div class="container">
 
-	<div class="col">
-		<h3>@GetLocalizedString("DefaultSectionListLabel")</h3>
-		<p class="lead">@GetLocalizedString("DefaultSectionListLeadInfo")</p>
+	<div class="py-5 text-center">
+		<h2>@(GetLocalizedString<AreaResources>("Users"))</h2>
+		<p class="lead">@(GetLocalizedString<AreaResources>("UsersLeadInfo"))</p>
 	</div>
 
-	<div class="col text-right">
-		<a href="@Url.Action("Add", "Users")" class="btn btn-outline-dark">
-			<i class="fa fa-plus mr-1"></i>@GetLocalizedString("AddNew")
-		</a>
+	<div class="row">
+
+		<div class="col-12">
+
+			<div class="text-right mb-5">
+				<a href="@Url.Action("Add", "Users")" class="btn btn-outline-dark">
+					<i class="fa fa-plus mr-1"></i>@(GetLocalizedString<AreaResources>("AddNew"))
+				</a>
+			</div>
+
+			<div class="table-responsive-sm">
+
+				<table class="table table-hover">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">@(GetLocalizedString<AreaResources>("UTCCreation"))</th>
+							<th scope="col">@(GetLocalizedString<AreaResources>("UserName"))</th>
+							<th scope="col">@(GetLocalizedString<AreaResources>("Email"))</th>
+							<th scope="col">@(GetLocalizedString<AreaResources>("Name"))</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+
+					<tbody>
+						@foreach (var item in Model.Users)
+						{
+							var editUrl = Url.Action("Edit", "Users", new { @id = item.Id });
+
+							<tr data-item-id="@item.Id" data-item-label="@item.FullName">
+								<td scope="row">@item.Id</td>
+								<td>@item.UTCCreation.ToTimeZone(User.TimeZone).ToString(dateTimePattern)</td>
+								<td>@item.UserName</td>
+								<td>@item.Email</td>
+								<td>@item.FullName</td>
+								<td class="text-right">
+									<div class="table-row-actions">
+										<a href="@editUrl" class="btn btn-sm btn-default" title="@(GetLocalizedString<AreaResources>("Edit"))">
+											<i class="fa fa-pencil"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+
+			</div>
+
+		</div>
+
 	</div>
 
 </div>
-
-<table class="table table-hover">
-	<thead class="thead-dark">
-		<tr>
-			<th scope="col">#</th>
-			<th scope="col">@GetLocalizedString("UTCCreation")</th>
-			<th scope="col">@GetLocalizedString("UserName")</th>
-			<th scope="col">@GetLocalizedString("Email")</th>
-			<th scope="col">@GetLocalizedString("Name")</th>
-			<th scope="col"></th>
-		</tr>
-	</thead>
-	<tbody>
-
-	<tbody>
-		@foreach (var item in Model.Users)
-			{
-				var editUrl = Url.Action("Edit", "Users", new { @id = item.Id });
-
-			<tr data-item-id="@item.Id" data-item-label="@item.FullName">
-				<td scope="row">@item.Id</td>
-				<td>@item.UTCCreation.ToTimeZone(User.TimeZone).ToString(dateTimePattern)</td>
-				<td>@item.UserName</td>
-				<td>@item.Email</td>
-				<td>@item.FullName</td>
-				<td class="text-right">
-					<div class="table-row-actions">
-						<a href="@editUrl" class="btn btn-sm btn-default" title="@GetLocalizedString("Edit")">
-							<i class="fa fa-pencil"></i>
-						</a>
-					</div>
-				</td>
-			</tr>
-			}
-	</tbody>
-</table>

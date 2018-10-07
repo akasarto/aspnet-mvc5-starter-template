@@ -747,8 +747,8 @@
     <Compile Include="Infrastructure\Validation\SimpleInjectorValidatorFactory.cs" />
     <Compile Include="Initializer.cs" />
     <Compile Include="Infrastructure\Blobs\IBlobService.cs" />
-    <Compile Include="Models\.info\PartialViewModel.Tpl.cs" />
-    <Compile Include="Models\.info\ViewModel.Tpl.cs" />
+    <Compile Include="Models\.tpls\PartialViewModel.Tpl.cs" />
+    <Compile Include="Models\.tpls\ViewModel.Tpl.cs" />
     <Compile Include="Models\EmptyPartialViewModel.cs" />
     <Compile Include="Models\BaseViewModel.cs" />
     <Compile Include="Models\BasePartialViewModel.cs" />

@@ -20,19 +20,22 @@
 else
 {
 	<div class="d-flex flex-row-reverse align-items-center">
-		<a class="p-2 text-dark" href="@Url.Action("Edit", "Profile", new { area = AppAreas.GetAreaName(Area.Users) })" data-toggle="tooltip" data-placement="bottom" title="@(GetLocalizedString<AreaResources>("MyAccount"))">
+		<a class="mr-3 text-dark" href="@Url.Action("LogOff", "Account", new { area = AppAreas.GetAreaName(Area.Users) })" data-toggle="tooltip" data-placement="bottom" title="@(GetLocalizedString<AreaResources>("LogOff"))">
+			<i class="fa fa-sign-out text-dark fa-align-center fa-align-center"></i>
+		</a>
+		<a class="mr-3 text-dark" href="@Url.Action("Edit", "Profile", new { area = AppAreas.GetAreaName(Area.Users) })" data-toggle="tooltip" data-placement="bottom" title="@(GetLocalizedString<AreaResources>("MyAccount"))">
 			<img src="@Url.BlobThumbnail(User.PictureBlobName, User.UserName, width: 35, height: 35)" class="img-fluid rounded-circle">
 		</a>
-		<nav class="my-2 my-md-0 mr-md-3">
+		<nav>
 			@if (!User.EmailConfirmed)
 			{
-				<a class="p-2 text-dark" href="@Url.Action("VerifyEmail", "Account", new { area = AppAreas.GetAreaName(Area.Users) })" data-toggle="tooltip" data-placement="bottom" title="@(GetLocalizedString<AreaResources>("EmailVerificationAlertMessage"))">
+				<a class="mr-3 text-dark" href="@Url.Action("VerifyEmail", "Account", new { area = AppAreas.GetAreaName(Area.Users) })" data-toggle="tooltip" data-placement="bottom" title="@(GetLocalizedString<AreaResources>("EmailVerificationAlertMessage"))">
 					<i class="fa fa-exclamation-circle text-warning"></i>
 				</a>
 			}
 			@if (User.IsInRole(Role.SuperUser))
 			{
-				<a class="p-2 text-dark @Menu.IfActiveItem("management.area", "active", string.Empty)" href="@Url.Action("Index", "_Landing", new { area = AppAreas.GetAreaName(Area.Management) })" data-toggle="tooltip" data-placement="bottom" title="@(GetLocalizedString<AreaResources>("Management"))">
+				<a class="mr-3 text-dark @Menu.IfActiveItem("management.area", "active", string.Empty)" href="@Url.Action("Index", "_Landing", new { area = AppAreas.GetAreaName(Area.Management) })" data-toggle="tooltip" data-placement="bottom" title="@(GetLocalizedString<AreaResources>("Management"))">
 					<i class="fa fa-cogs text-info"></i>
 				</a>
 			}
