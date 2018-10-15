@@ -32,9 +32,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Tools.Migrator", "Data.Tools.Migrator\Data.Tools.Migrator.csproj", "{4B3A666D-9AFB-4307-AFF4-FFC7A1C02282}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Solution Items", "0.Solution Items", "{DC06B7D6-71E6-45B2-B85A-0A384F988209}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\setup.cmd = ..\..\setup.cmd
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Domain", "2.Domain", "{8D5C1D06-0A8D-4068-B877-E3B51D82823B}"
 EndProject
