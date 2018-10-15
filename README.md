@@ -7,24 +7,44 @@ This is a MVC5 starter kit application with all the initial (and boring) boilerp
 - Dependency injection with SimpleInjector.
 - Out of the box mailing system with support for native SMTP and MailGun Api.
 - Out of the box dynamic image thumb generation with ImageResizer and Cloudinary.
+- Client side libraries managed by the new Visual Studio Library Manager (LibMan).
 - Globalization ready and by-user language, region and timezone definition.
 - Error logging with Serilog.
 
 And more to come...
 
+## Default Username and Password
+
+- admin
+- password
+
+## Pre Requirements
+
+- Tooling and Environment
+  - Windows 10+ machine
+  - Visual Studio 2017 Community v15.8.3+.
+- Clone or download the code from the _master_ branch.
+
 ## Running
 
-- Db
-  - Create a database named `mvc5Starter`
-  - Execute the script under `/sources/db-schemas/create_Db.sql` to create the db objects.
-  - Execute the script under `/sources/db-schemas/create_Users.sql` to create the default user.
-  - If necessary, change the _web.config_ connection string to point to your server.
+- Recommended
+  - Open a new `cmd` or `powershell` console window.
+  - Navigate to the project root folder (where it was extracted or cloned).
+  - Execute the following command to setup the app: `app install` or `./app install`.
+    - The command above will attempt to create the database on your local *LocalDb* instance.
+  - If necessary, change the _web.config_ connection string to point to your desired SQL Server.
+  - Open the `starterTemplateMVC5.sln` solution file under the `sources` folder.
+  - If necessary, set _App.UI.Mvc5_ as the startup project.
+  - Compile and you're good to go.
+  - Hit F5 to start.
 
-- Web App
-  - Get Visual Studio 2017 Community v15.8.3+.
-  - Get the code from this repository _master_ branch.
-  - Make sure nuget packages are set to auto restore.
-  - Set _App.UI.Mvc5_ as the startup project.
+- Manual (if the above fails for some reason)
+  - Create a database named `starterTemplateMVC5`
+  - Execute the script under `/sources/Data.Tools.Migrator/SqlServerScripts/Create_Initial_Db_Structure.sql` to create the db objects.
+  - Execute the script under `/sources/Data.Tools.Migrator/SqlServerScripts/Create_Initial_SuperUser_Account.sql` to create the default user.
+  - If necessary, change the _web.config_ connection string to point to your SQL Server.
+  - Open the `starterTemplateMVC5.sln` solution file under the `sources` folder.
+  - If necessary, set _App.UI.Mvc5_ as the startup project.
   - Compile and you're good to go.
   - Hit F5 to start.
 
@@ -35,13 +55,13 @@ And more to come...
 
 ## Screenshots
 
-![Overview](/media/ss1.png?raw=true "Overview")
+![Overview](/docs/ss1.png?raw=true "Overview")
 
 ## License
 
 MIT License
 
-Copyright (c) 2018 Thiago Alberto Schneider
+Copyright (c) 2018 Sarto Research
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

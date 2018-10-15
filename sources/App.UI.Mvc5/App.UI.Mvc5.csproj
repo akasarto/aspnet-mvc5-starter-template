@@ -634,11 +634,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AreaResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TmpResource.Designer.cs">
-      <DependentUpon>TmpResource.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -957,11 +952,6 @@
     <EmbeddedResource Include="Areas\Users\AreaResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AreaResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TmpResource.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>TmpResource.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
