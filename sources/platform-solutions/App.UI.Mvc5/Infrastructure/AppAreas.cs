@@ -3,7 +3,7 @@
 	public enum Area : int
 	{
 		Root,
-		Docs,
+		Blank,
 		Features,
 		Management,
 		Users

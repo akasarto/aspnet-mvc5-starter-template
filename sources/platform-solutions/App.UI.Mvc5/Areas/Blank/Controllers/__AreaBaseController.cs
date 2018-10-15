@@ -1,9 +1,9 @@
 ﻿using App.UI.Mvc5.Controllers;
 using System.Web.Mvc;
 
-namespace App.UI.Mvc5.Areas.Docs.Controllers
+namespace App.UI.Mvc5.Areas.Blank.Controllers
 {
-	[RouteArea("Docs", AreaPrefix = "docs")]
+	[RouteArea("Blank", AreaPrefix = "blank")]
 	public abstract class __AreaBaseController : __BaseController
 	{
 	}

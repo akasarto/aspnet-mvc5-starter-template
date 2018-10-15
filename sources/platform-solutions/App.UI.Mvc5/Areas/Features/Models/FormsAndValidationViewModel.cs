@@ -59,5 +59,8 @@ namespace App.UI.Mvc5.Areas.Features.Models
 
 		[Display(Name = "CardCVV", ResourceType = typeof(AreaResources))]
 		public string CardCVV { get; set; }
+
+		[Display(Name = "PromoCode", ResourceType = typeof(AreaResources))]
+		public string PromoCode { get; set; }
 	}
 }

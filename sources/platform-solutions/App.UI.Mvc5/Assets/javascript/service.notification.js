@@ -7,8 +7,8 @@ Notification Service
 
 - Usage
 	var notificationService = new NotificationService([options]);
-	var ex1 = notificationService.success();
-	var ex2 = notificationService.success([options]);
+	var ex1 = notificationService.showSuccess();
+	var ex2 = notificationService.showSuccess([options]);
 */
 
 var NotificationService = function (options) {

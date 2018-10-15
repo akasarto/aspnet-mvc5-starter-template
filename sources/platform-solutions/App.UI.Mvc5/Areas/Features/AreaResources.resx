@@ -195,4 +195,7 @@
   <data name="Zip" xml:space="preserve">
     <value>Zip</value>
   </data>
+  <data name="PromoCode" xml:space="preserve">
+    <value>Promo Code</value>
+  </data>
 </root>

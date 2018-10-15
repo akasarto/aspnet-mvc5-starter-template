@@ -241,6 +241,15 @@ namespace App.UI.Mvc5.Areas.Features {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Promo Code.
+        /// </summary>
+        public static string PromoCode {
+            get {
+                return ResourceManager.GetString("PromoCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Realtime.
         /// </summary>
         public static string Realtime {

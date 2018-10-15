@@ -6,6 +6,8 @@ namespace App.UI.Mvc5.Infrastructure
 {
 	public static class GlobalizationManager
 	{
+		private static object _syncRoot = new object();
+
 		private static readonly Dictionary<Type, ResourceManager> _resourceManagers;
 
 		static GlobalizationManager()
@@ -60,10 +62,13 @@ namespace App.UI.Mvc5.Infrastructure
 		{
 			var manager = default(ResourceManager);
 
-			if (!_resourceManagers.TryGetValue(type, out manager))
+			lock (_syncRoot)
 			{
-				manager = new ResourceManager(type);
-				_resourceManagers.Add(type, manager);
+				if (!_resourceManagers.TryGetValue(type, out manager))
+				{
+					manager = new ResourceManager(type);
+					_resourceManagers.Add(type, manager);
+				}
 			}
 
 			return manager;

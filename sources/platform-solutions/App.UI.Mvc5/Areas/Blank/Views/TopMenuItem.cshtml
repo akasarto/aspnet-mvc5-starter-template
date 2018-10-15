@@ -1,0 +1,7 @@
+﻿@using App.UI.Mvc5.Areas.Blank
+
+<!-- Page Contents -->
+
+<li class="nav-item @Menu.IfActiveItem("blank.*", "active")">
+	<a class="nav-link" href="@Url.Action("Index", "_Landing")">@(GetLocalizedString<AreaResources>("Blank"))</a>
+</li>

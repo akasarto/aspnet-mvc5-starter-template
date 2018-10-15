@@ -580,9 +580,6 @@
     <Content Include="Areas\Features\Views\Realtime\Index.cshtml" />
     <Content Include="Areas\Features\Views\_LayoutArea.cshtml" />
     <Content Include="Areas\Features\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Docs\Views\_LayoutArea.cshtml" />
-    <Content Include="Areas\Docs\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Docs\Views\Overview\Index.cshtml" />
     <Content Include=".editorconfig" />
     <Content Include="libman.json" />
     <Content Include="Assets\vendor\jquery\jquery.min.map" />
@@ -613,7 +610,17 @@
     <Compile Include="..\SharedAppAssemblyInfo.cs">
       <Link>Properties\SharedAppAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Areas\Blank\AreaResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AreaResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Blank\Controllers\OverviewController.cs" />
+    <Compile Include="Areas\Blank\Controllers\_LandingController.cs" />
+    <Compile Include="Areas\Blank\Controllers\_MenuController.cs" />
+    <Compile Include="Areas\Blank\Controllers\__AreaBaseController.cs" />
     <Compile Include="Areas\Features\Controllers\GlobalizationController.cs" />
+    <Compile Include="Areas\Features\Models\PromoCodeInfoViewModel.cs" />
     <Compile Include="Areas\Features\Models\GlobalizationViewModel.cs" />
     <Compile Include="Areas\Features\Models\GlobalizationViewModelValidator.cs" />
     <Compile Include="Areas\Features\Models\SamplePaymentTypesEnum.cs" />
@@ -636,15 +643,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Areas\Docs\Controllers\OverviewController.cs" />
-    <Compile Include="Areas\Docs\Controllers\_MenuController.cs" />
-    <Compile Include="Areas\Docs\Controllers\_LandingController.cs" />
-    <Compile Include="Areas\Docs\Controllers\__AreaBaseController.cs" />
-    <Compile Include="Areas\Docs\AreaResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AreaResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Features\Controllers\FormsAndValidationController.cs" />
     <Compile Include="Areas\Features\Controllers\OverviewController.cs" />
@@ -876,14 +874,16 @@
     <Content Include="Assets\vendor\js-cookie\js.cookie.min.js.map" />
     <Content Include="Assets\vendor\jquery-placeholder\jquery.placeholder.min.js.map" />
     <Content Include="Views\DefaultDeleteDialogTemplate.cshtml" />
-    <Content Include="Areas\Docs\Views\SubMenu.cshtml" />
-    <Content Include="Areas\Docs\Views\TopMenuItem.cshtml" />
     <Content Include="Areas\Features\Views\TopMenuItem.cshtml" />
     <Content Include="Areas\Features\Views\SubMenu.cshtml" />
     <Content Include="Views\TopMenu.cshtml" />
     <Content Include="Areas\Features\Views\Overview\Index.cshtml" />
     <Content Include="Areas\Features\Views\Globalization\Index.cshtml" />
     <Content Include="Areas\Users\Views\SubMenu.cshtml" />
+    <Content Include="Areas\Blank\Views\Overview\Index.cshtml" />
+    <Content Include="Areas\Blank\Views\TopMenuItem.cshtml" />
+    <Content Include="Areas\Blank\Views\_LayoutArea.cshtml" />
+    <Content Include="Areas\Blank\Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -946,6 +946,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Areas\Blank\AreaResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AreaResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Areas\Management\AreaResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AreaResources.Designer.cs</LastGenOutput>
@@ -967,10 +971,6 @@
     <EmbeddedResource Include="AppScriptResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppScriptResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Areas\Docs\AreaResources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AreaResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Areas\Features\AreaResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

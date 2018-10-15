@@ -2,13 +2,13 @@
 using App.UI.Mvc5.Models;
 using System.Web.Mvc;
 
-namespace App.UI.Mvc5.Areas.Docs.Controllers
+namespace App.UI.Mvc5.Areas.Blank.Controllers
 {
 	[RoutePrefix("overview")]
-	[TrackMenuItem("docs.overview")]
+	[TrackMenuItem("blank.overview")]
 	public partial class OverviewController : __AreaBaseController
 	{
-		[Route(Name = "Docs_Overview_Index_Get")]
+		[Route(Name = "Blank_Overview_Index_Get")]
 		public ActionResult Index()
 		{
 			var model = new EmptyViewModel();

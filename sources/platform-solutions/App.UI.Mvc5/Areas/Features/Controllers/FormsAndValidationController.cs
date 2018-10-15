@@ -1,11 +1,18 @@
 ﻿using App.UI.Mvc5.Areas.Features.Models;
 using App.UI.Mvc5.Infrastructure;
+using FluentValidation.Mvc;
 using Omu.ValueInjecter;
 using Shared.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web.Mvc;
+
+//
+// Attention!
+// This is just a sample to demonstrate validation and forms
+//
 
 namespace App.UI.Mvc5.Areas.Features.Controllers
 {
@@ -39,6 +46,32 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 			model = BuildFormsAndValidationViewModel(model);
 
 			return View(model);
+		}
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		[Route("redeem-code", Name = "Features_FormsAndValidation_RedeemCode_Post")]
+		public ActionResult RedeemCode([CustomizeValidator(Properties = "PromoCode")] FormsAndValidationViewModel model)
+		{
+			// This shows how to test specific fields in isolation.
+
+			if (ModelState.IsValid)
+			{
+				var code = model.PromoCode;
+				var isValidPromoCode = "test".Like(code);
+
+				var result = new PromoCodeInfoViewModel()
+				{
+					IsValid = isValidPromoCode,
+					CurrentAmount = 25,
+					DiscountValue = isValidPromoCode ? 5 : decimal.Zero,
+					PromoCode = code.ToUpper()
+				};
+
+				return Json(result);
+			}
+
+			return JsonError(ModelState, HttpStatusCode.BadRequest);
 		}
 
 		private FormsAndValidationViewModel BuildFormsAndValidationViewModel(FormsAndValidationViewModel postedModel = null)

@@ -7,8 +7,8 @@
 		<a class="nav-link" href="@Url.GetHomeUrl()">@GetLocalizedString("Home")</a>
 	</li>
 
-	@Html.Action("TopMenuItem", "_Menu", new { area = AppAreas.GetAreaName(Area.Docs) })
-
 	@Html.Action("TopMenuItem", "_Menu", new { area = AppAreas.GetAreaName(Area.Features) })
+
+	@Html.Action("TopMenuItem", "_Menu", new { area = AppAreas.GetAreaName(Area.Blank) })
 
 </ul>

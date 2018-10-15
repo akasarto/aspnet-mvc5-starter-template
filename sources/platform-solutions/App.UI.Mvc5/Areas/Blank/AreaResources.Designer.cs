@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace App.UI.Mvc5.Areas.Docs {
+namespace App.UI.Mvc5.Areas.Blank {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace App.UI.Mvc5.Areas.Docs {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("App.UI.Mvc5.Areas.Docs.AreaResources", typeof(AreaResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("App.UI.Mvc5.Areas.Blank.AreaResources", typeof(AreaResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,11 +61,11 @@ namespace App.UI.Mvc5.Areas.Docs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Documentation.
+        ///   Looks up a localized string similar to Blank.
         /// </summary>
-        public static string Documentation {
+        public static string Blank {
             get {
-                return ResourceManager.GetString("Documentation", resourceCulture);
+                return ResourceManager.GetString("Blank", resourceCulture);
             }
         }
     }
