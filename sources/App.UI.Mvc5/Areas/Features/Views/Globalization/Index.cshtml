@@ -10,10 +10,44 @@
 
 <!-- Page Contents -->
 
-<div class="container text-center mt-5 pt-5">
-
-	<p>Work in Progress</p>
-
+<div class="container">
+	<div class="py-5 text-center">
+		<h2>Globalization</h2>
+		<p class="lead">Check ou a quick overview on how to use the available globalization, localization and timezone capabilities.</p>
+	</div>
 </div>
 
+<div class="container">
 
+	<p>Globalization info is associated to the current user and can be accessed as follows:</p>
+
+	<ul>
+		<li><code>User.Culture</code> for date, time and numbers.</li>
+		<li><code>User.UICulture</code> for language translations.</li>
+		<li><code>User.TimeZone</code> for local date and time information.</li>
+	</ul>
+
+	<p>Both controllers and razor view have access to the current <code>User</code> instance and you can use the properties above to get the relevant date, number and currency information.</p>
+
+	<p><strong>All dates</strong> stored in the system <strong>should</strong> be <code>UTC</code> OR as <code>DateTimeOffset</code> with the corresponding UTC offset specified.</p>
+
+	<p>To convert between different time zones, there are some extensios available under the <code>Sarto.Extensions</code> namespace and can be used as follows:</p>
+
+	@{
+		var baseDate = DateTime.UtcNow;
+	}
+
+	<p>Base UTC date: <code>@baseDate</code></p>
+
+	<p class="text-weight-bold">Convert from UTC to the user time zone (@User.TimeZoneId):</p>
+	<div class="well well-sm">
+		<code>[DateTime Instance].ToTimeZone(User.TimeZone)</code> => @baseDate.ToTimeZone(User.TimeZone)
+	</div>
+
+	<p class="text-weight-bold">And culture date and number are supported as well.</p>
+
+	<div class="well well-sm">
+		<code>[DateTime Instance].ToTimeZone(User.TimeZone).ToString(User.Culture.DateTimeFormat.FullDateTimePattern)</code> => @baseDate.ToTimeZone(User.TimeZone).ToString(User.Culture.DateTimeFormat.FullDateTimePattern)
+	</div>
+
+</div>
