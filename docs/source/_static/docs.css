@@ -1,0 +1,4 @@
+/* Make it full width */
+.wy-nav-content {
+    max-width: none;
+}
