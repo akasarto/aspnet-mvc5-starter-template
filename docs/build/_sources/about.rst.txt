@@ -1,0 +1,16 @@
+About
+#####
+
+Asp.Net MVC 5 Starter Kit is a basic, clean, globalized and S.O.L.I.D template. All the necessary boilerplate is ready to go.
+
+Some of its main features are:
+
+- Bootstrap 4 based layout.
+- Realtime ready with SignalR.
+- Asp.Net Identity with role permissions.
+- Dependency injection with SimpleInjector.
+- Out of the box mailing system with support for native SMTP and MailGun Api.
+- Out of the box dynamic image thumb generation with ImageResizer and Cloudinary.
+- Client side libraries managed by the new Visual Studio Library Manager (LibMan).
+- Globalization ready and by-user language, region and timezone definition.
+- Error logging with Serilog.
