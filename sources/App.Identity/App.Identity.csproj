@@ -62,9 +62,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".editorconfig" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Data.Core\Data.Core.csproj">
       <Project>{01367635-B331-458F-BF5A-7369925864D6}</Project>
       <Name>Data.Core</Name>

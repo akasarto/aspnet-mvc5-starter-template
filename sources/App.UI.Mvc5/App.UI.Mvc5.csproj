@@ -583,7 +583,6 @@
     <Content Include="Areas\Features\Views\Realtime\Index.cshtml" />
     <Content Include="Areas\Features\Views\_LayoutArea.cshtml" />
     <Content Include="Areas\Features\Views\_ViewStart.cshtml" />
-    <Content Include=".editorconfig" />
     <Content Include="libman.json" />
     <Content Include="Assets\vendor\jquery\jquery.min.map" />
     <Content Include="Assets\vendor\jquery\jquery.slim.min.map" />

@@ -50,11 +50,6 @@
     <Compile Include="UsersRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\.editorconfig">
-      <Link>.editorconfig</Link>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Data.Core\Data.Core.csproj">
       <Project>{01367635-b331-458f-bf5a-7369925864d6}</Project>
       <Name>Data.Core</Name>

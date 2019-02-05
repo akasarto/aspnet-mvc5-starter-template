@@ -69,8 +69,5 @@
     <Compile Include="TimeSpan\ToLocalizedLabel.cs" />
     <Compile Include="TimeSpan\ToTimeZone.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include=".editorconfig" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

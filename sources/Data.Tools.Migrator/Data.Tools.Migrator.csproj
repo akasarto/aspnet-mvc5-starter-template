@@ -60,7 +60,6 @@
     <Compile Include="_Constants.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".editorconfig" />
     <Content Include="SqlServerScripts\.readme.txt" />
     <Content Include="SqlServerScripts\Create_Initial_Db_Structure.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
