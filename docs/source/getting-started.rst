@@ -11,9 +11,7 @@ Minimum Requirements
 * Visual Studio 2017 Community v15.8.3+ or |vs_link|
 * SQL Server Express LocalDB or |db_link|.
 
-.. container:: Note
-
-    Visual Studio 2017 includes the **SQL Server Express LocalDB**.
+*SQL Server Express LocalDB is included in Visual Studio 2017 editions*.
 
 .. |vs_link| raw:: html
 
@@ -25,6 +23,13 @@ Minimum Requirements
 
 Running locally
 ===============
+
+.. container:: Note
+
+    Default credentials for the initial user:
+
+    * **Username:** ``admin``
+    * **Password:** ``password``
 
 **Using Script (Recommended)**
 
