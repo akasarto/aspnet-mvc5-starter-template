@@ -1,6 +1,6 @@
-===============
+###############
 Getting Started
-===============
+###############
 
 Get the project up and running with a few simple steps.
 
@@ -73,7 +73,7 @@ The configuration bellow will ensure your project will always start in the home 
 Solution .editorconfig
 ======================
 
-Under the *0.Solution Items* solution folder, there is the global ``.editorconfig`` file that will ensure consistency between certain aspects of the code. This will apply to all users and will override their indivisual settings for this project.
+Under the **0.Solution Items** solution folder, there is a global ``.editorconfig`` file that will ensure consistency between certain aspects of the code. This will apply to all users and will override their indivisual settings for this project.
 
 More details can be found |editorconfig_link|.
 
