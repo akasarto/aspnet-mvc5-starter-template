@@ -90,26 +90,20 @@ Every major feature has its own folder. Files shared by that feature will be kep
 Namespace Conventions
 =====================
 
-When using the folder structure detailed above, some or maybe all files in that folder may be code classes. In this case, we use another convention that apply to namespaces. Consider the sample bellow:
+Namespaces are defined keeping the folder structure above in mind, but they will go no farther then the first subfolder level for an specific project. Using the **App.UI.Mvc5** project as example, the namespaces will be as follows:
 
-| ``Sarto.Web.UI``
-|   ``/Controllers``
-|     ``/Contacts``
-|       ``_ContactsController.cs`` *(Namespace: Sarto.Web.UI.Controllers)*
-|     ``/Users``
-|       ``_UsersController.cs``
-|     ``BaseController.cs`` *(Namespace: Sarto.Web.UI.Controllers)*
-|   ``/Models``
-|     ``/Clients``
-|       ``ModelX.cs`` *(Namespace: Sarto.Web.UI.Models)*
-|       ``ModelY.cs``
-|       ``ModelZ.cs``
-|     ``ModelA.cs`` *(Namespace: Sarto.Web.UI.Models)*
-|     ``ModelB.cs``
-|     ``ModelC.cs``
-| ``Initializer.cs`` *(Namespace: Sarto.Web.UI)*
-| ``WebUIContext.cs``
-| ``...``
+::
+
+    App.UI.Mvc5
+    ├── Controllers
+    │   └── (Namespace: App.UI.Mvc5.Controllers)
+    ├── Infrastructure
+    |   ├── Configs
+    │   |   └── (Namespace: App.UI.Mvc5.Infrastructure)
+    │   └── (Namespace: App.UI.Mvc5.Infrastructure)
+    ├── Models
+    │   └── (Namespace: App.UI.Mvc5.Models)
+    └── (Namespace: App.UI.Mvc5)
 
 Tech Used and Third-Party Libraries
 ===================================
