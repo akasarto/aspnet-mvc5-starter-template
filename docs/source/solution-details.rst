@@ -44,30 +44,48 @@ For more information regarding this topic, please check the original definition 
 Folder Conventions
 ==================
 
-The proposed folder structure convention applies to any place that can be grouped by feature. The idea is to use as less subfolders as possible, keeping what is common in the root folder for that feature and what is specialized on its own subfolder structure (that follows the same pattern). Bellow we are using the **Views** from the UI project as an example.
+The application folders use a simple structure that has been proven to keep things handy and cleanly organized. Take the snippet bellow:
 
-| ``/Views``
-|   ``/Alerts``
-|   ``/Calendar``
-|   ``/Contacts`` *(Groups all views)*
-|     ``Form.cshtml``
-|     ``Index.cshtml``
-|     ``Manager.cshtml``
-|     ``Modal.cshtml``
-|   ``/Dashboard``
-|   ``/Static`` *(Subfolders following the same structure pattern)*
-|     ``/Forms``
-|     ``/Tables``
-|     ``/UIElements``
-|     ``About.cshtml``
-|     ``Dashboard.cshtml``
-|     ``invoice.cshtml``
-|     ``...``
-|   ``/Users``
-|   ``_Layout.cshtml`` *(Shared files live in the root folder.)*
-|   ``_LayoutInternal.cshtml``
-|   ``_ViewStart.cshtml``
-|   ``...``
+::
+
+    folder
+    ├── subfolder
+    |   └── file.ext
+    └── file.ext
+
+Every major feature has its own folder. Files shared by that feature will be kept in the root folder and possible subfolders will follow the same rules. Taking *part* of the **Infrastructure** folder from the **App.UI.Mvc5** project, we have the following result:
+
+::
+
+    Infrastructure
+    ├── Blobs
+    │   ├── BlobService.cs
+    │   ├── BlobServiceConfigs.cs
+    │   ├── BlobUploadResult.cs
+    │   └── IBlobService.cs
+    ├── Cookies
+    │   ├── GetCookie.cs
+    │   └── SetCookie.cs
+    ├── Realtime
+    |   ├── Configs
+    │   |   ├── HubActivator.cs
+    │   |   ├── SignalRCamelCaseJsonResolver.cs
+    │   |   └── UserIdProvider.cs
+    |   ├── Hubs
+    │   |   └── DatabusHub.cs
+    │   ├── IRealtimeService.cs
+    │   └── RealtimeService.cs
+    ├── UrlExtensions
+    │   ├── BlobThumbnail.cs
+    │   └── GetHomeUrl.cs
+    ├── AppAreas.cs
+    ├── AppJsonResult.cs
+    ├── AppJsonResult.cs
+    ├── AppViewEngine.cs
+    ├── AppWebViewPage.cs
+    ├── AuthorizeAttribute.cs
+    ├── DirectRouteProvider.cs
+    └── SetLayout.cs
 
 Namespace Conventions
 =====================
