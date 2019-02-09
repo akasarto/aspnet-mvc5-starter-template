@@ -108,26 +108,27 @@ Namespaces are defined keeping the folder structure above in mind, but they will
 Tech Used and Third-Party Libraries
 ===================================
 
+A list with the main tech and libraries that are used throughout the solution, for further information.
+
 **Microsoft**
 
-* Visual Studio 2015 Communit or Higher (https://www.visualstudio.com/).
+* Latest released Visual Studio Community edition or higher (https://www.visualstudio.com).
 * ASP.Net MVC 5 (http://www.asp.net/mvc).
 * ASP.Net Identity 2.0 (http://www.asp.net/identity).
-* ASP.Net WebApi 2.0 (http://www.asp.net/web-api).
-* SQL Server Express and Tools (http://downloadsqlserverexpress.com/).
+* SQL Server Express and Tools (https://www.microsoft.com/en-us/sql-server/sql-server-editions-express/).
+* PowerShell - for script execution and automation (https://docs.microsoft.com/en-us/powershell/scripting/overview).
 
 **Third party libraries**
 
-* Porto HTML Template **\*** (https://themeforest.net/item/porto-admin-responsive-html5-template/8539472).
 * Image Resizer **\**** - for local image manipulation (http://imageresizing.net/plugins/editions/free).
-* Dapper .Net Micro ORM - for data manipulation (https://github.com/StackExchange/dapper-dot-net).
+* Dapper .Net Micro ORM - for data manipulation (https://github.com/StackExchange/Dapper).
 * Simple Injector - for IoC and Dependency injection (https://simpleinjector.org).
-* NLog - for logging (http://nlog-project.org).
+* Serilog - for logging (https://serilog.net).
 * Json.NET - for json data manipulation (http://www.newtonsoft.com/json).
-* FluentValidation - for client and server data validation (https://github.com/JeremySkinner/FluentValidation).
+* FluentValidation - for client and server data validation (https://fluentvalidation.net).
 * ValueInjecter - for class mapping (https://github.com/omuleanu/ValueInjecter).
+* FluentMigrator - for database robust versioning and manipulation (https://fluentmigrator.github.io).
 
-| \* *Paid license available.*
-| \** *Free and paid version available.*
+| \* *Free and paid version available.*
 
 |
