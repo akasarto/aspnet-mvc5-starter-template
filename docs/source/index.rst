@@ -10,3 +10,4 @@ Contents:
 
    getting-started
    solution-details
+   client-side-libraries

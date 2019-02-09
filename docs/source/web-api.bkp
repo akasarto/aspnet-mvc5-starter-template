@@ -1,0 +1,203 @@
+##################
+Integrated Web Api
+##################
+
+Our REST Web Api endpoint allows other client applications (like Mobile, UWP and Desktop apps) to exchange information with the main platform. It is the main gateway for integration with other systems.
+
+Overview
+========
+
+We use OAuth2 to authenticate requests. This is a commonly used scenario that consists of two main steps:
+
+    #. Users request a new access token using their credentials.
+    #. All subsequent requests will include the access token in the *Authorization* header.
+
+Getting an authentication token
+===============================
+
+By default, our integrated Web Api is listening on the following endpoint: ``http://localhost:5000/``
+
+To get an access token, we must issue an ``application/x-www-form-urlencoded`` ``POST`` request to ``/users/token``, providing the follogin data:
+
+* | **grant_type**
+  | The type of verification that will generate the token. In our case, the value for this will be *password*.
+  |
+
+* | **username**
+  | The e-mail or username for the requesting user.
+  |
+
+* | **password**
+  | The password for the requesting user.
+  |
+
+
+Using a tool like Postman (https://www.getpostman.com/), you can test the api by making direct calls to it:
+
+..  code-block:: rest
+
+    POST /users/token HTTP/1.1
+    Host: localhost:5000
+    Content-Type: application/x-www-form-urlencoded
+
+    grant_type=password&username=the%40email.com&password=123456
+
+The response will be a *JSON* result with either an error:
+
+..  code-block:: json
+
+    {
+        "error": "invalid_grant",
+        "error_description": "Invalid credentials"
+    }
+
+or a success message:
+
+..  code-block:: json
+
+    {
+        "access_token": "FzW4vzRMMC2brEV ... WgVO1juimoh_-N",
+        "token_type": "bearer",
+        "expires_in": 86399
+    }
+
+The value from the ``access_token`` field is what you must add to the request *Authentication* header.
+
+Requesting protected resources
+==============================
+
+After generating the access token, it is now possible to access protected resources from the Web Api. Lets use the ``Contacts`` section as example:
+
+..  code-block:: csharp
+
+	/// <summary>
+	/// Partial contacts controller.
+	/// </summary>
+	[Authorize]
+	[RoutePrefix("api/v1/contacts")]
+	public partial class ContactsController : BaseController
+	{
+		private IContactsRepository _contactsRepository = null;
+
+		/// <summary>
+		/// Constructor method.
+		/// </summary>
+		public ContactsController(IContactsRepository contactsRepository)
+		{
+			_contactsRepository = contactsRepository;
+		}
+	}
+
+Notice that the resource path is ``/api/v1/contacts``. We can now issue a ``GET`` request as follows:
+
+..  code-block:: rest
+
+    GET /api/v1/contacts HTTP/1.1
+    Host: localhost:5000
+    Authorization: Bearer FzW4vzRMMC2brEV ... WgVO1juimoh_-N
+
+The response will again be a *JSON* result with either a failure:
+
+..  code-block:: json
+
+    {
+        "message": "Authorization has been denied for this request."
+    }
+
+or success:
+
+..  code-block:: json
+
+    [
+        {
+            "id": 2,
+            "utcCreation": "2017-02-19T21:27:05.71",
+            "name": "Contact 1",
+            "type": 1,
+            "gender": 1,
+            "birthDate": "2017-02-15T00:00:00",
+            "email1": "contact@test.com"
+        },
+        {
+            "id": 3,
+            "utcCreation": "2017-02-19T21:27:16.0933333",
+            "imageBlobId": "8455f094-355a-4d19-94e1-168814c2d1c9",
+            "imageBlob": {
+                "id": "8455f094-355a-4d19-94e1-168814c2d1c9",
+                "utcCreation": "2017-02-19T21:27:14.37",
+                "type": "image/jpeg",
+                "length": 89565,
+                "extension": "jpg",
+                "container": "2017/02/19",
+                "name": "2017/02/19/8455f094-355a-4d19-94e1-168814c2d1c9.jpg"
+            },
+            "name": "Contact 2",
+            "type": 0,
+            "gender": 0
+        }
+    ]
+
+Role based authorization
+========================
+
+Just like in the main Web UI application, user roles can be used to limit access to resouces. They can limit an entire action:
+
+..  code-block:: csharp
+
+    /// <summary>
+    /// GET / Contacts action.
+    /// </summary>
+    [HttpGet]
+    [ActionName("")]
+    [Route(Name = "ContactsGet")]
+    [Authorize(Roles = Core.Entities.Role.Admin)]
+    public IHttpActionResult Get()
+    {
+        var result = _contactsRepository.GetAll();
+
+        return Ok(result);
+    }
+
+or be used within:
+
+..  code-block:: csharp
+
+    /// <summary>
+    /// GET / Contacts action.
+    /// </summary>
+    [HttpGet]
+    [ActionName("")]
+    [Route(Name = "ContactsGet")]
+    public IHttpActionResult Get()
+    {
+        var result = _contactsRepository.GetAll();
+
+        if (User.IsInRole(Core.Entities.Role.Admin))
+        {
+            // ...
+        }
+
+        return Ok(result);
+    }
+
+Registering new users
+=====================
+
+We already support registering new users from the Web Api as well. You can do that by issuing a ``POST`` ``application/json`` request to the ``/api/v1/users/register`` path with the related user data:
+
+..  code-block:: rest
+
+    POST /api/v1/users/register HTTP/1.1
+    Host: localhost:5000
+    Content-Type: application/json
+
+    {
+        "name": "My Name",
+        "email": "my@email.com",
+        "password": "apiapi",
+        "confirmPassword": "apiapi",
+        "termsOfUse": true
+    }
+
+
+
