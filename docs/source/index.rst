@@ -11,3 +11,4 @@ Contents:
    getting-started
    solution-details
    client-side-libraries
+   aspnet-mvc-areas
