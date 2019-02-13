@@ -80,3 +80,7 @@ More details can be found |editorconfig_link|.
 .. |editorconfig_link| raw:: html
 
    <a href="https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2017" target="_blank">here</a>
+
+
+
+|

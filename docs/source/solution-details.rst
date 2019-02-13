@@ -131,4 +131,6 @@ A list with the main tech and libraries that are used throughout the solution, f
 
 | \* *Free and paid version available.*
 
+
+
 |
