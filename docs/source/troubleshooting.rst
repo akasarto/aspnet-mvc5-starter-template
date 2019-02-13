@@ -54,4 +54,6 @@ You can fix this by comparing the nuget package version installed with the one t
 
   |
 
-* Your assembly bindings should now pointing to the correct versions and the runtime error will be fixed.
+Your assembly bindings should now pointing to the correct versions and the runtime errors will be fixed.
+
+For more details, check the official docs at https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/redirect-assembly-versions.
