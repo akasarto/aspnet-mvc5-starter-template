@@ -2,14 +2,6 @@
 Asp.NET MVC Areas
 #################
 
-.. raw:: html
-
-    <div style="text-align:center;">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/cTqvS0tRCoU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-
-|
-
 It is not very common to see areas being used in MVC applications, but when properly configured, they can be very handy. Providing good modularity options to the solution:
 
   .. image:: /_static/areas_top.png
