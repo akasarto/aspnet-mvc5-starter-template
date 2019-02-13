@@ -4,6 +4,27 @@ Troubleshooting
 
 Possible problems that may occur during the development lifecycle.
 
+Scripted Build Errors
+=====================
+
+For some specific cases, automattic build from ``app.cmd install`` command may fail. The most common scenario for that, so far, was that the dev/server machine did not had the proper environment setup. If you facing problem building the application from script, try the following steps:
+
+* On your **Windows 10** machine, look for the ``Visual Studio Installer`` application.
+
+  .. image:: /_static/vs_installer.png
+
+  |
+
+* Make sure that at least the **Nuget targets and build tasks** are selected.
+
+  .. image:: /_static/vs_build_tools.png
+
+  |
+
+  .. image:: /_static/vs_build_tools_targets.png
+
+  |
+
 Assembly mappings
 =================
 
@@ -23,14 +44,14 @@ You can fix this by comparing the nuget package version installed with the one t
 
   .. image:: /_static/assembly_bindings_delete.png
 
+  |
+
 * Recompile the application using Visual Studio.
 
 * Click on the compilation warning as instructed and click 'Yes' to the action box that is shown.
 
   .. image:: /_static/assembly_bindings_warning.png
 
-* Your assembly bindings should now pointing to the correct versions and the runtime error will be fixed.
-
-
-
   |
+
+* Your assembly bindings should now pointing to the correct versions and the runtime error will be fixed.

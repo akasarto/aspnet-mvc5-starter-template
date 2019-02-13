@@ -18,7 +18,3 @@ Contents:
    client-side-libraries
    aspnet-mvc-areas
    troubleshooting
-
-
-
-|

@@ -130,7 +130,3 @@ A list with the main tech and libraries that are used throughout the solution, f
 * FluentMigrator - for database robust versioning and manipulation (https://fluentmigrator.github.io).
 
 | \* *Free and paid version available.*
-
-
-
-|

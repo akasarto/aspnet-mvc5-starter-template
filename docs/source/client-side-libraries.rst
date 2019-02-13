@@ -22,7 +22,3 @@ Referencing new libraries is pretty simple, just edit the ``libman.json`` file u
 You can browse available libraries from the https://cdnjs.com/ catalog or add your preferred source.
 
 For more details, check the official docs at https://docs.microsoft.com/en-us/aspnet/core/client-side/libman.
-
-
-
-|
