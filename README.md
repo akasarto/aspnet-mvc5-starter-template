@@ -31,7 +31,7 @@ And more to come...
 
 MIT License
 
-Copyright (c) 2018 Sarto Research
+Copyright (c) 2017-2019 Sarto Research
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
