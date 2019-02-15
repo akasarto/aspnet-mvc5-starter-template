@@ -1,5 +1,9 @@
 # About
-This is a MVC5 starter kit application with all the initial (and boring) boilerplate already implemented. Some of the main features are:
+Asp.Net MVC 5 Starter Kit is a basic, clean, globalized and S.O.L.I.D template with all the necessary boilerplate is ready to go.
+
+For more details and getting started, check our online documentation at https://mvc5-starter-template.readthedocs.org.
+
+Some of the main features are:
 
 - Bootstrap 4 based layout.
 - Realtime ready with SignalR.
