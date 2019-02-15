@@ -1,9 +1,10 @@
 # About
 Asp.Net MVC 5 Starter Kit is a basic, clean, globalized and S.O.L.I.D template with all the necessary boilerplate is ready to go.
 
-For more details and getting started, check our online documentation at https://mvc5-starter-template.readthedocs.org.
+# Gettings Started
+Check our online docs at https://mvc5-starter-template.readthedocs.org.
 
-Some of the main features are:
+# Features Overview
 
 - Bootstrap 4 based layout.
 - Realtime ready with SignalR.
@@ -17,41 +18,6 @@ Some of the main features are:
 
 And more to come...
 
-## Default Username and Password
-
-- admin
-- password
-
-## Pre Requirements
-
-- Tooling and Environment
-  - Windows 10+ machine
-  - Visual Studio 2017 Community v15.8.3+.
-- Clone or download the code from the _master_ branch.
-
-## Running
-
-- Recommended
-  - Open a new `cmd` or `powershell` console window.
-  - Navigate to the project root folder (where it was extracted or cloned).
-  - Execute the following command to setup the app: `app install` or `./app install`.
-    - The command above will attempt to create the database on your local *LocalDb* instance.
-  - If necessary, change the _web.config_ connection string to point to your desired SQL Server.
-  - Open the `starterTemplateMVC5.sln` solution file under the `sources` folder.
-  - If necessary, set _App.UI.Mvc5_ as the startup project.
-  - Compile and you're good to go.
-  - Hit F5 to start.
-
-- Manual (if the above fails for some reason)
-  - Create a database named `starterTemplateMVC5`
-  - Execute the script under `/sources/Data.Tools.Migrator/SqlServerScripts/Create_Initial_Db_Structure.sql` to create the db objects.
-  - Execute the script under `/sources/Data.Tools.Migrator/SqlServerScripts/Create_Initial_SuperUser_Account.sql` to create the default user.
-  - If necessary, change the _web.config_ connection string to point to your SQL Server.
-  - Open the `starterTemplateMVC5.sln` solution file under the `sources` folder.
-  - If necessary, set _App.UI.Mvc5_ as the startup project.
-  - Compile and you're good to go.
-  - Hit F5 to start.
-
 ## Recommended Layout Templates
 
 - [Porto HTML5 Template](http://themeforest.net/item/porto-responsive-html5-template/4106987?ref=Sartor)
@@ -59,7 +25,7 @@ And more to come...
 
 ## Screenshots
 
-![Overview](/docs/ss1.png?raw=true "Overview")
+![Overview](/trunk/ss1.png?raw=true "Overview")
 
 ## License
 
