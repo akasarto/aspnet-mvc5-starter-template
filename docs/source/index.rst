@@ -5,7 +5,8 @@ Asp.Net MVC 5 Starter Kit is a basic, clean, globalized and S.O.L.I.D template. 
 
 **Attention**: *Docs are still a work in progress*
 
-Code:
+Source Code:
+
     https://github.com/akasarto/aspnet-mvc5-starter-template
 
 Contents:

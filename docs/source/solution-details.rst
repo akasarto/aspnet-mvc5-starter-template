@@ -21,13 +21,11 @@ Projects
 Architecture
 ============
 
-The solution was built following the **Onion Architecture**. The concept helps keet things organized and, as stated by the author himself:
+The solution was built following the **Onion Architecture** concept.
 
-.. container:: Note
+The overall philosophy of the Onion Architecture is to keep your business logic and model in the middle (Core) of your application and push your dependencies as far outward as possible.
 
-    The overall philosophy of the Onion Architecture is to keep your business logic and model in the middle (Core) of your application and push your dependencies as far outward as possible.
-
-Basically, it states that code from inner layers should not depend on code from outer layers.
+Basically, it states that code from inner layers should not depend on code from outer layers. It is very simple and help keeping things organized.
 
 Check the image below:
 
@@ -37,14 +35,14 @@ Check the image below:
 
 |
 
-Using the diagram above as an example, we can say that all code in the application can depend on code from the *core* layer, but code in the *infra* layer can **not** depend on code from *services* and *User Interface* layers.
+Using the diagram above as an example, we can say that all code in the application can depend on code from the *core* layer, but code in the *Infra* layer can **not** depend on code from *Services* or *User Interface* layers.
 
 For more information regarding this topic, please check the original definition post at `http://jeffreypalermo.com/blog/the-onion-architecture-part-1/ <http://jeffreypalermo.com/blog/the-onion-architecture-part-1/>`_.
 
 Folder Conventions
 ==================
 
-The application folders use a simple structure that has been proven to keep things handy and cleanly organized. Take the snippet bellow:
+The application folders use a simple structure that has been proven to keep things handy and organized. Take the snippet bellow:
 
 ::
 
