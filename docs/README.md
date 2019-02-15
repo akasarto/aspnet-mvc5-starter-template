@@ -27,7 +27,7 @@ cd project/extracted/or/cloned/folder
 ```
 
 ```
-sphinx-autobuild.exe docs/source/ docs/build/
+sphinx-autobuild docs/source/ docs/build/
 ```
 
 If everything goes as expected, the docs will be available at  `http://localhost:8000`.
