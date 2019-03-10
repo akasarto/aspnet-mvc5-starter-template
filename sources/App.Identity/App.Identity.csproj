@@ -81,7 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Dapper">
-      <Version>1.50.7</Version>
+      <Version>1.60.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNet.Identity.Owin">
       <Version>2.2.2</Version>
