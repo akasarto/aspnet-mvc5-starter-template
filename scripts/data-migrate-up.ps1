@@ -24,10 +24,10 @@ $solutionFilePath = Join-Path $rootFolder $solutionFilePath
 Write-Host ""
 
 # Check current powershell version
-check_required_powershell_version -requiredNetFrameworkReleaseVersion $requiredPowerShellMajorVersion
+check_required_powershell_version -requiredPowerShellMajorVersion $requiredPowerShellMajorVersion
 
 # Check current .NET Framework SDK version
-check_required_net_framework_version -requiredPowerShellMajorVersion $requiredNetFrameworkReleaseVersion
+check_required_net_framework_version -requiredNetFrameworkReleaseVersion $requiredNetFrameworkReleaseVersion
 
 # Check MSBuild.exe tool
 check_msbuild_tool_executable -vsWhereToolExe $vsWhereToolExe
