@@ -59,11 +59,11 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Antlr" Version="3.5.0.2" />
-    <PackageReference Include="CloudinaryDotNet" Version="1.6.0" />
+    <PackageReference Include="CloudinaryDotNet" Version="1.7.0" />
     <PackageReference Include="FluentValidation" Version="8.1.3" />
     <PackageReference Include="FluentValidation.Mvc5" Version="8.1.3" />
     <PackageReference Include="FluentValidation.ValidatorAttribute" Version="8.1.3" />
-    <PackageReference Include="Humanizer.Core" Version="2.5.16" />
+    <PackageReference Include="Humanizer.Core" Version="2.6.2" />
     <PackageReference Include="ImageResizer" Version="4.2.5" />
     <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.2" />
