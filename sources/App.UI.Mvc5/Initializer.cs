@@ -97,7 +97,7 @@ namespace App.UI.Mvc5
 
 			container.Register(() =>
 			{
-				if (AdvancedExtensions.IsVerifying(container) || HttpContext.Current == null)
+				if (container.IsVerifying || HttpContext.Current == null)
 				{
 					return new OwinContext().Authentication;
 				}
@@ -180,7 +180,7 @@ namespace App.UI.Mvc5
 			container.Register(typeof(IValidator<>), domainAssemblies);
 			container.Register<ISessionContext>(() =>
 			{
-				if (AdvancedExtensions.IsVerifying(container) || HttpContext.Current == null)
+				if (container.IsVerifying || HttpContext.Current == null)
 				{
 					return UserSessionContext.Null;
 				}

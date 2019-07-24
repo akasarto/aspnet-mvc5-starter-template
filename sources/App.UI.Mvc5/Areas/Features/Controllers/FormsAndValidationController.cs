@@ -57,7 +57,7 @@ namespace App.UI.Mvc5.Areas.Features.Controllers
 
 			if (ModelState.IsValid)
 			{
-				var code = model.PromoCode;
+				var code = model.PromoCode ?? string.Empty;
 				var isValidPromoCode = "test".Like(code);
 
 				var result = new PromoCodeInfoViewModel()
