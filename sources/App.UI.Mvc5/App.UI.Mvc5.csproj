@@ -78,7 +78,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Owin" Version="4.0.1" />
+    <PackageReference Include="Microsoft.Owin" Version="4.1.1" />
     <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.0.1" />
     <PackageReference Include="Microsoft.Owin.Security" Version="4.0.1" />
     <PackageReference Include="Microsoft.Owin.Security.Cookies" Version="4.0.1" />
